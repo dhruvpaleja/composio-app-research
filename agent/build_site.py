@@ -155,8 +155,9 @@ def gold_table(acc):
 def app_table(rows):
     out = []
     for r in rows:
-        auth = " ".join(f'<span class="tag{" pri" if a == r["auth_primary"] else ""}">{E(AUTH[a])}</span>'
-                        for a in (r["auth_methods"] or []))
+        others = [a for a in (r["auth_methods"] or []) if a != r["auth_primary"]]
+        auth = (f'<span class="tag pri">{E(AUTH.get(r["auth_primary"], r["auth_primary"] or "?"))}</span>'
+                + (f'<span class="more-n" title="{E(", ".join(AUTH[a] for a in others))}">+{len(others)}</span>' if others else ""))
         comp = {"native": '<span class="yes">native</span>', "mcp_only": '<span class="mid">MCP only</span>',
                 "none": '<span class="no">none</span>'}[r["composio_status"]]
         ev_links = " ".join(
@@ -178,6 +179,7 @@ def app_table(rows):
 <dt>API</dt><dd>{E(r["api_type"])} · {E(r["api_breadth"] or "")} breadth · OpenAPI spec: {r.get("openapi_spec")} · webhooks: {r.get("webhooks")} · sandbox: {r.get("sandbox")}</dd>
 <dt>MCP</dt><dd>{E(MCP[r["mcp"]])}{(' · <a href="' + E(r["mcp_url"]) + '" target="_blank" rel="noopener">' + E(r["mcp_url"][:80]) + '</a>') if r.get("mcp_url") else ""}</dd>
 <dt>Composio today</dt><dd>{E(", ".join(r["composio_slugs"]) or "no toolkit in catalog")}{(" · auth " + E(", ".join(r["composio_auth"]))) if r["composio_auth"] else ""}</dd>
+<dt>Evidence</dt><dd class="evl">{ev_links}</dd>
 <dt>Verification</dt><dd>{r["verify_rounds"]} audit round(s). {("Changed: " + changed) if changed else "Pass-1 answer confirmed."}{(" Still open: " + E(", ".join(r["open_flags"]))) if r["open_flags"] else ""}</dd>
 </dl>{human}
 <ol class="quotes">{quotes}</ol></div>"""
@@ -189,9 +191,8 @@ def app_table(rows):
             f'<small>{E(r["category"])}</small></th>'
             f'<td>{auth}</td><td>{pill("a", r["access"], ACCESS[r["access"]])}</td>'
             f'<td class="mono">{E(r["api_type"])}</td><td>{pill("m", r["mcp"], MCP[r["mcp"]])}</td>'
-            f'<td>{pill("v", r["verdict"], VERDICT[r["verdict"]])}</td><td>{comp}</td>'
-            f'<td class="evl">{ev_links}</td></tr>'
-            f'<tr class="drow" id="d-{r["id"]}" hidden><td></td><td colspan="8">{notes}</td></tr>')
+            f'<td>{pill("v", r["verdict"], VERDICT[r["verdict"]])}</td><td>{comp}</td></tr>'
+            f'<tr class="drow" id="d-{r["id"]}" hidden><td></td><td colspan="7">{notes}</td></tr>')
     return "".join(out)
 
 
@@ -213,6 +214,13 @@ def build(artifact: bool = False):
     queue = [r["name"] for r in rows if r["id"] in qids]
     fr = by_v("ready_with_friction")
     out = by_v("needs_outreach") + by_v("not_buildable")
+
+    def groups(lst):
+        g = {}
+        for r in lst:
+            g.setdefault(BLOCKER.get(r["blocker"], r["blocker"]), []).append(r)
+        return "".join(f'<div class="grp"><span class="grph">{E(k)} <b>{len(v)}</b></span><div class="chips">{chips(v)}</div></div>'
+                       for k, v in sorted(g.items(), key=lambda kv: -len(kv[1])))
 
     def chips(lst, extra=lambda r: ""):
         return "".join(f'<a class="chip" href="#app-{r["id"]}">{E(r["name"])}{extra(r)}</a>' for r in lst)
@@ -243,7 +251,11 @@ def build(artifact: bool = False):
         rest = (val[:m.start()] + val[m.end():]).strip(" :") if m else ""
         return (f'<div class="rs"><b>{E(big)}</b><span class="rk">{E(k)}</span>'
                 f'{f"<small>{E(rest)}</small>" if rest else ""}</div>')
-    run_tiles = "".join(stat_tile(k, str(val)) for k, val in run.items())
+    run_items = list(run.items())
+    run_tiles = ('<div class="rstats">' + "".join(stat_tile(k, str(val)) for k, val in run_items[:6]) + "</div>"
+                 + more(f"{len(run_items) - 6} more", '<div class="rstats">' + "".join(stat_tile(k, str(val)) for k, val in run_items[6:]) + "</div>"))
+
+    fr_groups = groups(fr)
 
     css = (ROOT / "agent" / "site.css").read_text(encoding="utf-8")
     js = (ROOT / "agent" / "site.js").read_text(encoding="utf-8")
@@ -308,7 +320,7 @@ def build(artifact: bool = False):
       {more("Already covered (" + str(len(ship_have)) + ")", '<div class="chips dim">' + chips(ship_have) + '</div>')}</div>
     <div class="actcol"><h3><i class="v-ready_with_friction"></i>Build with a workaround <span>{len(fr)}</span></h3>
       <p>One hurdle first: review, a paid plan or a trial.</p>
-      <div class="chips">{chips(fr, lambda r: f'<small>{E(BLOCKER.get(r["blocker"], r["blocker"]))}</small>')}</div></div>
+      {fr_groups}</div>
     <div class="actcol"><h3><i class="v-needs_outreach"></i>Start a conversation <span>{len(by_v("needs_outreach"))}</span></h3>
       <p>Credentials need a partnership. A job for BD.</p>
       <div class="chips">{chips(by_v("needs_outreach"))}</div>
@@ -332,7 +344,7 @@ def build(artifact: bool = False):
     <span id="count" class="count" aria-live="polite">{n} apps</span>
   </div>
   <div class="tw"><table class="apps">
-    <thead><tr><th>#</th><th>App</th><th>Auth (primary in bold)</th><th>Access</th><th>API</th><th>MCP</th><th>Verdict</th><th>In Composio</th><th>Evidence</th></tr></thead>
+    <thead><tr><th>#</th><th>App</th><th>Auth</th><th>Access</th><th>API</th><th>MCP</th><th>Verdict</th><th>In Composio</th></tr></thead>
     <tbody>{app_table(rows)}</tbody></table></div>
 </section>
 
@@ -348,7 +360,7 @@ def build(artifact: bool = False):
     <li><b>Human queue</b><span>Whatever is still flagged, a person decides.</span></li>
   </ol>
   <div class="grid2">
-    <div class="card"><h3>Run numbers</h3><div class="rstats">{run_tiles}</div></div>
+    <div class="card"><h3>Run numbers</h3>{run_tiles}</div>
     <div class="card"><h3>Where a human was needed</h3><p class="note" style="margin:0 0 4px">{len(P["human"])} judgement calls the agent could not make alone.</p>{more("Read them", '<ul class="plain">' + human_html + '</ul>')}</div>
   </div>
 </section>

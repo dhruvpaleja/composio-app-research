@@ -343,3 +343,15 @@ pre code{font-size:inherit}
 .loopkey small{font-size:.78rem;color:var(--ink-2)}
 .actcol .sub{border-top:0;padding-top:0;margin-top:20px}
 @media (max-width:720px){.loopkey{grid-template-columns:1fr}.patterns li{padding-left:36px}}
+
+/* ---------- cleaner pass */
+.more-n{font:500 .7rem var(--f-mono);color:var(--ink-3);cursor:help;margin-left:2px}
+.apps .tag.pri{box-shadow:none;background:var(--soft);font-weight:500}
+.apps td,.apps tbody th{padding-block:13px;vertical-align:middle}
+.apps tbody th small{margin-top:1px}
+.grp{margin-top:14px}
+.grp:first-of-type{margin-top:4px}
+.grph{display:flex;justify-content:space-between;font:500 .68rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding-bottom:6px;margin-bottom:8px;border-bottom:1px solid var(--rule-2)}
+.grph b{font-weight:500;color:var(--ink-2)}
+.detail .evl a{margin-right:10px}
+.card{transition:border-color .15s}
