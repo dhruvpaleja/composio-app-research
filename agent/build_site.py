@@ -13,8 +13,8 @@ DATA, SITE = ROOT / "data", ROOT / "site"
 E = html.escape
 
 AUTHOR = "Dhruv Paleja"
-DEMO = (ROOT / "data" / "demo_run.txt").read_text().strip() if (ROOT / "data" / "demo_run.txt").exists() else ""
-REPO_URL = (ROOT / "data" / "repo_url.txt").read_text().strip() if (ROOT / "data" / "repo_url.txt").exists() else "#run-it"
+DEMO = (ROOT / "data" / "demo_run.txt").read_text(encoding="utf-8").strip() if (ROOT / "data" / "demo_run.txt").exists() else ""
+REPO_URL = (ROOT / "data" / "repo_url.txt").read_text(encoding="utf-8").strip() if (ROOT / "data" / "repo_url.txt").exists() else "#run-it"
 
 VERDICT = {"ready": "Ready", "ready_with_friction": "Friction", "needs_outreach": "Outreach", "not_buildable": "Not buildable",
            "unverified": "Unverified"}
@@ -33,11 +33,11 @@ FIELDS = {"auth_primary": "Primary auth", "auth_methods": "All auth methods", "a
 
 
 def load():
-    rows = json.loads((SITE / "results.json").read_text())
-    stats = json.loads((DATA / "stats.json").read_text())
-    acc = json.loads((DATA / "accuracy.json").read_text())
-    patterns = json.loads((DATA / "patterns.json").read_text())
-    run = json.loads((DATA / "run_stats.json").read_text()) if (DATA / "run_stats.json").exists() else {}
+    rows = json.loads((SITE / "results.json").read_text(encoding="utf-8"))
+    stats = json.loads((DATA / "stats.json").read_text(encoding="utf-8"))
+    acc = json.loads((DATA / "accuracy.json").read_text(encoding="utf-8"))
+    patterns = json.loads((DATA / "patterns.json").read_text(encoding="utf-8"))
+    run = json.loads((DATA / "run_stats.json").read_text(encoding="utf-8")) if (DATA / "run_stats.json").exists() else {}
     return rows, stats, acc, patterns, run
 
 
@@ -204,7 +204,7 @@ def build(artifact: bool = False):
     ship = [r for r in by_v("ready") if r["composio_status"] != "native" and not r.get("identity_risk")]
     ship_have = [r for r in by_v("ready") if r["composio_status"] == "native"]
     unsure = [r for r in rows if r.get("identity_risk")]
-    qids = [q["id"] for q in json.loads((DATA / "human_queue.json").read_text())]
+    qids = [q["id"] for q in json.loads((DATA / "human_queue.json").read_text(encoding="utf-8"))]
     queue = [r["name"] for r in rows if r["id"] in qids]
     fr = by_v("ready_with_friction")
     out = by_v("needs_outreach") + by_v("not_buildable")
@@ -224,18 +224,19 @@ def build(artifact: bool = False):
     access_order = list(ACCESS)
     verdict_order = list(VERDICT)
 
-    css = (ROOT / "agent" / "site.css").read_text()
-    js = (ROOT / "agent" / "site.js").read_text()
+    css = (ROOT / "agent" / "site.css").read_text(encoding="utf-8")
+    js = (ROOT / "agent" / "site.js").read_text(encoding="utf-8")
 
     body = f"""
 <header class="top"><div class="wrap topin">
-  <span class="brand">App Research Agent</span>
-  <nav aria-label="Sections"><a href="#patterns">Patterns</a><a href="#act">Where to act</a><a href="#matrix">Findings</a><a href="#agent">Agent</a><a href="#verify">Verification</a><a href="#run-it">Run it</a></nav>
+  <a class="brand" href="#top"><span class="mark" aria-hidden="true">{"<i></i>" * 9}</span>App Research Agent</a>
+  <nav aria-label="Sections"><a href="#patterns">Patterns</a><a href="#act">Where to act</a><a href="#matrix">All apps</a><a href="#agent">Agent</a><a href="#verify">Verification</a><a href="#run-it">Run it</a></nav>
+  <a class="dl" href="results.csv" download>results.csv ↓</a>
 </div></header>
 
-<section class="hero"><div class="wrap herogrid">
+<section class="hero" id="top"><div class="wrap herogrid">
   <div class="herotext">
-    <p class="eyebrow">Composio · AI Product Ops Intern take-home · {E(AUTHOR)} · {E(P["date"])}</p>
+    <p class="eyebrow"><span>Composio</span><span>AI Product Ops Intern take-home</span><span>{E(AUTHOR)}</span><span>{E(P["date"])}</span></p>
     <h1>{E(P["title"])}</h1>
     <p class="lede">{E(P["lede"])}</p>
     <div class="kpis">
@@ -249,7 +250,9 @@ def build(artifact: bool = False):
       My first verification loop made answers worse, so I rebuilt it. The rebuilt loop improves evidence, not labels: answers backed by a quote found on the cited page rose from <b>{pct1(a1["verified_overall"])}</b> to <b>{pct1(a2["verified_overall"])}</b>.</p>
   </div>
   <figure class="herofig">
+    <div class="figlab"><span>{n} apps · 10 × 10</span><span>by verdict</span></div>
     {waffle(rows)}
+    <div class="legend">{"".join(f'<span class="lg"><i class="v-{k}"></i>{E(VERDICT_LONG[k])}</span>' for k in VERDICT)}</div>
     <figcaption>All {n} apps, one square each, in the order given (10 categories × 10). Colour is the verdict. Click a square to jump to its row.</figcaption>
   </figure>
 </div></section>
@@ -301,11 +304,12 @@ def build(artifact: bool = False):
   <h2>All 100 apps</h2>
   <p class="intro">Click an app name for its notes, every quote the agent relied on, and what verification changed. Hover an evidence link to see the quote. The same data is in <a href="results.json">results.json</a> and <a href="results.csv">results.csv</a>.</p>
   <div class="filters" role="search">
-    <label for="q">Search</label><input id="q" type="search" placeholder="App name or keyword">
+    <label for="q">Search</label><input id="q" type="search" placeholder="Search 100 apps…" autocomplete="off">
     <label for="fcat">Category</label><select id="fcat"><option value="">All categories</option>{cat_opts}</select>
     <label for="fver">Verdict</label><select id="fver"><option value="">All verdicts</option>{"".join(f'<option value="{k}">{E(VERDICT_LONG[k])}</option>' for k in VERDICT)}</select>
     <label for="facc">Access</label><select id="facc"><option value="">Any access</option>{"".join(f'<option value="{k}">{E(l)}</option>' for k, l in ACCESS.items())}</select>
     <label class="cb"><input id="fcomp" type="checkbox"> No native Composio toolkit</label>
+    <button type="button" id="freset" class="reset" hidden>Clear filters</button>
     <span id="count" class="count" aria-live="polite">{n} apps</span>
   </div>
   <div class="tw"><table class="apps">
@@ -382,22 +386,23 @@ python3 -m agent.analyze && python3 -m agent.check && python3 -m agent.build_sit
   </div>
 </section>
 </main>
-<footer class="foot"><div class="wrap">Made by {E(AUTHOR)} for Composio's AI Product Ops Intern take-home. Researched {E(P["date"])}. Facts about vendors change, and each claim links to the page it came from.</div></footer>
+<footer class="foot"><div class="wrap"><span>Made by {E(AUTHOR)} for Composio's AI Product Ops Intern take-home. Researched {E(P["date"])}.</span><span>Facts about vendors change; each claim links to the page it came from.</span></div></footer>
 <script>{js}</script>
 """
     head = f"""<title>App Research Agent</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="light"><meta name="theme-color" content="#f7f5f0">
 <meta name="description" content="{E(P['lede'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <style>{css}</style>"""
     if artifact:
         page = head + body
-        (SITE / "artifact.html").write_text(page)
+        (SITE / "artifact.html").write_text(page, encoding="utf-8")
     else:
         page = f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8">{head}</head><body>{body}</body></html>'
-        (SITE / "index.html").write_text(page)
+        (SITE / "index.html").write_text(page, encoding="utf-8")
     print(f"wrote {len(page) // 1024} KB")
 
 
