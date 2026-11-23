@@ -59,25 +59,32 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* ---------- hero */
 .hero{border-bottom:1px solid var(--rule)}
-.herogrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:64px;padding-block:72px 64px;align-items:start}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;padding-block:72px 64px;align-items:start}
 .eyebrow{font:500 .74rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 22px;display:flex;flex-wrap:wrap;gap:6px 14px}
 .eyebrow span+span::before{content:"/";margin-right:14px;color:var(--rule)}
 h1{font-size:clamp(2.4rem,5.2vw,4.1rem);line-height:1.02;font-weight:400;letter-spacing:-.03em}
 h1 em{font-style:italic;color:var(--accent)}
 .lede{font-size:1.12rem;line-height:1.6;color:var(--ink-2);max-width:60ch;margin:24px 0 36px}
-.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
-.kpi{padding:14px 14px 14px 0;min-width:0}
-.kpi+.kpi{padding-left:14px;border-left:1px solid var(--rule)}
-.kpi b{display:block;font:400 2.9rem/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
-.kpi span{display:flex;gap:6px;align-items:baseline;font-size:.8rem;line-height:1.3;color:var(--ink-2);margin-top:8px}
-.kpi span::before{content:"";flex:none;width:8px;height:8px;border-radius:2px;background:currentColor;transform:translateY(-1px)}
-.kpi .c-ready+span{color:var(--ink-2)}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;min-width:0;transition:border-color .15s}
+.kpi:hover{border-color:var(--ink-3)}
+.kv{display:flex;align-items:baseline;gap:3px}
+.kv b{font:400 2.8rem/.9 var(--f-display);letter-spacing:-.04em;color:var(--c);font-variant-numeric:lining-nums tabular-nums}
+.kpi.v-not_buildable .kv b,.kpi.v-unverified .kv b{color:var(--ink-3)}
+.kv small{font:500 .72rem var(--f-mono);color:var(--ink-3)}
+.kl{font-size:.8rem;color:var(--ink-2);line-height:1.3;min-height:2.6em}
+.kbar{height:4px;background:var(--soft);border-radius:2px;overflow:hidden;margin-top:auto}
+.kbar i{display:block;height:100%;min-width:3px;background:var(--c);border-radius:2px}
+.kpi.v-unverified .kbar i{background:repeating-linear-gradient(45deg,var(--nb) 0 2px,var(--soft) 2px 4px)}
 .c-ready{color:var(--ready)} .c-friction{color:var(--friction)} .c-outreach{color:var(--outreach)} .c-nb{color:var(--nb)} .c-unv{color:var(--nb)}
-.kpi:nth-child(1) span::before{background:var(--ready)} .kpi:nth-child(2) span::before{background:var(--friction)}
-.kpi:nth-child(3) span::before{background:var(--outreach)} .kpi:nth-child(4) span::before{background:var(--nb)}
-.kpi:nth-child(5) span::before{background:repeating-linear-gradient(45deg,var(--nb) 0 2px,var(--soft) 2px 4px)}
-.accline{margin:28px 0 0;padding:2px 0 2px 18px;border-left:2px solid var(--accent);font-size:.95rem;line-height:1.65;color:var(--ink-2);max-width:68ch}
-.accline b{color:var(--ink);font-family:var(--f-mono);font-size:.92em;font-weight:500;background:var(--hl);padding:0 3px;border-radius:2px}
+.accstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:32px;border-top:1px solid var(--ink)}
+.as{padding:14px 14px 0 0;min-width:0}
+.as+.as{padding-left:14px;border-left:1px solid var(--rule)}
+.as b{display:flex;align-items:baseline;gap:3px;font:500 1.3rem/1.1 var(--f-mono);letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.as b i{font-style:normal;color:var(--ink-3);font-weight:400;font-size:.8em}
+.as.up b{color:var(--ready)}
+.as span{display:block;font-size:.76rem;color:var(--ink-2);margin-top:8px;line-height:1.45}
+.accnote{font-size:.85rem;color:var(--ink-3);margin:18px 0 0;padding-left:12px;border-left:2px solid var(--accent);max-width:68ch}
 .herofig{margin:0;padding:20px;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r)}
 .figlab{display:flex;justify-content:space-between;align-items:baseline;font:500 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
 .waffle{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
@@ -98,7 +105,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .w.v-unverified,.seg.v-unverified,.lg i.v-unverified,.sw.v-unverified{background:repeating-linear-gradient(45deg,var(--nb) 0 3px,var(--soft) 3px 6px)}
 
 /* ---------- sections */
-main.wrap{counter-reset:sec}
+main.wrap{counter-reset:sec fig}
 .sec{padding-block:96px 0;counter-increment:sec}
 .sec>h2{display:grid;grid-template-columns:auto;gap:10px}
 .sec>h2::before{content:counter(sec,decimal-leading-zero);font:500 .74rem var(--f-mono);letter-spacing:.08em;color:var(--accent);display:flex;align-items:center;gap:10px}
@@ -121,6 +128,17 @@ main.wrap{counter-reset:sec}
 figcaption{display:flex;flex-direction:column;gap:2px;margin-bottom:18px}
 figcaption b{font:600 1.05rem/1.3 var(--f-display)}
 figcaption span{font-size:.82rem;color:var(--ink-3)}
+figure.card{counter-increment:fig}
+figure.card>figcaption,.card>h3:first-child{padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--rule-2)}
+figure.card>figcaption::before{content:"Fig. " counter(fig);font:500 .68rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.card>h3:first-child{font-size:1.05rem}
+.rstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.rs{padding:14px 14px 14px 0;border-bottom:1px solid var(--rule-2);min-width:0}
+.rs:nth-child(even){padding-left:14px;border-left:1px solid var(--rule-2)}
+.rs:nth-last-child(-n+2):nth-child(odd),.rs:last-child{border-bottom:0}
+.rs b{display:block;font:400 2rem/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
+.rk{display:block;font-size:.8rem;color:var(--ink);font-weight:500;margin-top:8px;line-height:1.35}
+.rs small{display:block;font:.7rem/1.45 var(--f-mono);color:var(--ink-3);margin-top:3px;overflow-wrap:anywhere}
 
 /* stacked bars */
 .stack{display:grid;gap:7px}
@@ -280,10 +298,12 @@ pre code{font-size:inherit}
   body{font-size:15px}
   .sec{padding-block:64px 0}
   .grid2,.patterns{grid-template-columns:1fr}
-  .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .kpi:nth-child(4){padding-left:0;border-left:0}
-  .kpi:nth-child(n+4){border-top:1px solid var(--rule)}
-  .kpi b{font-size:2.3rem}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi:first-child{grid-column:1/-1}
+  .accstats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .as:nth-child(3){padding-left:0;border-left:0}
+  .as:nth-child(n+3){margin-top:14px}
+  .rstats{grid-template-columns:1fr} .rs:nth-child(even){padding-left:0;border-left:0}
   .srow{grid-template-columns:96px minmax(0,1fr)}
   .hb{grid-template-columns:110px minmax(0,1fr) 30px}
   .count{margin-left:0;flex-basis:100%}
@@ -312,15 +332,14 @@ pre code{font-size:inherit}
     <p class="eyebrow"><span>Composio</span><span>AI Product Ops Intern take-home</span><span>Dhruv Paleja</span><span>23 Nov 2026</span></p>
     <h1>91 of these 100 apps can become agent toolkits. Six need a sales conversation.</h1>
     <p class="lede">I built an agent that researched auth, access, API surface and MCP status for all 100 apps through Composio&#x27;s own tools, then made it back every answer with a quote from a page it could fetch again (vendor docs wherever possible). 61 apps are ready to build today, 30 more after one hurdle, and the real gating sits in a few predictable places.</p>
-    <div class="kpis">
-      <div class="kpi"><b class="c-ready">61</b><span>ready to build now</span></div>
-      <div class="kpi"><b class="c-friction">30</b><span>buildable with friction</span></div>
-      <div class="kpi"><b class="c-outreach">6</b><span>need outreach</span></div>
-      <div class="kpi"><b class="c-nb">2</b><span>no hosted API</span></div>
-      <div class="kpi"><b class="c-unv">1</b><span>unverified</span></div>
+    <div class="kpis"><div class="kpi v-ready"><div class="kv"><b>61</b><small>/100</small></div><span class="kl">ready to build now</span><span class="kbar" aria-hidden="true"><i style="width:61%"></i></span></div><div class="kpi v-ready_with_friction"><div class="kv"><b>30</b><small>/100</small></div><span class="kl">buildable with friction</span><span class="kbar" aria-hidden="true"><i style="width:30%"></i></span></div><div class="kpi v-needs_outreach"><div class="kv"><b>6</b><small>/100</small></div><span class="kl">need outreach</span><span class="kbar" aria-hidden="true"><i style="width:6%"></i></span></div><div class="kpi v-not_buildable"><div class="kv"><b>2</b><small>/100</small></div><span class="kl">no hosted API</span><span class="kbar" aria-hidden="true"><i style="width:2%"></i></span></div><div class="kpi v-unverified"><div class="kv"><b>1</b><small>/100</small></div><span class="kl">unverified</span><span class="kbar" aria-hidden="true"><i style="width:1%"></i></span></div></div>
+    <div class="accstats" aria-label="Accuracy">
+      <div class="as"><b>98.9%</b><span>answers acceptable on the 30-app hand-labelled gold sample</span></div>
+      <div class="as"><b>98.1%</b><span>acceptable on 18 held-out apps, labelled blind by separate agents</span></div>
+      <div class="as"><b>85.0%<i>/</i>86.1%</b><span>exact match with my first-choice answer (gold / held-out)</span></div>
+      <div class="as up"><b>95.0%<i>→</i>98.9%</b><span>answers backed by a quote found on the cited page</span></div>
     </div>
-    <p class="accline">Checked against 30 apps labelled by hand and 18 held-out apps labelled blind by separate research agents: <b>98.9%</b> and <b>98.1%</b> of answers acceptable, and <b>85.0%</b> and <b>86.1%</b> matching my first-choice answer exactly.
-      My first verification loop made answers worse, so I rebuilt it. The rebuilt loop improves evidence, not labels: answers backed by a quote found on the cited page rose from <b>95.0%</b> to <b>98.9%</b>.</p>
+    <p class="accnote">My first verification loop made answers worse, so I rebuilt it. The rebuilt loop improves evidence, not labels.</p>
   </div>
   <figure class="herofig">
     <div class="figlab"><span>100 apps · 10 × 10</span><span>by verdict</span></div>
@@ -1517,7 +1536,7 @@ Yes” <a href="https://twenty.com/pricing" target="_blank" rel="noopener">https
     <li><b>Human queue</b><span>Anything still flagged after 2 rounds goes to <code>data/human_queue.json</code> for a person to decide against the docs.</span></li>
   </ol>
   <div class="grid2">
-    <div class="card"><h3>Run numbers</h3><dl class="nums"><dt>Apps researched</dt><dd>100</dd><dt>Composio web searches</dt><dd>1,317 unique (KEENABLE_SEARCH_WEB_PUBLIC)</dd><dt>Pages fetched and re-checked</dt><dd>1,711 unique (KEENABLE_FETCH_URL_PUBLIC, HTTP fallback)</dd><dt>MCP Registry lookups</dt><dd>100</dd><dt>Claude calls, final pipeline</dt><dd>311 (100 research + 211 audit)</dd><dt>Claude cost, final pipeline</dt><dd>$20.75</dd><dt>Claude cost, incl. discarded v1</dt><dd>about $40</dd><dt>Wall time, cold cache</dt><dd>~45 min at 8 to 16 workers</dd><dt>Wall time, rerun</dt><dd>~5 min (cached search and fetch)</dd><dt>Evidence quotes kept</dt><dd>99.6% of 757 re-check on their page</dd><dt>Evidence links checked live</dt><dd>645: 604 OK, 23 bot-blocked, 18 dead (dropped)</dd></dl></div>
+    <div class="card"><h3>Run numbers</h3><div class="rstats"><div class="rs"><b>100</b><span class="rk">Apps researched</span></div><div class="rs"><b>1,317</b><span class="rk">Composio web searches</span><small>unique (KEENABLE_SEARCH_WEB_PUBLIC)</small></div><div class="rs"><b>1,711</b><span class="rk">Pages fetched and re-checked</span><small>unique (KEENABLE_FETCH_URL_PUBLIC, HTTP fallback)</small></div><div class="rs"><b>100</b><span class="rk">MCP Registry lookups</span></div><div class="rs"><b>311</b><span class="rk">Claude calls, final pipeline</span><small>(100 research + 211 audit)</small></div><div class="rs"><b>$20.75</b><span class="rk">Claude cost, final pipeline</span></div><div class="rs"><b>$40</b><span class="rk">Claude cost, incl. discarded v1</span><small>about</small></div><div class="rs"><b>~45</b><span class="rk">Wall time, cold cache</span><small>min at 8 to 16 workers</small></div><div class="rs"><b>~5</b><span class="rk">Wall time, rerun</span><small>min (cached search and fetch)</small></div><div class="rs"><b>99.6%</b><span class="rk">Evidence quotes kept</span><small>of 757 re-check on their page</small></div><div class="rs"><b>645</b><span class="rk">Evidence links checked live</span><small>604 OK, 23 bot-blocked, 18 dead (dropped)</small></div></div></div>
     <div class="card"><h3>Where a human was needed</h3><ul class="plain"><li>Writing the rubric. My first version counted &#x27;per-customer setup&#x27; as friction, which describes nearly every API-key app, so the auditor drifted toward &#x27;friction&#x27;. I rewrote it.</li><li>Building the 30-app gold sample by hand from vendor docs. I labelled it while pass 1 ran and before reading its output, though file timestamps can&#x27;t prove that.</li><li>Diagnosing why loop v1 made things worse. The auditor treated &#x27;the page doesn&#x27;t mention it&#x27; as &#x27;it&#x27;s false&#x27; and downgraded Salesforce, Twilio and Aircall MCP to none. Fixed with an &#x27;absence is not evidence&#x27; rule plus MCP-specific fetching.</li><li>The human queue: 2 apps still flagged after 2 rounds. Datadog&#x27;s pricing page contradicts itself. Paygent Connect has an unresolved identity question: the brief says &#x27;NMI-powered&#x27;, but the agent found a different Paygent.</li><li>Auditing every answer the loop changed: 12 fields in 9 apps. 6 apps were fixed (Salesforce, Zendesk, LiveAgent, Mailchimp, Squarespace, NotebookLM), 1 is debatable (MongoDB primary auth), 1 was still wrong (fanbasis rebranded to Commas, which has its own MCP server) and 1 was made wrong (Mermaid CLI&#x27;s MCP moved to &#x27;official&#x27;). I corrected the last two by hand.</li><li>Reviewing the Composio catalog matches. The automatic matcher had false hits, such as 13 google_* toolkits for Google Ads and the CRM toolkit for Salesforce Commerce Cloud. The corrections are in gold/composio_matches.json.</li><li>A review of labels against the agent&#x27;s own notes produced 5 more corrections: iPayX needs a paid plan, Close falls under the trial rule, Salesforce&#x27;s blocker is partnership, Mermaid&#x27;s MCP is community, and Paygent is unverified. Each is documented in gold/human_overrides.json.</li></ul></div>
   </div>
 </section>

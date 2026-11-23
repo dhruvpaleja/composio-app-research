@@ -224,6 +224,22 @@ def build(artifact: bool = False):
     access_order = list(ACCESS)
     verdict_order = list(VERDICT)
 
+    kpi_def = [("ready", "ready to build now"), ("ready_with_friction", "buildable with friction"),
+               ("needs_outreach", "need outreach"), ("not_buildable", "no hosted API"), ("unverified", "unverified")]
+    kpis = "".join(
+        f'<div class="kpi v-{k}"><div class="kv"><b>{v.get(k, 0)}</b><small>/{n}</small></div>'
+        f'<span class="kl">{E(lab)}</span><span class="kbar" aria-hidden="true"><i style="width:{100 * v.get(k, 0) / n:.0f}%"></i></span></div>'
+        for k, lab in kpi_def)
+
+    def stat_tile(k, val):
+        import re
+        m = re.search(r"[~$]?\d[\d,.]*%?", val)
+        big = m.group(0) if m else val
+        rest = (val[:m.start()] + val[m.end():]).strip(" :") if m else ""
+        return (f'<div class="rs"><b>{E(big)}</b><span class="rk">{E(k)}</span>'
+                f'{f"<small>{E(rest)}</small>" if rest else ""}</div>')
+    run_tiles = "".join(stat_tile(k, str(val)) for k, val in run.items())
+
     css = (ROOT / "agent" / "site.css").read_text(encoding="utf-8")
     js = (ROOT / "agent" / "site.js").read_text(encoding="utf-8")
 
@@ -239,15 +255,14 @@ def build(artifact: bool = False):
     <p class="eyebrow"><span>Composio</span><span>AI Product Ops Intern take-home</span><span>{E(AUTHOR)}</span><span>{E(P["date"])}</span></p>
     <h1>{E(P["title"])}</h1>
     <p class="lede">{E(P["lede"])}</p>
-    <div class="kpis">
-      <div class="kpi"><b class="c-ready">{v.get("ready", 0)}</b><span>ready to build now</span></div>
-      <div class="kpi"><b class="c-friction">{v.get("ready_with_friction", 0)}</b><span>buildable with friction</span></div>
-      <div class="kpi"><b class="c-outreach">{v.get("needs_outreach", 0)}</b><span>need outreach</span></div>
-      <div class="kpi"><b class="c-nb">{v.get("not_buildable", 0)}</b><span>no hosted API</span></div>
-      <div class="kpi"><b class="c-unv">{v.get("unverified", 0)}</b><span>unverified</span></div>
+    <div class="kpis">{kpis}</div>
+    <div class="accstats" aria-label="Accuracy">
+      <div class="as"><b>{pct1(a2["overall"])}</b><span>answers acceptable on the {a2["n_apps"]}-app hand-labelled gold sample</span></div>
+      <div class="as"><b>{pct1(ho["overall"])}</b><span>acceptable on {ho["n_apps"]} held-out apps, labelled blind by separate agents</span></div>
+      <div class="as"><b>{pct1(acc["strict"]["final_human"]["overall"])}<i>/</i>{pct1(acc["holdout_strict"]["final_human"]["overall"])}</b><span>exact match with my first-choice answer (gold / held-out)</span></div>
+      <div class="as up"><b>{pct1(a1["verified_overall"])}<i>→</i>{pct1(a2["verified_overall"])}</b><span>answers backed by a quote found on the cited page</span></div>
     </div>
-    <p class="accline">Checked against {a2["n_apps"]} apps labelled by hand and {ho["n_apps"]} held-out apps labelled blind by separate research agents: <b>{pct1(a2["overall"])}</b> and <b>{pct1(ho["overall"])}</b> of answers acceptable, and <b>{pct1(acc["strict"]["final_human"]["overall"])}</b> and <b>{pct1(acc["holdout_strict"]["final_human"]["overall"])}</b> matching my first-choice answer exactly.
-      My first verification loop made answers worse, so I rebuilt it. The rebuilt loop improves evidence, not labels: answers backed by a quote found on the cited page rose from <b>{pct1(a1["verified_overall"])}</b> to <b>{pct1(a2["verified_overall"])}</b>.</p>
+    <p class="accnote">My first verification loop made answers worse, so I rebuilt it. The rebuilt loop improves evidence, not labels.</p>
   </div>
   <figure class="herofig">
     <div class="figlab"><span>{n} apps · 10 × 10</span><span>by verdict</span></div>
@@ -329,7 +344,7 @@ def build(artifact: bool = False):
     <li><b>Human queue</b><span>Anything still flagged after 2 rounds goes to <code>data/human_queue.json</code> for a person to decide against the docs.</span></li>
   </ol>
   <div class="grid2">
-    <div class="card"><h3>Run numbers</h3><dl class="nums">{"".join(f"<dt>{E(k)}</dt><dd>{E(str(v))}</dd>" for k, v in run.items())}</dl></div>
+    <div class="card"><h3>Run numbers</h3><div class="rstats">{run_tiles}</div></div>
     <div class="card"><h3>Where a human was needed</h3><ul class="plain">{human_html}</ul></div>
   </div>
 </section>
