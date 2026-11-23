@@ -348,3 +348,13 @@ pre code{font-size:inherit}
 .diff{color:#9a5b00} .same{color:#1a7f45}
 .diff::before,.same::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:5px;vertical-align:1px}
 @media (max-width:720px){.agree{grid-template-columns:repeat(2,minmax(0,1fr))}.ag b{font-size:2.4rem}}
+.xh{font-size:1.6rem;margin:64px 0 0;letter-spacing:-.03em}
+.ag.w-agent b{color:var(--accent)} .ag.w-manual b{color:#9a5b00} .ag.w-neither b{color:var(--outreach)} .ag.w-unclear b{color:var(--ink-4)}
+.win{display:inline-block;font-size:.72rem;font-weight:600;margin-left:6px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.w-agent.win{background:var(--accent-soft);color:var(--accent-ink)} .w-manual.win{background:#fff3dc;color:#9a5b00}
+.w-neither.win{background:#ffecea;color:#d70015} .w-unclear.win{background:var(--soft);color:var(--ink-3)}
+.xtab td a{font-size:.78rem;margin-left:6px}
+.mini th,.mini td{padding:10px 12px;text-align:center;font-variant-numeric:tabular-nums}
+.mini th:first-child,.mini tbody th{text-align:left}
+.mini tbody th{font-weight:500;color:var(--ink-2)}
+.mini .bestc{font-weight:700;color:var(--ink);background:var(--accent-soft)}

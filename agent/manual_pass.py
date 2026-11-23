@@ -105,6 +105,27 @@ def run():
     summary = {"agree": dict(agree), "n": dict(n), "counts": {k: dict(v) for k, v in counts.items()},
                "pdf_headline": PDF_HEADLINE, "extraction_matches_pdf": extracted == PDF_HEADLINE,
                "agent_mcp_official": sum(r["mcp"] == "official" for r in agent.values())}
+    # Adjudication: every disputed field was re-checked against the vendor's live docs (data/adjudication.json).
+    adj_file = DATA / "adjudication.json"
+    if adj_file.exists():
+        adj = {a["id"]: a["fields"] for a in json.loads(adj_file.read_text(encoding="utf-8"))}
+        wins = {f: Counter() for f in ("verdict", "access", "mcp")}
+        best = {f: Counter() for f in ("verdict", "access", "mcp")}
+        for o in out:
+            a = agent[o["id"]]
+            o["adjudication"] = {}
+            for f in ("verdict", "access", "mcp"):
+                ruling = adj.get(o["id"], {}).get(f)
+                if o["agree"][f] is False and ruling:
+                    o["adjudication"][f] = ruling
+                    wins[f][ruling["winner"]] += 1
+                    label = ruling["correct"] if ruling["winner"] != "unclear" else a[f]
+                else:
+                    label = a[f]
+                best[f][label] += 1
+        summary["adjudication"] = {"wins": {f: dict(c) for f, c in wins.items()},
+                                   "best_estimate": {f: dict(c) for f, c in best.items()},
+                                   "agent": {f: dict(Counter(r[f] for r in agent.values())) for f in ("verdict", "access", "mcp")}}
     doc = {"summary": summary, "apps": out}
     for path in (DATA / "manual_pass.json", SITE / "manual_pass.json"):
         path.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")

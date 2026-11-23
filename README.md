@@ -43,6 +43,8 @@ The labelling rubric is in `agent/schema.py`. The agent, the auditor and the han
 
 `site/manual-pass.pdf` is an independent manual research pass over the same 100 apps. Its table is extracted into `data/manual_pass_rows.json`; `python -m agent.manual_pass` maps it onto the agent's schema and writes per-app agreement to `data/manual_pass.json` (also published as `site/manual_pass.json`). The extraction reproduces the PDF's own totals (69 free, 10 paid, 13 gated, 41 official MCP). Agreement with the agent: verdict 82/100, access 82/100, primary auth 86/97, MCP 42/60 where the manual pass names one. The page shows every disagreement, and each app's detail row shows the manual answer next to the agent's.
 
+Every disputed field (54 across 35 apps) was then re-checked against the vendor's live docs and pricing pages with the same rubric; rulings with source URL and quote are in `data/adjudication.json`. The agent was right on 43, the manual pass on 7, both were wrong on 1 (Copper MCP: community), and 3 stay unclear (Devin verdict and access, Paygent access). Best-estimate totals after the check: 65 ready, 26 with friction, 6 outreach, 85 official MCP.
+
 ## Run it
 
 Python 3.10+, standard library only. The cache in `data/cache/` (≈38 MB) ships with the repo, so these commands reproduce the published page **offline, with no keys and no cost**:

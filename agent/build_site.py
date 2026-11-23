@@ -229,6 +229,53 @@ def manual_detail(m):
             f'{E(m["manual"]["access"])} · {E(m["manual"]["api_mcp"])}{src}{flag}</dd>')
 
 
+WIN = {"agent": ("Agent right", "w-agent"), "manual": ("Manual right", "w-manual"),
+       "neither": ("Both wrong", "w-neither"), "unclear": ("Unclear", "w-unclear")}
+RUBRIC_PILL = {**{k: ("v", k, VERDICT[k]) for k in VERDICT}, **{k: ("a", k, ACCESS[k]) for k in ACCESS},
+               **{k: ("m", k, MCP[k]) for k in MCP}}
+
+
+def checked_cell(a, field):
+    r = (a.get("adjudication") or {}).get(field)
+    if not r:
+        return '<td></td>'
+    lab, cls = WIN[r["winner"]]
+    pl = pill(*RUBRIC_PILL[r["correct"]]) if r["correct"] in RUBRIC_PILL else ""
+    q = f' title="{E(r.get("quote") or "")}"' if r.get("quote") else ""
+    link = f' <a href="{E(r["url"])}" target="_blank" rel="noopener"{q}>source</a>' if r.get("url") else ""
+    return f'<td>{pl}<span class="win {cls}">{lab}</span>{link}<small>{E(r.get("reason") or "")}</small></td>'
+
+
+def adjudication_block(S):
+    A = S.get("adjudication")
+    if not A:
+        return ""
+    tot = {k: sum(A["wins"][f].get(k, 0) for f in A["wins"]) for k in WIN}
+    n = sum(tot.values())
+    tiles = "".join(f'<div class="ag {WIN[k][1]}"><b>{tot[k]}</b><span class="agl">{WIN[k][0].lower()}</span>'
+                    f'<small>of {n} disputed fields</small></div>' for k in WIN)
+    per = "".join(f'<tr><th scope="row">{lab}</th>' + "".join(f'<td>{A["wins"][f].get(k, 0)}</td>' for k in WIN) + "</tr>"
+                  for f, lab in [("verdict", "Verdict"), ("access", "Access"), ("mcp", "MCP")])
+    be, ag, mc = A["best_estimate"], A["agent"], S["counts"]
+    man_v = {"ready": mc["verdict"].get("ready", 0), "ready_with_friction": mc["verdict"].get("friction", 0),
+             "needs_outreach": mc["verdict"].get("outreach", 0), "not_buildable": mc["verdict"].get("not_buildable", 0)}
+    rows_ = [(VERDICT_LONG[k], ag["verdict"].get(k, 0), man_v.get(k, "—"), be["verdict"].get(k, 0)) for k in VERDICT]
+    rows_ += [("Free self-serve access", ag["access"].get("self_serve_free", 0), "—", be["access"].get("self_serve_free", 0)),
+              ("Trial-only access", ag["access"].get("self_serve_trial", 0), "—", be["access"].get("self_serve_trial", 0)),
+              ("Paid plan for API", ag["access"].get("paid_plan", 0), mc["access"].get("paid", 0), be["access"].get("paid_plan", 0)),
+              ("Official MCP server", ag["mcp"].get("official", 0), mc["mcp"].get("official", 0), be["mcp"].get("official", 0))]
+    best = "".join(f'<tr><th scope="row">{E(l)}</th><td>{a}</td><td>{m}</td><td class="bestc">{b}</td></tr>' for l, a, m, b in rows_)
+    return f"""
+  <h3 class="xh">Who was right?</h3>
+  <p class="intro">Every disputed field was re-checked against the vendor's live docs and pricing pages, using the same rubric, with a source link and quote for each ruling.</p>
+  <div class="agree">{tiles}</div>
+  <div class="grid2">
+    <div class="card"><h3>Rulings by field</h3><div class="tw"><table class="mini"><thead><tr><th></th>{"".join(f"<th>{WIN[k][0]}</th>" for k in WIN)}</tr></thead><tbody>{per}</tbody></table></div></div>
+    <div class="card"><h3>Best-estimate numbers</h3><div class="tw"><table class="mini"><thead><tr><th></th><th>Agent</th><th>Manual</th><th>Checked</th></tr></thead><tbody>{best}</tbody></table></div>
+      <p class="note">Checked = the agent's answer where both passes agree, the re-checked answer where they don't. Unclear rulings keep the agent's answer.</p></div>
+  </div>"""
+
+
 def cross_section(mp):
     if not mp:
         return ""
@@ -247,11 +294,10 @@ def cross_section(mp):
         body = "".join(
             f'<tr><th scope="row"><a href="#app-{a["id"]}">{E(a["name"])}</a></th>'
             f'<td>{mp_pill(field, a["manual_norm"][field])}<small>{E(a["manual"]["access"] if field != "mcp" else a["manual"]["api_mcp"])}</small></td>'
-            f'<td>{mp_pill(field, a["agent_norm"][field])}</td>'
-            f'<td>{f"""<a href="{E(a["manual_url"])}" target="_blank" rel="noopener">docs</a>""" if a["manual_url"] else ""}</td></tr>'
+            f'<td>{mp_pill(field, a["agent_norm"][field])}</td>{checked_cell(a, field)}</tr>'
             for a in rows_)
         return (f'<details class="more big"><summary>{MP_FIELDS[field][0]} disagreements ({len(rows_)})</summary><div class="morein">'
-                f'<div class="tw"><table class="xtab"><thead><tr><th>App</th><th>Manual pass</th><th>Agent</th><th>Manual source</th></tr></thead>'
+                f'<div class="tw"><table class="xtab"><thead><tr><th>App</th><th>Manual pass</th><th>Agent</th><th>Checked against vendor docs</th></tr></thead>'
                 f'<tbody>{body}</tbody></table></div></div></details>')
 
     return f"""
@@ -271,6 +317,7 @@ def cross_section(mp):
       <div><span>official MCP servers</span><b>{c["mcp"].get("official", 0)} vs {S["agent_mcp_official"]}</b><small>the agent also checks the MCP Registry; {c["mcp"].get("unstated", 0)} manual rows don't name an MCP status</small></div>
     </div></div>
   </div>
+  {adjudication_block(S)}
   {table("verdict")}{table("access")}{table("mcp")}
 </section>
 """

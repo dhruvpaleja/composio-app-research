@@ -1,0 +1,590 @@
+[
+ {
+  "id": 1,
+  "name": "Salesforce",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "manual",
+    "url": "https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/api_rest.pdf",
+    "quote": "Developer Edition provides a free and easy solution so that you can use Salesforce for testing and development.",
+    "reason": "A free Developer Edition org has API access by default, so credentials are self-serve. The commercial-use / ISV clause in the API terms is not one of the rubric's friction triggers. (developer.salesforce.com HTML pages returned 403, so the quote is from Salesforce's official REST API guide PDF.)"
+   }
+  }
+ },
+ {
+  "id": 3,
+  "name": "Pipedrive",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://www.pipedrive.com/en/features/mcp-server",
+    "quote": "An official, reliable and fully supported connection built and maintained by Pipedrive.",
+    "reason": "Pipedrive launched and hosts its own native MCP server (announced June 2026); community servers also exist but the vendor one makes it official."
+   }
+  }
+ },
+ {
+  "id": 5,
+  "name": "Twenty",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://docs.twenty.com/developers/extend/mcp",
+    "quote": "Twenty exposes an MCP server so that AI assistants",
+    "reason": "Twenty's own docs describe a built-in MCP server configured under Settings > AI > MCP, so it is first-party, not community."
+   }
+  }
+ },
+ {
+  "id": 6,
+  "name": "Podio",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server",
+    "quote": "The server is live at https://mcp.podio.com — just point your AI platform at it and log in with your Podio account.",
+    "reason": "Progress (Podio's owner) documents its own hosted MCP server at mcp.podio.com, currently in beta."
+   }
+  }
+ },
+ {
+  "id": 8,
+  "name": "Close",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://www.close.com/pricing",
+    "quote": "Close doesn't have a free plan, but you can try it free for 14 days with no credit card.",
+    "reason": "The only self-serve path is a 14-day trial. The free Dev org requires emailing support and is limited to integration partners. A short time-limited trial is friction under the rubric."
+   },
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://developer.close.com/mcp",
+    "quote": "The MCP server URL is `https://mcp.close.com/mcp`",
+    "reason": "Close documents and hosts its own MCP server on its developer site."
+   }
+  }
+ },
+ {
+  "id": 9,
+  "name": "Copper",
+  "fields": {
+   "access": {
+    "correct": "self_serve_trial",
+    "winner": "agent",
+    "url": "https://copper.com",
+    "quote": "Every plan starts with a 14-day free trial, and no credit card is required.",
+    "reason": "No free plan; API is on Professional/Business, which can be trialled for 14 days without a card (trial-includes-API is confirmed only by third-party integrator docs, so moderate confidence)."
+   },
+   "mcp": {
+    "correct": "community",
+    "winner": "neither",
+    "url": "https://copper.com/mcp",
+    "quote": "We'll share both at public release.",
+    "reason": "Copper's own server is still listed as coming soon behind a waitlist/beta, so it is not yet published; third-party servers (e.g. dazanza/copper-mcp, Cotlet, Activepieces) do exist."
+   }
+  }
+ },
+ {
+  "id": 10,
+  "name": "DealCloud",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://api.docs.dealcloud.com/releases",
+    "quote": "DealCloud now provides a Model Context Protocol (MCP) server which gives AI agents read access to your DealCloud data.",
+    "reason": "DealCloud's release notes announce its own MCP server (Celeste license), so an official server exists."
+   }
+  }
+ },
+ {
+  "id": 11,
+  "name": "Zendesk",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+    "quote": "You can try out the Zendesk platform with a free, 14-day trial account.",
+    "reason": "Non-partner builders only get a 14-day trial (sponsored accounts are reserved for Marketplace partners), which the rubric counts as friction."
+   }
+  }
+ },
+ {
+  "id": 13,
+  "name": "Freshdesk",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://www.freshworks.com/freshdesk/pricing/",
+    "quote": "When you sign up, you instantly get access to our Enterprise plan for 14 days.",
+    "reason": "The pricing page lists only paid plans and a 14-day trial, with no free plan, so the only free path is a short trial."
+   },
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://support.freshdesk.com/support/solutions/articles/50000014407",
+    "quote": "MCP is enabled by default for your Freshdesk instance.",
+    "reason": "Freshworks' own support docs describe a built-in Freshdesk MCP server, not a third-party one."
+   }
+  }
+ },
+ {
+  "id": 14,
+  "name": "Front",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://dev.frontapp.com/docs/mcp-server",
+    "quote": "Front's MCP server (mcp.frontapp.com/mcp)",
+    "reason": "Front documents and hosts its own MCP server on its developer portal."
+   }
+  }
+ },
+ {
+  "id": 15,
+  "name": "Pylon",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+    "quote": "The Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol",
+    "reason": "Pylon documents and hosts its own MCP server on its docs domain."
+   }
+  }
+ },
+ {
+  "id": 16,
+  "name": "LiveAgent",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+    "quote": "LiveAgent exposes a built-in MCP server (Model Context Protocol)",
+    "reason": "The vendor's own support docs describe a built-in, vendor-hosted MCP server."
+   }
+  }
+ },
+ {
+  "id": 17,
+  "name": "Plain",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://www.plain.com/pricing",
+    "quote": "Start with a 7-day free trial, no credit card required.",
+    "reason": "There is no free plan. The only free path is a 7-day trial, which is a short time-limited trial."
+   },
+   "access": {
+    "correct": "self_serve_trial",
+    "winner": "manual",
+    "url": "https://www.plain.com/pricing",
+    "quote": "Start with a 7-day free trial, no credit card required.",
+    "reason": "A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan."
+   },
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://www.plain.com/docs/integrations/mcp-server",
+    "quote": "The Plain MCP server at `https://mcp.plain.com/mcp`",
+    "reason": "Plain documents and hosts its own MCP server."
+   }
+  }
+ },
+ {
+  "id": 18,
+  "name": "Help Scout",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+    "quote": "Help Scout MCP gives AI assistants secure, official access to Help Scout data.",
+    "reason": "Help Scout runs a vendor-hosted remote MCP server at mcp.helpscout.net."
+   }
+  }
+ },
+ {
+  "id": 19,
+  "name": "Gorgias",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://www.gorgias.com/pricing",
+    "quote": "The Gorgias trial period lasts 7 days.",
+    "reason": "No free plan exists, so the only free path is a short 7-day trial, which the rubric counts as friction."
+   },
+   "access": {
+    "correct": "self_serve_trial",
+    "winner": "manual",
+    "url": "https://www.gorgias.com/pricing",
+    "quote": "No, you don't need to enter payment info to start the Gorgias trial.",
+    "reason": "The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan."
+   },
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://gorgias.com/blog/gorgias-mcp",
+    "quote": "The Gorgias MCP provides a first-party bridge",
+    "reason": "Gorgias publishes its own MCP server at mcp.gorgias.com."
+   }
+  }
+ },
+ {
+  "id": 20,
+  "name": "Gladly",
+  "fields": {
+   "mcp": {
+    "correct": "community",
+    "winner": "agent",
+    "url": "https://www.stackone.com/connectors/gladly/mcp/",
+    "quote": "StackOne's Gladly MCP server ships with 65 pre-built actions",
+    "reason": "Gladly publishes no MCP server, but third parties (StackOne, Truto, usefulapi) offer Gladly MCP servers, so community rather than none."
+   }
+  }
+ },
+ {
+  "id": 29,
+  "name": "Aircall",
+  "fields": {
+   "access": {
+    "correct": "self_serve_trial",
+    "winner": "agent",
+    "url": "https://aircall.io/pricing/",
+    "quote": "Yes. Aircall offers free access to test the platform before committing.",
+    "reason": "There is a free self-serve trial and 'All plans include API access', so the access is not paid-only. The trial length, and whether the API works during the trial, are not stated, so confidence is moderate."
+   },
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://support.aircall.io/en-gb/articles/39677926959517",
+    "quote": "an AI assistant, like Claude or ChatGPT, read-only access to your company's calls",
+    "reason": "Aircall's help center documents its own beta, read-only MCP at mcp.aircall.io/mcp, which returns 401 without auth. The developer FAQ saying there is no MCP is stale."
+   }
+  }
+ },
+ {
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "quote": "Visit your app's Product tab in the Developer Portal to apply for the Advertising API product.",
+    "reason": "Access is a self-serve application from the developer portal with a Development tier to build and test, which is vendor approval (friction), not a partnership or sales conversation."
+   },
+   "access": {
+    "correct": "app_review",
+    "winner": "agent",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "quote": "LinkedIn reserves the right to review applications and select partners at its discretion",
+    "reason": "Developer apps are self-serve but the Advertising API product is granted by LinkedIn review with Development/Standard tiering, matching the app_review definition."
+   }
+  }
+ },
+ {
+  "id": 34,
+  "name": "GoHighLevel",
+  "fields": {
+   "access": {
+    "correct": "self_serve_trial",
+    "winner": "agent",
+    "url": "https://www.gohighlevel.com/pricing",
+    "quote": "Start with a FREE 14-day trial on any plan below!",
+    "reason": "There is no free plan, but a 14-day trial on any plan is self-serve, so this is self_serve_trial rather than paid_plan."
+   }
+  }
+ },
+ {
+  "id": 35,
+  "name": "Mailchimp",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp",
+    "quote": "Our MCP specifically allows you to interact with the Transactional Messaging API",
+    "reason": "Mailchimp's own developer site documents a vendor-hosted MCP at mandrillapp.com/mcp (Transactional only, not the Marketing API), which still counts as official."
+   }
+  }
+ },
+ {
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "manual",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "Create a new integration on Admin.",
+    "reason": "The free Magento Open Source build exposes the same web API, so a developer can self-host and create an integration for credentials. Self-hosting and per-merchant integrations are not rubric friction."
+   }
+  }
+ },
+ {
+  "id": 46,
+  "name": "Squarespace",
+  "fields": {
+   "access": {
+    "correct": "app_review",
+    "winner": "agent",
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "quote": "Registering an OAuth client, and having it reviewed and approved, only allows OAuth connections with Squarespace.",
+    "reason": "The multi-user OAuth path a toolkit needs is gated by Squarespace review (no paid plan stated for it), while paid Commerce Advanced applies only to single-site API keys; borderline, since neither path is fully self-serve free."
+   }
+  }
+ },
+ {
+  "id": 47,
+  "name": "Ecwid",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "Email us to get a free plan upgrade for your test store.",
+    "reason": "The builder must either pay or email Ecwid for an upgrade before the API works, which is friction."
+   },
+   "access": {
+    "correct": "paid_plan",
+    "winner": "agent",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "Only stores on paid plans can access API.",
+    "reason": "The free store excludes the API, and a free plan that excludes the API is not self_serve_free under the rubric."
+   }
+  }
+ },
+ {
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-3-create-a-developer-profile",
+    "quote": "Amazon reviews your application and sends you an email to the email address associated with your developer profile.",
+    "reason": "Self-serve registration followed by Amazon review is app-review friction, not a sales or partnership conversation."
+   },
+   "access": {
+    "correct": "app_review",
+    "winner": "agent",
+    "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-3-create-a-developer-profile",
+    "quote": "Amazon reviews your application and sends you an email to the email address associated with your developer profile.",
+    "reason": "The rubric names Amazon SP-API as an app_review example: the developer profile is self-serve and Amazon then reviews it and the requested roles."
+   }
+  }
+ },
+ {
+  "id": 52,
+  "name": "SE Ranking",
+  "fields": {
+   "access": {
+    "correct": "self_serve_trial",
+    "winner": "agent",
+    "url": "https://seranking.com/api-pricing.html",
+    "quote": "The 14-day free trial gives you 100K API credits across all six API endpoints",
+    "reason": "The API is usable in a no-card 14-day trial before any payment is needed, so the access is not paid-only."
+   }
+  }
+ },
+ {
+  "id": 60,
+  "name": "Clay",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "agent",
+    "url": "https://university.clay.com/docs/clay-api-cli",
+    "quote": "The developer platform is available across all Clay plans, including free, trial, and Legacy plans.",
+    "reason": "A documented public API with self-serve keys on the free plan means a builder can start now; its narrow scope is not outreach."
+   },
+   "access": {
+    "correct": "self_serve_free",
+    "winner": "agent",
+    "url": "https://university.clay.com/docs/clay-api-cli",
+    "quote": "The developer platform is available across all Clay plans, including free, trial, and Legacy plans.",
+    "reason": "API keys are created via the CLI on any plan including free; there is a public API, contradicting the manual's 'no general public API'."
+   }
+  }
+ },
+ {
+  "id": 69,
+  "name": "Datadog",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "manual",
+    "url": "https://www.datadoghq.com/pricing/",
+    "quote": "On the Free tier, you get up to five Basic hosts with 1-day metric retention, at no cost.",
+    "reason": "A permanent free tier, plus the trial, gives API and app keys self-serve, and partner-registered OAuth is not a rubric friction item."
+   }
+  }
+ },
+ {
+  "id": 80,
+  "name": "Harvest",
+  "fields": {
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://api.harvestapp.com/.well-known/oauth-protected-resource",
+    "quote": "\"authorization_servers\":[\"https://id.getharvest.com\"]",
+    "reason": "Harvest runs a live MCP endpoint at api.harvestapp.com/mcp that uses Harvest's own OAuth server, and its help center has a 'Harvest MCP' article (support.getharvest.com/hc/en-us/articles/46293697226381; Cloudflare blocked a direct fetch, seen only through search)."
+   }
+  }
+ },
+ {
+  "id": 82,
+  "name": "Plaid",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "agent",
+    "url": "https://plaid.com/docs/account/billing/",
+    "quote": "These models only apply to Production traffic; usage of Sandbox is always free.",
+    "reason": "A free, fully featured Sandbox gives working keys immediately, plus a free Trial plan with real data for US/CA teams. Production approval does not block building."
+   },
+   "access": {
+    "correct": "self_serve_free",
+    "winner": "agent",
+    "url": "https://plaid.com/docs/account/billing/",
+    "quote": "Using a Trial plan, you can use Plaid with real production data for free.",
+    "reason": "The free dev sandbox counts as self_serve_free under the rubric. Meaningful real-data use is also free via the Trial plan without review, so it is not app_review."
+   }
+  }
+ },
+ {
+  "id": 84,
+  "name": "Paygent Connect",
+  "fields": {
+   "access": {
+    "correct": "unclear",
+    "winner": "unclear",
+    "url": "https://gopaygent.com",
+    "quote": "",
+    "reason": "gopaygent.com and its /developers/docs and /pricing pages returned only a title on fetch, and no vendor page confirmed either a free plan with API keys or a reseller/NMI merchant-account model; product identity itself is ambiguous."
+   }
+  }
+ },
+ {
+  "id": 85,
+  "name": "iPayX",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "manual",
+    "url": "https://ipayx.ai/docs/mcp-server",
+    "quote": "10 audits / day per API key (free)",
+    "reason": "Free API keys from the dashboard are enough to build and test the 3-endpoint API (medium confidence, because the /developers page cites a $99 Developer plan)."
+   },
+   "access": {
+    "correct": "self_serve_free",
+    "winner": "manual",
+    "url": "https://ipayx.ai/docs/mcp-server",
+    "quote": "10 audits / day per API key (free)",
+    "reason": "The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan."
+   }
+  }
+ },
+ {
+  "id": 88,
+  "name": "Brex",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://developer.brex.com/guides/partner_authentication",
+    "quote": "Please contact our developer support team to be issued a client ID and client secret for partner authentication.",
+    "reason": "Per-account tokens are self-serve on the free Essentials plan, but multi-user OAuth needs Brex to approve the partner and issue credentials by hand: friction, not outreach for basic access."
+   },
+   "access": {
+    "correct": "self_serve_free",
+    "winner": "agent",
+    "url": "https://www.brex.com/pricing",
+    "quote": "Brex API access",
+    "reason": "The self-serve $0/user Essentials tier lists 'Brex API access', and an admin of your own account can create a token, so access is not partner-gated."
+   },
+   "mcp": {
+    "correct": "official",
+    "winner": "agent",
+    "url": "https://developer.brex.com/docs/mcp",
+    "quote": "The server is hosted at https://api.brex.com/mcp and supports any MCP-compatible client.",
+    "reason": "Brex documents and hosts its own MCP server."
+   }
+  }
+ },
+ {
+  "id": 89,
+  "name": "Ramp",
+  "fields": {
+   "verdict": {
+    "correct": "ready_with_friction",
+    "winner": "agent",
+    "url": "https://support.ramp.com/hc/en-us/articles/46681939909907-Accessing-the-Developer-API",
+    "quote": "After Ramp approves your production access application, onboard production customers through OAuth.",
+    "reason": "A sandbox is self-serve via a form (ready in about a minute), but multi-customer use needs Ramp's approval. That is app review, not outreach."
+   },
+   "access": {
+    "correct": "app_review",
+    "winner": "agent",
+    "url": "https://support.ramp.com/hc/en-us/articles/46681939909907-Accessing-the-Developer-API",
+    "quote": "Your sandbox should be ready in about one minute.",
+    "reason": "Sandbox credentials are self-serve, and production for other businesses requires an approval application. That matches app_review, not partner_gated."
+   }
+  }
+ },
+ {
+  "id": 91,
+  "name": "NotebookLM",
+  "fields": {
+   "verdict": {
+    "correct": "ready",
+    "winner": "agent",
+    "url": "https://developers.google.com/notebook/docs",
+    "quote": "During the preview, the API is available for personal Google Accounts.",
+    "reason": "The Gemini Notebook API is an open public preview usable with a personal Google account and no allowlist or licence; Workspace exclusion is not a builder blocker."
+   },
+   "access": {
+    "correct": "self_serve_free",
+    "winner": "agent",
+    "url": "https://developers.google.com/notebook/docs/rate-limits",
+    "quote": "The Gemini Notebook API is free to use during the Public Preview period,",
+    "reason": "Free during public preview with a Free tier listed; the manual cited the older enterprise-licensed NotebookLM Enterprise API instead."
+   }
+  }
+ },
+ {
+  "id": 96,
+  "name": "Devin",
+  "fields": {
+   "verdict": {
+    "correct": "unclear",
+    "winner": "unclear",
+    "url": "https://docs.devin.ai/api-reference/getting-started/teams-quickstart",
+    "quote": "teams and standard organizations (non-enterprise)",
+    "reason": "The docs never state whether the Free or Pro plans get API keys, so ready vs ready_with_friction cannot be settled."
+   },
+   "access": {
+    "correct": "unclear",
+    "winner": "unclear",
+    "url": "https://docs.devin.ai/api-reference/getting-started/teams-quickstart",
+    "quote": "teams and standard organizations (non-enterprise)",
+    "reason": "API key setup is documented for Teams/org service users, but no page says whether Free accounts get API access (paid_plan likely but unconfirmed)."
+   }
+  }
+ }
+]
