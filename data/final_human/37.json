@@ -1,0 +1,88 @@
+{
+ "one_liner": "systeme.io has a REST public API authenticated with a self-generated X-API-Key, plus an official hosted MCP server (mcp.systeme.io) using MCP keys, available on all plans including Free.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The official docs say the API key in the X-API-Key header is the only option. The MCP server uses an MCP key via X-MCP-Key header or mcpKey query parameter. Keys are created in account settings, with optional expiry.",
+ "access": "self_serve_free",
+ "access_notes": "Keys are generated in the dashboard under Settings > MCP & API keys. The vendor says the MCP server is included in all plans including Free. The pages do not state the plan requirement for the REST API itself, but it shares the same key settings page, so a free account likely suffices.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://developer.systeme.io/docs/mcp-server",
+ "docs_url": "https://developer.systeme.io/reference/api",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Per-user API keys are required rather than OAuth; this is not a blocker. Free-plan REST API access is not explicitly stated, but MCP is stated as available on the Free plan.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.systeme.io/reference/api",
+   "quote": "To authenticate with the Systeme.io Public API, your only option right now is to attach your API key to the `X-API-Key` header of each request.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+   "quote": "Scroll down to the Public API keys section and click **Create** (3).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://systeme.io/mcp",
+   "quote": "The MCP server is a powerful feature included in all systeme.io plans. Whether you are on our Free, Startup, Webinar, or Unlimited plan",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.systeme.io/reference/api",
+   "quote": "Adhering to RESTful conventions, our API ensures an intuitive and consistent interaction pattern for all users.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.systeme.io/reference/api",
+   "quote": "allowing you to manage contacts, tags, and a variety of other operations integral to our platform.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://systeme.io/mcp",
+   "quote": "systeme.io includes a built-in MCP server that lets you **connect AI tools like ChatGPT or Claude directly to your account**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.systeme.io/docs/mcp-server",
+   "quote": "Attach your MCP key to the `X-MCP-Key` header.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

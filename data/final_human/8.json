@@ -1,0 +1,137 @@
+{
+ "one_liner": "Close is a CRM with a broad REST API, self-serve OAuth app registration, API keys, and an official remote MCP server. The builder can test with a 14-day trial or a free Dev org.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code flow with self-serve app creation. All OAuth apps get full_access plus offline_access scopes. API keys are sent via HTTP Basic. The MCP server accepts OAuth with DCR or a Close-API-Key header.",
+ "access": "self_serve_trial",
+ "access_notes": "The draft says there is no free plan and a 14-day no-card trial. The pricing page was not in the fetched pages, so that claim is only weakly grounded. Dev organizations are described as having no subscription fees. The draft says they are requested by email. Other access details come from the draft and were not re-verified.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.close.com/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "No free plan; only a 14-day trial (or a Dev org requested from support). Under the rubric a trial under 30 days is friction.",
+ "docs_url": "https://developer.close.com/",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.close.com/integrations/create-an-oauth-app",
+   "quote": "All OAuth applications are granted the `all.full_access offline_access` scopes, providing the same level of access as API keys.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.close.com/api/overview/oauth-authentication",
+   "quote": "The Authorization Code can be exchanged for an Access Token by performing a POST request with form-encoded parameters to `https://api.close.com/oauth2/token/`",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.close.com/api/overview/api-key-authentication",
+   "quote": "API keys use [HTTP Basic client side authentication]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://close.io/pricing",
+   "quote": "Start your free 14-day trial\u2014no credit card required.",
+   "grounding": 0.38,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.close.com/integrations",
+   "quote": "Dev organizations work identically to standard Close organizations but have no subscription fees.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.close.com/",
+   "quote": "Push leads, contacts, activities, and custom data into Close from your website or other systems via the [REST API](https://developer.close.com/api).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developer.close.com/",
+   "quote": "Stream changes with [webhooks](https://developer.close.com/api/resources/webhooks)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.close.com/mcp",
+   "quote": "The MCP server URL is `https://mcp.close.com/mcp` and has \u201cHTTP Streamable\u201d and \u201cOAuth 2.0 Dynamic Client Registration (DCR)\u201d support.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.close.com/docs/mcp-server.md",
+   "quote": "Close's MCP server is an officially supported across the Claude ecosystem.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "close",
+    "name": "Close",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 75
+   },
+   {
+    "slug": "close_mcp",
+    "name": "Close MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 114
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "city.close/close-api",
+   "com.close/close-mcp"
+  ],
+  "mcp_registry_any": 15,
+  "composio_mcp_toolkits": [
+   "close_mcp"
+  ]
+ },
+ "_human": {
+  "note": "Applied the same trial rule as Zendesk, Copper and Datadog (14-day trials are friction).",
+  "src": [
+   "https://www.close.com/pricing"
+  ],
+  "trigger": "review (rubric consistency)"
+ }
+}

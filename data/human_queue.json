@@ -1,0 +1,22 @@
+[
+ {
+  "id": 69,
+  "flags": [
+   {
+    "check": "V2_catalog",
+    "field": "auth",
+    "why": "Composio catalog lists ['API_KEY', 'OAUTH2']; agent missed ['OAUTH2']"
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   }
+  ]
+ }
+]

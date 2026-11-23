@@ -1,0 +1,137 @@
+{
+ "one_liner": "iPayX offers a narrow Bearer-key REST API for FX spread auditing plus a vendor-hosted MCP server. Keys come from the dashboard. A small free quota is documented for the MCP tools, and the REST plans listed start at $99/mo.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Static Bearer token (ipx_live_ for production, ipx_test_ for sandbox) generated in the dashboard. The only OAuth2 mention is \"Coming Q3 2026\" for QuickBooks/Stripe apps, so it is not available today.",
+ "access": "self_serve_free",
+ "access_notes": "The MCP docs mark tools as free tier with 10 audits/day per API key, and keys come from the dashboard. The developer page lists paid REST plans starting at $99/mo (100 audits/mo, sandbox), and the MCP docs mark the full forensic report as a paid tier. The pages do not say whether the REST API itself has a free tier, so this is low confidence. If REST is paid-only, the correct value would be paid_plan.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://mcp.ipayx.ai/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Keys are self-serve, but the free quota is small and the full forensic report and higher volumes are paid. The API is narrow (3 endpoints on the REST page). Docs are inconsistent. The base URL is a supabase function (fx-public-api-v1 or fx-audit-engine) in some places and api.ipayx.ai/v1 in others. The endpoint sets differ between pages. The MCP URL and tool names also differ between the developer page and the MCP docs.",
+ "docs_url": "https://ipayx.ai/docs/api",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "Every request requires a Bearer token in the `Authorization` header. Keys start with `ipx_live_`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/mcp-server",
+   "quote": "**Format:** `ipx_live_xxxxx` (production) or `ipx_test_xxxxx` (sandbox).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/mcp-server",
+   "quote": "**How to get a key:** [Open your iPayX dashboard \u2192 API keys](/dashboard).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "OAuth2 apps, payout audits, international bill enrichment",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/docs/mcp-server",
+   "quote": "**Rate limit:** 10 audits / day per API key (free).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/developers",
+   "quote": "Developer \u2014 $99/mo \u00b7 100 audits/mo \u00b7 sandbox",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/docs/mcp-server",
+   "quote": "Paid tier ($199)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "Bearer auth, OpenAPI 3.1, signed webhooks.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "audit \u00b7 rates \u00b7 audit/document",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/developers/sandbox",
+   "quote": "Submit up to 50 FX transactions per request.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://ipayx.ai/developers",
+   "quote": "Officially listed on the MCP Registry (v1.3.3)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://ipayx.ai/developers",
+   "quote": "`https://mcp.ipayx.ai/mcp`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Ipayx-stellar/fx-audit",
+   "io.github.iPAYX-Technologies/mcp-fx-audit"
+  ],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

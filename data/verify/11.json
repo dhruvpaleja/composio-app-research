@@ -1,0 +1,49 @@
+{
+ "id": "11",
+ "name": "Zendesk",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+    "https://zendesk.com",
+    "https://developer.zendesk.com/api-reference/",
+    "https://developer.zendesk.com/api-reference/integration-services/introduction",
+    "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+    "https://support.zendesk.com/hc/en-us/articles/115015500928-What-are-the-Zendesk-plan-requirements-for-RingCentral-s-integration-",
+    "https://develop.zendesk.com/hc/en-us/articles/360043317073-About-the-Sunshine-Profiles-API",
+    "https://developer.zendesk.com/api-reference/reseller/getting_started",
+    "https://developer.zendesk.com/documentation/conversations/how-to-guides/building-a-marketplace-bot"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "official"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 480
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

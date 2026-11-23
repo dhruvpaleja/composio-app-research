@@ -1,0 +1,42 @@
+{
+ "id": "100",
+ "name": "Grain",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://grain.tools/docs/mcp",
+    "https://grain.com/release-note/06-18-2025",
+    "https://docs.grainledger.com/mcp-server",
+    "https://developers.grain.com/mcp/faq.html",
+    "https://docs.grainql.com/ai-tools/mcp/cursor",
+    "https://docs.grainql.com/ai-tools/mcp/overview",
+    "https://grain.com",
+    "https://developers.grain.com",
+    "https://support.grain.com/en/articles/15507288-grain-api"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "grain",
+    "name": "Grain",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 17
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 16,
+  "composio_mcp_toolkits": []
+ }
+}

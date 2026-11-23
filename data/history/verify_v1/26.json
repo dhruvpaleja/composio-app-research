@@ -1,0 +1,72 @@
+{
+ "id": "26",
+ "name": "Discord",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://discord.com",
+    "https://docs.discord.com/developers/reference",
+    "https://support-dev.discord.com/hc/en-us/articles/6207308062871-What-are-Privileged-Intents",
+    "https://support-dev.discord.com/api/v2/help_center/en-us/articles/40281523410967.json",
+    "https://docs.discord.com/developers/topics/oauth2",
+    "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+    "https://support.discord.com/hc/en-us/articles/41618861207959-Events-API-Terms"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://discord.com",
+    "https://docs.discord.com/developers/reference",
+    "https://github.com/massgen/MassGen/blob/main/massgen/configs/docs/DISCORD_MCP_SETUP.md",
+    "https://github.com/The-LukeZ/discord-docs-mcp",
+    "https://github.com/purduehackers/discord-mcp",
+    "https://github.com/pagelines/discord-mcp",
+    "https://github.com/cappyeo/discord-mcp"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "official"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "discord",
+    "name": "Discord",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 23
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 13,
+  "composio_mcp_toolkits": []
+ }
+}

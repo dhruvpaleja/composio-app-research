@@ -1,0 +1,42 @@
+{
+ "id": "90",
+ "name": "PitchBook",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://pitchbook.com/media/press-releases/pitchbook-launches-an-agentic-platform-assistant-and-new-pitchbook-data-mcp-to-meet-investors-rapidly-evolving-workflow-needs",
+    "https://pitchbook.com",
+    "https://documenter.getpostman.com/view/5190535/TzCV1iRc",
+    "https://pitchbook.com/help/PitchBook-api",
+    "https://pitchbook.com/help/getting-started-with-pitchbook-premium-connector",
+    "https://pitchbook.com/data",
+    "https://dlthub.com/context/source/pitchbook-api",
+    "https://pitchbook.com/api-agreement",
+    "https://pitchbook.com/products/premium-connectors"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "pitchbook",
+    "name": "PitchBook",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 130
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

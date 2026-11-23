@@ -1,0 +1,66 @@
+{
+ "one_liner": "SendGrid has a broad REST v3 API with API-key Bearer auth, but new accounts only get a 60-day, 100/day trial before a paid plan is needed; only community MCP servers exist.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Bearer API key created in the SendGrid console. Basic auth with username/password is no longer accepted. No OAuth for third-party developers appears in the evidence.",
+ "access": "self_serve_trial",
+ "access_notes": "No free plan. New accounts get a 60-day trial (100 emails/day, no credit card), after which a paid plan is needed. Essentials starts around $19.95/month.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api",
+ "mcp": "community",
+ "mcp_url": "https://github.com/deyikong/sendgrid-mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The API works during the 60-day trial, but continued use needs a paid plan. Each user must also create and paste their own API key, since there is no OAuth.",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "quote": "To use an API key, include an `Authorization` header with the value `Bearer <YOUR_API_KEY_HERE>` in your request."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.sendgrid.com/for-developers/sending-email/api-getting-started",
+   "quote": "Basic Authentication is no longer accepted; you must use an API key."
+  },
+  {
+   "field": "access",
+   "url": "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Overview-of-60-Day-Free-Trial-Plans-for-New-SendGrid-Accounts",
+   "quote": "users will be given a 60 day timed free trial plan."
+  },
+  {
+   "field": "access",
+   "url": "https://email-sdk.dev/blog/sendgrid-api-nodejs-typescript",
+   "quote": "SendGrid has no free plan any more: new accounts get a 60-day trial at 100 emails a day"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.sendgrid.com/api-reference/mail-send/mail-send",
+   "quote": "The Mail Send operation allows you to send email over SendGrid's v3 Web API"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/deyikong/sendgrid-mcp",
+   "quote": "comprehensive access to SendGrid's API v3 for email marketing, transactional email operations, dynamic template management, and detailed analytics. Features 154 tools"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/deyikong/sendgrid-mcp",
+   "quote": "Built and maintained by a SendGrid engineer, as an independent project \u2014 not an official SendGrid product."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

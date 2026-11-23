@@ -1,0 +1,121 @@
+{
+ "one_liner": "Consensus offers a self-serve REST scholarly paper search API (free tier of 30 calls/month) keyed by x-api-key, plus a vendor-hosted MCP server at mcp.consensus.app/mcp that supports API-key bearer and OAuth 2.0 PKCE.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "REST API (api.consensus.app): API key in the x-api-key header only. OAuth 2.0 authorization-code + PKCE (S256, scope 'search', DCR public clients) is documented for the MCP server, not the REST API; Bearer is for MCP only. No client-credentials grant. Confidential OAuth clients are provisioned manually for enterprise partners via sales.",
+ "access": "self_serve_free",
+ "access_notes": "Every plan including Free gets API access via a key from the API & MCP Dashboard; Free has 30 calls/month, 1 req/s, 20 papers per request, no pagination, full-text excerpts, citations, or complete text. API and MCP share one monthly pool.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://mcp.consensus.app/mcp",
+ "docs_url": "https://docs.consensus.app/api-get-started",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free quota is small (30 calls/month) and several features need a paid plan; API surface is narrow (search, full text, citations/references beta, threads).",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.consensus.app/api-plans-and-access",
+   "quote": "Pass the key in the `x-api-key` header. Requests without a valid key return `401`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.consensus.app/api-plans-and-access",
+   "quote": "`Authorization: Bearer` is for the MCP server (`mcp.consensus.app/mcp`), not the REST API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.consensus.app/enterprise/connection-reference",
+   "quote": "Authorization-code flow only. There is no client-credentials grant, so OAuth always involves a per-user consent step; each user signs in to their own Consensus account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.consensus.app/api-get-started",
+   "quote": "Every plan includes API access, and the Free plan includes 30 calls a month.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.consensus.app/api-plans-and-access",
+   "quote": "The API is self-serve on every Consensus plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.consensus.app/api-get-started",
+   "quote": "The Consensus API lets you search 400+ million scholarly articles, including 350 million peer-reviewed research papers, over a single REST endpoint.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.consensus.app/api-get-started",
+   "quote": "Prefer a no-code path? Connect Consensus to Claude, ChatGPT, and other MCP clients.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.consensus.app/enterprise/connection-reference",
+   "quote": "Everything on this page applies to any MCP client or gateway.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "consensus",
+    "name": "Consensus",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 1
+   },
+   {
+    "slug": "consensus_mcp",
+    "name": "Consensus MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 1
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "com.consensus-analytics/mcp"
+  ],
+  "mcp_registry_any": 10,
+  "composio_mcp_toolkits": [
+   "consensus_mcp"
+  ]
+ }
+}

@@ -1,0 +1,917 @@
+[
+ {
+  "id": 1,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 15 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "access",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "registry/catalog suggests vendor MCP (['intercom_mcp']) but agent said none"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "auth",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "api",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 1 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 2 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "flags": [
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 3 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "api",
+    "why": "no evidence"
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 2 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "api",
+    "why": "no evidence"
+   },
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "access",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "access",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "auth",
+    "why": "no evidence"
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 4 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "api",
+    "why": "no evidence"
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "auth",
+    "why": "no evidence"
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 55,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "access",
+    "why": "no evidence"
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 3 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 63,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 64,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "auth",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "auth",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 66,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "api",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "access",
+    "why": "no evidence"
+   },
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 70,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "access",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "auth",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V2_mcp_registry",
+    "field": "mcp",
+    "why": "agent said none, registry returns 7 servers matching name"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 81,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "auth",
+    "why": "no evidence"
+   },
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "auth",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "api",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 96,
+  "flags": [
+   {
+    "check": "V1_grounding",
+    "field": "mcp",
+    "why": "no evidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "access",
+    "why": "agent self-reported low confidence"
+   },
+   {
+    "check": "V3_rules",
+    "field": "mcp",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ },
+ {
+  "id": 98,
+  "flags": [
+   {
+    "check": "V3_rules",
+    "field": "verdict",
+    "why": "agent self-reported low confidence"
+   }
+  ]
+ }
+]

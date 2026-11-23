@@ -1,0 +1,71 @@
+{
+ "one_liner": "PitchBook has a REST API (PB-Token API key) but access is a paid, contract-gated Direct Data add-on via account manager; sandbox key only after engaging sales.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Static key sent as 'Authorization: PB-Token {API_KEY}'. No OAuth for the REST API (OAuth only on the vendor's hosted MCP server). Credits are also required per call.",
+ "access": "partner_gated",
+ "access_notes": "API keys are provisioned by the Direct Data team / account manager after a separate contract; no self-serve signup or trial. Sandbox key must be requested from the account manager. API credits must be purchased.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://premium.mcp.pitchbook.com/mcp",
+ "verdict": "needs_outreach",
+ "blocker": "partnership",
+ "blocker_notes": "Credentials only via a sales/contract conversation with PitchBook's Direct Data team, plus purchased API credits. Docs are on Postman but keys are not self-serve.",
+ "docs_url": "https://documenter.getpostman.com/view/5190535/TzCV1iRc",
+ "openapi_spec": false,
+ "sandbox": true,
+ "webhooks": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://documenter.getpostman.com/view/5190535/TzCV1iRc",
+   "quote": "include a header named \"Authorization\" with the value of \"PB-Token {API_KEY}\" with each API request."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.frontegg.com/agen-for-work/connectors/marketplace/pitchbook",
+   "quote": "PitchBook authenticates with a static API key sent on every request, so there is no OAuth flow."
+  },
+  {
+   "field": "access",
+   "url": "https://dlthub.com/context/source/pitchbook-api",
+   "quote": "Access to the PitchBook API is a paid, contract-gated add-on and is not available via a self-serve dashboard."
+  },
+  {
+   "field": "access",
+   "url": "https://investordatarooms.com/pitchbook-api",
+   "quote": "There\u2019s no developer signup page. There\u2019s no \u201cgenerate an API key\u201d button in the dashboard. You can\u2019t start testing without a sales conversation first."
+  },
+  {
+   "field": "access",
+   "url": "https://documenter.getpostman.com/view/5190535/TzCV1iRc",
+   "quote": "Please reach out to your account manager to request a sandbox key."
+  },
+  {
+   "field": "api",
+   "url": "https://pitchbook.com/help/PitchBook-api",
+   "quote": "The PitchBook API is a RESTful implementation that most HTTP clients can easily access in your chosen language or via a web browser."
+  },
+  {
+   "field": "mcp",
+   "url": "https://mcpservers.org/remote-mcp-servers/pitchbook",
+   "quote": "The PitchBook remote MCP server is a hosted Model Context Protocol endpoint at https://premium.mcp.pitchbook.com/mcp"
+  },
+  {
+   "field": "mcp",
+   "url": "https://pitchbook.com/media/press-releases/pitchbook-launches-an-agentic-platform-assistant-and-new-pitchbook-data-mcp-to-meet-investors-rapidly-evolving-workflow-needs",
+   "quote": "PitchBook Data MCP gives investment teams native, secure access to a subset of PitchBook\u2019s dataset, including company, deal, investor, and fund data"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

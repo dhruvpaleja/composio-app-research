@@ -1,0 +1,125 @@
+{
+ "one_liner": "Linear has a broad GraphQL API with OAuth2 and personal API keys available on the free plan, plus an official hosted MCP server, so a toolkit is ready to build.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Developer docs say to use OAuth 2.0 or personal API keys to authenticate requests. Rate limit table lists API key and OAuth App authentication separately.",
+ "access": "self_serve_free",
+ "access_notes": "Linear's own pricing page lists the Free plan at $0 and shows API and webhook access included in the Free plan. MCP access is also included in Free.",
+ "api_type": "GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.linear.app/mcp",
+ "docs_url": "https://linear.app/developers",
+ "openapi_spec": false,
+ "webhooks": true,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker. Standard rate limits apply, and higher limits can be requested through Linear support.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://linear.app/pricing.md",
+   "quote": "| API and webhook access | Included | Included | Included | Included |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://linear.app/pricing.md",
+   "quote": "Free for everyone",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://linear.app/pricing.md",
+   "quote": "For agents: connect to the Linear MCP server at https://mcp.linear.app/mcp to read and change issues, projects, and documents.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://linear.app/pricing.md",
+   "quote": "| MCP access | Included | Included | Included | Included |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://linear.app/developers",
+   "quote": "Use OAuth 2.0 or personal API keys to authenticate your requests to the Linear API",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://linear.app/developers/rate-limiting",
+   "quote": "| OAuth App | 5,000 | User (or App User) | 1 hour |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://linear.app/developers",
+   "quote": "Learn about building apps and integrations for Linear using the GraphQL API and TypeScript SDK.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "blocker",
+   "url": "https://linear.app/developers/rate-limiting",
+   "quote": "If you temporarily require higher limits, you can request them by contacting Linear support where we\u2019ll review them on a case by case basis.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "linear",
+    "name": "Linear",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 47
+   },
+   {
+    "slug": "linear_mcp",
+    "name": "Linear MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 78
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "app.linear/linear"
+  ],
+  "mcp_registry_any": 13,
+  "composio_mcp_toolkits": [
+   "linear_mcp"
+  ]
+ }
+}

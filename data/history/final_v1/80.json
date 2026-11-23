@@ -1,0 +1,115 @@
+{
+ "one_liner": "Harvest (time tracking) has a broad, documented v2 REST API with Personal Access Tokens and OAuth2 (authorization code); a free 30-day trial is shown, but free-plan API access and the MCP server aren't confirmed.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The Harvest v2 authentication page documents Personal Access Tokens (bearer token created in Harvest ID Developers) and OAuth2 apps using authorization code flow with refresh tokens (plus implicit grant for client-side apps). OAuth2 is self-serve registration, so it is the primary method for multi-user access.",
+ "access": "self_serve_trial",
+ "access_notes": "Pages show only a \"Free 30-day trial\" with no credit card. Developer tokens come from Harvest ID, which needs a Harvest account. No page says the API works on a free plan, so the defensible value is self_serve_trial. Low confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://help.getharvest.com/api-v2",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Access appears to require a Harvest account, which is available through a 30-day trial. No page confirms a permanent free tier. The Greenhouse \"Harvest API\" pages are a different product and were ignored. No MCP server was confirmed, and the MCP Registry shows none under the vendor namespace.",
+ "webhooks": null,
+ "sandbox": null,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+   "quote": "A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+   "quote": "We use the [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-4.1) for server-side authorization.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://harvestapp.com",
+   "quote": "Free 30-day trial",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://help.getharvest.com/api-v2",
+   "quote": "### [Approvals API](https://help.getharvest.com/api-v2/approvals-api)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://help.getharvest.com/api-v2",
+   "quote": "*   [Client Contacts](https://help.getharvest.com/api-v2/clients-api/clients/contacts/)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V2_mcp_registry",
+   "field": "mcp",
+   "why": "agent said none, registry returns 7 servers matching name"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "harvest",
+    "name": "Harvest",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 57
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 7,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "one_liner": "Asana has a broad self-serve REST API with OAuth2 and PATs, free-tier access, and an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 (PKCE, one-hour tokens, refresh, scopes) for multi-user apps; personal access tokens from the developer console; Enterprise service account tokens (a long-lived static token type, Enterprise only).",
+ "access": "self_serve_free",
+ "access_notes": "Free Personal plan includes API access at 150 req/min. Task search, portfolios and goals need a paid plan. A developer sandbox with paid features is free on request.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.asana.com/v2/mcp",
+ "docs_url": "https://developers.asana.com/reference",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: some endpoints (search, portfolios, goals) are paid-only; service accounts are Enterprise only.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://activepieces.com/blog/asana-api-guide-get-tasks-projects-and-users-in-2026",
+   "quote": "Asana's API is a REST interface that speaks JSON at `https://app.asana.com/api/1.0`"
+  },
+  {
+   "field": "auth",
+   "url": "https://anchorterminal.com/tools/asana",
+   "quote": "Any user creates a personal access token or an OAuth app in the developer console, with no app review unless the app is listed in the app directory."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.asana.com/docs/quick-start",
+   "quote": "To quickly authorize your API requests, create a [personal access token](https://developers.asana.com/docs/personal-access-token) via the [developer console](https://app.asana.com/0/my-apps)"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.asana.com/docs/rate-limits",
+   "quote": "Limits are based on minute-long windows and differ depending on whether the domain is free or paid"
+  },
+  {
+   "field": "access",
+   "url": "https://anchorterminal.com/tools/asana",
+   "quote": "Free Personal plan for up to two users, which includes API access at 150 requests a minute."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+   "quote": "The Asana V2 MCP server is generally available and uses OAuth for authorization."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.asana.com/docs/using-asanas-mcp-server.md",
+   "quote": "The Asana MCP V2 server is available at: `https://mcp.asana.com/v2/mcp`."
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,44 @@
+{
+ "id": "4",
+ "name": "Attio",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.attio.com/mcp/overview",
+    "https://attio.com/platform/mcp/llms.txt",
+    "https://attio.com/help/reference/how-to-guides/attio-mcp-prompts-and-best-practices",
+    "https://docs.attio.com/sdk/guides/ai",
+    "https://attio.com",
+    "https://docs.attio.com",
+    "https://attio.com/legal/terms-and-conditions",
+    "https://attio.com/partners/app-partners",
+    "https://pipeline.zoominfo.com/sales/attio-api"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "attio",
+    "name": "Attio",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 105
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

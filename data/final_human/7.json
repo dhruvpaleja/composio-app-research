@@ -1,0 +1,109 @@
+{
+ "one_liner": "Zoho CRM has a broad REST API (v8) with OAuth 2.0 auth-code flow, free plan/Developer Edition for self-serve credentials, and vendor-published MCP servers.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code grant with connected app registered in Zoho API console; access tokens last 1 hour, refresh tokens unlimited until revoked. Source says OAuth 2.0 exclusively, no API-key option.",
+ "access": "self_serve_free",
+ "access_notes": "Third-party review says API is included on all plans incl. permanent free plan (3 users, 5,000 credits/day), and a free Developer Edition exists. Not confirmed on vendor's own pages in this set, so access confidence is medium. The Zoho CRM homepage confirms a freemium edition for up to 3 users and a free trial.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: data-center-specific URLs, per-org tokens, credit-based rate limits; none are blockers.",
+ "docs_url": "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+   "quote": "The Zoho CRM API uses the **OAuth 2.0** protocol for authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+   "quote": "Zoho CRM uses [OAuth 2.0](https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html) exclusively for API authentication. There is no API-key option.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+   "quote": "There is no separate developer signup, no enterprise gate, and no approval process.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+   "quote": "Zoho also offers a [free Developer Edition](https://www.zoho.com/crm/developer/developer-edition.html), a full CRM instance for building and testing",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://zoho.com/crm",
+   "quote": "Zoho CRM's freemium edition supports up to 3 users and comes with the essentials like leads, documents, and mobile apps",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+   "quote": "Zoho CRM's** API is a mature REST surface, now on its [eighth major version]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+   "quote": "Zoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+   "quote": "When you invoke an MCP tool for the first time, the server initiates an OAuth flow.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "zoho",
+    "name": "Zoho",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 115
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

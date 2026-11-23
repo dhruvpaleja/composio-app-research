@@ -1,0 +1,99 @@
+{
+ "id": "61",
+ "name": "GitHub",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.github.com/rest",
+    "https://partner.github.com/technology",
+    "https://docs.github.com/en/enterprise-cloud@latest/support/learning-about-github-support/github-partner-support",
+    "https://developer.github.com/partnerships/integration-partners",
+    "https://github.com/github/docs/blob/main/content/get-started/exploring-integrations/github-developer-program.md",
+    "https://github.com/partners/technology-partners",
+    "https://github.com/partners/technology-partners-terms"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "best quote only 0% found on cited page"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://docs.github.com/rest",
+    "https://partner.github.com/technology.html",
+    "https://github.com/github/docs/blob/main/content/get-started/exploring-integrations/github-developer-program.md",
+    "https://docs.github.com/en/enterprise-cloud@latest/support/learning-about-github-support/github-partner-support",
+    "https://github.com/github/docs/blob/main/content/site-policy/github-terms/github-marketplace-developer-agreement.md",
+    "https://developer.github.com/partnerships/integration-partners",
+    "https://github.com/partners/technology-partners"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "github",
+    "name": "GitHub",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 883
+   },
+   {
+    "slug": "github_mcp",
+    "name": "GitHub MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 44
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 16,
+  "composio_mcp_toolkits": [
+   "github_mcp"
+  ]
+ }
+}

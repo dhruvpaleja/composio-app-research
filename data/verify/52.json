@@ -1,0 +1,30 @@
+{
+ "id": "52",
+ "name": "SE Ranking",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://seranking.com/api/integrations/mcp",
+    "https://seranking.com/mcp.html",
+    "https://help.seranking.com/hc/en-us/articles/27392471017372-How-to-build-automated-SEO-workflows-with-SE-Ranking-MCP-and-GA4",
+    "https://help.seranking.com/hc/en-us/articles/22903914755100-Prompt-library",
+    "https://help.seranking.com/hc/en-us/articles/29963340610844-How-to-connect-SE-Ranking-MCP-to-Gemini-Spark",
+    "https://help.seranking.com/hc/en-us/articles/29433510970140-Setup",
+    "https://seranking.com/api/data/getting-started",
+    "https://help.seranking.com/hc/en-us/articles/25945946059548-SE-Ranking-API-Use-Cases-Overview",
+    "https://seranking.com/api/how-to-get-api"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

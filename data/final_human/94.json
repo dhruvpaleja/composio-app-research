@@ -1,0 +1,121 @@
+{
+ "one_liner": "Consensus offers a self-serve REST API for scholarly paper search with a free tier (30 calls/month), API keys, OAuth 2.0 PKCE, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API key generated self-serve in the API & MCP Dashboard (x-api-key header for REST; also accepted as a Bearer token on MCP). OAuth 2.0 authorization-code + PKCE (S256, scope search) with dynamic client registration issuing public clients; confidential clients provisioned manually via sales. API key kept primary since the main REST API documents it and OAuth scope is narrow.",
+ "access": "self_serve_free",
+ "access_notes": "Docs say the API is self-serve and open to everyone; Free plan includes 30 calls/month (max 10 papers per call per the plans table, 1 req/s). Keys are created in the API & MCP Dashboard under Keys and Clients.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://mcp.consensus.app/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free tier is limited (30 calls/month, 1 req/s) but sufficient to build and test.",
+ "docs_url": "https://docs.consensus.app/api-get-started",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.consensus.app/api-get-started",
+   "quote": "Every request must include your API key in the `x-api-key` header:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.consensus.app/enterprise/connection-reference",
+   "quote": "Authorization-code flow only. There is no client-credentials grant, so OAuth always involves a per-user consent step; each user signs in to their own Consensus account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.consensus.app/core-features/mcp",
+   "quote": "It\u2019s self-serve and open to everyone.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.consensus.app/core-features/mcp",
+   "quote": "| Free | 10 | 30 | 1 per second | \u2014 |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.consensus.app/core-features/mcp",
+   "quote": "To get a key, click your profile icon in Consensus, choose **API & MCP Dashboard**, open **Keys and Clients**, and click **New key**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.consensus.app/core-features/mcp",
+   "quote": "GET https://api.consensus.app/v1/search",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.consensus.app/consensus-mcp.md",
+   "quote": "One hosted server covers every field of science",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.consensus.app/consensus-mcp.md",
+   "quote": "claude mcp add --transport http consensus https://mcp.consensus.app/mcp",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "consensus",
+    "name": "Consensus",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 1
+   },
+   {
+    "slug": "consensus_mcp",
+    "name": "Consensus MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 1
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "com.consensus-analytics/mcp"
+  ],
+  "mcp_registry_any": 10,
+  "composio_mcp_toolkits": [
+   "consensus_mcp"
+  ]
+ }
+}

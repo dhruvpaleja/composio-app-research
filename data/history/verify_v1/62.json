@@ -1,0 +1,105 @@
+{
+ "id": "62",
+ "name": "Vercel",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://vercel.com/docs/rest-api",
+    "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=graph",
+    "https://vercel.com/docs/integrations/create-integration/submit-integration",
+    "https://vercel-docs.vercel.sh/docs/integrations/create-integration/marketplace-api/reference/partner",
+    "https://vercel.com/docs/connect",
+    "https://vercel-docs.vercel.sh/startups/credits",
+    "https://vercel.com/docs/integrations/create-integration/marketplace-api"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://vercel.com/docs/rest-api",
+    "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=graph",
+    "https://vercel.com/docs/integrations/create-integration/submit-integration",
+    "https://vercel.com/docs/accounts/access-tokens",
+    "https://vercel-docs.vercel.sh/docs/integrations/create-integration/marketplace-api/reference/partner",
+    "https://vercel.com/docs/connect",
+    "https://vercel.com/docs/integrations/create-integration/marketplace-api"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "vercel",
+    "name": "Vercel",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 399
+   },
+   {
+    "slug": "vercel_mcp",
+    "name": "Vercel MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 37
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "app.vercel.agent-permissions-index/agent-permissions-index",
+   "app.vercel.agent-shopping-tracker/feed",
+   "app.vercel.agent-svg-registry/mcp",
+   "app.vercel.agentready-rho/agentready",
+   "app.vercel.aididwhat/aididwhat"
+  ],
+  "mcp_registry_any": 23,
+  "composio_mcp_toolkits": [
+   "vercel_mcp"
+  ]
+ }
+}

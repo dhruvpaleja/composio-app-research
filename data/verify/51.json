@@ -1,0 +1,63 @@
+{
+ "id": "51",
+ "name": "DataForSEO",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://dataforseo.com/help-center/how-to-connect-and-use-the-dataforseo-mcp-server-with-chatgpt-work-and-codex-cli",
+    "https://dataforseo.com/seo-mcp-server",
+    "https://dataforseo.com/help-center/3-ways-to-install-dataforseo-mcp-with-claude-code",
+    "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide",
+    "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+    "https://docs.dataforseo.com",
+    "https://docs.dataforseo.com/v3/",
+    "https://dataforseo.com/update/pricing-update-in-dataforseo-apis",
+    "https://dataforseo.com/help-center/backlinks-api-pricing-explained/amp"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://docs.dataforseo.com",
+    "https://docs.dataforseo.com/v3/",
+    "https://docs.dataforseo.com/v3/serp/google/organic/tasks_ready.md",
+    "https://docs.dataforseo.com/v3.md",
+    "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis",
+    "https://docs.dataforseo.com/v3/backlinks/backlinks/live.md",
+    "https://docs.dataforseo.com/v3/dataforseo_labs/google/competitors_domain/live.md",
+    "https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_keyword_difficulty/live.md"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "dataforseo",
+    "name": "DataForSEO",
+    "auth_schemes": [
+     "BASIC"
+    ],
+    "managed": [],
+    "tools": 354
+   }
+  ],
+  "catalog_auth": [
+   "BASIC"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

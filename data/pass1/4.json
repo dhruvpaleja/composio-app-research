@@ -1,0 +1,73 @@
+{
+ "one_liner": "Attio CRM has a broad public REST API with self-serve OAuth 2.0 and API keys, free-plan API access, webhooks, an OpenAPI spec and an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code flow (PKCE supported) with apps registered self-serve at build.attio.com. Workspace API keys (Bearer) for single-workspace use. HTTP Basic with the token as username is also accepted. Unpublished apps can only grant tokens to workspaces they're shared with.",
+ "access": "self_serve_free",
+ "access_notes": "Free plan includes full REST API and webhooks, with no approval gate. Installing an app requires a workspace admin.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.attio.com/mcp",
+ "docs_url": "https://docs.attio.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No meaningful blocker. Free workspace gives API access and OAuth app registration is self-serve.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.attio.com/rest-api/guides/authentication",
+   "quote": "There are two ways to generate an access token: 1. By implementing an OAuth 2.0 flow 2. By generating an API key for your workspace"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.attio.com/rest-api/tutorials/connect-an-app-through-oauth",
+   "quote": "In the developer console, select **New app** in the sidebar."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.attio.com/docs/making-your-first-api-call",
+   "quote": "We also support HTTP Basic Authentication, where the username is the token and the password is left blank"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "There is no separate developer signup, no approval gate, and no enterprise-only restriction."
+  },
+  {
+   "field": "access",
+   "url": "https://onegtmlab.dev/tool-directory/crm/attio",
+   "quote": "API and webhook access, App SDK, MCP server and workflows included; no credit card"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "an endpoint catalogue spanning custom objects, records, lists, notes, tasks, files, meetings, and call recordings"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "an OpenAPI spec is downloadable, and API access ships on every plan, including free."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.attio.com/mcp/overview",
+   "quote": "Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

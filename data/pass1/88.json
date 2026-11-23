@@ -1,0 +1,62 @@
+{
+ "one_liner": "Brex has a broad REST API with admin-generated user tokens for customers. Multi-user OAuth is partner-only. An official MCP server exists. The builder needs an approved Brex business account, and there is no customer sandbox.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Customers generate a scoped user token in Settings > Developer and send it as a Bearer header. OAuth 2.0 authorization code is for approved Brex partners, who receive a client ID and secret. Client credentials are used only for the onboarding API.",
+ "access": "self_serve_free",
+ "access_notes": "The API is free for Brex customers, and a token is self-serve for an account admin. It requires an approved Brex business account, and there is no customer sandbox. The staging server is for approved partners only.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.brex.com/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "The builder needs an approved Brex business account with admin rights to create a token. There is no public sandbox. Multi-user OAuth requires Brex partner approval.",
+ "docs_url": "https://developer.brex.com",
+ "openapi_spec": true,
+ "sandbox": false,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/authentication.md",
+   "quote": "generate a user token from your Brex dashboard and pass it along in your API call headers."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/partner_authentication",
+   "quote": "For all other APIs, you will implement the Authorization Code Grant, which implements a web-based redirection flow to request permission from the Brex client to access their account."
+  },
+  {
+   "field": "access",
+   "url": "https://brex.com/journal/press/brex-announces-api-and-zapier-partnership-to-automate-payments-transactions-and-more",
+   "quote": "This new open API is available to all Brex customers, free of charge."
+  },
+  {
+   "field": "access",
+   "url": "https://anchorterminal.com/tools/brex",
+   "quote": "Access needs an approved Brex business account, so an agent can't start without one. There is no customer sandbox, and the staging server is for approved partners only."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.brex.com/guides/quickstart",
+   "quote": "make a `GET` request to `https://api.brex.com/v2/users/me` with your language/tool of choice."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "The server is hosted at `https://api.brex.com/mcp` and supports any MCP-compatible client."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,51 @@
+{
+ "id": "89",
+ "name": "Ramp",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.ramp.com",
+    "https://docs.ramp.com/developer-api/v1/introduction",
+    "https://support.ramp.com/accessing-the-developer-api",
+    "https://ramp.com/blog/technology-partner-program",
+    "https://ramp.com/technology-partnerships",
+    "https://docs.ramp.com/llms-guides/authorization.txt",
+    "https://support.ramp.network/en/articles/13060-how-can-i-integrate-ramp-with-my-platform-or-app"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "ramp",
+    "name": "Ramp",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 186
+   },
+   {
+    "slug": "ramp_mcp",
+    "name": "Ramp MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 213
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 14,
+  "composio_mcp_toolkits": [
+   "ramp_mcp"
+  ]
+ }
+}

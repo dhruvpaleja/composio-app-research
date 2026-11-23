@@ -1,0 +1,35 @@
+{
+ "id": "50",
+ "name": "fanbasis",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://fanbasis.com",
+    "https://demo.embedded.fanbasis.io/docs/getting-started",
+    "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+    "https://whop.com/blog/fanbasis-alternatives",
+    "https://slashdot.org/software/comparison/Affise-vs-FanBasis",
+    "https://fanbaseapi.openstage.live/guides.html",
+    "https://npmjs.com/package/@fanbasis/checkout-sdk",
+    "https://sourceforge.net/software/product/FanBasis",
+    "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md"
+   ],
+   "changed": {
+    "mcp": [
+     "none",
+     "community"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

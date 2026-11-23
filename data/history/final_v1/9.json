@@ -1,0 +1,113 @@
+{
+ "one_liner": "Copper CRM has a documented REST Developer API authenticated with an admin-generated API key plus user email, reachable through a 14-day free trial or a paid plan. Copper's own official MCP server is still an announced beta with a waitlist, so only third-party MCP servers are usable today.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The CData page says to generate an API key in Settings > Integrations > API Keys and to supply the key with the account email. The provided pages do not confirm OAuth2 for the Dev API. The draft's OAuth2 claim, header names and Admin-only claim came from pages that were not supplied, so they are dropped here. Composio lists only API_KEY. developer.copper.co and getcopper.io are different products and were ignored.",
+ "access": "self_serve_trial",
+ "access_notes": "Every plan starts with a 14-day free trial and no credit card is required. No free plan appears in the pages. The pages do not say which plans include API access, and they do not say whether the API works during the trial. copper.com says an API is available for custom integrations.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": null,
+ "docs_url": "https://developer.copper.com/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Access is through a 14-day trial or a paid per-seat plan. Each customer must generate their own API key. The pages do not confirm which plan tiers include the API. Copper's official MCP is a read-only beta announced for November 2026 with an early-access form, so it cannot be relied on yet.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://developer.copper.com/",
+   "quote": "The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://cdata.com/kb/tech/copper-mcp-cline-visual-studio-code.rst",
+   "quote": "Provide both the API key and the email address associated with your account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://copper.com",
+   "quote": "Every plan starts with a 14-day free trial, and no credit card is required.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://copper.com",
+   "quote": "an API is available for custom integrations",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://copper.com/mcp",
+   "quote": "Yes. Copper is launching an official MCP server, built and hosted by Copper. The beta launches in November 2026.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://copper.com/mcp",
+   "quote": "Request early access to the beta, or join the waitlist for updates as we get closer to launch.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://copper.com/mcp",
+   "quote": "Most third-party connectors run on an admin API key, which ignores each user's permissions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://cdata.com/kb/tech/copper-mcp-cline-visual-studio-code.rst",
+   "quote": "Run CData API Driver for MCP Server on Windows Subsytem for Linux (WSL) and connect to live Copper data from the Cline extension in Visual Studio Code.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "copper",
+    "name": "Copper",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 65
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

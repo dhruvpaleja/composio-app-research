@@ -1,0 +1,73 @@
+{
+ "one_liner": "Zendesk has a broad REST API with self-serve OAuth 2.0 (auth code + PKCE); a free 14-day trial gives working credentials, global OAuth for multi-tenant apps may need Zendesk setup; only community MCP servers found.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code (with PKCE) is the recommended method. API tokens (basic auth email/token:api_token) are being removed: unused tokens deactivate from July 28, 2026 and all stop by April 30, 2027. Multi-customer distribution requires global OAuth clients, which must be requested from Zendesk.",
+ "access": "self_serve_trial",
+ "access_notes": "A free 14-day trial gives a working account and API. No permanent free tier. Sponsored accounts are reserved for Marketplace partners. Individual developers are directed to their own instances or sandboxes.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/reminia/zendesk-mcp-server",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Only a 14-day trial is available without partnership. Multi-tenant distribution needs a global OAuth client, which must be requested from Zendesk. Per-instance OAuth clients are self-serve in Admin Center.",
+ "docs_url": "https://developer.zendesk.com/api-reference/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+   "quote": "If you plan on distributing an app, integration, or bot to multiple Zendesk customers, you must use global OAuth tokens to authenticate Zendesk API requests."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.zendesk.com/documentation/api-basics/authentication/oauth-pkce",
+   "quote": "The authorization code grant flow is used by developers to get OAuth access tokens to authenticate Zendesk API requests."
+  },
+  {
+   "field": "auth",
+   "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+   "quote": "Starting July 28, 2026, unused tokens will automatically deactivate. By April 30, 2027, all API tokens will stop working."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+   "quote": "You can try out the Zendesk platform with a free, 14-day trial account."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+   "quote": "Customer developers or individual private app developers should use their own instances or sandboxes."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+   "quote": "Zendesk supports using OAuth access tokens to authenticate API requests."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/reminia/zendesk-mcp-server",
+   "quote": "This server provides a comprehensive integration with Zendesk."
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+   "quote": "This article covers Zendesk acting as an MCP client."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

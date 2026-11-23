@@ -1,0 +1,40 @@
+{
+ "id": "25",
+ "name": "Pumble",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://pumble.com",
+    "https://pumble.com/learn/pumble/ai-automation-guide",
+    "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+    "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+    "https://composio.dev/toolkits/pumble",
+    "https://pumble.com/help/integrations/add-pumble-apps/guide-to-pumble-integrations",
+    "https://help.withpersona.com/articles/nBLp2ttHIYjnF2FCO5dOEr"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "pumble",
+    "name": "Pumble",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

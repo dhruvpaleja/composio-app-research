@@ -1,0 +1,126 @@
+{
+ "one_liner": "Jira Cloud has a broad REST v3 API with self-serve OAuth 2.0 (3LO) and basic/API-token auth, plus an official Atlassian Rovo MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 (3LO) apps are registered self-serve in the developer console. Ad-hoc scripts use basic auth (email:API token). Connect apps use JWT. Forge is the app platform.",
+ "access": "self_serve_free",
+ "access_notes": "Draft sources say REST API access is free on all Jira plans, including Free. Atlassian's own pages show the developer console is self-serve for creating OAuth apps. No page shows paid-only access. Points-based rate limits apply to apps.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/use-atlassian-rovo-mcp-server/",
+ "docs_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Tier 2 per-tenant rate limits require review, but apps start in Tier 1 and this does not block building a toolkit.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://community.developer.atlassian.com/t/jira-all-apis-are-free-or-paid-if-paid-what-are-the-paiment-plans/87575",
+   "quote": "Access to the REST APIs is free for all Jira plans.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+   "quote": "In the Developer console, select the **Create** dropdown and choose **OAuth 2.0 integration** to create an OAuth 2.0 (3LO) app.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "For integrations that are not Forge or Connect apps, use OAuth 2.0 authorization code grants (3LO) for security",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "For personal scripts, bots, and ad-hoc execution of the REST APIs use basic authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "For Connect apps, authentication (JWT-based) is built into the Connect libraries.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "The Jira REST API enables you to interact with Jira programmatically.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.atlassian.com",
+   "quote": "Build a secure, scalable bridge between Atlassian and external AI solutions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://atlassian.com/blog/development/evolving-api-rate-limits",
+   "quote": "consider using Atlassian Rovo MCP as an alternative to direct API queries",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "atlassian_mcp",
+    "name": "Atlassian MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 213
+   },
+   {
+    "slug": "jira",
+    "name": "Jira",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 166
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 8,
+  "composio_mcp_toolkits": [
+   "atlassian_mcp"
+  ]
+ }
+}

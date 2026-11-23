@@ -1,0 +1,102 @@
+{
+ "one_liner": "MrScraper has a REST scraping API with self-serve API tokens, a reported free tier, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API uses an API token sent in the x-api-token header. Marketplace endpoints take the same token as a Bearer token. OAuth 2.1 exists only on the hosted MCP server, not on the REST API, so it is not listed as an API auth method.",
+ "access": "self_serve_free",
+ "access_notes": "The free plan is reported to need no credit card and to include API tokens. The pricing page was not in the pages re-checked, so the free allocation could not be re-verified. Sources disagreed earlier: 1,000 tokens per month in one place, 100 in the billing docs. API keys are created in the dashboard at app.mrscraper.com/api-tokens.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://mcp.mrscraper.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None found. The breadth rating is a judgement because no endpoint count was given. The free-tier claim rests on pages not re-fetched here.",
+ "docs_url": "https://docs.mrscraper.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "Include your API token in the `x-api-token` HTTP header on every request",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "API tokens are managed directly from your MrScraper dashboard.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://mrscraper.com/pricing",
+   "quote": "Scraper Free includes 1,000 MrScraper tokens every month at no cost - no credit card required.",
+   "grounding": 0.14,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+   "quote": "Obtain an API key from [the MrScraper app](https://app.mrscraper.com/api-tokens).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "The MrScraper API uses API token authentication to secure all endpoints.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+   "quote": "MrScraper MCP is the official Model Context Protocol server for MrScraper.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+   "quote": "Use the hosted Streamable HTTP endpoint for a managed connection",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "mrscraper",
+    "name": "MrScraper",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 11
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "io.github.mrscraper-com/mrscraper-mcp"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

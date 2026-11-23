@@ -1,0 +1,73 @@
+{
+ "one_liner": "Sentry has a broad REST API with bearer auth tokens and OAuth2 for Sentry Apps, plus an official hosted MCP server. A free Developer plan exists, but third-party sources disagree on whether it includes API access.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Bearer auth tokens (org tokens via internal integration, user tokens) are the main documented method. OAuth 2.0 is available for Sentry Apps (public integrations). Legacy API keys use HTTP Basic and are disabled for new accounts. DSN auth is very limited.",
+ "access": "self_serve_free",
+ "access_notes": "Official docs recommend a free Sentry developer account for the API tutorial, and the free Developer plan has no time limit. Third-party pricing pages claim the Developer plan has no API, which conflicts with this. Creating an org token needs a Manager or Admin role. Rate limit is about 40 req/s per token.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.sentry.dev/mcp",
+ "docs_url": "https://docs.sentry.io/api/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor uncertainty about whether the free Developer plan includes API access. Official docs suggest it does.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.sentry.io/api/auth.md",
+   "quote": "curl -H 'Authorization: Bearer {TOKEN}' https://sentry.io/api/0/organizations/{organization_slug}/projects/"
+  },
+  {
+   "field": "auth",
+   "url": "https://apis.io/providers/sentry",
+   "quote": "OAuth 2.0 (Sentry Apps) and auth tokens"
+  },
+  {
+   "field": "auth",
+   "url": "https://sentry-docs-git-patch-1.sentry.dev/api/auth",
+   "quote": "API keys are passed using HTTP Basic auth where the username is your api key, and the password is an empty value."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.sentry.io/api/guides/teams-tutorial",
+   "quote": "We recommend using a free [Sentry developer account](https://sentry.io/pricing/) for this tutorial."
+  },
+  {
+   "field": "access",
+   "url": "https://maple.dev/guides/sentry-pricing",
+   "quote": "No API or third-party integrations, so alerts go by email instead of Slack."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.sentry.io/api/auth.md",
+   "quote": "curl -H 'Authorization: Bearer 1a2b3c' https://sentry.io/api/0/organizations/acme/projects/"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.sentry.io/product/sentry-mcp",
+   "quote": "The base MCP server address is: `https://mcp.sentry.dev/mcp`"
+  },
+  {
+   "field": "mcp",
+   "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+   "quote": "yes, as the title of this post suggests - Sentry has an MCP server."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

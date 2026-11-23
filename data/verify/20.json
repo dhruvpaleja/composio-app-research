@@ -1,0 +1,30 @@
+{
+ "id": "20",
+ "name": "Gladly",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://gladly.com",
+    "https://developer.gladly.com/rest",
+    "https://connect.gladly.com/docs/help/article/generate-api-tokens-and-create-webhooks",
+    "https://help.gladly.com/product-docs/docs/set-up-the-gladly-ai-gorgias-integration",
+    "https://help.gladly.com/docs/smile-app-platform-installation",
+    "https://help.gladly.com/docs/set-up-the-gladly-ai-gorgias-integration",
+    "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly",
+    "https://apps.shopify.com/gladly",
+    "https://apps.shopify.com/gladly?surface_detail=store-management-support-helpdesk&surface_inter_position=1&surface_intra_position=5&surface_type=category&surface_version=redesign"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

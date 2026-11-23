@@ -1,0 +1,82 @@
+{
+ "one_liner": "Squarespace has a broad REST Commerce API with per-site API keys (paid Commerce Advanced plan) and OAuth 2.0 (manual client review), plus an official remote MCP server; buildable with friction.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "OAuth 2.0 authorization code flow, but client credentials are issued only after a manual request/review (form), so not self-serve. API keys are self-generated per site in Developer API Keys and are the only self-serve method. Webhook Subscriptions API reportedly OAuth-only.",
+ "access": "app_review",
+ "access_notes": "OAuth client_id/secret issued only after Squarespace reviews the registration. Self-serve API keys require a paid Commerce Advanced plan for Orders, Inventory and Transactions. OAuth use is tied to Squarespace Extensions.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.squarespace.com/mcp",
+ "docs_url": "https://developers.squarespace.com/commerce-apis/overview",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Multi-user OAuth needs manual Squarespace approval of the OAuth client. Testing with API keys needs a paid Commerce Advanced site.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "If you'd like to develop a new Extension, start the OAuth client process by filling out [this form](https://support.squarespace.com/hc/en-us/requests/new?ticket_form_id=28554433855373).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+   "quote": "**Orders**, **Inventory**, and **Transactions** are only available in the Commerce Advanced plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "With [Squarespace's Commerce Advanced](https://www.squarespace.com/pricing) plan, you can develop a custom application for a Squarespace merchant site.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "quote": "All Commerce APIs are built on HTTPS and designed with REST principles in mind.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.squarespace.com/mcp/connect-a-client",
+   "quote": "The Squarespace MCP server is a remote server: your client connects to it over HTTPS, and there's nothing to install.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+   "quote": "The Squarespace MCP server connects AI assistants, like Claude and ChatGPT, to Squarespace tools using Model Context Protocol (MCP).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

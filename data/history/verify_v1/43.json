@@ -1,0 +1,87 @@
+{
+ "id": "43",
+ "name": "BigCommerce",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.bigcommerce.com",
+    "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/introduction",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/beginning-development",
+    "https://big-migration.com/blog/development-integrations/bigcommerce-trial-stores-unlocking-api-access-for-seamless-integrations",
+    "https://docs.bigcommerce.com/developer/docs/beta/powered-by/api-documentation",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/unified-billing/overview"
+   ],
+   "changed": {
+    "verdict": [
+     "ready",
+     "ready_with_friction"
+    ],
+    "blocker": [
+     "none",
+     "other"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developer.bigcommerce.com",
+    "http://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+    "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+    "https://docs.bigcommerce.com/developer/docs/beta/store-management-mcp",
+    "https://docs.bigcommerce.com/developer/api-reference/mcp/storefront-session-sync",
+    "https://docs.bigcommerce.com/developer/api-reference/mcp/webmcp",
+    "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+   ],
+   "changed": {
+    "access": [
+     "self_serve_free",
+     "self_serve_trial"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "bigcommerce",
+    "name": "BigCommerce",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 532
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

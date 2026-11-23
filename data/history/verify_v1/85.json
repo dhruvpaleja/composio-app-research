@@ -1,0 +1,62 @@
+{
+ "id": "85",
+ "name": "iPayX",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://ipayx.ai/docs/api",
+    "https://ipayx.ai/developers?lang=en",
+    "https://ipayx.ai/developers",
+    "https://ipayx.ai/developers/sandbox",
+    "https://ipayx.ai/docs/mcp-server",
+    "https://ipayx.ai/api-terms",
+    "https://ipayx.ai/partners"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://ipayx.ai/docs/api",
+    "https://ipayx.ai/developers?lang=en",
+    "https://ipayx.ai/developers/sandbox",
+    "https://ipayx.ai/developers",
+    "https://ipayx.ai/docs/mcp-server",
+    "https://ipayx.ai/api-terms",
+    "https://ipayx.ai/docs/api?lang=en"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Ipayx-stellar/fx-audit",
+   "io.github.iPAYX-Technologies/mcp-fx-audit"
+  ],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

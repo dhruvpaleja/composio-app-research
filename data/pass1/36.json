@@ -1,0 +1,72 @@
+{
+ "one_liner": "Klaviyo has a broad REST API with self-serve private API keys and self-serve OAuth app creation, free test accounts, and an official MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Private API keys (Klaviyo-API-Key header) with scopes, and OAuth authorization code with PKCE. OAuth apps can be created at klaviyo.com/oauth/client. Public site ID is only for client endpoints. The Conversations API is gated separately.",
+ "access": "self_serve_free",
+ "access_notes": "The Get Started series creates a free test account. There are no platform or API usage fees. The free tier covers 250 profiles. Only the Conversations API needs approval, and it is a small part of the API.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.klaviyo.com/mcp",
+ "docs_url": "https://developers.klaviyo.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Marketplace listing needs partner approval, but building and testing do not. The Conversations API is gated.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "quote": "Klaviyo provides 3 methods of authentication including private key authentication and OAuth (used to call server-side APIs) and public key authentication (used to call client-side APIs)."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.klaviyo.com/en/v2023-12-15/docs/set_up_oauth",
+   "quote": "Navigate to this page: [https://www.klaviyo.com/oauth/client](https://www.klaviyo.com/oauth/client). 2. Select **Create app** to create your new application."
+  },
+  {
+   "field": "access",
+   "url": "https://developers.klaviyo.com/en/v2024-02-15/docs/build_your_integration",
+   "quote": "There are no platform or API usage fees with Klaviyo, so integrating and testing are free."
+  },
+  {
+   "field": "access",
+   "url": "https://developers.klaviyo.com/en/v2024-02-15/docs/build_your_integration",
+   "quote": "you will create a free test account, generate sample data, send a test API request, and more."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.klaviyo.com/en/reference/get_campaign_message.md",
+   "quote": "[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/get_campaign_message.json)"
+  },
+  {
+   "field": "api",
+   "url": "https://activepieces.com/blog/klaviyo-api-keys-rate-limits-and-error-codes-2026",
+   "quote": "Klaviyo's API is a REST API that speaks JSON:API, authenticated with a private API key"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.klaviyo.com/hc/en-us/articles/52833598880923",
+   "quote": "The remote MCP server URL:** https://mcp.klaviyo.com/mcp"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.klaviyo.com/en/v2025-10-15/docs/klaviyo_mcp_server",
+   "quote": "The Klaviyo Model Context Protocol (MCP) server seamlessly integrates with Klaviyo\u2019s APIs, enabling AI clients to interact with your Klaviyo data."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,82 @@
+{
+ "one_liner": "DataForSEO offers a broad pay-as-you-go REST API for SEO data (SERP, keywords, backlinks, etc.) with Basic auth, a free sandbox, $1 trial credit, and an official MCP server.",
+ "auth_methods": [
+  "BASIC",
+  "OAUTH2"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "The REST API uses only HTTP Basic (API login + generated API password). OAuth2 authorization-code exists only for the MCP server (mcp.dataforseo.com), not the REST API, so Basic is primary for a toolkit.",
+ "access": "self_serve_free",
+ "access_notes": "Free signup gives credentials, a free Sandbox with dummy data, and $1 trial credit that never expires. Production use is pay-as-you-go with a $50 minimum top-up; no subscription.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": null,
+ "sandbox": true,
+ "openapi_spec": null,
+ "docs_url": "https://docs.dataforseo.com/v3/",
+ "mcp": "official",
+ "mcp_url": "https://github.com/dataforseo/mcp-server-typescript",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Real data needs a prepaid balance ($50 minimum), but free credentials, sandbox and trial credit allow building immediately.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.dataforseo.com/v3/auth.md",
+   "quote": "DataForSEO is using the [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), which makes it possible to call our APIs with almost any programming language"
+  },
+  {
+   "field": "auth",
+   "url": "https://dataforseo.com/dev-starter-kit",
+   "quote": "Authentication](https://docs.dataforseo.com/v3/auth/) is HTTP Basic and nothing else: there is no separate auth call, and credentials cannot be passed as URL parameters."
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/dataforseo/mcp-server-typescript/tree/master",
+   "quote": "**OAuth 2.0 (default for HTTP MCP):** works out of the box. MCP clients discover the DataForSEO authorization server via Protected Resource metadata"
+  },
+  {
+   "field": "access",
+   "url": "https://dataforseo.com/pricing",
+   "quote": "You can sign up for free and use your $1 trial credit available to new accounts for trying our APIs in the Playground section"
+  },
+  {
+   "field": "access",
+   "url": "https://dataforseo.com/pricing",
+   "quote": "Pay as you go - No subscriptions - $50 minimum top-up - Balance never expires"
+  },
+  {
+   "field": "access",
+   "url": "https://dataforseo.com/help-center/how-to-test-google-web-scraping-for-free-with-dataforseo-sandbox",
+   "quote": "Any registered user gets access, and your account is never charged for Sandbox endpoints."
+  },
+  {
+   "field": "api",
+   "url": "https://dataforseo.com/dev-starter-kit",
+   "quote": "Endpoint reference for every API \u2192](https://docs.dataforseo.com/v3/)"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/girish-markathon/dataforseo-mcp-server/blob/master/README.md",
+   "quote": "BACKLINKS API: comprehensive backlink analysis including referring domains, anchor text distribution, and link quality metrics;"
+  },
+  {
+   "field": "mcp",
+   "url": "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide",
+   "quote": "Now, with our [official MCP Server](https://dataforseo.com/model-context-protocol) available,"
+  },
+  {
+   "field": "mcp",
+   "url": "https://dataforseo.com/model-context-protocol",
+   "quote": "Click **Add custom connector** and paste the DataForSEO MCP HTTP URL: https://mcp.dataforseo.com/v3/mcp"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

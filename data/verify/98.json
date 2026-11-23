@@ -1,0 +1,32 @@
+{
+ "id": "98",
+ "name": "Mermaid CLI",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/mermaid-js/mermaid-cli",
+    "https://mermaid.ai/products/mermaid-api",
+    "https://mermaid.ai/docs/ai/mcp-server",
+    "https://mermaid.ai/pricing",
+    "https://mermaid-25331.zendesk.com/hc/en-us/articles/51112817195923-Mermaid-MCP-Server",
+    "https://mcp.mermaid.ai"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "official"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "one_liner": "Sherlock (sherlock-project) is a local open-source Python CLI for username enumeration across sites; it has no hosted HTTP API or credentials, so it can't become a standard hosted-API toolkit.",
+ "auth_methods": [
+  "NONE"
+ ],
+ "auth_primary": "NONE",
+ "auth_notes": "The local tool needs no API keys or login. Other products named Sherlock (Sherlock Interview API, CloudFerro, Aleph Alpha) are unrelated and use bearer tokens.",
+ "access": "self_serve_free",
+ "access_notes": "The open-source CLI is free to install and run locally, with no account. There is no vendor-hosted service to get credentials for.",
+ "api_type": "SDK_or_CLI_only",
+ "api_breadth": "none",
+ "mcp": "community",
+ "mcp_url": "https://github.com/Burnsedia/sherlock-mcp",
+ "verdict": "not_buildable",
+ "blocker": "self_hosted_or_local",
+ "blocker_notes": "It is a local CLI that sends requests directly to each target site. There is no hosted API, so a toolkit would need to run the CLI itself, for example through a community MCP wrapper. Its traffic may also be seen as scraping.",
+ "webhooks": false,
+ "sandbox": false,
+ "openapi_spec": false,
+ "docs_url": "https://github.com/sherlock-project/sherlock",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "Sherlock is designed to be straightforward for open source investigations: it does not require API keys or login credentials for the sites it checks"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "No account/API keys needed** \u2013 Sherlock uses direct web requests and does not require creating any account or API key to use."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "it simply constructs the expected profile URL for each site and observes the response to determine whether the username exists on a given platform."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Burnsedia/sherlock-mcp/blob/master/README.md",
+   "quote": "FastMCP server integration for the Sherlock OSINT tool** \u2013 Seamlessly search social media accounts across 400+ platforms using the Model Context Protocol."
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "high",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

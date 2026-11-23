@@ -1,0 +1,131 @@
+{
+ "one_liner": "GitHub has a broad REST API (OpenAPI described, webhooks) with GitHub App, fine-grained PAT and OAuth authorization docs; no partnership is needed, but pages don't settle free access or MCP.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Docs navigation lists OAuth authorizations, fine-grained PATs, and GitHub App installation/user tokens. GitHub App JWT minting is from background knowledge; flow details are not on the fetched pages.",
+ "access": "self_serve_free",
+ "access_notes": "Pages do not state pricing for API access. Developer Program membership is open to individual developers; Technology Partner program (5,000 users, 10 Enterprise customers) is optional and for enterprise co-marketing. Free access rests mainly on background knowledge.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/github/github-mcp-server",
+ "docs_url": "https://docs.github.com/rest",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker evident in the fetched pages. Partner programs are optional. Some endpoints may depend on plan of the underlying feature.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://docs.github.com/rest",
+   "quote": "[OpenAPI description](https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.github.com/rest",
+   "quote": "[Comparing GitHub's APIs](https://docs.github.com/en/rest/about-the-rest-api/comparing-githubs-rest-api-and-graphql-api)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.github.com/rest",
+   "quote": "[Webhooks](https://docs.github.com/en/rest/apps/webhooks)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.github.com/rest",
+   "quote": "[Endpoints for fine-grained PATs](https://docs.github.com/en/rest/authentication/endpoints-available-for-fine-grained-personal-access-tokens)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.github.com/rest",
+   "quote": "[Endpoints for GitHub App installation tokens](https://docs.github.com/en/rest/authentication/endpoints-available-for-github-app-installation-access-tokens)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.github.com/rest",
+   "quote": "[OAuth authorizations](https://docs.github.com/en/rest/apps/oauth-applications)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/github/docs/blob/main/content/get-started/exploring-integrations/github-developer-program.md",
+   "quote": "Membership is open to individual developers and companies who have:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "github",
+    "name": "GitHub",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 883
+   },
+   {
+    "slug": "github_mcp",
+    "name": "GitHub MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 44
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 16,
+  "composio_mcp_toolkits": [
+   "github_mcp"
+  ]
+ }
+}

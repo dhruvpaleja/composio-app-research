@@ -1,0 +1,28 @@
+{
+ "id": "10",
+ "name": "DealCloud",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://api.docs.dealcloud.com",
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://api.docs.dealcloud.com/releases",
+    "https://api.docs.dealcloud.com/docs/relintel",
+    "https://api.docs.dealcloud.com/mcp/getting-started",
+    "https://api.docs.dealcloud.com/guides/making_requests_on_behalf_of_users",
+    "https://g2.com/products/dealcloud/pricing"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

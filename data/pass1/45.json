@@ -1,0 +1,62 @@
+{
+ "one_liner": "Magento Open Source is free and self-hosted with broad REST/GraphQL APIs; auth is per-store OAuth 1.0a integrations or tokens, with no central app registry or multi-tenant OAuth2.",
+ "auth_methods": [
+  "OTHER",
+  "API_KEY"
+ ],
+ "auth_primary": "OTHER",
+ "auth_notes": "Third-party apps use OAuth 1.0a (signed requests) via merchant-created integrations. Admin/customer tokens are obtained by username/password (4h/1h). Bare integration token as bearer is disabled by default. Adobe Commerce as a Cloud Service uses Adobe IMS OAuth2 (client credentials), which is a separate narrower path.",
+ "access": "self_serve_free",
+ "access_notes": "Magento Open Source is free (OSL 3.0) so a developer can self-host a store and create an integration for working credentials. Composer install needs free Marketplace keys. Adobe Commerce paid/cloud editions are sales-led, but the free path is sufficient to build and test.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
+ "verdict": "ready_with_friction",
+ "blocker": "self_hosted_or_local",
+ "blocker_notes": "There is no hosted sandbox. The builder must stand up their own Magento instance, and each merchant has its own base URL and OAuth 1.0a integration, so there is no central multi-user OAuth app flow.",
+ "docs_url": "https://developer.adobe.com/commerce/webapi/",
+ "openapi_spec": null,
+ "sandbox": false,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth",
+   "quote": "OAuth authentication with Adobe Commerce and Magento Open Source is based on [OAuth 1.0a](https://datatracker.ietf.org/doc/html/rfc5849), an open standard for secure API authentication."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+   "quote": "When you request a token from one of these services, the service returns a unique access token in exchange for an account's username and password."
+  },
+  {
+   "field": "access",
+   "url": "https://anchorterminal.com/tools/adobe-commerce",
+   "quote": "Magento Open Source, the core with the same REST and GraphQL framework, is free under OSL 3.0, so an owner can start on a self-hosted store with no contract."
+  },
+  {
+   "field": "api",
+   "url": "https://devdocs.magento.com/guides/v2.4/rest/bk-rest.html",
+   "quote": "Adobe Commerce on Cloud, on-premises, and Magento Open Source all use the same REST API framework."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/hryvinskyi/magento2-mcp-server",
+   "quote": "Turns every service method that a `webapi.xml` route calls into an *ability*, for example `catalog.product_repository.get_list`. A store has about 600 of them."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
+   "quote": "This is a Model Context Protocol (MCP) server that connects to a Magento Open Source or Adobe Commerce REST API"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

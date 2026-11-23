@@ -1,0 +1,101 @@
+{
+ "one_liner": "Freshdesk has a broad REST v2 API using an agent API key via Basic auth, plus a vendor-run MCP server; the free plan has no API access, so builders need a trial or paid plan.",
+ "auth_methods": [
+  "BASIC",
+  "API_KEY"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Per-agent API key from Profile Settings, sent as the Basic Auth username with \"X\" as the password. The vendor MCP server also authenticates with the individual API key only (Authorization header). No OAuth flow for the main API was shown in the official pages.",
+ "access": "self_serve_trial",
+ "access_notes": "The Free plan has no API (per RingCentral doc). Trials have API access at 50 calls/min by default; paid plans get higher limits. Trial length is not stated in the pages. The homepage has a \"Start for free\" signup, but the pages do not say whether it is a trial or a free plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The API is unavailable on the free plan. A builder must use a limited trial (50 calls/min) or buy a paid plan to get a working key. Trial length is unverified.",
+ "docs_url": "https://developers.freshdesk.com/api",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://getmacha.com/blog/how-to-use-the-freshdesk-api",
+   "quote": "The Freshdesk API uses Basic Auth against your own subdomain, with the API key as the username and the letter X as the password.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+   "quote": "An API key is a unique alphanumeric identifier, for each agent on your Freshdesk Account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.ringcentral.com/article-v2/integrating-freshdesk-with-ace.html?brand=RingCentral&language=en_US&product=RingEX",
+   "quote": "The Freshdesk Free plan doesn\u2019t include API access, so the integration won\u2019t work with it.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.freshdesk.com/api",
+   "quote": "For all trial users, there is a default API limit of 50 calls/minute.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.freshdesk.com/api",
+   "quote": "Freshdesk's APIs belong to the **Representational State Transfer (REST)** category. They allow you to perform 'RESTful' operations such as reading, modifying, adding or deleting data from your helpdesk.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+   "quote": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.freshdesk.com/support/solutions/articles/50000014407",
+   "quote": "Freshdesk MCP uses API key authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "freshdesk",
+    "name": "Freshdesk",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 184
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "one_liner": "Sherlock (sherlock-project) is a local open-source CLI that checks usernames across sites with no hosted API, no credentials and only community MCP wrappers, so it doesn't fit a hosted-API toolkit.",
+ "auth_methods": [
+  "NONE"
+ ],
+ "auth_primary": "NONE",
+ "auth_notes": "The tool needs no credentials. It builds profile URLs and checks the responses.",
+ "access": "no_public_api",
+ "access_notes": "The GitHub project is a free local CLI installed via pipx, pip or Docker, and has no hosted HTTP API. The other \"Sherlock\" products in the results (docs.sherlock.xyz audit platform, usesherlock.ai, sherlocks.ai, and others) are different products and not the app in question.",
+ "api_type": "SDK_or_CLI_only",
+ "api_breadth": "none",
+ "mcp": "community",
+ "mcp_url": "https://github.com/Burnsedia/sherlock-mcp",
+ "docs_url": "https://github.com/sherlock-project/sherlock",
+ "openapi_spec": false,
+ "webhooks": false,
+ "sandbox": false,
+ "verdict": "not_buildable",
+ "blocker": "self_hosted_or_local",
+ "blocker_notes": "The tool only runs locally as a CLI that sends many web requests to third-party sites. There is no hosted API for Composio to call. A toolkit would need to host and run the tool itself.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "quote": "Sherlock: Find Usernames Across Social Networks (Version 0.16.0)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "quote": "| `pipx install sherlock-project` | `pip` or [`uv`](https://docs.astral.sh/uv/) may be used in place of `pipx` |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "Sherlock is designed to be straightforward for open source investigations: it does not require API keys or login credentials for the sites it checks",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "No account/API keys needed \u2013 Sherlock uses direct web requests and does not require creating any account or API key to use.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "it simply constructs the expected profile URL for each site and observes the response to determine whether the username exists on a given platform.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Burnsedia/sherlock-mcp/blob/master/README.md",
+   "quote": "FastMCP server integration for the Sherlock OSINT tool \u2013 Seamlessly search social media accounts across 400+ platforms using the Model Context Protocol.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

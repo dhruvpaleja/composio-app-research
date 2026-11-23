@@ -1,0 +1,109 @@
+{
+ "one_liner": "Pinterest API v5 is a broad REST API with OAuth 2.0; it's free, but apps need Pinterest approval for Trial access and a video review for Standard access. An official MCP server is announced but not yet launched.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code OAuth 2.0 with app ID and secret. Access tokens last 30 days, and refresh tokens are supported. Client credentials also exist but don't cover the full API.",
+ "access": "app_review",
+ "access_notes": "No fee. A business account must submit the Connect app request form for Trial access, and Pinterest reviews it and emails an approval or denial. Trial content is visible only to its creator, and Trial rate limits are daily and tight. Standard access needs a video demo review, and no timeline is published.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.pinterest.com/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Pinterest must approve the app for Trial access before an app ID and secret are issued. Multi-user production use needs Standard access, which requires a video review.",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": true,
+ "docs_url": "https://developers.pinterest.com/docs/api/v5/",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+   "quote": "Your app ID and client secret You will provide these as credentials when requesting an OAuth access token.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+   "quote": "Application requests are reviewed by Pinterest.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.pinterest.com/docs/key-concepts/developer-guidelines",
+   "quote": "Prepare a video recording of your app completing an action using the Pinterest API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://blotato.com/blog/pinterest-api-pricing",
+   "quote": "Pinterest does not publish API access fees for v5. No price card, no per-call meter, no subscription fee.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.pinterest.com/docs/api/v5/",
+   "quote": "In this reference, you will find information on all endpoints available in the Pinterest API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.pinterest.com/about-pinterest-mcp",
+   "quote": "The Pinterest MCP Server brings Pinterest data into the AI tools you already use",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.pinterest.com/about-pinterest-mcp",
+   "quote": "Be the first to know when it launches.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.pinterest.com",
+   "quote": "Pinterest MCP is on the way",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "pinterest",
+    "name": "Pinterest",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 27
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 16,
+  "composio_mcp_toolkits": []
+ }
+}

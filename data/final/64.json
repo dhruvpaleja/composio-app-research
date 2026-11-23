@@ -1,0 +1,129 @@
+{
+ "one_liner": "Cloudflare has a broad REST API with self-serve API tokens, OAuth client management, and an official MCP server covering the whole API.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API tokens (Bearer) are the preferred documented method. Legacy Global API Key is sent as X-Auth-Email/X-Auth-Key headers. OAuth clients can be created, but coverage of the whole API is not shown, so API token stays primary.",
+ "access": "self_serve_free",
+ "access_notes": "Any account can create API tokens from the dashboard. Pages did not directly restate free-plan access, so confidence is medium. Tenant/partner API needs a partner agreement but is not required for the core API.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.cloudflare.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker for the core API.",
+ "docs_url": "https://developers.cloudflare.com/api/",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token",
+   "quote": "From the [Cloudflare dashboard \u2197\ufe0e](https://dash.cloudflare.com/profile/api-tokens/), go to **My Profile** > **API Tokens** for user tokens.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/fundamentals/oauth/create-an-oauth-client",
+   "quote": "To create an OAuth client, you must have one of these roles for the associated account: Super Administrator, Administrator, or OAuth Client Write.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/list",
+   "quote": "The preferred authorization scheme for interacting with the Cloudflare API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/list",
+   "quote": "curl https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records \\\n    -H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.cloudflare.com/email-service/api/send-emails/rest-api",
+   "quote": "For the full OpenAPI specification, refer to the [Email Sending API reference]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token",
+   "quote": "Select **Create Token**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.cloudflare.com/tenant/get-started",
+   "quote": "After you sign your partner agreement with Cloudflare, Cloudflare will add [certain entitlements](https://developers.cloudflare.com/tenant/structure/) to your account that allow you to provision and manage custom accounts.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/cloudflare/mcp-server-cloudflare",
+   "quote": "| [**Cloudflare API MCP Server (recommended)**](https://github.com/cloudflare/mcp) | Best when you want broad access across Cloudflare's APIs through code execution | `https://mcp.cloudflare.com/mcp` |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/cloudflare/mcp-server-cloudflare",
+   "quote": "Cloudflare offers the following MCP servers.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 170
+   },
+   {
+    "slug": "cloudflare_mcp",
+    "name": "Cloudflare MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 3
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "com.cloudflare.mcp/mcp"
+  ],
+  "mcp_registry_any": 21,
+  "composio_mcp_toolkits": [
+   "cloudflare_mcp"
+  ]
+ }
+}

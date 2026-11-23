@@ -1,0 +1,49 @@
+{
+ "id": "10",
+ "name": "DealCloud",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://api.docs.dealcloud.com/mcp/connections",
+    "https://api.docs.dealcloud.com/mcp/getting-started",
+    "https://api.docs.dealcloud.com/mcp/tools",
+    "https://api.docs.dealcloud.com/mcp/custom-servers",
+    "https://api.docs.dealcloud.com/mcp",
+    "https://api.docs.dealcloud.com/releases",
+    "https://api.docs.dealcloud.com/mcp/authentication",
+    "https://api.docs.dealcloud.com",
+    "https://api.docs.dealcloud.com/docs/apikeys"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://api.docs.dealcloud.com",
+    "https://api.docs.dealcloud.com/docs/data/rows/get",
+    "https://api.docs.dealcloud.com/sdk/python-1.X/reference/api-reference",
+    "https://api.docs.dealcloud.com/docs/data/rows/get_view_data",
+    "https://api.docs.dealcloud.com/docs/data/files",
+    "https://api.docs.dealcloud.com/docs/management/invite_user"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

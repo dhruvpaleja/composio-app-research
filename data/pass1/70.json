@@ -1,0 +1,73 @@
+{
+ "one_liner": "Sentry has a broad REST API (sentry.io/api/0) with bearer auth tokens and OAuth for Sentry Apps. A free Developer plan is available, and there is an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Org or user auth tokens (internal integration) are sent as a Bearer header. Sentry Apps (integration platform) support OAuth 2.0 with a grant-code exchange. Legacy API keys use Basic auth but are disabled for new accounts. DSN auth is very limited.",
+ "access": "self_serve_free",
+ "access_notes": "The free Developer plan has no expiry, and new accounts get a 14-day Business trial. Sentry's own API tutorial recommends a free developer account. Some third-party pricing sites claim the free plan excludes the API, which conflicts with Sentry's docs. Creating an internal integration or token needs an org Manager or Admin role.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.sentry.dev/mcp",
+ "docs_url": "https://docs.sentry.io/api/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Possible minor friction: third-party sources say the free plan excludes the API, but Sentry's docs point to a free developer account. The 14-day Business trial would also work.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.sentry.io/api/auth.md",
+   "quote": "curl -H 'Authorization: Bearer {TOKEN}' https://sentry.io/api/0/organizations/{organization_slug}/projects/"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/getsentry/sentry/blob/master/src/sentry/api/authentication.py",
+   "quote": "Authenticates a Sentry Application using its Client ID and Secret"
+  },
+  {
+   "field": "auth",
+   "url": "https://apis.io/providers/sentry",
+   "quote": "OAuth 2.0 (Sentry Apps) and auth tokens"
+  },
+  {
+   "field": "auth",
+   "url": "https://sentry-docs-git-patch-1.sentry.dev/api/auth",
+   "quote": "API keys are passed using HTTP Basic auth where the username is your api key, and the password is an empty value."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.sentry.io/api/guides/teams-tutorial",
+   "quote": "We recommend using a free [Sentry developer account](https://sentry.io/pricing/) for this tutorial."
+  },
+  {
+   "field": "access",
+   "url": "https://maple.dev/guides/sentry-pricing",
+   "quote": "New accounts start on a **14-day Business trial** without a credit card and drop to Developer when it ends unless they upgrade."
+  },
+  {
+   "field": "api",
+   "url": "https://apis.io/providers/sentry",
+   "quote": "Web API: 40 req/sec read and write per auth token"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.sentry.io/product/sentry-mcp",
+   "quote": "The base MCP server address is: `https://mcp.sentry.dev/mcp`"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

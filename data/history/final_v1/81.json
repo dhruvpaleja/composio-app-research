@@ -1,0 +1,158 @@
+{
+ "one_liner": "Stripe has a broad REST API with self-serve free-account API keys (HTTP Basic or bearer), sandboxes, and documented OAuth 2.0 for Stripe Apps and Connect. An official MCP server is not confirmed by the pages.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The pages document OAuth 2.0 authorization-code flows. Stripe Apps use marketplace.stripe.com/oauth/v2/authorize with a token exchange at /v1/oauth/token, with refresh tokens. Connect Standard OAuth also exists but isn't recommended for new platforms. API keys (sk_/rk_) are sent as the Basic auth username or as a bearer token. Stripe Apps can also use a restricted API key that the user pastes in. OAuth for public apps requires publishing through app review, so a pasted restricted key is the simpler multi-user path for now.",
+ "access": "self_serve_free",
+ "access_notes": "The API keys are managed in the Dashboard. Test mode secret keys work in sandboxes. Live mode uses restricted keys or sk_live_. Listing an OAuth app on the Marketplace requires app review. Pasted keys do not. The pages don't directly state that signup is free beyond the partner page's \"Create and activate a free Stripe account\" line.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.stripe.com",
+ "docs_url": "https://docs.stripe.com/api",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Users can paste restricted API keys today. OAuth publishing needs app review but isn't required to start. No fetched page mentions MCP. The official MCP rating rests on the MCP Registry entry com.stripe/mcp, which is a hint and not page evidence, so confidence is low.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/api",
+   "quote": "Provide your API key as the basic auth username value.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/api",
+   "quote": "If you need to authenticate using bearer auth (for example, for a cross-origin request), use `-H \"Authorization: Bearer \"` instead of `-u`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+   "quote": "Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+   "quote": "Your callback URL receives an OAuth [authorization code](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1) parameter that your back end needs to exchange for an API access token and the refresh token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication",
+   "quote": "When a user installs your app, Stripe generates a permissioned, restricted API key that users need to copy and paste into your software to interact with Stripe.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/connect/oauth-standard-accounts",
+   "quote": "OAuth isn\u2019t recommended for new [Connect](https://docs.stripe.com/connect) platforms.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.stripe.com/api",
+   "quote": "Test mode secret keys start with `sk_test_` and have unrestricted access to their sandboxes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.stripe.com/api",
+   "quote": "Our API has predictable resource-oriented URLs, accepts",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://docs.stripe.com/api",
+   "quote": "You can use the Stripe API in [sandboxes](https://docs.stripe.com/sandboxes) without affecting your live data or interacting with banking networks.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://docs.stripe.com/connect/oauth-standard-accounts",
+   "quote": "An `account.application.deauthorized` [event](https://docs.stripe.com/api#list_events) occurs when a user disconnects your platform from their account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+   "quote": "[Submit your app for review](https://docs.stripe.com/stripe-apps/publish-app#submit-app-for-review) when you\u2019re ready to publish it to the Stripe App Marketplace",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "stripe",
+    "name": "Stripe",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 428
+   },
+   {
+    "slug": "stripe_mcp",
+    "name": "Stripe MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 10
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.stripe/mcp"
+  ],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": [
+   "stripe_mcp"
+  ]
+ }
+}

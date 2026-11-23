@@ -1,0 +1,62 @@
+{
+ "one_liner": "Smartsheet has a broad REST API with OAuth2 and bearer API tokens plus an official hosted MCP server, but API and token access requires a paid Business or Enterprise plan.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 is a 3-legged flow, with apps registered through Developer Tools. Personal access tokens are generated in the UI and sent as a Bearer header. Gov and regional instances use separate tokens.",
+ "access": "paid_plan",
+ "access_notes": "The API and token generation require a Business, Enterprise, or Advanced Work Management plan, and free accounts cannot generate tokens or register OAuth apps. The vendor FAQ says there is no extra API fee. The FAQ conflicts with the plan restriction, so the plan requirement is treated as current.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+ "docs_url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "A paid Business or higher plan is needed to get working credentials. Developer Tools activation is also needed to register OAuth apps.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+   "quote": "Each API request requires passing in an access token as the `Bearer` value in your authorization header."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+   "quote": "Note that the Smartsheet implementation of OAuth 2.0 is a 3-legged process, which requires human intervention."
+  },
+  {
+   "field": "access",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+   "quote": "**Required plan:** Business, Enterprise, or Advanced Work Management"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.aws.amazon.com/quick/latest/userguide/smartsheet-integration.html",
+   "quote": "Free accounts cannot generate API access tokens or register OAuth apps."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+   "quote": "[Smartsheet OpenAPI Reference](https://developers.smartsheet.com/_bundle/api/smartsheet/openapi.yaml)"
+  },
+  {
+   "field": "mcp",
+   "url": "https://aws.amazon.com/blogs/machine-learning/workflow-context-for-ai-agents-with-smartsheet-mcp-on-aws",
+   "quote": "The Smartsheet MCP Server is available at three regional endpoints. It uses Streamable HTTP transport"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

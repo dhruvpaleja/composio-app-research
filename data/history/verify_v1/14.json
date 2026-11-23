@@ -1,0 +1,42 @@
+{
+ "id": "14",
+ "name": "Front",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://front.com",
+    "https://dev.frontapp.com/docs/welcome",
+    "https://dev.frontapp.com/docs/partnering-with-front",
+    "https://dev.frontapp.com/docs/rate-limiting",
+    "https://front.com/partners/integration",
+    "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+    "https://front.com/partners/channel"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "front",
+    "name": "Front",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 180
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 12,
+  "composio_mcp_toolkits": []
+ }
+}

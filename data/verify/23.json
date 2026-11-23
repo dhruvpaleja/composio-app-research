@@ -1,0 +1,53 @@
+{
+ "id": "23",
+ "name": "Zoho Cliq",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html",
+    "https://zoho.com/cliq/mcp-server.html",
+    "https://zoho.com/cliq/help/platform/zoho-cliq-mcp-tools.html",
+    "https://zoho.com/cliq/help/platform/connect-zoho-cliq-mcp-with-claude.html",
+    "https://zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+    "https://zoho.com/cliq/help/platform/connect-zoho-cliq-mcp-with-vs-code.html",
+    "https://help.zoho.com/portal/en/kb/zoho-cliq/cliq-7-0/user-guides/articles/setting-up-the-zoho-cliq-mcp-server",
+    "https://zoho.com/cliq",
+    "https://zoho.com/cliq/help/restapi"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "zoho",
+    "name": "Zoho",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 115
+   },
+   {
+    "slug": "zoho_cliq",
+    "name": "Zoho Cliq",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 162
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

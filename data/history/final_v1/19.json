@@ -1,0 +1,113 @@
+{
+ "one_liner": "Gorgias has a broad REST API using Basic auth (account email + API key) for private apps and mandatory OAuth2 for public 3rd-party apps; no MCP server confirmed by the pages.",
+ "auth_methods": [
+  "BASIC",
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OpenAPI security scheme is HTTP basic: email as username, API key as password. OAuth2 is mandatory for 3rd-party apps. Whether OAuth2 is self-serve for a non-partner is unclear; public apps need Developer Portal signup.",
+ "access": "paid_plan",
+ "access_notes": "Private apps need no approval, so per-customer API keys work immediately. Pages do not state whether a free tier or trial exists; a Gorgias account is presumably paid. Developer sandbox is offered via the Developer Portal.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "A multi-tenant OAuth2 public app requires Developer Portal signup and Gorgias review before listing. Per-customer private-app API keys avoid review but need per-customer setup.",
+ "docs_url": "https://developers.gorgias.com",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.gorgias.com/reference/get-user.md",
+   "quote": "The username will be the email address of your Gorgias account and the password will be your API key.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.gorgias.com/reference/get-user.md",
+   "quote": "The Gorgias REST API. Please go to https://developers.gorgias.com for more details.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.gorgias.com",
+   "quote": "For Private apps there is no need for approval.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.gorgias.com",
+   "quote": "This step is required only if you plan to build a Public app.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://developers.gorgias.com/llms.txt",
+   "quote": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V2_mcp_registry",
+   "field": "mcp",
+   "why": "agent said none, registry returns 1 servers matching name"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "gorgias",
+    "name": "Gorgias",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 51
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

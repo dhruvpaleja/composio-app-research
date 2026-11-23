@@ -1,0 +1,136 @@
+{
+ "one_liner": "Datadog has a broad REST API that uses API key plus application key headers. OAuth 2.0 exists but its client setup is described only through a Partner Sandbox. The pages don't settle trial versus free access or the MCP status.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The API docs say to authenticate with an API key in the DD-API-KEY header, and some endpoints also need an application key in DD-APPLICATION-KEY. The OAuth docs describe an authorization-code flow with PKCE that returns a Bearer access token. The OAuth client is created in a Datadog Partner Sandbox Account via the Developer Platform, so it is not clearly self-serve for ordinary developers. The Composio catalog also lists OAUTH2. API_KEY stays primary because OAuth self-serve availability is unconfirmed. Endpoints differ per Datadog site (regional), so the site must be configured per customer. The draft's claim that standalone OAuth clients are unsupported, and its personal access token mention, are not confirmed by the supplied pages.",
+ "access": "self_serve_trial",
+ "access_notes": "No supplied page says how a developer obtains keys or whether a free tier or trial exists. Keys come from an org account, so a trial or paid account is assumed. This is low confidence. The OAuth client is created in a Partner Sandbox Account.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": null,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://docs.datadoghq.com/api/latest/",
+ "mcp": "official",
+ "mcp_url": "https://mcp.datadoghq.com/v1/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Each customer must create and supply API and application keys and the correct regional site. An account able to create keys (trial or paid) is needed, and the pages don't say which. The MCP server is not verified by any supplied page. The MCP registry shows nothing under the vendor namespace. The \"official\" rating rests on the draft and on Composio's separate datadog_mcp toolkit with DCR_OAUTH, so it is low confidence.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://docs.datadoghq.com/api/latest/",
+   "quote": "The Datadog API is an HTTP REST API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/api/latest/",
+   "quote": "using the header `DD-API-KEY`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/api/latest/",
+   "quote": "which uses the header `DD-APPLICATION-KEY`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog",
+   "quote": "Within your Datadog Partner Sandbox Account, create and configure your OAuth client in the",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog",
+   "quote": "Use the `access_token` to make calls to Datadog API endpoints by sending it in as a part of the authorization header of your request",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/developers/authorization/oauth2_endpoints",
+   "quote": "These endpoints direct the application through the authorization code grant flow.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog",
+   "quote": "API endpoints are different in each Datadog site.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "access",
+   "why": "no evidence"
+  },
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "datadog",
+    "name": "Datadog",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY",
+     "BEARER_TOKEN"
+    ],
+    "managed": [],
+    "tools": 255
+   },
+   {
+    "slug": "datadog_mcp",
+    "name": "Datadog MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 370
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": [
+   "datadog_mcp"
+  ]
+ }
+}

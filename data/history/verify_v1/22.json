@@ -1,0 +1,94 @@
+{
+ "id": "22",
+ "name": "Twilio",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://twilio.com",
+    "https://twilio.com/docs",
+    "https://twilio.com/content/dam/twilio-com/global/en/solutions/partner-solutions/2026-Twilio-Technology_Partner-Program-Guide.pdf",
+    "https://twilio.com/en-us/partners/become-a-partner",
+    "https://twilio.com/docs/iam/api-keys/restricted-api-keys",
+    "https://twilio.com/legal/tos/ptos-feb-2022",
+    "https://static1.twilio.com/partner-solutions"
+   ],
+   "changed": {
+    "verdict": [
+     "ready",
+     "ready_with_friction"
+    ],
+    "blocker": [
+     "none",
+     "other"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "auth",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://twilio.com",
+    "https://twilio.com/docs",
+    "https://twilio.com/docs/iam/oauth-apps/overview",
+    "https://twilio.com/docs/usage/api-security-reference-guide/secure-auth",
+    "https://twilio.com/docs/iam/oauth-apps/org-oauth-apps",
+    "https://twilio.com/docs/iam/oauth-apps/account-oauth-apps-resource",
+    "https://twilio.com/docs/iam/oauth-apps/oauth-access-token"
+   ],
+   "changed": {
+    "mcp": [
+     "official",
+     "none"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V2_mcp_registry",
+     "field": "mcp",
+     "why": "agent said none, registry returns 3 servers matching name"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "twilio",
+    "name": "Twilio",
+    "auth_schemes": [
+     "API_KEY",
+     "BASIC",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 452
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

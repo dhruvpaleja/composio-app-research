@@ -1,0 +1,50 @@
+{
+ "id": "51",
+ "name": "DataForSEO",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.dataforseo.com",
+    "https://docs.dataforseo.com/v3/",
+    "https://dataforseo.com/update/pricing-update-in-dataforseo-apis",
+    "https://dataforseo.com/help-center/backlinks-api-pricing-explained/amp",
+    "https://dataforseo.com/dataforseo-alternatives",
+    "https://dataforseo.com/help-center/how-to-run-bulk-keyword-research-with-dataforseo-apis",
+    "https://dataforseo.com/Pricing"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "BASIC",
+      "OAUTH2"
+     ],
+     [
+      "BASIC"
+     ]
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "dataforseo",
+    "name": "DataForSEO",
+    "auth_schemes": [
+     "BASIC"
+    ],
+    "managed": [],
+    "tools": 354
+   }
+  ],
+  "catalog_auth": [
+   "BASIC"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

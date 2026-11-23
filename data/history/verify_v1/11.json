@@ -1,0 +1,88 @@
+{
+ "id": "11",
+ "name": "Zendesk",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://zendesk.com",
+    "https://developer.zendesk.com/api-reference/",
+    "https://developer.zendesk.com/api-reference/integration-services/introduction",
+    "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+    "https://support.zendesk.com/hc/en-us/articles/115015500928-What-are-the-Zendesk-plan-requirements-for-RingCentral-s-integration-",
+    "https://develop.zendesk.com/hc/en-us/articles/360043317073-About-the-Sunshine-Profiles-API",
+    "https://developer.zendesk.com/api-reference/reseller/getting_started"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://zendesk.com",
+    "https://developer.zendesk.com/api-reference/",
+    "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+    "https://support.zendesk.com/hc/en-us/articles/10497779528730-Using-the-Zendesk-MCP-client-to-access-MCP-tools-in-action-flows-and-advanced-action-flows",
+    "https://zendesk.com/marketplace/connectors/53/mcp-client",
+    "https://zendesk.com/blog/zendesk-insights/innovation/zendesk-ai-mcp-client",
+    "https://support.zendesk.com/hc/en-us/articles/11105393853210-Announcing-the-general-availability-of-the-MCP-client"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "official"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "access",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 480
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

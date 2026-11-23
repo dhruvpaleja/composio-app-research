@@ -1,0 +1,55 @@
+{
+ "id": "77",
+ "name": "ClickUp",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://clickup.com/api",
+    "https://developer.clickup.com/docs/authentication",
+    "https://developer.clickup.com/docs/apis-available-by-plan",
+    "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+    "https://clickup.com/blog/how-to-use-clickup-mcp-server",
+    "https://developer.clickup.com/docs/apis-available-by-plan.md",
+    "https://clickup.com/terms/developer-terms"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "clickup",
+    "name": "ClickUp",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 163
+   },
+   {
+    "slug": "clickup_mcp",
+    "name": "ClickUp MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 58
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": [
+   "clickup_mcp"
+  ]
+ }
+}

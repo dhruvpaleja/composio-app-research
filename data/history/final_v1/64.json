@@ -1,0 +1,126 @@
+{
+ "one_liner": "Cloudflare has a broad REST API with API tokens and the legacy global key, plus OAuth client management endpoints and a vendor-namespaced MCP server. The fetched pages do not confirm free-account token creation, so access is low confidence.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Bearer API tokens and the legacy global key (X-Auth-Email/X-Auth-Key) appear in the docs. The API reference lists OAuth Clients and OAuth Scopes endpoints, but the pages do not describe a third-party OAuth flow. Composio's main toolkit lists API_KEY only. I therefore changed auth_primary from OAUTH2 to API_KEY and kept OAUTH2 as a low-confidence secondary method.",
+ "access": "self_serve_free",
+ "access_notes": "The pages do not directly show that a free account can create API tokens. They show only the ordinary account-creation step and the global API key retrieval link. The Tenant/partner provisioning API is gated behind a signed partner agreement, but it is a separate surface. self_serve_free is kept as the most defensible value, with low confidence.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/cloudflare/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker for the core API is shown. The Tenant/partner provisioning APIs require a partner agreement. The pages do not verify GraphQL, the MCP server, or free-tier token creation. Those rely on prior knowledge and the independent registry signal.",
+ "docs_url": "https://developers.cloudflare.com/api/",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/api",
+   "quote": "OAuth Clients OAuth Clients List OAuth Clients OAuth Client Details Create OAuth Client Update OAuth Client Delete OAuth Client Rotate OAuth Client Secret Delete Rotated OAuth Client Secret OAuth Scopes OAuth Scopes List OAuth Scopes",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/tenant/get-started",
+   "quote": "--header \"Authorization: Bearer <API_TOKEN>\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/tenant/get-started",
+   "quote": "--header \"X-Auth-Key: <API_KEY>\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.cloudflare.com/tenant/get-started",
+   "quote": "After you sign your partner agreement with Cloudflare, Cloudflare will add [certain entitlements](https://developers.cloudflare.com/tenant/structure/) to your account that allow you to provision and manage custom accounts.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.cloudflare.com/api",
+   "quote": "Alerting Alerting Available Alerts Available Alerts Get Alert Types",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "auth": "low",
+  "access": "low",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "auth",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 170
+   },
+   {
+    "slug": "cloudflare_mcp",
+    "name": "Cloudflare MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 3
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "com.cloudflare.mcp/mcp"
+  ],
+  "mcp_registry_any": 21,
+  "composio_mcp_toolkits": [
+   "cloudflare_mcp"
+  ]
+ }
+}

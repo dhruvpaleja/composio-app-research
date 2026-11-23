@@ -1,0 +1,72 @@
+{
+ "one_liner": "Reducto offers a REST document parsing/extraction API with free self-serve signup ($150 credits), bearer API keys, and an official MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Bearer API key created in Studio. Workload Identity (OIDC federated short-lived tokens) is also offered as an alternative.",
+ "access": "self_serve_free",
+ "access_notes": "Free Studio account with $150 free credits, no credit card required; API keys created self-serve.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://github.com/reductoai/mcp-server-reducto",
+ "docs_url": "https://docs.reducto.ai",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None; free credits allow building and testing.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "**Auth:** `Authorization: Bearer $REDUCTO_API_KEY`"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.reducto.ai/quickstart",
+   "quote": "In the Studio sidebar, click **API Keys**, then **Create API Key**. Give it a name and copy the key."
+  },
+  {
+   "field": "access",
+   "url": "https://reducto.ai/lp/signup?ad=823035844522&reducto.ai=&src=g&tnt_id=d397c4ec-64fb-4e6d-893f-fdeffc833c21",
+   "quote": "starting with $150 in free credits."
+  },
+  {
+   "field": "access",
+   "url": "https://reducto.ai/pricing",
+   "quote": "Standard accounts include $150 in free credits."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "**Base URL:** `https://platform.reducto.ai`"
+  },
+  {
+   "field": "api",
+   "url": "https://reducto.ai/pricing",
+   "quote": "Parse API - Extract API - Edit API - Split API"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.reducto.ai/mcp-server",
+   "quote": "The Reducto MCP server connects AI agents directly to Reducto."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/reductoai/mcp-server-reducto",
+   "quote": "Parse, extract, classify, split, and edit documents from any MCP-compatible agent"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,71 @@
+{
+ "one_liner": "SE Ranking offers a broad REST Data/Project API with API-key auth, a 14-day trial with 100K credits, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Single API key generated in API Dashboard, sent as 'Authorization: Token KEY' or apikey query param. MCP server supports OAuth, but the REST API documents only API keys.",
+ "access": "self_serve_trial",
+ "access_notes": "14-day trial with 100K free credits and full API access; afterwards pay-as-you-go from $50 or a paid plan. No permanent free tier.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.seranking.com/mcp",
+ "docs_url": "https://seranking.com/api/data/getting-started",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Only a 14-day trial (100K credits) is free; ongoing testing needs a paid plan or $50 PAYG credits. The trial is enough to build, so friction is modest.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/data/getting-started",
+   "quote": "Include an `Authorization` header in your request, with the value `Token YOUR_API_KEY`."
+  },
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/how-to-get-api",
+   "quote": "A single API key authenticates every endpoint across the Data API and the Project API."
+  },
+  {
+   "field": "access",
+   "url": "https://seranking.com/api-pricing.html",
+   "quote": "14-day trial to test every API endpoint"
+  },
+  {
+   "field": "access",
+   "url": "https://help.seranking.com/hc/en-us/articles/22447958135068-Getting-Started-with-SE-Ranking-s-API",
+   "quote": "Start with a 14-day trial that includes **100,000 free API credits**."
+  },
+  {
+   "field": "api",
+   "url": "https://seranking.com/api/data/getting-started",
+   "quote": "The base URL for all endpoints is: https://api.seranking.com"
+  },
+  {
+   "field": "api",
+   "url": "https://seranking.com/mcp.html",
+   "quote": "Data across keyword research, domain analysis, backlinks, website audits, and more \u2014 all in one MCP server."
+  },
+  {
+   "field": "mcp",
+   "url": "https://seranking.com/api/integrations/mcp",
+   "quote": "MCP server server follows the authenticated remote MCP spec, so it\u2019s centrally hosted and managed."
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.seranking.com/hc/en-us/articles/29433510970140-Getting-Started-with-MCP",
+   "quote": "add a custom connector with the URL https://api.seranking.com/mcp, name it **SE Ranking**, and authorize with OAuth or your API key."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

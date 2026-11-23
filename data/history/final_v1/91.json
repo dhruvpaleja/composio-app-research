@@ -1,0 +1,94 @@
+{
+ "one_liner": "NotebookLM (now Gemini Notebook) has an official v1alpha REST API for notebook management only through Gemini Notebook Enterprise on Google Cloud (licensed user, Google OAuth access token); only community MCP servers exist, and they rely on browser-session auth.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "access": "paid_plan",
+ "access_notes": "The official API requires an authenticated user account with an active Gemini Notebook Enterprise license, a Cloud project and an IAM role. The supplied pages do not state pricing, license minimums or trial length, so the draft's $9, 15-license and trial figures are unverified here. They also don't show a free path.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "community",
+ "mcp_url": "https://github.com/jacob-bd/gemini-notebook-mcp-cli",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Needs an Enterprise license, Cloud project setup and the notebookLmUser role. The API is v1alpha and the documented page covers only notebook create, get, list, delete and share. Calls use per-user gcloud tokens, so a multi-user OAuth flow needs per-customer setup. Community MCP servers use browser cookies or login and are unofficial.",
+ "docs_url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+   "quote": "methods on this page require an authenticated user account with an active Gemini Notebook Enterprise license.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+   "quote": "Authorization:Bearer $(gcloud auth print-access-token)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+   "quote": "https://ENDPOINT_LOCATION-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/LOCATION/notebooks",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+   "quote": "- Share a notebook",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/jacob-bd/gemini-notebook-mcp-cli/blob/main/docs/MCP_GUIDE.md",
+   "quote": "Complete reference for the Gemini Notebook (formerly Google NotebookLM) MCP server \u2014 **53 tools** for AI assistants.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/moodRobotics/notebooklm-mcp-server/blob/HEAD/README.md",
+   "quote": "the session cookies (including Google's rotating `__Secure-1PSIDTS` token) are captured and saved to `~/.notebooklm-mcp/auth.json`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "notebook_lm",
+    "name": "NotebookLM",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 11
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

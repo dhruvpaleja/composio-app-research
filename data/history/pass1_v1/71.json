@@ -1,0 +1,62 @@
+{
+ "one_liner": "Notion has a broad REST API with free self-serve tokens (internal connection, PAT) and OAuth 2.0 for public connections, plus an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Public connections use OAuth 2.0 (token endpoint uses Basic client auth). Internal connection tokens and personal access tokens are static bearer tokens. Internal connections require workspace owner; pages must be shared with the connection.",
+ "access": "self_serve_free",
+ "access_notes": "API available on all plans including Free; creating internal connections requires workspace owner, but anyone can create a free personal workspace. PAT creation is restricted by default on Business/Enterprise.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://developers.notion.com/reference",
+ "mcp": "official",
+ "mcp_url": "https://mcp.notion.com/mcp",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No significant blocker; users must share pages with an internal connection or authorize via OAuth.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.notion.com/docs/authorization",
+   "quote": "personal access tokens use a user-scoped static token, and OAuth integrations and public integrations use the OAuth 2.0 protocol"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.notion.com/guides/connections-and-tokens/internal-connections",
+   "quote": "There\u2019s no OAuth flow to implement \u2014 you get a token immediately when you create the connection, and you use that same token for every API request."
+  },
+  {
+   "field": "access",
+   "url": "https://activepieces.com/blog/notion-api-quickstart-get-a-key-and-make-your-first-call",
+   "quote": "You can create an integration on any of the four plans, so your plan tier doesn't restrict your ability to build integrations"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.notion.com/reference/authentication",
+   "quote": "The Notion API accepts bearer tokens in this header."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.notion.com/guides/get-started/personal-access-tokens",
+   "quote": "Read, create, update, and search content; read and create comments; and read supported user information through Notion\u2019s REST API."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.notion.com/guides/mcp/overview",
+   "quote": "Notion MCP is a remote MCP server hosted by Notion. After you authorize a connection with OAuth"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

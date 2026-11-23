@@ -1,0 +1,110 @@
+{
+ "one_liner": "Firecrawl offers a REST API for search, scrape, crawl, map, interact and more. It has a free tier with an API key, OAuth for apps, and an official MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Bearer API keys (fc-...) are found in the dashboard. The API reference points to \"OAuth for apps\" so users can connect their own Firecrawl account to your app. The OAuth details (flow, token prefixes) were not in the fetched pages. Composio lists only API_KEY. Some endpoints (scrape, search, parse) also work keyless.",
+ "access": "self_serve_free",
+ "access_notes": "The free plan gives 1,000 credits per month with no card. Scrape, search and parse also work keyless with per-IP daily caps. Heavier use needs a paid plan.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://mcp.firecrawl.dev/v2/mcp",
+ "docs_url": "https://docs.firecrawl.dev/api-reference",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker. A free key is self-serve. Free credits are limited, so heavy use needs a paid plan.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://firecrawl.dev",
+   "quote": "Firecrawl gives you 1,000 free credits every month, which covers about 1,000 pages, and no card is required.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.firecrawl.dev/rate-limits",
+   "quote": "to get 1,000 credits and higher rate limits at no cost",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "A few endpoints, including `/v2/scrape`, `/v2/search` and `/v2/parse`, also work without a key, with limits.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "Authorization: Bearer fc-YOUR-API-KEY",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "To let users connect their own Firecrawl account to your app instead, use [OAuth for apps](/oauth).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "All requests use the following base URL:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://firecrawl.dev",
+   "quote": "Yes. Firecrawl has an official MCP server so agents in Cursor, Claude, Windsurf, and other MCP-compatible tools can search, scrape, and interact with the web directly.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.firecrawl.dev/rate-limits",
+   "quote": "The hosted Firecrawl MCP keyless endpoint exposes exactly **Search, Scrape, and Parse** without an API key.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "firecrawl",
+    "name": "Firecrawl",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 245
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "io.github.firecrawl/firecrawl-mcp-server"
+  ],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

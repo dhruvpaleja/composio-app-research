@@ -1,0 +1,130 @@
+{
+ "id": "84",
+ "name": "Paygent Connect",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://gopaygent.com",
+    "https://docs.paygent.to/getting-started/quickstart",
+    "https://docs.paygent.to/getting-started/assign-users-to-plans",
+    "https://gopaygent.com/resources/partners",
+    "https://docs.withpaygent.com/documentation/introduction/subscription-fees",
+    "https://paygent.ai/partner-network",
+    "https://docs.paygent.to/reference/api-reference"
+   ],
+   "changed": {
+    "blocker": [
+     "paid_plan",
+     "unclear_docs"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "api",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://gopaygent.com/developers/docs",
+    "https://docs.paygent.to/getting-started/assign-users-to-plans",
+    "https://docs.paygent.to/getting-started/quickstart",
+    "https://docs.paygentic.io/platform/pricing/features",
+    "https://docs.paygent.to/getting-started/configure-first-plan",
+    "https://docs.paygent.to/reference/api-reference",
+    "https://docs.paygent.to/introduction/plans-and-usage-events"
+   ],
+   "changed": {
+    "access": [
+     "self_serve_free",
+     "paid_plan"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "auth",
+     "why": "no evidence"
+    },
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "auth",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "api",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V3_rules",
+   "field": "api",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

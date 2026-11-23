@@ -1,0 +1,44 @@
+{
+ "id": "79",
+ "name": "Smartsheet",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-quickstart",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/manually-configure-the-mcp-server",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server-tools",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server/connect-cursor",
+    "https://smartsheet.com/developers",
+    "https://developers.smartsheet.com/api/smartsheet/introduction",
+    "https://developers.smartsheet.com/api/smartsheet/guides/getting-started"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "smartsheet",
+    "name": "Smartsheet",
+    "auth_schemes": [
+     "OAUTH2",
+     "BEARER_TOKEN"
+    ],
+    "managed": [],
+    "tools": 180
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

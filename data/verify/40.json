@@ -1,0 +1,63 @@
+{
+ "id": "40",
+ "name": "SendGrid",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://sendgrid.com",
+    "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "https://learn.microsoft.com/en-us/azure/databricks/ingestion/lakeflow-connect/sendgrid-source-setup",
+    "https://support.sendgrid.com/hc/en-us/articles/1260802641289-Legacy-Email-Activity-Feed-Twilio-SendGrid-Reseller-Partners-Email-API-Premier-plans-above-50m",
+    "https://support.sendgrid.com/hc/en-us/articles/35270136965403-Overview-of-60-Day-Free-Trial-Plans-for-New-SendGrid-Accounts",
+    "https://docs.sendgrid.com/onboarding/email-api/build-and-test-your-application",
+    "https://sendgrid.com/en-us/free",
+    "https://docs.sendgrid.com/api-reference/account-provisioning-api-offering-operations/get-account-offerings",
+    "https://sendgrid.com/en-us/pricing?tab=1_1"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://sendgrid.com",
+    "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "https://docs.sendgrid.com/api-reference/mail-send/mail-send",
+    "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/requests",
+    "https://docs.sendgrid.com/v2-api/mail",
+    "https://docs.sendgrid.com/api-reference/contacts/get-contacts-by-emails",
+    "https://docs.sendgrid.com/api-reference/contacts/add-or-update-a-contact",
+    "https://docs.sendgrid.com/api-reference/campaigns-api/create-a-campaign"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "sendgrid",
+    "name": "SendGrid",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 359
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "one_liner": "Airtable has a broad REST Web API with free-tier PATs and self-serve OAuth app registration, plus an official MCP server; ready to build.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code integrations register self-serve at airtable.com/create/oauth; personal access tokens (bearer) are for personal use. Legacy API keys were deprecated Feb 2024.",
+ "access": "self_serve_free",
+ "access_notes": "Free plan gives PATs and OAuth integration registration; free plan has 1,000 API calls per workspace per month. Enterprise API endpoints need Enterprise Scale.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://airtable.com/developers/web/api/introduction",
+ "mcp": "official",
+ "mcp_url": "https://airtable.com/developers/agents/mcp/getting-started",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Using an OAuth integration beyond development requires Terms of Service, Support Email and Privacy Policy URLs. Free-plan call limits are low but workable for testing.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+   "quote": "If you are building an Airtable integration for your product or for many different users that needs to use the Airtable API on behalf of those users, you will need to create an OAuth integration."
+  },
+  {
+   "field": "auth",
+   "url": "https://airtable.com/developers/web/guides/personal-access-tokens.md",
+   "quote": "Personal access tokens are used to authenticate requests to Airtable's API when developing an integration for yourself, your client, or for your company."
+  },
+  {
+   "field": "access",
+   "url": "https://airtable.com/developers/web/api/billing-plans.md",
+   "quote": "Access to all \"Base Data\" endpoints except \"Views\""
+  },
+  {
+   "field": "access",
+   "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+   "quote": "**Free** plan - 1000 calls per workspace per month"
+  },
+  {
+   "field": "api",
+   "url": "https://airtable.com/developers/web/api/authentication.md",
+   "quote": "curl https://api.airtable.com/v0/YOUR_BASE_ID/YOUR_TABLE_ID_OR_NAME -H \\ \"Authorization: Bearer YOUR_TOKEN\""
+  },
+  {
+   "field": "mcp",
+   "url": "https://airtable.com/developers/agents/mcp/getting-started",
+   "quote": "Airtable's MCP server lets you connect AI tools directly to your Airtable bases."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

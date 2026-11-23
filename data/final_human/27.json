@@ -1,0 +1,95 @@
+{
+ "one_liner": "Telegram offers a free Bot API (HTTPS, token from @BotFather) plus the MTProto Telegram API (api_id/api_hash); easily buildable, with only community MCP servers found.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Bot API uses a static bot token from @BotFather. MTProto user API uses api_id/api_hash plus phone-code login (session auth). Telegram Login offers OIDC authorization-code with PKCE, but only for sign-in, not for the main API.",
+ "access": "self_serve_free",
+ "access_notes": "Telegram's own developer homepage states the Bot API and the Telegram API/TDLib are free of charge. A bot token comes from @BotFather, and api_id/api_hash come from my.telegram.org.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/chigwell/telegram-mcp",
+ "docs_url": "https://core.telegram.org/bots/api",
+ "openapi_spec": false,
+ "sandbox": false,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Bots cannot act as a user account; user-level access needs MTProto sessions. The fetched pages did not show any vendor MCP server (absence is not proof), and the community MCP evidence was not among the fetched pages, so the mcp label is kept at low confidence.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "quote": "You will get basic addresses as well as the **api_id** and **api_hash** parameters required for user authorization.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://oauth.telegram.org/developers",
+   "quote": "Our implementation follows the standard [Authorization Code Flow](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth) with **PKCE** support.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://core.telegram.org/bots/api",
+   "quote": "Each bot is given a unique authentication token when it is created",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://core.telegram.org",
+   "quote": "You are welcome to use both APIs free of charge.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://core.telegram.org/bots/api",
+   "quote": "Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized Update",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/chigwell/telegram-mcp/blob/main/README.md",
+   "quote": "The server currently includes 80+ MCP tools grouped into these areas",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "low",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "telegram",
+    "name": "Telegram",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 18
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 13,
+  "composio_mcp_toolkits": []
+ }
+}

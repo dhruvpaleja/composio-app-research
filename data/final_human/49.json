@@ -1,0 +1,95 @@
+{
+ "one_liner": "Amazon SP-API is a broad REST API for seller/vendor data using LWA OAuth 2.0; builders need a Professional seller account ($39.99/mo) and Amazon-reviewed developer profile and role approvals.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Login with Amazon OAuth 2.0 authorization-code flow yields refresh tokens exchanged for 1-hour access tokens; private apps can self-authorize in draft status. Restricted operations use Restricted Data Tokens. Public apps must be listed in the Appstore.",
+ "access": "app_review",
+ "access_notes": "Requires a Professional selling account (paid, $39.99/month), a Developer Profile that Amazon reviews, and role approvals; restricted roles need extra review. Public apps have further requirements.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/christian-ramos/mcp-amazon-sp-api",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Developer profile review by Amazon and role approval, plus a paid Professional seller account, are required before meaningful use. Public multi-user apps need Appstore listing.",
+ "docs_url": "https://developer-docs.amazon.com/sp-api",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer-docs.amazon.com/sp-api/docs/authorize-public-applications",
+   "quote": "selling partners follow an authorization flow based on Login with Amazon (LWA), which is Amazon's implementation of OAuth 2.0",
+   "grounding": 0.89,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.amazonservices.com/start/getting-started-for-private-developers",
+   "quote": "You can self-authorize your application in draft status; there is no need to publish a private application.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://sell.amazon.com/developers",
+   "quote": "Yes, only Professional selling accounts can access Developer Central and integrate with SP-API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://sell.amazon.com/developers",
+   "quote": "*A Professional selling account is $39.99/month + selling fees.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://deltologic.com/blog/amazon-seller-central-api-guide",
+   "quote": "Amazon reviews it and opens a case.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://sell.amazon.com/developers",
+   "quote": "Selling Partner API (SP-API) is a REST-based API that helps Amazon sellers and vendors programmatically access their data for orders, shipments, payments, and much more.",
+   "grounding": 0.92,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://developer.amazonservices.com/start/getting-started-for-private-developers",
+   "quote": "we recommend using Postman and making a call to one of our sandbox endpoints.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/christian-ramos/mcp-amazon-sp-api/blob/master/README.md",
+   "quote": "It wraps the python-amazon-sp-api SDK and ships 55+ tools across 19 SP-API scopes",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

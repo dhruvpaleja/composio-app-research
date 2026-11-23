@@ -1,0 +1,102 @@
+{
+ "one_liner": "Ecwid has a broad REST API (OAuth for public App Market apps, secret access tokens for single-store custom apps), but only stores on paid plans can call it. Developers can email API Support for a free paid-plan upgrade on a test store. Only third-party MCP servers exist.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Custom apps (single store) give a secret token, copied from the app Details page, that does not expire. The fetched pages show this API-key-style path. They also say multi-merchant distribution needs a public App Market app, which Ecwid validates. The pages don't describe the OAuth flow itself, so OAUTH2 for public apps rests on prior knowledge and is low-confidence.",
+ "access": "paid_plan",
+ "access_notes": "The API is only available to stores on a paid plan. Ecwid grants a free paid-plan upgrade to developers, but you must email API Support to get it, so it is not self-serve. Creating the custom app and tokens is free once the store is on a paid plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://docs.ecwid.com",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": false,
+ "mcp": "community",
+ "mcp_url": "https://vinkius.com/en/ai-agent-connect/ecwid",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "A paid-plan store is required, both for a developer test store (free upgrade by emailing API Support) and for each customer's store. Extra scopes are a manual request to API Support. There is no test mode, so use a separate test store.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+   "quote": "Only stores on paid plans can access API",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+   "quote": "Ecwid grants a free upgrade to a paid plan for developers building a store customization",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+   "quote": "Access tokens do not expire and are tied to this one store.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+   "quote": "Distributing to other Ecwid stores means a public App Market app, which does go through Ecwid app validation.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+   "quote": "There is also no test mode in the Ecwid API",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://docs.popmcp.com/docs/integrations/ecwid",
+   "quote": "Webhook automations and similar features need self-hosted endpoint URLs ready at the time you request the app update",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://vinkius.com/pdf/ecwid-mcp.pdf",
+   "quote": "MAINTAINED BY VINKIUS CLOUD FOR AI AGENTS",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://popmcp.com/mcp-servers/ecwid",
+   "quote": "PopMCP hosts it and gives you a Streamable HTTP MCP URL.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "api",
+   "why": "no evidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

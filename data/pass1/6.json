@@ -1,0 +1,66 @@
+{
+ "one_liner": "Podio has a free-to-use REST API with self-serve OAuth2 app registration, broad coverage, and an official hosted MCP server at mcp.podio.com.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Server-side authorization-code flow, client-side flow, username/password flow and app-auth flow. Developers register an API key (client ID and secret) from account settings. App-auth uses app ID plus app token via the OAuth token endpoint, so it is grouped under OAuth2. Access tokens last 8 hours and refresh tokens 28 days.",
+ "access": "self_serve_free",
+ "access_notes": "The API is available to free and paid accounts at no extra charge. Base rate limits are 1,000 calls/hour (Limit B) and 250 calls/hour for resource-intensive calls (Limit A). API add-ons are optional.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.podio.com",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker found. The free plan includes API access, and OAuth app registration is self-serve.",
+ "docs_url": "https://developers.podio.com",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.podio.com/authentication",
+   "quote": "Before you can use the Podio API you must register your application. Your application is assigned a unique identifier, called \"Client ID\", together with a \"Client Secret\"."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.podio.com/authentication/server_side",
+   "quote": "The server-side flow works by sending your user to Podio to authorize. It's a four step process"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.podio.com/index/faq",
+   "quote": "The Podio API is available to use for both paid and free Podio accounts. Both have full access to the API and the same base rate Limit A and Limit B apply."
+  },
+  {
+   "field": "access",
+   "url": "https://podio.com/site/pricing",
+   "quote": "API Integrations | 1000 calls per hour | 1000 calls per hour Upgrade with Add-ons"
+  },
+  {
+   "field": "api",
+   "url": "https://rollout.com/integration-guides/podio/api-essentials",
+   "quote": "Podio has a RESTful API. Specifically: It is described as \"RESTful\" and uses JSON as the exchange format."
+  },
+  {
+   "field": "api",
+   "url": "https://rollout.com/integration-guides/podio/api-essentials",
+   "quote": "Provides complete programmatic access to all Podio functionality"
+  },
+  {
+   "field": "mcp",
+   "url": "https://progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide",
+   "quote": "The server is live at https://mcp.podio.com \u2014 just point your AI platform at it and log in with your Podio account."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

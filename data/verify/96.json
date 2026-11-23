@@ -1,0 +1,55 @@
+{
+ "id": "96",
+ "name": "Devin",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "https://docs.devin.ai/work-with-devin/mcp",
+    "https://docs.devin.ai/cli/extensibility/mcp/configuration",
+    "https://docs.devin.ai/cli/extensibility/mcp/overview",
+    "https://docs.devin.ai/product-guides/plugin-mcp-setups",
+    "https://docs.devin.ai/desktop/cascade/mcp.md",
+    "https://mcp.devin.ai",
+    "https://docs.devin.ai/cli/changelog/stable",
+    "https://docs.devin.ai"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "devin_mcp",
+    "name": "Devin MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 23
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.devin-lemcke/canusign-mcp-server"
+  ],
+  "mcp_registry_any": 10,
+  "composio_mcp_toolkits": [
+   "devin_mcp"
+  ]
+ }
+}

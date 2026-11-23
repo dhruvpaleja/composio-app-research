@@ -1,0 +1,96 @@
+{
+ "one_liner": "Front has a documented Core API using OAuth apps or admin-created API tokens, a free developer environment, and a vendor-published MCP server meant for human teammates.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "API tokens are company-level, created by admins in Settings > Developers. Front requires OAuth for partner Core API integrations. The OAuth grant types and the app setup details are on pages that were not fetched, so they are not confirmed here. The MCP server uses its own token feature that is not available for API tokens.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer environment, limited to 3 teammates, with no production data. Rate limits are 50/100/200 rpm by plan. Partner OAuth integrations get a separate 120 rpm. A public App Store listing needs a partner submission, but internal or single-client integrations skip that.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://dev.frontapp.com/docs/mcp-server",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Public App Store listing needs partner review, but a toolkit can use self-serve OAuth apps or API tokens with a free developer account.",
+ "docs_url": "https://dev.frontapp.com/docs/welcome",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "You\u2019ll get access to a free developer environment that will provide everything you need to begin building with our APIs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "Access Front data and actions through the MCP protocol, allowing AI agents like Claude and ChatGPT to read and reply to conversations and other Front resources.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+   "quote": "API tokens apply at a company level rather than being tied to a specific user, so anyone at your company with admin privileges will see the token you create.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "quote": "Integrations that use the Core API are required to use OAuth",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "Our webhooks also make it possible to respond to real-time events as actions and updates happen in Front.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://dev.frontapp.com/docs/rate-limiting",
+   "quote": "API requests made by a partner integration on behalf of a company via OAuth have a separate rate limit of 120 rpm",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "front",
+    "name": "Front",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 180
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 12,
+  "composio_mcp_toolkits": []
+ }
+}

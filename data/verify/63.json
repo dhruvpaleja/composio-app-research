@@ -1,0 +1,48 @@
+{
+ "id": "63",
+ "name": "Netlify",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/ManolisTsongas/epic-fantasy-101-booklist-mcp",
+    "https://github.com/ToukoUrsin/clify",
+    "https://netlify.com/knowledge-base/how-to-build-and-deploy-an-mcp-server-on-netlify",
+    "https://developers.netlify.com/guides/write-mcps-on-netlify",
+    "https://netlify.com/blog/netlify-mcp-server-ai-agents-deploy-your-code",
+    "https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview",
+    "https://netlify.com/blog/mcp-goes-stateless-and-extensible",
+    "https://netlify.com/press/netlify-launches-official-mcp-server-setting-the-standard-for-agent-native-development",
+    "https://docs.netlify.com"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "netlify_mcp",
+    "name": "Netlify MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "app.netlify.acenes-of-sparta-the-dragon-slayer/epic-fantasy-101-booklist",
+   "app.netlify.agent-kb-y83q/kb",
+   "app.netlify.agent-rescue-desk/production-triage",
+   "app.netlify.automatom-x402/web-data-toolkit",
+   "app.netlify.chaincheck-api/chaincheck"
+  ],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": [
+   "netlify_mcp"
+  ]
+ }
+}

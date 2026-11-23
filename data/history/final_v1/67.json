@@ -1,0 +1,107 @@
+{
+ "one_liner": "Snowflake offers a SQL REST API plus a broad OpenAPI-described REST resource API, authenticated via OAuth or key-pair JWT. The pages show only a trial-account path, and each customer needs per-account setup.",
+ "auth_methods": [
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The SQL API docs say to use OAuth or Key Pair. The REST API getting-started page uses a self-minted JWT as a bearer token (OTHER). Programmatic access tokens (PATs) are not confirmed by the pages, so API_KEY was dropped. Each customer has their own account URL.",
+ "access": "self_serve_trial",
+ "access_notes": "The docs home page links \"Getting a Trial Account\". The pages do not describe trial limits or ongoing billing.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The pages show only a trial account as the entry path. Each customer also needs their own account URL and OAuth or key-pair setup. The MCP status rests on the registry hint only (io.github.Snowflake-Labs/mcp); no page covers it.",
+ "docs_url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+ "openapi_spec": true,
+ "sandbox": null,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+   "quote": "The Snowflake SQL API is a REST API that you can use to access and update data in a Snowflake database.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+   "quote": "Snowflake REST APIs for resource management provide a set of endpoints that lets users programmatically interact with and control various resources within the Snowflake Data Cloud.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "openapi_spec",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+   "quote": "These REST APIs are compliant with the",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+   "quote": "Use OAuth or Key Pair to authenticate with the Snowflake server.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/getting-started",
+   "quote": "REST requests require a JWT token in the request header to authenticate the request.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.snowflake.com",
+   "quote": "Getting a Trial Account",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "snowflake",
+    "name": "Snowflake",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 16
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "io.github.Snowflake-Labs/mcp"
+  ],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

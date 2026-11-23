@@ -1,0 +1,44 @@
+{
+ "id": "88",
+ "name": "Brex",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.brex.com/docs/mcp",
+    "https://brex.com/support/using-brex-in-ai-apps",
+    "https://api.brex.com/mcp",
+    "https://developer.brex.com",
+    "https://developer.brex.com/guides/api-launch-stages",
+    "https://developer.brex.com/guides/checklist",
+    "https://developer.brex.com/docs/partner_onboarding",
+    "https://brex.com/journal/accounting-partner-program",
+    "https://developer.brex.com/guides/roles_permissions_scopes.md"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "brex",
+    "name": "Brex",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 84
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

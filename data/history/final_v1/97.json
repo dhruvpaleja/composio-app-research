@@ -1,0 +1,122 @@
+{
+ "one_liner": "Higgsfield has a self-serve REST API (api.higgsfield.ai) for 50+ image/video models using a key ID:secret, funded by a prepaid USD balance ($5 min top-up), plus an official OAuth MCP server that uses plan credits.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "REST API: key ID + secret sent as `Authorization: Key KEY_ID:SECRET`, generated in the console at open.higgsfield.ai. OAuth (with Dynamic Client Registration) applies only to the MCP server, which acts on the user's higgsfield.ai account; the REST API has no documented OAuth.",
+ "access": "paid_plan",
+ "access_notes": "The API requires a funded prepaid USD balance (minimum top-up $5). No free tier is documented. The website plan is a separate product and doesn't grant API access. The MCP route requires an active paid subscription.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "docs_url": "https://docs.higgsfield.ai",
+ "mcp": "official",
+ "mcp_url": "https://mcp.higgsfield.ai/mcp",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Must register a payment method and fund the balance (min $5) before the API can be used. Otherwise self-serve and documented.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+   "quote": "Create a Header Auth credential. The header name is `Authorization`, the value is `Key KEY_ID:SECRET` with the key generated in the console at",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "quote": "No plan or subscription is involved: fund the balance, send requests at the rates listed in the catalog, and new requests simply wait once the balance hits zero.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://higgsfield.ai/blog/higgsfield-api",
+   "quote": "There is no subscription: you top up a balance, pay per generation at published rates, and spending stops automatically at zero.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://higgsfield.ai/blog/higgsfield-api",
+   "quote": "Higgsfield API is a self-serve API for developers that provides direct access to more than 50 current video and image generation models",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+   "quote": "A webhook URL is passed in the `hf_webhook` query parameter of each request",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+   "quote": "Add the MCP Client node and set Server Transport to HTTP Streamable, the endpoint URL to `https://mcp.higgsfield.ai/mcp`, and Authentication to MCP OAuth2.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://higgsfield.ai/cli",
+   "quote": "Add the Higgsfield MCP server URL in your agent's settings and authenticate through your Higgsfield account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "quote": "MCP and CLI are agent connections: they attach Claude, Cursor, or another agent to your existing",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "higgsfield",
+    "name": "Higgsfield",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 13
+   },
+   {
+    "slug": "higgsfield_mcp",
+    "name": "Higgsfield MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 101
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "app.higgsfield.agentwares/marketplace",
+   "app.higgsfield.mizan-bazar/mizan"
+  ],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "higgsfield_mcp"
+  ]
+ }
+}

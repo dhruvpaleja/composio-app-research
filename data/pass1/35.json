@@ -1,0 +1,78 @@
+{
+ "one_liner": "Mailchimp Marketing API v3 is a broad REST API with self-serve API keys and OAuth 2 app registration on a free account; only a docs-search MCP is official, so the usable MCP servers are community-built.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code OAuth 2 is available. Apps are registered self-serve on the Registered Apps page. Tokens don't expire and there is no refresh token. API keys and OAuth tokens can be sent as HTTP Basic (token as password) or as a Bearer header. The data center prefix (dc) is needed for the API host.",
+ "access": "self_serve_free",
+ "access_notes": "A free Mailchimp account lets you generate an API key and register an OAuth app. Some API features depend on the plan level (for example, the Templates API is read-only on free plans). Marketplace listing needs 25+ active users, but that is not required to build or use the API.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/cyanheads/mailchimp-mcp-server",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker. Free account gives an API key and OAuth app registration.",
+ "docs_url": "https://mailchimp.com/developer/marketing/api",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://mailchimp.com/developer/marketing/api-concepts/authentication/oauth-2.md",
+   "quote": "Mailchimp implements the standard [authorization code flow]"
+  },
+  {
+   "field": "auth",
+   "url": "https://mailchimp.com/developer/marketing/build/start-developing/set-up-an-oauth-app",
+   "quote": "Registering gives you the `client_id` and `client_secret` your server needs."
+  },
+  {
+   "field": "auth",
+   "url": "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+   "quote": "You can use either HTTP Basic Authentication or Bearer Authentication."
+  },
+  {
+   "field": "access",
+   "url": "https://alloyautomation-245bf23e.mintlify.app/connectors/Mailchimp",
+   "quote": "Mailchimp offers a free tier with up to 500 subscribers and 1,000 monthly email sends."
+  },
+  {
+   "field": "access",
+   "url": "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+   "quote": "If you don't have a Mailchimp account already, you\u2019ll need to [create one](https://login.mailchimp.com/signup/) in order to use the API."
+  },
+  {
+   "field": "api",
+   "url": "https://mailchimp.com/developer/guides/an-introduction-to-rest",
+   "quote": "The root url for the API is `https://<dc>.api.mailchimp.com/3.0/`."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/damientilman/mailchimp-mcp-server/blob/main/README.md",
+   "quote": "The most complete [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for the [Mailchimp Marketing API](https://mailchimp.com/developer/marketing/): **227 tools**"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/cyanheads/mailchimp-mcp-server",
+   "quote": "Draft, test, and send Mailchimp campaigns straight from your MCP client"
+  },
+  {
+   "field": "mcp",
+   "url": "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md",
+   "quote": "This documentation site is itself an MCP server. Connect an agent to it and the agent can search these docs directly"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

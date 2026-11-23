@@ -1,0 +1,102 @@
+{
+ "one_liner": "Vonage offers self-serve communications APIs (Messages/SMS, Voice, Verify, Video) with free signup, API key/secret Basic auth and JWT auth; OAuth 2.0 exists for Business Communications and Network Features APIs; vendor MCP server exists only as documentation MCP.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Core APIs: API key+secret (Basic header) and self-minted JWT (app ID + private key). Vonage Business Communications APIs use OAuth 2.0 authorization code (and password grant) with consumer key/secret generated in the developer portal. Network Features use a CAMARA CIBA OAuth flow started with a JWT. OAuth is not the main path for core Messages/Voice/Video APIs, so OAUTH2 as primary applies to VBC only; core multi-user toolkit would likely use per-customer key/secret or JWT.",
+ "access": "self_serve_free",
+ "access_notes": "Homepage invites visitors to create a free account; an API key and secret are created automatically with the account. Network Features need operator approval for production via Network Registry.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developer.vonage.com/en/mcp-server/technical-details",
+ "docs_url": "https://developer.vonage.com",
+ "webhooks": true,
+ "openapi_spec": true,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Core APIs are self-serve with per-customer credentials. Network Features require operator approval for production. The MCP server is only supported by the registry signal (vendor namespace io.github.Vonage/vonage-documentation-mcp), not by fetched pages, and appears to be a documentation MCP.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://developer.vonage.com",
+   "quote": "Ready to start building? Create a free account now!",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "quote": "When you create a Vonage account, an API key and secret will be created for you.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "quote": "Authorization: Basic base64(API_KEY:API_SECRET)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/video/guides/authentication.md",
+   "quote": "Authorization: Bearer <JWT>",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/vonage-business-cloud/getting-started/create-an-access-token",
+   "quote": "Vonage Business Communications APIs use [OAuth]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/getting-started-network/guides/server-authentication",
+   "quote": "The OpenAPI specification for the Network Feature auth endpoints is available [here](/api/camara/auth).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "medium",
+  "auth": "high",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "api",
+   "why": "no evidence"
+  },
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Vonage/vonage-documentation-mcp"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

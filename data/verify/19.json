@@ -1,0 +1,46 @@
+{
+ "id": "19",
+ "name": "Gorgias",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://gorgias.com/blog/gorgias-mcp",
+    "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546?about_us=1&ajs_event=Ad+Campaign+Clicked&ajs_prop_ad_position=&ajs_prop_adgroup_id=157712685737&ajs_prop_campaign_id=21098215864&ajs_prop_creative=712914974608&ajs_prop_device=c&ajs_prop_extension_id=&ajs_prop_gclid=CjwKCAjwqJXUBhBNEiwA8BgG7hfUN6qLKfSZW6qNUZdbN-CoTfq9NS6OVKdQsB2G6gkvGPga-vjTDhoCAWgQAvD_BwE&ajs_prop_keyword=gorgias&ajs_prop_landingpage=https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D21098215864%26utm_term%3Dgorgias&ajs_prop_match_type=p&ajs_prop_network=g&ajs_prop_physical_location=9011831&ajs_prop_placement=&ajs_prop_source=google&ajs_prop_target_id=kwd-298465390318",
+    "https://gorgias.com/llm-info",
+    "https://mcp.gorgias.com",
+    "https://gorgias.com",
+    "https://developers.gorgias.com",
+    "https://helpcenter.gorgias.com/en-US/technology-partner-program-81978",
+    "https://developers.gorgias.com/docs/building-a-high-quality-gorgias-app",
+    "https://gorgias.com/app-partners"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "gorgias",
+    "name": "Gorgias",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 51
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

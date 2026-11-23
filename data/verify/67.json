@@ -1,0 +1,55 @@
+{
+ "id": "67",
+ "name": "Snowflake",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/Snowflake-Labs/mcp",
+    "https://docs.snowflake.com",
+    "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+    "https://snowflake.com/en/why-snowflake/partners/product-partners",
+    "https://snowflake.com/wp-content/uploads/2023/08/sm-provider-playbook-extended-ver.pdf",
+    "https://snowflake.com/en/blog/snowflake-partner-network-agentic-enterprise",
+    "https://snowflake.com/en/why-snowflake/partners/resale-partners",
+    "https://snowflake.com/en/why-snowflake/partners?utm_cta=website-industry-pubsec-bottom-of-page-partners-snowflake-partner-network",
+    "https://docs.snowflake.com/en/collaboration/guidelines-reqs-for-listing-apps"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "access",
+   "why": "best quote only 0% found on cited page"
+  },
+  {
+   "check": "V1_grounding",
+   "field": "api",
+   "why": "best quote only 56% found on cited page"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "snowflake",
+    "name": "Snowflake",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 16
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "io.github.Snowflake-Labs/mcp"
+  ],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

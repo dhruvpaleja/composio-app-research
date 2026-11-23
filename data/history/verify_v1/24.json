@@ -1,0 +1,59 @@
+{
+ "id": "24",
+ "name": "Lark (Larksuite)",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://open.larksuite.com",
+    "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+    "https://open.larksuite.com/document/server-docs/getting-started/server-api-list",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-guide/api-billing",
+    "https://larksuite.com/en_us/partner",
+    "https://larksuite.com/hc/en-US/articles/000472088408-overview-of-app-permissions-and-approval-rules",
+    "https://open.larksuite.com/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://open.larksuite.com",
+    "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+    "https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/advanced-configuration",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/install-and-use-document-search-mcp",
+    "https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/docs/reference/tool-presets/presets.md",
+    "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/docker/docker.md"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 20,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "one_liner": "Discord has a broad, free REST API with OAuth2 for users and bot tokens, self-serve via the Developer Portal; only community MCP servers were found.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code OAuth2 with self-serve app registration covers user-scoped endpoints. Bot tokens handle most guild operations and are static secrets. Basic auth (client_id:client_secret) applies only to token endpoints. Some scopes are partner-only.",
+ "access": "self_serve_free",
+ "access_notes": "Anyone can register a developer application and get a client ID and secret (plus a bot token on the Bot page). Privileged intents are a self-serve toggle below 10,000 users; review is needed only above that.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://docs.discord.com/developers/reference",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": null,
+ "mcp": "community",
+ "mcp_url": "https://github.com/hanweg/mcp-discord",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Privileged intent review applies only past 10,000 users, which does not affect building or testing. Some scopes are partner-only.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.discord.com/developers/topics/oauth2",
+   "quote": "We support the authorization code grant, the implicit grant, client credentials, and some modified special-for-Discord flows for Bots and Webhooks.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.discord.com/developers/reference",
+   "quote": "Using a bot token found on the Bot page within your app\u2019s settings.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.discord.com/developers/reference",
+   "quote": "Only applicable for [OAuth2 API](/developers/topics/oauth2) token endpoints.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.discord.com/developers/topics/oauth2",
+   "quote": "The first step in implementing OAuth2 is [registering a developer application](https://discord.com/developers/applications) and retrieving your client ID and client secret.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support-dev.discord.com/hc/en-us/articles/6207308062871-What-are-Privileged-Intents",
+   "quote": "If your app has fewer than 10,000 users, you may access Privileged Intents by enabling them in the Developer Portal.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.discord.com/developers/discord-social-sdk/how-to/use-with-discord-apis",
+   "quote": "You can use the [Discord OpenAPI Spec](https://github.com/discord/discord-api-spec) to generate a client in your preferred backend language",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/hanweg/mcp-discord",
+   "quote": "A Model Context Protocol (MCP) server that provides Discord integration capabilities to MCP clients like Claude Desktop.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "discord",
+    "name": "Discord",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 23
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 13,
+  "composio_mcp_toolkits": []
+ }
+}

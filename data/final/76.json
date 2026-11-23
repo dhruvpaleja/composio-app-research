@@ -1,0 +1,116 @@
+{
+ "one_liner": "monday.com has a broad GraphQL API with self-serve OAuth apps, personal tokens, a free developer sandbox, and an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code flow works for apps created in the Developer Center (OAuth 2.1 also used for MCP). Personal V2 API tokens are the simpler alternative. JWTs are only for verifying incoming webhooks.",
+ "access": "self_serve_free",
+ "access_notes": "A free developer account gives an API token. The pages do not restate plan-level API limits, so those draft details are lower confidence.",
+ "api_type": "GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.monday.com/mcp",
+ "docs_url": "https://developer.monday.com/api-reference/docs/getting-started",
+ "openapi_spec": false,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None. Credentials are self-serve and free through the developer account.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.monday.com/apps/docs/oauth",
+   "quote": "OAuth 2.0 is a protocol that lets your app request authorization to read or modify data in a user's monday account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.monday.com/api-reference/docs/authentication",
+   "quote": "The monday.com platform API utilizes **personal V2 API tokens** to authenticate requests and identify the user making the call.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.monday.com/api-reference/docs/developer-sandbox",
+   "quote": "A **developer account** (also called a **sandbox account**) is a free monday.com account designed for building and testing",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.monday.com/api-reference/docs/authentication",
+   "quote": "create a free [developer account](https://developer.monday.com/docs/developer-sandbox) to get an API token and start testing.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.monday.com/api-reference/docs/getting-started",
+   "quote": "GraphQL APIs use a single endpoint for all operations (unlike REST APIs). Our API endpoint is:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+   "quote": "The hosted MCP server is the recommended way to connect to monday.com. It requires no local setup, updates automatically",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp.md",
+   "quote": "is monday.com's hosted MCP (Model Context Protocol) server, maintained by the monday.com AI team.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "monday",
+    "name": "Monday",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 122
+   },
+   {
+    "slug": "monday_mcp",
+    "name": "Monday MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 96
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.monday/monday.com"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": [
+   "monday_mcp"
+  ]
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "one_liner": "Zoho Cliq has a broad REST API v2/v3 with self-serve OAuth 2.0 via the Zoho API Console, a free plan with API support, and an official Zoho MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code flow with client registration in the Zoho API Console (multi-DC). Integration-component API tokens also exist for bot/extension endpoints, but the main REST API uses OAuth.",
+ "access": "self_serve_free",
+ "access_notes": "Draft cites the plan-comparison page (API support: Yes on all plans, including Free) and self-serve API Console registration. Those pages were not among the re-fetched pages, so the claim is kept with reduced confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://zoho.com/cliq/mcp-server.html",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Per-user rate limits and lock periods apply, and multiple data centers need handling, but neither blocks building.",
+ "docs_url": "https://zoho.com/cliq/help/restapi",
+ "openapi_spec": false,
+ "webhooks": true,
+ "sandbox": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://zoho.com/cliq/help/restapi",
+   "quote": "Zoho Cliq API uses the OAuth 2.0 protocol for authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://zoho.com/cliq/help/restapi/v2/oauth",
+   "quote": "registering your app with the Zoho API console. Once you register your client, you will get a Client ID and Client secret",
+   "grounding": 0.9,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://zoho.com/cliq/help/restapi/v3/oauth",
+   "quote": "server-based applications can use the authorization code flow",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://zoho.com/cliq/help/platform/faq.html",
+   "quote": "API tokens are also provided while creating an application with the integration components.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://zoho.com/cliq/plan-comparison.html",
+   "quote": "API support | Yes | Yes | Yes | Yes",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://zoho.com/cliq/pricing.html",
+   "quote": "Free | Free | Free",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://zoho.com/cliq/help/restapi",
+   "quote": "The Zoho Cliq API is based on REST principles. It enables you to perform read-and-write operations similar to those available with our web client.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://zoho.com/cliq/help/restapi/v3/postman",
+   "quote": "The collection is organized by module, mirroring the documentation's structure. It includes pre-configured request structures, path parameters, and body templates for every endpoint.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+   "quote": "Any AI model or agent can use our official MCP server to access your Cliq data",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "zoho",
+    "name": "Zoho",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 115
+   },
+   {
+    "slug": "zoho_cliq",
+    "name": "Zoho Cliq",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 162
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

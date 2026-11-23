@@ -1,0 +1,101 @@
+{
+ "id": "44",
+ "name": "Salesforce Commerce Cloud",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.salesforce.com/docs/commerce",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+    "https://salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/alliance-agreements-and-terms/commerce-cloud-link-partner-integration-agreement.pdf",
+    "https://1.salesforce-partners.com/full-stack-commerce-cloud",
+    "https://partners.salesforce.com/s/education/consultants/Consulting_Partner_Signup",
+    "https://partners.salesforce.com/pdx/s/learn/article/isv-salesforce-commerce-cloud-MCXU3JBWFMQBBKRLW76UCTTYO63A?language=en_US",
+    "https://docs.rokt.com/platform-guides/rokt-catalog/brands/getting-started/onboarding-salesforce-commerce-cloud"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "OAUTH2",
+      "OTHER"
+     ],
+     [
+      "OAUTH2"
+     ]
+    ],
+    "access": [
+     "partner_gated",
+     "paid_plan"
+    ],
+    "verdict": [
+     "needs_outreach",
+     "ready_with_friction"
+    ],
+    "blocker": [
+     "partnership",
+     "paid_plan"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developer.salesforce.com/docs/commerce",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+    "https://docs.rokt.com/platform-guides/rokt-catalog/brands/getting-started/onboarding-salesforce-commerce-cloud",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/base-url.html",
+    "https://help.salesforce.com/s/articleView?id=cc.b2c_account_manager_add_api_client_id.htm&language=en_US&type=5",
+    "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/ocapisettings.html",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/setting-up-api-access.html"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 556
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

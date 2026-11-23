@@ -1,0 +1,52 @@
+{
+ "id": "30",
+ "name": "Vonage",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/Vonage/vonage-mcp-server-documentation",
+    "https://developer.vonage.com/en/mcp-server/how-to-guides/install-tooling-mcp-server",
+    "https://developer.vonage.com/vonage-cloud-runtime/getting-started/ai-mcp",
+    "https://developer.vonage.com/en/blog/telephony-mcp-server-for-agentic-ai-and-language-models",
+    "https://developer.vonage.com/en/blog/step-by-step-adding-vonage-apis-to-your-ai-agent-with-mcp",
+    "https://developer.vonage.com/en/blog/introducing-the-vonage-mcp-tooling-server",
+    "https://developer.vonage.com/en/mcp-server/technical-details",
+    "https://developer.vonage.com",
+    "https://developer.vonage.com/en/startups"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developer.vonage.com",
+    "https://developer.uc.vonage.com/api/telephony",
+    "https://developer.vonage.com/en/api/developer/numbers",
+    "https://docs.ai.vonage.com/rest-apis-and-references/outbound-call-api",
+    "https://developer.vonage.com/en/api/account",
+    "https://developer.vonage.com/en/voice/voice-api/technical-details",
+    "https://developer.vonage.com/en/api/pricing"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Vonage/vonage-documentation-mcp"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

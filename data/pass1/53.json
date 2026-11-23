@@ -1,0 +1,77 @@
+{
+ "one_liner": "Ahrefs API v3 is a broad REST API with bearer API keys, but real access requires a paid plan (Lite $129/mo+); only free test queries are available otherwise. It has an official remote MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API v3 uses bearer API keys created by workspace owners/admins (1-year lifetime). OAuth 2.0 auth code + PKCE exists via Ahrefs Connect, but it needs an approved app and production use requires an Enterprise plan, so API key is the primary method.",
+ "access": "paid_plan",
+ "access_notes": "API is included in paid plans from Lite ($129/mo). Free and Starter plans get only limited free test queries and some free public endpoints. Those test queries are usable for development, but full data access needs a paid plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.ahrefs.com/mcp/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Meaningful API access needs a paid Ahrefs plan (Lite or higher). Free test queries allow limited development and testing. OAuth via Ahrefs Connect needs app approval, and production use needs Enterprise.",
+ "docs_url": "https://docs.ahrefs.com/en/api/docs/introduction",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.ahrefs.com/llms.txt",
+   "quote": "send your API key as a bearer token in the `Authorization: Bearer <API_KEY>` header. Free \"public\" endpoints do not require a key."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.ahrefs.com/en/api/docs/api-keys-creation-and-management",
+   "quote": "Note that only workspace owners and admins have access to this section."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide",
+   "quote": "Ahrefs Connect uses **OAuth 2.0 Authorization Code Flow with Proof Key for Code Exchange (PKCE)**."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "Ahrefs API is available on [eligible paid plans](https://ahrefs.com/pricing). On all other plans, you'll still have access to a [limited set of free test queries]"
+  },
+  {
+   "field": "access",
+   "url": "https://ahrefs.com/seo-api",
+   "quote": "API access is included in every Ahrefs plan from Lite up."
+  },
+  {
+   "field": "access",
+   "url": "https://developers.frontegg.com/agen-for-work/connectors/marketplace/ahrefs",
+   "quote": "Production access requires an Ahrefs Enterprise plan; development and testing are free."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.ahrefs.com/llms.txt",
+   "quote": "**Base URL:** `https://api.ahrefs.com/v3/{tool}/{endpoint}` (for example `https://api.ahrefs.com/v3/site-explorer/domain-rating`)."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.frontegg.com/agen-for-work/connectors/marketplace/ahrefs",
+   "quote": "Site Explorer, Keywords Explorer, Site Audit, Rank Tracker, Brand Radar, Social Media, batch analysis, subscription info, and management endpoints."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.ahrefs.com/docs/mcp/introduction",
+   "quote": "Ahrefs provides a hosted MCP server that allows users with a Lite plan or higher to connect their Ahrefs account to supported AI tools."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

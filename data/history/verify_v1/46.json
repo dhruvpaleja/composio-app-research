@@ -1,0 +1,28 @@
+{
+ "id": "46",
+ "name": "Squarespace",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.squarespace.com",
+    "https://developers.squarespace.com/commerce-apis/overview",
+    "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+    "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+    "https://support.squarespace.com/api/v2/help_center/en-us/articles/236297987.json",
+    "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+    "https://supergood.ai/api-report-card/squarespace"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

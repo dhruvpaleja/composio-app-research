@@ -1,0 +1,61 @@
+{
+ "one_liner": "Threads API is a free REST Graph-style API with OAuth 2.0 user tokens; self-serve dev access works for testers, but multi-user use needs Meta App Review.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code flow at threads.com/oauth/authorize; short-lived (1h) tokens exchanged for 60-day long-lived tokens, refreshable. App access tokens (client_credentials) exist only for narrow APIs like oEmbed.",
+ "access": "app_review",
+ "access_notes": "API is free and self-serve for app roles/testers (own account), but users without a role on the app require per-permission Meta App Review (and Tech Provider verification per some sources).",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "community",
+ "mcp_url": "https://github.com/baguskto/threads-mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Meta App Review required per permission before arbitrary end users can authorize the app; development and testing possible meanwhile with tester accounts.",
+ "docs_url": "https://developers.facebook.com/docs/threads",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/docs/threads/get-started?locale=en_US",
+   "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/documentation/threads/get-started/app-access-tokens",
+   "quote": "Use an app access token to make requests to the Threads API on behalf of an app rather than a user."
+  },
+  {
+   "field": "access",
+   "url": "https://blog.lots.social/threads-api-free-access-posting-limits-app-review",
+   "quote": "Posting to your own account needs a Meta app and no review. Posting for other people needs App Review"
+  },
+  {
+   "field": "access",
+   "url": "https://blotato.com/blog/threads-api-pricing",
+   "quote": "Meta publishes no paid tier, no per-call fee, and no pricing page in the official Threads developer docs."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.facebook.com/documentation/threads/threads-profiles",
+   "quote": "Use the `GET /{threads-user-id}?fields=id,username,...` endpoint to return profile information about a Threads user."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/MetaThreads/meta-threads-mcp",
+   "quote": "Unofficial MCP server for Meta's Threads API. Enables LLMs like Claude to publish posts, manage replies, and track insights through the Model Context Protocol."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,57 @@
+{
+ "one_liner": "Vercel has a broad REST API with self-serve access tokens (free Hobby plan) and an official remote MCP server; a toolkit is buildable now.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Access tokens are self-serve from the Account Tokens page (Full Account, Team, or Project scope). OAuth 2.0 exists via Sign in with Vercel (authorize and token endpoints) and via Marketplace integrations. The Sign in with Vercel evidence covers identity and permission scopes, so OAuth coverage of the full REST API is not confirmed. If it falls short, use access tokens as the fallback.",
+ "access": "self_serve_free",
+ "access_notes": "A free Hobby plan and a free Vercel account are enough to create access tokens and call the REST API. Some features, such as AI Gateway, have a free tier plus paid credits.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.vercel.com",
+ "docs_url": "https://vercel.com/docs/rest-api",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker found. The evidence does not confirm an OpenAPI spec or webhooks, and it does not show which REST scopes OAuth tokens can reach.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://vercel.com/docs/rest-api/getting-started",
+   "quote": "Use a Vercel access token to call the Vercel REST API with `curl`, then make the same request with `@vercel/sdk`."
+  },
+  {
+   "field": "auth",
+   "url": "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api",
+   "quote": "The Authorization Server API exposes a set of endpoints which are used by your application for obtaining, refreshing, revoking, and introspecting tokens"
+  },
+  {
+   "field": "access",
+   "url": "https://vercel.co/pricing",
+   "quote": "Our Hobby plan is free and a great way to get started."
+  },
+  {
+   "field": "api",
+   "url": "https://vercel.com/docs/rest-api/getting-started",
+   "quote": "Both examples retrieve at most one project with `GET /v10/projects` and do not change your account."
+  },
+  {
+   "field": "mcp",
+   "url": "https://mcp.vercel.com/docs/project-configuration",
+   "quote": "Vercel MCP is Vercel's official MCP server. It's a remote MCP with OAuth that gives AI tools secure access to your Vercel projects"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

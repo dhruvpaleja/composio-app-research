@@ -1,0 +1,67 @@
+{
+ "id": "84",
+ "name": "Paygent Connect",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://api.paygent.tech/docs",
+    "https://docs.withpaygent.com/documentation/paygent-sd-ks/installation",
+    "https://docs.withpaygent.com/documentation/introduction/agents-indicators",
+    "https://gopaygent.com",
+    "https://docs.paygent.to/getting-started/quickstart",
+    "https://docs.paygent.to/getting-started/assign-users-to-plans",
+    "https://gopaygent.com/resources/partners",
+    "https://docs.withpaygent.com/documentation/introduction/subscription-fees",
+    "https://paygent.ai/partner-network"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://api.paygent.tech/docs",
+    "https://docs.withpaygent.com/documentation/paygent-sd-ks/installation",
+    "https://docs.withpaygent.com/documentation/introduction/agents-indicators",
+    "https://gopaygent.com",
+    "https://npm.io/package/@paygent-ai/mcp-server",
+    "https://github.com/FoxRick/paygentic-sdk",
+    "https://docs.withpaygent.com/cli/get-started/quickstart"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

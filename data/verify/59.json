@@ -1,0 +1,52 @@
+{
+ "id": "59",
+ "name": "Waterfall.io",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.wpwaterfall.com/mcp/overview",
+    "https://docs.wpwaterfall.com/features/agents",
+    "https://waterfall.io",
+    "https://docs.waterfall.io/v1/introduction",
+    "https://docs.waterfall.io/v1/faq",
+    "https://docs.waterfall.io/v1/book-demo",
+    "https://docs.waterfall.io/v1/about-waterfall",
+    "https://docs.waterfall.io/v1/authentication",
+    "https://waterfall.io/book-a-call"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://docs.wpwaterfall.com/mcp/overview",
+    "https://docs.wpwaterfall.com/features/agents",
+    "https://waterfall.io",
+    "https://docs.waterfall.io/v1/introduction",
+    "https://docs.waterfall.io/v1/skills-direct-api",
+    "https://docs.waterfall.io/v1/skills-integration",
+    "https://docs.waterfall.io/v1/skills-overview",
+    "https://docs.waterfall.io/v1/faq",
+    "https://docs.workato.com/en/mcp/prebuilt-mcps/waterfall-lead-enrichment-mcp-server"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

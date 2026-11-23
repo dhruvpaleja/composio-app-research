@@ -1,0 +1,121 @@
+{
+ "one_liner": "Salesforce B2C Commerce has broad REST APIs (SCAPI) that use OAuth-style tokens (SLAS for shopper calls, Account Manager for admin calls). They need a B2C Commerce instance and a per-merchant API client. The pages don't show a free self-serve path for an individual developer, only a shared demo sandbox and on-demand sandboxes.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Shopper APIs use SLAS (OAuth 2.1) with a SLAS client that is private (with a secret) or public. Admin APIs use an Account Manager token from an API client. Each merchant or realm must create its own API client. Account Manager clients can optionally authenticate with a JWT public key.",
+ "access": "paid_plan",
+ "access_notes": "The pages say the API is available at no extra cost to B2C Commerce customers, so access is tied to owning an instance. A shared demo sandbox and on-demand sandboxes are mentioned. The pages don't show whether an individual can get their own credentials without a customer realm. Low confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/b2c-developer-tooling.html#connect-your-ai-assistant",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Needs a B2C Commerce instance (customer-owned or on-demand sandbox) and a per-customer Account Manager or SLAS API client. The pages don't settle whether a free self-serve path exists. Whether Salesforce provisions these to non-customers would need outreach.",
+ "docs_url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "The B2C Commerce API (SCAPI) is a set of RESTful APIs for building storefronts, merchant tools, and integrations on the B2C Commerce platform.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "| **Authentication** | [SLAS](https://developer.salesforce.com/docs/commerce/commerce-api/guide/slas.html) (OAuth 2.1) | [Account Manager](https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html) |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://help.salesforce.com/s/articleView?id=cc.b2c_account_manager_add_api_client_id.htm&language=en_US&type=5",
+   "quote": "Account administrators can use Account Manager to create API clients.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "For B2C Commerce customers, the API is available at no extra cost.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "If you don\u2019t have a B2C Commerce instance, try the demo sandbox used in the example above.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "or create an [on-demand sandbox]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "To explore SCAPI with your assistant, use the [B2C MCP](https://developer.salesforce.com/docs/commerce/commerce-api/guide/b2c-developer-tooling.html#connect-your-ai-assistant).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "openapi_spec",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+   "quote": "or the API specs in [`commerce-sdk`]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 556
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

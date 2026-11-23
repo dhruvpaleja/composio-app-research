@@ -1,0 +1,56 @@
+{
+ "one_liner": "Snowflake has a broad REST API (SQL API, Cortex, Python API) with OAuth and PAT auth, trial accounts available, and an official managed MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Snowflake OAuth (and External OAuth) is supported; programmatic access tokens are static secrets users generate; key-pair JWT is also supported by Snowflake generally (from background knowledge). Each customer has own account URL.",
+ "access": "self_serve_trial",
+ "access_notes": "Snowflake offers a time-limited free trial account; ongoing use is paid consumption-based. Each customer account requires per-account setup (account identifier, OAuth security integration created by ACCOUNTADMIN).",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.snowflake.com/en/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Only trial access is free; per-customer account URL and admin-created OAuth integration are needed.",
+ "docs_url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+ "webhooks": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/user-guide/programmatic-access-tokens.md",
+   "quote": "You can generate programmatic access tokens for human users (users with TYPE=PERSON) as well as service users (users with TYPE=SERVICE or TYPE=SERVICE_AGENT)."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+   "quote": "Snowflake OAuth by default, with optional External OAuth so MCP clients can authenticate against your organization\u2019s identity provider."
+  },
+  {
+   "field": "access",
+   "url": "https://snowflake.com/wp-content/uploads/2023/08/sm-provider-playbook-extended-ver.pdf",
+   "quote": "Upgrading your account from a trial account to a paid account is required in order to create a listing."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-rest-api",
+   "quote": "Your **Snowflake account URL** (for example, `https://<account-identifier>.snowflakecomputing.com`)."
+  },
+  {
+   "field": "mcp",
+   "url": "https://snowflake.com/en/developers/guides/getting-started-with-snowflake-mcp-server",
+   "quote": "The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without deploying separate infrastructure."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

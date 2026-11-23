@@ -1,0 +1,53 @@
+{
+ "id": "66",
+ "name": "Neo4j",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/neo4j-contrib/gds-agent",
+    "https://github.com/neo4j-contrib/mcp-neo4j",
+    "https://neo4j.com/docs/aura/api/authentication",
+    "https://neo4j.com/partners/solution-partners",
+    "https://neo4j.com/partners/technology-partners",
+    "http://neo4j.com/partners/solution-partners",
+    "https://neo4j.com/terms/partner-program-benefits-requirements",
+    "https://go.neo4j.com/rs/710-RRC-335/images/Master-Partner-Agreement_Prepared.pdf",
+    "http://neo4j.com/partners/neo4j-partner-program"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "neo4j",
+    "name": "Neo4J",
+    "auth_schemes": [
+     "OAUTH2",
+     "BASIC",
+     "API_KEY",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 21
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "io.github.neo4j-contrib/gds-agent",
+   "io.github.neo4j-contrib/mcp-neo4j-aura-manager",
+   "io.github.neo4j-contrib/mcp-neo4j-cypher",
+   "io.github.neo4j-contrib/mcp-neo4j-data-modeling",
+   "io.github.neo4j-contrib/mcp-neo4j-memory"
+  ],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

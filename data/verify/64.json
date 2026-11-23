@@ -1,0 +1,76 @@
+{
+ "id": "64",
+ "name": "Cloudflare",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/cloudflare/mcp-server-cloudflare",
+    "https://developers.cloudflare.com/api",
+    "https://developers.cloudflare.com/api/",
+    "https://developers.cloudflare.com/tenant/reference/subscriptions",
+    "https://developers.cloudflare.com/tenant/llms-full.txt",
+    "https://developers.cloudflare.com/tenant/get-started",
+    "https://developers.cloudflare.com/tenant/reference/subscriptions/index.md",
+    "https://github.com/cloudflare/cloudflare-docs/raw/refs/heads/production/src/content/docs/tenant/get-started.mdx",
+    "https://github.com/cloudflare/cloudflare-docs/blob/production/src/content/docs/tenant/get-started.mdx"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developers.cloudflare.com/api",
+    "https://developers.cloudflare.com/api/",
+    "https://developers.cloudflare.com/email-service/api/send-emails/rest-api",
+    "https://cloudflare.com/docs/client-api.html",
+    "https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/list",
+    "https://developers.cloudflare.com/ruleset-engine/rulesets-api/view",
+    "https://developers.cloudflare.com/ai-search/api/search/rest-api/index.md",
+    "https://developers.cloudflare.com:8443/api/resources/hostnames"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 170
+   },
+   {
+    "slug": "cloudflare_mcp",
+    "name": "Cloudflare MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 3
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "com.cloudflare.mcp/mcp"
+  ],
+  "mcp_registry_any": 21,
+  "composio_mcp_toolkits": [
+   "cloudflare_mcp"
+  ]
+ }
+}

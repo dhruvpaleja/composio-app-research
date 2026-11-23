@@ -1,0 +1,44 @@
+{
+ "id": "86",
+ "name": "QuickBooks",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.intuit.com",
+    "https://developer.intuit.com/app/developer/qbo/docs/get-started/start-developing-your-app",
+    "https://apideck.com/blog/quickbooks-api-pricing-and-the-intuit-app-partner-program",
+    "https://quickbooks.intuit.com/community/reports-87/can-you-provide-quickbooks-api-access-for-historical-client-data-to-build-our-internal-dashboard-including-any-api-limits-restrictions-and-charges-376139",
+    "https://static.developer.intuit.com/output_html/qbo/docs/get-started/partner-faq.html",
+    "https://investors.intuit.com/_assets/_eb3c470873fd72946bd47a075ad5115f/intuit/news/2025-07-28_Intuit_Launches_New_App_Partner_Program_to_Drive_1261.pdf",
+    "https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program",
+    "https://raw.githubusercontent.com/intuit/intuit-plugins-official/main/plugins/quickbooks-labs/.mcp.json",
+    "https://github.com/intuit/quickbooks-online-mcp-server"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "quickbooks",
+    "name": "QuickBooks",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 114
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 8,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "id": "16",
+ "name": "LiveAgent",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+    "https://cdn.liveagent.com/features/mcp-server",
+    "https://support.liveagent.com/578762-MCP-Tools-Reference",
+    "https://support.liveagent.com/278609-Setting-up-AI-Agents-feature-via-FlowHunt",
+    "https://changelog.liveagent.com/all",
+    "https://faq.liveagent.com/114892-MCP-Integration-Guide-for-LiveAgent-Agents-Early-Preview",
+    "https://liveagent.com",
+    "https://support.liveagent.com/567924-Documentation",
+    "https://support.liveagent.com/674103-ResellerPartner-program"
+   ],
+   "changed": {
+    "verdict": [
+     "ready_with_friction",
+     "ready"
+    ],
+    "blocker": [
+     "other",
+     "none"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

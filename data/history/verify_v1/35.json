@@ -1,0 +1,72 @@
+{
+ "id": "35",
+ "name": "Mailchimp",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://mailchimp.com/developer",
+    "https://mailchimp.com/developer/marketing/api",
+    "https://mailchimp.com/developer/integration-partner-program",
+    "https://mailchimp.com/developer/marketing/build",
+    "https://mailchimp.com/partners/integrations",
+    "https://mailchimp.com/developer/guides/an-introduction-to-rest",
+    "https://mailchimp.com/developer/marketing/build/get-started/create-an-account"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://mailchimp.com/developer",
+    "https://mailchimp.com/developer/marketing/api",
+    "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md",
+    "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp",
+    "https://github.com/cyanheads/mailchimp-mcp-server/blob/main/README.md",
+    "https://raw.githubusercontent.com/alexlaguardia/mcp-mailchimp/HEAD/README.md",
+    "https://mailchimp.com/developer/marketing/build/ai-tools"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "official"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 275
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

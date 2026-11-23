@@ -1,0 +1,68 @@
+{
+ "one_liner": "Close is a CRM with a broad REST API, self-serve OAuth app registration, API keys, and an official remote MCP server; the builder needs a 14-day trial or a free secondary or dev org to test.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code flow with self-serve app creation, refresh tokens via offline_access, and all apps get full_access scope. API keys are sent via HTTP Basic (key as username, empty password).",
+ "access": "self_serve_trial",
+ "access_notes": "No free plan. A 14-day free trial with no credit card is available. API access starts on the Solo plan. Existing Close users can create a free secondary org. Non-users can request a free Dev org by email. OAuth apps keep working after a subscription lapses.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.close.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Builder needs a trial, a secondary org or a free Dev org (request by email). A self-serve trial plus the free dev org path is enough to build and test.",
+ "docs_url": "https://developer.close.com/",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.close.com/integrations/create-an-oauth-app",
+   "quote": "All OAuth applications are granted the `all.full_access offline_access` scopes, providing the same level of access as API keys."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.close.com/api/overview/oauth-authentication",
+   "quote": "The Authorization Code can be exchanged for an Access Token by performing a POST request with form-encoded parameters to `https://api.close.com/oauth2/token/`"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.close.com/api/overview/api-key-authentication",
+   "quote": "API keys use [HTTP Basic client side authentication]"
+  },
+  {
+   "field": "access",
+   "url": "https://close.io/pricing",
+   "quote": "Start your free 14-day trial\u2014no credit card required."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.close.com/integrations",
+   "quote": "Dev organizations work identically to standard Close organizations but have no subscription fees."
+  },
+  {
+   "field": "api",
+   "url": "https://close.com/pricing",
+   "quote": "Close provides a REST API for building custom integrations, connecting your applications, and automating sales processes."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.close.com/mcp",
+   "quote": "The MCP server URL is `https://mcp.close.com/mcp` and has \u201cHTTP Streamable\u201d and \u201cOAuth 2.0 Dynamic Client Registration (DCR)\u201d support."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

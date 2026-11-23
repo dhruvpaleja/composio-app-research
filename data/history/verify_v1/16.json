@@ -1,0 +1,69 @@
+{
+ "id": "16",
+ "name": "LiveAgent",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://liveagent.com",
+    "https://support.liveagent.com/567924-Documentation",
+    "https://support.liveagent.com/674103-ResellerPartner-program",
+    "https://faq.liveagent.com/824713-What-are-the-benefits-of-the-Enterprise-plan",
+    "https://liveagent.com/affiliate-program/terms-and-conditions",
+    "https://support.liveagent.com/651503-Partner-REST-API",
+    "https://faq.liveagent.com/703689-General"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "API_KEY",
+      "OAUTH2"
+     ],
+     [
+      "API_KEY"
+     ]
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://liveagent.com",
+    "https://support.liveagent.com/567924-Documentation",
+    "https://support.liveagent.com/674103-ResellerPartner-program",
+    "https://faq.liveagent.com/824713-What-are-the-benefits-of-the-Enterprise-plan",
+    "https://liveagent.com/blog/byok-ai",
+    "https://support.liveagent.com/802463-REST-API",
+    "https://support.liveagent.com/651503-Partner-REST-API"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "api",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

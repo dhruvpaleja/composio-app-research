@@ -1,0 +1,101 @@
+{
+ "one_liner": "Pumble has a free, self-serve REST API (API-key addon plus OAuth2 app SDK) and an official hosted MCP server. A toolkit is buildable now.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Pumble apps use an OAuth2 authorization-code flow (code exchange with client-id/client-secret); requests also need an x-app-token header. The API Keys addon gives a static bearer key with a narrower API, and Composio's existing toolkit uses API_KEY. Creating an app is self-serve through Configure apps. The OAuth auth_primary is only medium-confidence given the app-install step.",
+ "access": "self_serve_free",
+ "access_notes": "The API addon is available on all plans, including Free. The Free plan allows up to 3 addons. Only Owners and Admins can install apps, so the builder must own or admin a workspace (easy to create free).",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "webhooks": true,
+ "sandbox": false,
+ "openapi_spec": true,
+ "docs_url": "https://cake-com.github.io/pumble-node-sdk/",
+ "mcp": "official",
+ "mcp_url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: the OAuth app requires a public HTTP server for events, and the API key addon has limited endpoints. Neither blocks a toolkit.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+   "quote": "you must first generate an API key within your Pumble workspace administration panel. This token must be passed inside the HTTP header of every request as a bearer token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://api-ga.pumble.com/v3/api-docs/Pumble-api-v1",
+   "quote": "It's mandatory to include the token (access token issued to user/bot) and x-app-token (app token issued to your app, prefixed with 'xpat-') headers in every request",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+   "quote": "Available on all plans",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.withpersona.com/articles/nBLp2ttHIYjnF2FCO5dOEr",
+   "quote": "A Pumble workspace where you are allowed to install apps. The free Pumble plan is enough.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pumble.com/help/integrations/add-pumble-apps/guide-to-pumble-integrations",
+   "quote": "Only Owners and Admins can install apps.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+   "quote": "This addon lets you generate an API key that allows you to send messages, reactions, and more via simple HTTP requests.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+   "quote": "Pumble maintains a native MCP (Model Context Protocol) server hosted directly at pumble.com, helping you connect your workspace to your AI agent of choice.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "pumble",
+    "name": "Pumble",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

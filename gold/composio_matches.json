@@ -1,0 +1,5 @@
+{
+ "_note": "Hand-reviewed corrections to the automatic Composio catalog match (the automatic prefix/name match produced false hits such as google_* for Google Ads and salesforce for Salesforce Commerce Cloud). Listed apps use exactly these slugs.",
+ "7": ["zoho"], "23": ["zoho_cliq"], "28": ["whatsapp"], "31": ["googleads"], "32": ["metaads"],
+ "33": ["linkedin_ads"], "39": ["threads"], "44": [], "45": [], "91": ["notebook_lm"]
+}

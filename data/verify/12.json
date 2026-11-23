@@ -1,0 +1,55 @@
+{
+ "id": "12",
+ "name": "Intercom",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://intercom.com/integrations/connectors/intercom-mcp-server",
+    "https://intercom.com",
+    "https://developers.intercom.com/docs",
+    "https://intercom.help/easypoints/en/articles/12605261-api-access",
+    "https://intercom.com/technology-partner-program",
+    "https://intercom.help/easypoints/en/articles/12605265-comparing-the-plans",
+    "https://intercom.com/solution-partner-program",
+    "https://intercom.help/renowned-us/en/articles/9505255-build-your-own-custom-integration",
+    "http://intercom.com/app-partner-program"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "intercom",
+    "name": "Intercom",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 138
+   },
+   {
+    "slug": "intercom_mcp",
+    "name": "Intercom MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 15
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": [
+   "intercom_mcp"
+  ]
+ }
+}

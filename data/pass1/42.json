@@ -1,0 +1,68 @@
+{
+ "one_liner": "WooCommerce is a free, open-source WordPress plugin whose REST API (wc/v3) is authenticated with merchant-generated consumer key/secret, so a builder can self-host a store and test right away.",
+ "auth_methods": [
+  "API_KEY",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Merchant generates a Consumer Key/Secret in WooCommerce > Settings > Advanced > REST API. Over HTTPS the key is the Basic Auth username and the secret is the password. Over HTTP, OAuth 1.0a HMAC-SHA1 signing is used, which is why OTHER is listed. WordPress Application Passwords are used for the MCP/abilities path. There is no OAuth2 flow for the core REST API.",
+ "access": "self_serve_free",
+ "access_notes": "No developer programme or application is needed. WooCommerce is a free plugin, so a developer can run a store on their own WordPress site and generate keys. Each customer's store is self-hosted, so a store URL has to be collected per user.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developer.woocommerce.com/docs/features/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Each user must supply their own store URL and generate keys. HTTPS and pretty permalinks are required. These are per-customer setup steps, not blockers for the builder.",
+ "docs_url": "https://developer.woocommerce.com/docs/apis/rest-api",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+   "quote": "Pre-generated keys can be used to authenticate use of the REST API endpoints."
+  },
+  {
+   "field": "auth",
+   "url": "https://woocommerce.com/document/subscriptions/develop/rest-api",
+   "quote": "Over HTTPS, send the Consumer Key as the Basic Auth username and the Consumer Secret as the password"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.intelligent.page/connectors/woocommerce",
+   "quote": "WooCommerce implements OAuth 1.0a signing with HMAC-SHA1 and no token exchange step"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.intelligent.page/connectors/woocommerce",
+   "quote": "There is no developer programme and nothing to apply for."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.woocommerce.com/docs/apis/rest-api",
+   "quote": "This allows WC data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.woocommerce.com/docs/features/mcp",
+   "quote": "WooCommerce registers product and order abilities in WordPress. With the MCP Adapter plugin, AI clients can discover and run these store operations through the Model Context Protocol"
+  },
+  {
+   "field": "mcp",
+   "url": "https://woocommerce.com/document/woocommerce-ai/mcp-server",
+   "quote": "Connect an external Model Context Protocol (MCP) client to your store\u2019s WooCommerce AI server."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,115 @@
+{
+ "one_liner": "Twenty is an open-source CRM with REST and GraphQL APIs, OAuth 2.0 with self-serve dynamic client registration, API keys, and an official MCP server. Builders can get credentials from a free self-hosted instance or a cloud trial.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization code + PKCE and client credentials. Clients register programmatically via RFC 7591 dynamic client registration, with no manual setup. API keys are Bearer tokens created in Settings \u2192 Developers \u2192 API. Each workspace has its own schema, and cloud and self-hosted base URLs differ.",
+ "access": "self_serve_trial",
+ "access_notes": "Cloud has no free plan. Twenty's pricing page says \"Start your free trial today without credit card.\" A third-party directory says the in-app 30-day trial needs a card. The Pro plan is $9/user/month, and it includes the REST & GraphQL API, webhooks and the MCP server. Self-hosted Free is $0 and includes all Pro CRM features, so a developer can also get API credentials at no cost.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.twenty.com/developers/extend/mcp",
+ "docs_url": "https://docs.twenty.com/developers/extend/api",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No real blocker. A free self-hosted instance or a cloud trial is enough to build and test. The API schema is per workspace and includes custom objects, so the toolkit should discover the schema at runtime.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.twenty.com/developers/extend/oauth",
+   "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.twenty.com/developers/extend/oauth",
+   "quote": "Twenty supports **dynamic client registration** per [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591). No manual setup needed \u2014 register programmatically:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.twenty.com/developers/extend/api",
+   "quote": "Create an API key in **Settings \u2192 Developers \u2192 API \u2192 + Create key**. Copy it immediately \u2014 it\u2019s shown once.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://twenty.com/pricing",
+   "quote": "Start your free trial today without credit card.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.twenty.com/user-guide/billing/capabilities/pricing-plans",
+   "quote": "Host Twenty on your own infrastructure at no cost:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://onegtmlab.dev/tool-directory/crm/twenty",
+   "quote": "Self-hosted Free: $0 with all Pro features (community support). No free cloud plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.twenty.com/developers/extend/api",
+   "quote": "**Core API** \u2014 `/rest/` and `/graphql/` CRUD on records: People, Companies, Opportunities, your custom objects.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://twenty.com/pricing",
+   "quote": "MCP server\n\nYes\n\nYes\n\nYes",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.twenty.com/developers/extend/mcp",
+   "quote": "Twenty exposes an [MCP](https://modelcontextprotocol.io/) server so that AI assistants \u2014 Claude Desktop, Claude Code, Cursor, ChatGPT, and others \u2014 can read and write your CRM data",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "twenty",
+    "name": "Twenty",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 23
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

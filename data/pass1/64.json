@@ -1,0 +1,63 @@
+{
+ "one_liner": "Cloudflare has a broad REST API with self-serve API tokens on a free account, OAuth client registration, and an official MCP server covering the whole API.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API tokens (Bearer) are the recommended, documented method. The legacy Global API Key is sent as X-Auth-Email/X-Auth-Key headers. OAuth clients (authorization_code) can be created self-serve in the dashboard, but the OAuth docs show limited scopes (e.g. workers-platform), and the evidence does not show it covering the whole API. API token is therefore primary. The OTHER entry is a weak placeholder for the legacy email+key header scheme.",
+ "access": "self_serve_free",
+ "access_notes": "Any Cloudflare account can create API tokens from the dashboard. Free-plan zones are supported. Some features (API Shield, Tenant/partner API) need Enterprise or a partner agreement, but the core API does not.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.cloudflare.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker for the core API. Tenant/partner and API Shield features are gated, but they are not needed for a toolkit.",
+ "docs_url": "https://developers.cloudflare.com/api/",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/api/quick",
+   "quote": "Cloudflare uses the RFC standardAuthorization: Bearer <Token> interface."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token",
+   "quote": "From the [Cloudflare dashboard \u2197\ufe0e](https://dash.cloudflare.com/profile/api-tokens/), go to **My Profile** > **API Tokens** for user tokens."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.cloudflare.com/fundamentals/oauth/create-an-oauth-client",
+   "quote": "To create an OAuth client, you must have one of these roles for the associated account: Super Administrator, Administrator, or OAuth Client Write."
+  },
+  {
+   "field": "access",
+   "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token",
+   "quote": "Select **Create Token**."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/cloudflare/mcp",
+   "quote": "A token-efficient MCP server for the entire Cloudflare API. 2500 endpoints in 1k tokens"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/cloudflare/mcp",
+   "quote": "MCP URL: `https://mcp.cloudflare.com/mcp`"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

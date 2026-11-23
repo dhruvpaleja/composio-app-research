@@ -1,0 +1,133 @@
+{
+ "one_liner": "Plaid is a broad REST financial data API with a free Sandbox, a free Trial plan for new US/CA teams, and paid production access after approval. Core calls use a client_id and secret, and a separate OAuth service covers dashboard/MCP and consumer-report tokens.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The API reference pages show that requests carry a Plaid client_id (PLAID-CLIENT-ID header or body) and a secret (PLAID-SECRET header or body). Those are static credentials, so API_KEY. Plaid also runs an OAuth 2.0 service at /oauth/token that supports client_credentials, refresh_token and token-exchange grants, with scopes such as user:read and mcp:dashboard. The page says it is for consumer-report sharing, the Plaid Dashboard and other Plaid services. It is not the main route for the core product APIs, so API_KEY stays primary. Per-Item access_tokens from Link are not covered by the fetched pages.",
+ "access": "self_serve_free",
+ "access_notes": "Sandbox is always free. New US/CA teams created on or after 2026-04-15 can get a free Trial plan with production APIs. Full Production needs approval (a few business days, with company and use-case info) and is paid. EU/UK customers can only get Custom plans.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": null,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Sandbox and the Trial plan are self-serve. Scaling to full Production needs approval with company and use-case information, and each end user must complete Plaid Link. The Trial plan is limited to US/CA teams.",
+ "docs_url": "https://plaid.com/docs/",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://plaid.com/docs/account/billing",
+   "quote": "Free Trial plans are available to new Plaid teams (US/Canada only) created on or after April 15, 2026.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://plaid.com/docs/account/billing",
+   "quote": "These models only apply to Production traffic; usage of Sandbox is always free.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different",
+   "quote": "Required (a few business days; company + use-case info)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.plaid.com/hc/en-us/articles/39994173227159-What-is-the-Plaid-Trial-plan",
+   "quote": "The Plaid Trial plan provides free access to Plaid's production APIs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://plaid.com/docs/account/billing",
+   "quote": "If your business is based in the EU or UK, or serves end users there, only Custom plans are available.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://plaid.com/docs/",
+   "quote": "Explore server-side API libraries and integrate with API endpoints",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://plaid.com/docs/api/oauth",
+   "quote": "`client_credentials` allows exchanging a client id and client secret for a refresh and access token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://plaid.com/docs/api/oauth",
+   "quote": "Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://plaid.com/docs/api/oauth",
+   "quote": "These endpoints are for customers, partners and services that are integrating with Plaid's OAuth service to obtain a token for sharing consumer reports or accessing the Plaid Dashboard or other Plaid services.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://plaid.com/docs/api/oauth",
+   "quote": "`mcp:dashboard` allows access to the MCP dashboard server.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "plaid",
+    "name": "Plaid",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 70
+   },
+   {
+    "slug": "plaid_mcp",
+    "name": "Plaid MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 5
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "plaid_mcp"
+  ]
+ }
+}

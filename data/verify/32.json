@@ -1,0 +1,55 @@
+{
+ "id": "32",
+ "name": "Meta Ads",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.facebook.com/docs/marketing-apis",
+    "https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api",
+    "https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/integration",
+    "https://developers.facebook.com/docs/marketing-api/access",
+    "https://developers.facebook.com/documentation/ads-commerce/marketing-api/brand-safety-and-suitability/brand-safety-partners.md",
+    "https://developers.secure.facebook.com/documentation/ads-commerce/conversions-api/guides/conversions-api-crm-for-platforms",
+    "https://developers.facebook.com/documentation/ads-commerce/conversions-api/business-messaging",
+    "https://goodmorningco.com/blog/meta-marketing-api-rate-limits",
+    "https://variafy.com/guides/meta-marketing-api"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "facebook",
+    "name": "Facebook",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 72
+   },
+   {
+    "slug": "metaads",
+    "name": "Meta Ads",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 99
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

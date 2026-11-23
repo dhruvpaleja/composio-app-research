@@ -1,0 +1,66 @@
+{
+ "id": "87",
+ "name": "Xero",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.xero.com",
+    "https://developer.xero.com/pricing",
+    "https://radar.apideck.com/blog/xero-api-pricing-and-the-app-partner-program",
+    "https://docs.chift.eu/connectors/accounting/xero",
+    "https://developers.apideck.com/connectors/xero/docs/application_owner+oauth_credentials",
+    "https://developer.xero.com/faq/pricing-and-policy-updates",
+    "https://wiki.licenseware.io/wiki/xero-developer-platform-plans-and-api-limits"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developer.xero.com",
+    "https://developer.xero.com/documentation/api/Accounts",
+    "https://developer.xero.com/documentation/api/BankTransactions",
+    "http://developer.xero.com/documentation/getting-started/http-requests-and-responses",
+    "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_accounting.yaml",
+    "https://developer.xero.com/documentation/api/Journals",
+    "https://developer.xero.com/documentation/api/Attachments"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "xero",
+    "name": "Xero",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 109
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

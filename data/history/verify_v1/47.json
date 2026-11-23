@@ -1,0 +1,59 @@
+{
+ "id": "47",
+ "name": "Ecwid",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://api-docs.ecwid.com",
+    "https://docs.ecwid.com",
+    "https://docs.ecwid.com/api-reference/partner-api/partner-api-calls",
+    "https://support.ecwid.com/hc/en-us/articles/5427019897884-Ecwid-reseller-program",
+    "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "https://docs.violet.io/ecom-platforms/ecwid",
+    "https://litextension.com/faq/docs/shopping-cart-questions/ecwid/how-to-retrieve-ecwid-api-from-admin-panel"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://api-docs.ecwid.com",
+    "https://docs.ecwid.com",
+    "https://vinkius.com/pdf/ecwid-mcp.pdf",
+    "https://docs.popmcp.com/docs/integrations/ecwid",
+    "https://popmcp.com/mcp-servers/ecwid",
+    "https://mcplantern.com/server/io-usefulapi-ecwid",
+    "https://vinkius.com/en/ai-agent-connect/ecwid"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

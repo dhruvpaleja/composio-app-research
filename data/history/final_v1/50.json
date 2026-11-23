@@ -1,0 +1,123 @@
+{
+ "one_liner": "Fanbasis (now Commas) has a REST public API at www.fanbasis.com/public-api using an x-api-key header, with sandbox and webhooks. OAuth 2.0 PKCE is mentioned by a third party but not confirmed for general developers. No vendor MCP was found.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The Commas API reference says all requests need an x-api-key header, and the laravel-payments doc says the key comes from the dashboard. Aura's doc says Fanbasis uses OAuth 2.0 with PKCE, but Aura describes its integration as gated. The pages don't show a self-serve OAuth app flow for third-party developers, so OAUTH2 is left out. Webhook HMAC-SHA256 signing is for verifying inbound events and is not an auth method for API calls.",
+ "access": "self_serve_free",
+ "access_notes": "The API key comes from the dashboard. The pages show no plan gating or approval step, and Whop's blog says it is free to start selling. No page confirms outright that API access is free or ungated, so this is inferred.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker is evidenced. Caveats: Aura says Fanbasis has not yet published product and order endpoints for OAuth integrations, and account or merchant approval requirements are unverified. The official apidocs.fan was not fetched.",
+ "docs_url": "https://apidocs.fan",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+   "quote": "x-api-key: YOUR_API_KEY",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "No OAuth, no client ID/secret pairs \u2014 Fanbasis uses a single API key with separate test/live environments.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.aura-app.ai/integrations/fanbasis",
+   "quote": "Fanbasis is currently a gated integration.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "**API Key** \u2014 [FanBasis Dashboard \u2192 API Keys](https://www.fanbasis.com). Required for all API calls.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://whop.com/blog/fanbasis-alternatives",
+   "quote": "It's free to start selling, as FanBasis operates on a revenue-share model, meaning they make money when you do.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "Full Fanbasis API integration: checkout sessions, customers, subscribers, discount codes, products, transactions, refunds, and webhook management.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+   "quote": "https://www.fanbasis.com/public-api/products",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "The package handles all 12 Fanbasis webhook event types:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+   "quote": "The sandbox environment allows you to test payments without real money:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

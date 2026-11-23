@@ -1,0 +1,96 @@
+{
+ "one_liner": "Ecwid has a broad REST API with OAuth2 for public apps and non-expiring secret tokens for custom apps, but API access requires a paid store plan (free test-store upgrade available via email).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Public/external apps use OAuth 2.0 authorization-code flow to obtain per-store access tokens; custom apps get non-expiring secret/public tokens from the app dashboard, sent as Bearer.",
+ "access": "paid_plan",
+ "access_notes": "Only stores on paid plans can access the API; no free plan or trial. Developers can email API support for a free upgrade of a test store.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://ecwid.usefulapi.io/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "API requires a paid Ecwid plan; the builder must email Ecwid API support to get a free test-store upgrade, or pay (Starter about $5/mo).",
+ "docs_url": "https://docs.ecwid.com/api-reference",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+   "quote": "Ecwid uses OAuth 2.0 to provide secure access to the store data for public apps.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.ecwid.com/develop-apps/app-settings",
+   "quote": "Access tokens - non-expiring authorization keys for REST API requests.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "quote": "Only stores on paid plans can access API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "quote": "Ecwid provides a **free upgrade to a paid plan** if you:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.ecwid.com/api-reference",
+   "quote": "Ecwid REST API allows you to access and manage any store data, payment and shipping methods, and storefront settings.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developers.ecwid.com/customize-your-ecwid-store",
+   "quote": "Get notified about store events for different entities \u2014 products, categories, orders, abandoned carts, and more.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://usefulapi.io/ecwid",
+   "quote": "Read store products, orders, customers, categories and coupons; adjust inventory and update orders. Hosted by **usefulapi**",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://vinkius.com/pdf/ecwid-mcp.pdf",
+   "quote": "This MCP server is hosted and maintained by the Vinkius Cloud for AI Agents.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

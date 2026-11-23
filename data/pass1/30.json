@@ -1,0 +1,68 @@
+{
+ "one_liner": "Vonage offers self-serve REST communications APIs (SMS, Voice, Messages, Verify, etc.) with API key/secret and JWT auth, free signup credit, and official MCP servers.",
+ "auth_methods": [
+  "API_KEY",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Account-level API key/secret (Basic header or legacy params) and application-signed JWT (self-minted with private key). OAuth exists only for Vonage Business Communications APIs (gated) and CAMARA network APIs; no user-authorization flow for the main API.",
+ "access": "self_serve_free",
+ "access_notes": "Free signup gives API key/secret, \u20ac2 test credit, and DEMO mode (up to 10 destination numbers). Production needs added credit. RCS requires managed-customer onboarding; VBC APIs require 50+ extensions and a CSM.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/Vonage-Community/vonage-mcp-server-api-bindings",
+ "docs_url": "https://developer.vonage.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free account gives working credentials with demo credit; the VBC and RCS sub-products are gated but the core APIs are not.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/verify/concepts/authentication",
+   "quote": "Basic Authentication sends your API Key and API Secret **Base64-encoded** in the `Authorization` header."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/dashboard/build/applications",
+   "quote": "Vonage APIs (Voice, Messages, Conversation, etc) use JSON Web Tokens (JWTs) for authentication. JWTs must be signed with the private key of your application."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/vonage-business-cloud/getting-started/create-an-access-token",
+   "quote": "Vonage Business Communications APIs use"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.vonage.com/en/messages/getting-started",
+   "quote": "When you create your Vonage account you are given \u20ac2 free test credit and your account is set in DEMO mode."
+  },
+  {
+   "field": "access",
+   "url": "https://support.vonagebusiness.com/articles/answer/Vonage-Business-Communications-APIs",
+   "quote": "Ensure your organization has 50 extensions or more."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.vonage.com/concepts/guides/authentication",
+   "quote": "Messages supports both JWT and Basic authentication, however basic authentication does not support webhooks or advanced features such as ACLs."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.vonage.com/en/mcp-server/technical-details",
+   "quote": "The Vonage MCP Server allows AI agents and developer tools to interact with Vonage APIs through the Model Context Protocol"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

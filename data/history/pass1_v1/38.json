@@ -1,0 +1,71 @@
+{
+ "one_liner": "Pinterest API v5 is a broad REST API with OAuth 2.0, free but gated by Pinterest's Trial approval and a Standard-access review; an official MCP server exists.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code flow with app ID and secret. Access tokens last 30 days and refresh tokens are supported. Trial-tier test tokens are also mentioned in the evidence, but OAuth is the main path.",
+ "access": "app_review",
+ "access_notes": "There is no API fee. A business account must request Trial access, and Pinterest reviews each request (typically 1-3 business days). Trial pins are visible only to their creator and have low rate limits. Standard access needs a review that includes a video demo of the OAuth flow.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": null,
+ "sandbox": true,
+ "openapi_spec": true,
+ "mcp": "official",
+ "mcp_url": "https://api.pinterest.com/mcp",
+ "docs_url": "https://developers.pinterest.com/docs/api/v5/",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "New apps need Trial approval, then a Standard-access review (demo video) before real multi-user use. Trial content is sandboxed to its creator.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+   "quote": "Make sure your API requests on a user\"s behalf include a current access token that identifies the user and defines your permissions, or scopes"
+  },
+  {
+   "field": "auth",
+   "url": "https://breakreach.com/developers/pinterest-api",
+   "quote": "Access tokens30 days. Continuous refresh tokens last 60 days and renew each time they're used"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+   "quote": "Application requests are reviewed by Pinterest. You will receive an email notification after your app has been reviewed, letting you know whether it was approved or denied access."
+  },
+  {
+   "field": "access",
+   "url": "https://plugkit.co/blog/pinterest-api-guide",
+   "quote": "If you are the only intended user of the Pinterest API, we will still require a video recording of the OAuth flow."
+  },
+  {
+   "field": "access",
+   "url": "https://blotato.com/blog/pinterest-api-pricing",
+   "quote": "Pinterest does not publish API access fees for v5. No price card, no per-call meter, no subscription fee."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/N-Graves/pinterest-mcp-server/blob/main/README.md",
+   "quote": "263 of Pinterest's 266 published operations are reachable."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.pinterest.com/docs/getting-started/make-an-api-call.md",
+   "quote": "curl --location --request GET 'https://api.pinterest.com/v5/pins' \\"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.pinterest.com/about-pinterest-mcp",
+   "quote": "The Pinterest MCP Server brings Pinterest data into the AI tools you already use, giving agents native access to rich inspiration and creative signals"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,94 @@
+{
+ "id": "20",
+ "name": "Gladly",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://gladly.com",
+    "https://developer.gladly.com/rest",
+    "https://connect.gladly.com/docs/help/article/generate-api-tokens-and-create-webhooks",
+    "https://help.gladly.com/product-docs/docs/set-up-the-gladly-ai-gorgias-integration",
+    "https://help.gladly.com/docs/smile-app-platform-installation",
+    "https://help.gladly.com/docs/set-up-the-gladly-ai-gorgias-integration",
+    "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://gladly.com",
+    "https://developer.gladly.com/rest",
+    "https://connect.gladly.com/docs/help/article/generate-api-tokens-and-create-webhooks",
+    "https://help.gladly.com/product-docs/docs/set-up-the-gladly-ai-gorgias-integration",
+    "https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks",
+    "https://developer.gladly.com/llms-full.txt",
+    "https://help.gladly.com/docs/requirements-for-setting-up-gladly-ai-with-your-helpdesk"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "none"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V2_mcp_registry",
+     "field": "mcp",
+     "why": "agent said none, registry returns 2 servers matching name"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

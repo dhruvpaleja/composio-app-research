@@ -1,0 +1,79 @@
+{
+ "id": "39",
+ "name": "Threads (Meta)",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.facebook.com/docs/threads",
+    "https://developers.secure.facebook.com/docs/threads/get-started/create-an-app",
+    "https://developers.facebook.com/docs/permissions/threads",
+    "https://developers.facebook.com/documentation/development/create-an-app/threads-use-case",
+    "https://developers.secure.facebook.com/documentation/threads/get-started.md",
+    "https://developers.facebook.com/documentation/threads/retrieve-and-discover-posts/retrieve-posts",
+    "https://blotato.com/blog/threads-api-pricing"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developers.facebook.com/docs/threads",
+    "https://github.com/baguskto/threads-mcp/blob/main/README.md",
+    "https://docs.getthread.com/super-magic/thread-mcp-server-developer-guide",
+    "https://github.com/poisonstefani-dev/threads-mcp"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "auth",
+     "why": "no evidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "facebook",
+    "name": "Facebook",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 72
+   },
+   {
+    "slug": "threads",
+    "name": "Threads",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 24
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 10,
+  "composio_mcp_toolkits": []
+ }
+}

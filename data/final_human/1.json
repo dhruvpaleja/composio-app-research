@@ -1,0 +1,126 @@
+{
+ "one_liner": "Salesforce has a broad REST/SOAP/Bulk/GraphQL API with OAuth2 and a free Developer Edition org, but its API terms require ISV Partner Program enrollment for commercial multi-customer use; vendor also offers MCP servers.",
+ "auth_methods": [
+  "OAUTH2",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 via connected apps / external client apps (authorization code, client credentials, JWT bearer). SOAP login() uses username+password(+security token). JWT is minted by the developer.",
+ "access": "self_serve_free",
+ "access_notes": "Developer Edition orgs have API access enabled by default and can be signed up for free. Production orgs need Enterprise+ or add-on (customer's cost). Statement in draft that trial orgs are not API-enabled is not verified by the pages.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+ "docs_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": null,
+ "verdict": "ready_with_friction",
+ "blocker": "partnership",
+ "blocker_notes": "A free Developer Edition org gives working OAuth credentials, so building and testing is self-serve. But the SFDC API Terms bar Commercial Use of the APIs unless the app is enrolled in Salesforce's ISV partner program, which applies to a commercial multi-tenant toolkit.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.salesforce.com/docs/platform/api/guide/sforce-api-oauth-and-connected-apps.html",
+   "quote": "it must be authorized as a safe visitor. To implement this authorization, use either an external client app or a connected app and an OAuth 2.0 authorization flow.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.salesforce.com/docs/platform/api/guide/sforce-api-calls-login.html",
+   "quote": "When a client app invokes the `login()` call, it passes in a username and password as credentials.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+   "quote": "API access is enabled by default in Enterprise, Performance, Unlimited, and Developer Edition orgs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+   "quote": "Get your very own Developer Edition",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "blocker",
+   "url": "https://salesforce.com/company/legal/sfdc-api-terms-of-service",
+   "quote": "engage in Commercial Use of the SFDC APIs unless You are doing so via an application or solution enrolled in",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://frontal.so/gtm-apis/crm-apis/salesforce-api-review",
+   "quote": "GraphQL API | One query across related objects.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.salesforce.com/blogs/2023/03/using-the-client-credentials-flow-for-easier-api-authentication",
+   "quote": "Salesforce provides a [comprehensive set of APIs](https://developer.salesforce.com/developer-centers/integration-apis) that address a wide range of use cases.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+   "quote": "Salesforce Hosted MCP Servers give AI agents a secure, governed way to interact with Salesforce data and automation.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/salesforcecli/mcp/tree/main",
+   "quote": "The Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 556
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 15,
+  "composio_mcp_toolkits": []
+ },
+ "_human": {
+  "note": "The agent's own evidence describes a partner-program requirement, so the blocker is partnership rather than a generic ToS worry.",
+  "src": [
+   "https://salesforce.com/company/legal/sfdc-api-terms-of-service"
+  ],
+  "trigger": "review (blocker label)"
+ }
+}

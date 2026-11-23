@@ -1,0 +1,18 @@
+[verify 1/100] #4 Attio: flags=0 rounds=1
+[verify 2/100] #2 HubSpot: flags=0 rounds=1
+[verify 3/100] #6 Podio: flags=0 rounds=2
+[verify 4/100] #5 Twenty: flags=0 rounds=2
+[verify 5/100] #3 Pipedrive: flags=0 rounds=2
+[verify 6/100] #7 Zoho CRM: flags=0 rounds=2
+[verify 7/100] #8 Close: flags=0 rounds=2
+[verify 8/100] #1 Salesforce: flags=0 rounds=2
+[verify 9/100] #10 DealCloud: flags=0 rounds=1
+[verify 10/100] #14 Front: flags=0 rounds=1
+[verify 11/100] #9 Copper: flags=0 rounds=2
+[verify 12/100] #11 Zendesk: flags=0 rounds=2
+[verify 13/100] #13 Freshdesk: flags=0 rounds=2
+[verify 14/100] #15 Pylon: flags=0 rounds=2
+[verify 15/100] #12 Intercom: flags=1 rounds=2
+[verify 16/100] #17 Plain: flags=1 rounds=2
+[verify 17/100] #18 Help Scout: flags=0 rounds=2
+[verify 18/100] #16 LiveAgent: flags=0 rounds=2

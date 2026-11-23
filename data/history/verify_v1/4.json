@@ -1,0 +1,42 @@
+{
+ "id": "4",
+ "name": "Attio",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://attio.com",
+    "https://docs.attio.com",
+    "https://attio.com/legal/terms-and-conditions",
+    "https://attio.com/partners/app-partners",
+    "https://pipeline.zoominfo.com/sales/attio-api",
+    "https://github.com/apideck-libraries/api-skills/blob/main/providers/claude/plugin/skills/attio/SKILL.md",
+    "https://attio.com/startups"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "attio",
+    "name": "Attio",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 105
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

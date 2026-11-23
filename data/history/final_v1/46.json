@@ -1,0 +1,96 @@
+{
+ "one_liner": "Squarespace Commerce REST APIs (orders, products, inventory, transactions, contacts, discounts, webhooks) with API keys (Commerce Advanced plan) or OAuth2 (registration form and review); an official vendor MCP server exists and includes commerce tools.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "API keys are generated per site in Developer API Keys and never expire while the site is active. OAuth requires becoming a registered OAuth client via a request form; OAuth is the route for Extensions. Webhook subscriptions being OAuth-only comes from a third-party report, not the vendor pages.",
+ "access": "app_review",
+ "access_notes": "API-key path needs a paid Commerce Advanced site. Multi-user OAuth needs a registration request to Squarespace. No free path is evidenced in the pages.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developers.squarespace.com/mcp/overview",
+ "docs_url": "https://developers.squarespace.com/commerce-apis/overview",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Multi-user OAuth requires applying to become a registered OAuth client. API-key testing needs a paid Commerce Advanced plan. The earlier claim that the official MCP covers only domains is contradicted by the vendor's help page, which mentions commerce tools.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "Depending on your development needs, you can use a generated API key or start the OAuth process with Squarespace to become a registered OAuth client.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "A Squarespace merchant site can use both API keys and OAuth for data access, but Squarespace Extensions are required to use OAuth.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+   "quote": "**Orders**, **Inventory**, and **Transactions** are only available in the Commerce Advanced plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "With [Squarespace's Commerce Advanced](https://www.squarespace.com/pricing) plan, you can develop a custom application for a Squarespace merchant site.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "quote": "All Commerce APIs are built on HTTPS and designed with REST principles in mind.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "quote": "**Webhook Subscriptions API:** Subscribe to notifications from a site, like when an order was created, by configuring a webhook endpoint.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+   "quote": "The Squarespace MCP server connects AI assistants, like Claude and ChatGPT, to Squarespace tools using Model Context Protocol (MCP).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+   "quote": "Tools are organized by product area, like domains and commerce, and we add new tools over time.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

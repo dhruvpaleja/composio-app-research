@@ -1,0 +1,66 @@
+{
+ "one_liner": "LinkedIn Ads (Marketing/Advertising API) is a broad REST API with 3-legged OAuth2; self-serve app creation but Advertising API product requires LinkedIn approval, with Development tier limited to 5 editable ad accounts.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "3-legged authorization code flow with rw_ads/r_ads scopes; refresh tokens supported; developer portal token generator available for testing.",
+ "access": "app_review",
+ "access_notes": "Apps are created self-serve in the Developer Portal, but the Advertising API product must be applied for and approved. Development tier allows edits on up to 5 ad accounts; Standard tier requires a separate upgrade application. The API is free of charge.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/mharnett/mcp-linkedin-ads",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "The Advertising API product requires LinkedIn approval, and the Standard tier requires a further upgrade for production use with many accounts. Development tier approval is typically available to approved developers with an active Campaign Manager account.",
+ "docs_url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+ "openapi_spec": false,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/api-evangelist/linkedin-ads/refs/heads/main/authentication/linkedin-ads-authentication.yml",
+   "quote": "OAuth 2.0 three-legged (authorization code) flow \u2014 the flow every Marketing API call uses."
+  },
+  {
+   "field": "auth",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-09",
+   "quote": "Marketing APIs require the `rw_ads` scope."
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+   "quote": "All applications start with Development tier. You must apply separately to upgrade to the Standard tier."
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+   "quote": "edit capabilities for up to five (5) Ad Accounts."
+  },
+  {
+   "field": "access",
+   "url": "https://blotato.com/blog/linkedin-api-pricing",
+   "quote": "The APIs are currently provided for free, but LinkedIn reserves the right to charge for the APIs in the future."
+  },
+  {
+   "field": "api",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+   "quote": "These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Meshpilot-AGI/linkedin-ads-mcp",
+   "quote": "There's no official LinkedIn MCP. This fills the gap with a thin, correctness-first wrapper"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

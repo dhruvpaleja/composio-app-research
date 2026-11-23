@@ -1,0 +1,51 @@
+{
+ "id": "72",
+ "name": "Airtable",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://airtable.com/developers",
+    "https://airtable.com/developers/web/api/introduction",
+    "https://airtable.com/developers/web/api/billing-plans.md",
+    "https://support.airtable.com/docs/en/creating-and-using-api-keys-and-access-tokens",
+    "https://support.airtable.com/articles/2022585894-airtable-enterprise-api",
+    "https://support.airtable.com/docs/getting-started-with-airtables-web-api",
+    "https://support.airtable.com/articles/6097393062-airtable-sync-integration-sync-api"
+   ],
+   "changed": {
+    "api_breadth": [
+     "moderate",
+     "broad"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "airtable",
+    "name": "Airtable",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 26
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.airtable/mcp"
+  ],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

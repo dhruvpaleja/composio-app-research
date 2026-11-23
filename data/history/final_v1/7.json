@@ -1,0 +1,113 @@
+{
+ "one_liner": "Zoho CRM has a broad REST API (v8) with OAuth 2.0 and an official vendor-hosted MCP server set (four pre-built servers); free edition and free trial exist, though free-tier API access is not confirmed by the supplied pages.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 is documented for the MCP servers; the Composio catalog independently lists OAUTH2 as the only managed scheme for Zoho. The supplied pages do not directly describe the REST API token flow, API keys, or client-credentials, so those are unconfirmed.",
+ "access": "self_serve_free",
+ "access_notes": "Zoho's homepage advertises a free trial and a freemium edition (3 users). The supplied pages do not state explicitly that the free edition includes API access; the earlier claims from the ZoomInfo and API-limits pages are not among the supplied pages and were dropped. Trial access is the evidenced path; free-edition API access is unverified.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+ "docs_url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "MCP is vendor-published on zoho.com (the MCP Registry vendor namespace is empty, but that does not contradict the vendor's own docs). API calls via MCP consume API credits. Free-edition API availability is not confirmed by the supplied pages; a free trial is available as a fallback.",
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+   "quote": "Zoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://zoho.com/crm/developer/mcp.html",
+   "quote": "Deploy four composable MCP servers that give your AI agent secure, scoped access to your Zoho CRM.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+   "quote": "the server initiates an OAuth flow. A browser window opens and prompts you to log in to your Zoho account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://zoho.com/crm",
+   "quote": "Zoho CRM's freemium edition supports up to 3 users and comes with the essentials like leads, documents, and mobile apps",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://zoho.com/crm",
+   "quote": "Get started with your\n flexible free trial",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+   "quote": "Perform CRUD operations on CRM module entities and integrate with any third party application through flexible RESTful endpoints.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+   "quote": "Get notified whenever a data change occurs inside your CRM.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "zoho",
+    "name": "Zoho",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 115
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

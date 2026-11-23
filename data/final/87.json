@@ -1,0 +1,100 @@
+{
+ "one_liner": "Xero has a broad REST accounting API with self-serve OAuth 2.0 app registration and a free Starter tier (5 connections); official hosted Remote MCP exists (Starter limited to demo org).",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code flow (PKCE supported) for multi-user apps; Custom Connections is a client-credentials option for single-org. No API keys.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer account and free Starter tier (5 connections, 1,000 calls/day/org). Higher tiers cost money. Journals endpoint, XPM and bulk connections need Advanced plan plus security assessment and approval. Remote MCP on Starter works with demo org only; Core and above includes full use.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.xero.com/mcp/v1",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Starter caps at 5 connections and 1,000 calls/day/org; journals endpoint needs Advanced tier with approval. Not blocking building and testing core toolkit.",
+ "docs_url": "https://developer.xero.com",
+ "webhooks": true,
+ "openapi_spec": true,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.xero.com/faq",
+   "quote": "The Xero API does not support basic API Key authentication. Our API uses OAuth 2.0 which means you need to register your app to get a client id and client secret",
+   "grounding": 0.93,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.xero.com/pricing",
+   "quote": "Monthly Tier Fee | No charge | $35 AUD | $245 AUD | $1445 AUD | Price on Application",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.xero.com",
+   "quote": "Sign up for a free account to build on the Xero platform.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.chift.eu/connectors/accounting/xero",
+   "quote": "New apps start on the free Starter tier, capped at 5 connected organizations.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7",
+   "quote": "Remote MCP is now generally available. It\u2019s the same Xero MCP server, hosted and maintained by Xero.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7",
+   "quote": "If you\u2019re on the free **Starter plan**, you can use Remote MCP with the **demo organisation**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/XeroAPI/xero-java",
+   "quote": "This SDK supports full method coverage for the following Xero API sets",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "xero",
+    "name": "Xero",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 109
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

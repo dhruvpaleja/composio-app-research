@@ -1,0 +1,123 @@
+{
+ "one_liner": "ClickUp has a broad public REST API on all plans (including free) with personal tokens and OAuth2, plus an official remote MCP server (OAuth only).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Personal API token (pk_...) sent raw in Authorization header; OAuth2 authorization code flow for multi-user apps with Bearer token; access tokens currently don't expire. Workspace owners/admins create OAuth apps. The MCP server supports OAuth only, not API keys.",
+ "access": "self_serve_free",
+ "access_notes": "API is available on all ClickUp plans. Some endpoints (user/guest management) are Enterprise-only; some parameters are limited by plan. Limited members with view-only permissions cannot access the API.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.clickup.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: some endpoints are Enterprise-only. The rate limit and no-API claims in the draft were not verified in the provided pages.",
+ "docs_url": "https://developer.clickup.com/docs/authentication",
+ "webhooks": true,
+ "openapi_spec": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.clickup.com/docs/authentication",
+   "quote": "For apps or integrations that other people use, use the OAuth flow, allowing users to authorize Workspaces for your app.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.clickup.com/docs/authentication",
+   "quote": "Use a personal API token for individual or testing purposes. Personal tokens begin with `pk_`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.clickup.com/docs/apis-available-by-plan",
+   "quote": "Our Public API is available on all [ClickUp Plans](https://clickup.com/pricing) . Some endpoints and parameters are limited by plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+   "quote": "Anyone with a ClickUp account can generate a personal token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://clickup.com/blog/how-to-use-clickup-mcp-server",
+   "quote": "| **Official endpoint** | `https://mcp.clickup.com/mcp` |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://clickup.com/blog/how-to-use-clickup-mcp-server",
+   "quote": "The server works on every ClickUp plan, Free Forever included.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://clickup.com/api",
+   "quote": "[Download the spec](https://developer.clickup.com/docs/open-api-spec)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://clickup.com/api",
+   "quote": "Trigger workflows from ClickUp events.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "clickup",
+    "name": "ClickUp",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 163
+   },
+   {
+    "slug": "clickup_mcp",
+    "name": "ClickUp MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 58
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": [
+   "clickup_mcp"
+  ]
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "one_liner": "Threads API is a free Meta Graph-style REST API with OAuth 2.0 user tokens, but production use for non-tester users requires Meta App Review per permission; only community MCP servers exist.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization-code OAuth at threads.com/oauth/authorize; short-lived (1h) tokens exchanged for 60-day long-lived tokens, refreshable. App access tokens (client_credentials) exist for oEmbed.",
+ "access": "app_review",
+ "access_notes": "Free; the app owner and testers can use it without review. Any user without a role on the app requires per-permission App Review (and Tech Provider verification per one source).",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "community",
+ "mcp_url": "https://github.com/baguskto/threads-mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Meta App Review is required per permission (threads_basic, threads_content_publish, etc.) before arbitrary users can authorize. Publishing is capped at 250 posts per profile per 24h.",
+ "docs_url": "https://developers.facebook.com/docs/threads",
+ "openapi_spec": false,
+ "webhooks": true,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/docs/threads/get-started?locale=en_US",
+   "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol."
+  },
+  {
+   "field": "access",
+   "url": "https://blog.lots.social/threads-api-free-access-posting-limits-app-review",
+   "quote": "Posting to your own account needs a Meta app and no review. Posting for other people needs App Review"
+  },
+  {
+   "field": "access",
+   "url": "https://breakreach.com/developers/threads-api",
+   "quote": "Profiles without a role on your app need App Review for threads_basic and threads_content_publish"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.facebook.com/documentation/threads/threads-profiles",
+   "quote": "Use the `GET /profile_lookup?username=...` endpoint to look up a public profile and retrieve their basic profile information."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/MetaThreads/meta-threads-mcp",
+   "quote": "Unofficial MCP server for Meta's Threads API. Enables LLMs like Claude to publish posts, manage replies, and track insights"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,55 @@
+{
+ "id": "60",
+ "name": "Clay",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/clay-swartz/pennyrail",
+    "https://university.clay.com/docs/connect-to-clay-mcp",
+    "https://developers.clay.com/concepts/mcp",
+    "https://clay.com/guides/clay-mcp",
+    "https://clay.com",
+    "https://developers.clay.com",
+    "https://clay.com/blog/announcing-the-clay-partner-program",
+    "https://clay.com/partners/integrations",
+    "https://cleanlist.ai/blog/2026-10-16-clay-api-guide"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "clay",
+    "name": "Clay",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 15
+   },
+   {
+    "slug": "clay_mcp",
+    "name": "Clay MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 17
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "io.github.clay-swartz/pennyrail"
+  ],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": [
+   "clay_mcp"
+  ]
+ }
+}

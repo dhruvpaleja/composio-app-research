@@ -1,0 +1,55 @@
+{
+ "id": "70",
+ "name": "Sentry",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.sentry.io/product/sentry-mcp",
+    "https://sentry-docs-j9n0fzz72.sentry.dev/product/sentry-mcp",
+    "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+    "https://sentry.io/cookbook/debug-with-sentry-mcp-claude-code",
+    "https://cli.sentry.dev/commands/mcp",
+    "https://docs.sentry.io/product/snapshots/agentic-workflow",
+    "https://docs.sentry.io/api",
+    "https://docs.sentry.io/api/",
+    "https://docs.sentry.io/product/partnership-platform/oauth-integration"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "sentry",
+    "name": "Sentry",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 210
+   },
+   {
+    "slug": "sentry_mcp",
+    "name": "Sentry MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": [
+   "sentry_mcp"
+  ]
+ }
+}

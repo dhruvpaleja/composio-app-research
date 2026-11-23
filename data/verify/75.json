@@ -1,0 +1,44 @@
+{
+ "id": "75",
+ "name": "Asana",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+    "https://developers.asana.com/docs/mcp-tools-reference",
+    "https://developers.asana.com/docs/connecting-mcp-clients-to-asanas-v2-server",
+    "https://developers.asana.com/docs/using-asanas-command-mcp-server",
+    "https://developers.asana.com/docs/using-asanas-mcp-server",
+    "https://developers.asana.com",
+    "https://developers.asana.com/reference",
+    "https://partner-program-directory.partnerfleet.io/partners/asana-technology-partners",
+    "https://asana.com/developers"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "asana",
+    "name": "Asana",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 247
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 7,
+  "composio_mcp_toolkits": []
+ }
+}

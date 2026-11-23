@@ -1,0 +1,100 @@
+{
+ "one_liner": "Airtable has a broad REST Web API with free-tier PATs and self-serve OAuth app registration, plus an official MCP server; ready to build.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 integrations for third-party/multi-user use; personal access tokens (bearer) for personal use. Legacy API keys deprecated Feb 2024.",
+ "access": "self_serve_free",
+ "access_notes": "Free plan has access to all Base Data endpoints except Views, with 1000 calls per workspace per month. Enterprise API needs Enterprise Scale.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://airtable.com/developers/web/api/introduction",
+ "mcp": "official",
+ "mcp_url": "https://airtable.com/developers/agents/mcp/getting-started",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free-plan call limits are low but workable for testing. Views endpoints are not on Free; Enterprise endpoints need Enterprise Scale.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+   "quote": "If you are building an Airtable integration for your product or for many different users that needs to use the Airtable API on behalf of those users, you will need to create an OAuth integration.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://airtable.com/developers/web/guides/personal-access-tokens.md",
+   "quote": "Personal access tokens are used to authenticate requests to Airtable's API when developing an integration for yourself, your client, or for your company.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://airtable.com/developers/web/api/billing-plans.md",
+   "quote": "Access to all \"Base Data\" endpoints except \"Views\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.airtable.com/docs/getting-started-with-airtables-web-api",
+   "quote": "**Free** plan - 1000 calls per workspace per month",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://airtable.com/developers/web/api/introduction",
+   "quote": "The API closely follows REST semantics, uses JSON to encode objects, and relies on standard HTTP codes to signal operation outcomes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://airtable.com/developers",
+   "quote": "The Airtable MCP server gives agents your base's full structure",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "airtable",
+    "name": "Airtable",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 26
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.airtable/mcp"
+  ],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

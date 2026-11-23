@@ -1,0 +1,107 @@
+{
+ "one_liner": "Otter.ai has a REST public API with self-generated bearer API keys, but it's Enterprise-only and requires account-manager enablement; an official OAuth MCP server exists (mcp.otter.ai).",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Public API uses bearer API keys created at Integrations \u2192 Developer (limit 2 per user). The MCP server uses OAuth for end users but is not a developer-registerable OAuth API.",
+ "access": "partner_gated",
+ "access_notes": "Public API is stated as available for Enterprise workspaces; if not visible, contact your Otter account manager. The pages fetched do not show self-serve signup or a trial for Enterprise, so the draft's claims about contact-sales and a 100-user minimum are not verified here.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://mcp.otter.ai/mcp",
+ "verdict": "needs_outreach",
+ "blocker": "partnership",
+ "blocker_notes": "API access requires an Enterprise plan and enablement via an Otter account manager. The official MCP server is OAuth-based with 3 tools (get user info, search, fetch), but it is not a general developer API.",
+ "docs_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "All API requests require authentication using Bearer token authentication. Follow the steps below to create your **API key.**",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "Otter's Public API is available for all Enterprise workspaces. If you do not see this feature for your workspace, contact your Otter account manager.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "This content is available for the **Otter Enterprise** plan and may require admin permissions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your Otter account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "Webhooks are the recommended way to build export integrations with Otter.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "quote": "Connect AI models to Otter using Model Context Protocol (MCP).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "quote": "\"url\": \"https://mcp.otter.ai/mcp\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "quote": "\ud83d\udd12 **Security:** All access is OAuth-authenticated with granular permissions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "otter_ai_mcp",
+    "name": "Otter.ai MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 3
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": [
+   "otter_ai_mcp"
+  ]
+ }
+}

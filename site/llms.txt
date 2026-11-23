@@ -1,0 +1,25 @@
+# App Research Agent: 100 apps, agent-toolkit readiness (Dhruv Paleja, Composio take-home)
+
+> One record per app: auth, self-serve vs gated access, API surface, MCP status, a buildability verdict,
+> and the evidence (URL + verbatim quote + grounding score) behind each claim.
+
+## Files
+- results.json: array of 100 records (fields below)
+- results.csv: same data, one row per app
+- index.html: human-readable case study (patterns, findings, agent design, verification)
+
+## Fields
+- auth_methods: subset of OAUTH2 | API_KEY (any static key/token/PAT) | BASIC | OTHER (signed/HMAC/JWT) | NONE
+- auth_primary: the method a multi-user agent toolkit should use
+- access: self_serve_free | self_serve_trial | paid_plan | app_review | partner_gated | no_public_api
+- api_type: REST | GraphQL | REST+GraphQL | SDK_or_CLI_only | other_protocol | none ; api_breadth: broad|moderate|narrow|none
+- mcp: official (vendor-run) | community (third-party only) | none ; mcp_url
+- verdict: ready | ready_with_friction | needs_outreach | not_buildable ; blocker + blocker_notes
+- in_composio / composio_slugs / composio_auth: matching toolkits in Composio's catalog at research time
+- evidence[]: {field, url, quote, grounding}; grounding = share of the quote's word 3-grams found on the page when re-fetched
+- changed_by_verification: fields whose value changed between pass 1 and final, as [before, after]
+- human_override: present when a person decided a field from the human review queue
+
+## Trust
+Accuracy was measured on a 30-app stratified random sample checked by hand (see index.html#verify).
+Records with open_flags were not fully settled by the agent; prefer the evidence quote over the label there.

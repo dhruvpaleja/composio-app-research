@@ -1,0 +1,125 @@
+{
+ "one_liner": "Mailchimp Marketing API v3 is a broad REST API with self-serve API keys and OAuth 2. The vendor publishes an official MCP for the Transactional API and a docs-search MCP, but none that acts on a Marketing account (only community servers do).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The vendor's Authentication page is said to cover API key and OAuth 2 credentials for the Marketing API. The supplied pages don't detail Basic or Bearer use, token lifetime or app registration. Basic and Bearer come from the draft, which cited a page not supplied here. The Transactional MCP uses a separate Transactional API key.",
+ "access": "self_serve_free",
+ "access_notes": "Community READMEs show an account plus an API key is enough, and a vendor-facing README notes that template reads work on free plans, so a free plan exists. Some write features need a paid plan. The supplied pages don't spell out free-tier key creation, so this is inferred.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mandrillapp.com/mcp",
+ "docs_url": "https://mailchimp.com/developer/marketing/api",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No gate on getting an API key appears in the pages. Plan level affects some features. The official MCP covers only Transactional (Mandrill) and the docs site; Marketing account actions are covered only by community MCP servers (cyanheads, alexlaguardia). The draft's damientilman repo is not supported by the pages.",
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp",
+   "quote": "Our MCP mirrors what our API can already do.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp",
+   "quote": "The MCP server URL is [https://mandrillapp.com/mcp](https://mandrillapp.com/mcp).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md",
+   "quote": "This documentation site is itself an MCP server.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md",
+   "quote": "**This searches documentation, not your Mailchimp account.** The server",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://raw.githubusercontent.com/alexlaguardia/mcp-mailchimp/HEAD/README.md",
+   "quote": "Production-grade MCP server for the [Mailchimp Marketing API](https://mailchimp.com/developer/marketing/).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md",
+   "quote": "key and OAuth 2 credentials for calling the Marketing API directly.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://raw.githubusercontent.com/alexlaguardia/mcp-mailchimp/HEAD/README.md",
+   "quote": "- Mailchimp account with API key",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/cyanheads/mailchimp-mcp-server/blob/main/README.md",
+   "quote": "Mailchimp-hosted templates; reads work on free plans, writes need a paid plan",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://raw.githubusercontent.com/alexlaguardia/mcp-mailchimp/HEAD/README.md",
+   "quote": "| `create_webhook` | Create a webhook for audience events |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://mailchimp.com/developer/marketing/api",
+   "quote": "# List API root resources",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 275
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

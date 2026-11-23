@@ -1,0 +1,122 @@
+{
+ "one_liner": "Help Scout has a broad REST Inbox API with OAuth2 (auth-code and client-credentials) and a Docs API using a key over Basic auth. An official MCP server is likely, but this audit's pages don't confirm it. Paid-plan gating is plausible but also unconfirmed by these pages.",
+ "auth_methods": [
+  "OAUTH2",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Inbox API uses OAuth 2.0 with Authorization Code (for integrations used by other users) and Client Credentials (internal) flows; the app is created under My apps. The Docs API uses an API key sent as the Basic-auth username with a dummy password.",
+ "access": "paid_plan",
+ "access_notes": "The supplied pages do not directly state which plans include API access. They show plan-tiering only for parts (reports are Plus/Pro; Restricted Docs needs Plus/Pro). The homepage says \"try Help Scout free\", so a trial may exist. The draft's claim that the Free plan has no API came from pages not supplied here, so it is retained as the most defensible value at low confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.helpscout.net/mcp",
+ "docs_url": "https://developer.helpscout.com/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Likely needs a paid plan (Standard or above) to get working API access; reporting endpoints need Plus/Pro. Whether a trial gives API access is not confirmed by the pages.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "This is an HTTPS-only API and it uses [OAuth 2.0 authorization](https://oauth.net/2/), implementing Authorization Code and Client Credential flows.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "You need to create an OAuth2 application before you can use the API. Create one by navigating to Your Profile > My apps and click Create My App.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/llms.txt",
+   "quote": "curl --user {api_key}:X",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.helpscout.com/",
+   "quote": "[Inbox API](https://developer.helpscout.com/mailbox-api/) - read and write data to Help Scout inboxes",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developer.helpscout.com/",
+   "quote": "[Webhooks](https://developer.helpscout.com/webhooks/) - get notified about activity in Help Scout",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.helpscout.com/docs-api/restricted-docs",
+   "quote": "Restricted Docs requires the Plus or Pro plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.helpscout.com/llms.txt",
+   "quote": "### Reports (Plus/Pro Plans)",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "help_scout",
+    "name": "Help Scout",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 129
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

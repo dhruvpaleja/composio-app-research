@@ -1,0 +1,44 @@
+{
+ "id": "26",
+ "name": "Discord",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://discord.com",
+    "https://docs.discord.com/developers/reference",
+    "https://support-dev.discord.com/hc/en-us/articles/6207308062871-What-are-Privileged-Intents",
+    "https://support-dev.discord.com/api/v2/help_center/en-us/articles/40281523410967.json",
+    "https://docs.discord.com/developers/topics/oauth2",
+    "https://docs.discord.com/developers/gateway/getting-started-with-privileged-intent-review",
+    "https://support.discord.com/hc/en-us/articles/41618861207959-Events-API-Terms",
+    "https://discord.com/developers/docs/policies-and-agreements/developer-policy",
+    "https://dev.to/0012303/discord-has-a-free-api-build-bots-read-messages-and-automate-servers-no-paid-plan-needed-36n4"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "discord",
+    "name": "Discord",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 23
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 13,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "id": "30",
+ "name": "Vonage",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.vonage.com",
+    "https://developer.vonage.com/en/startups",
+    "https://developer.vonage.com/en/getting-started-network/concepts/network-registry",
+    "https://api.support.vonage.com/hc/en-us/articles/31055547542044-Getting-Started-with-Vonage-s-WhatsApp-Business-API-New-V4-Embedded-Sign-Up-flow",
+    "https://vonage.co.uk/partners",
+    "https://vonage.dev/3d093hA",
+    "https://vonage.com/partners"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "API_KEY",
+      "BASIC",
+      "OTHER",
+      "OAUTH2"
+     ],
+     [
+      "API_KEY",
+      "BASIC",
+      "OTHER"
+     ]
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "auth",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developer.vonage.com",
+    "https://developer.vonage.com/en/vonage-business-cloud/getting-started/create-an-access-token",
+    "https://developer.vonage.com/en/getting-started-network/guides/server-authentication",
+    "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "https://developer.vonage.com/en/vonage-business-cloud/getting-started/make-an-api-request",
+    "https://developer.vonage.com/en/video/guides/authentication.md",
+    "https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3568861545/Getting+a+bearer+access+token"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "API_KEY",
+      "BASIC",
+      "OTHER"
+     ],
+     [
+      "OAUTH2",
+      "API_KEY",
+      "BASIC",
+      "OTHER"
+     ]
+    ],
+    "auth_primary": [
+     "BASIC",
+     "OAUTH2"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    },
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Vonage/vonage-documentation-mcp"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

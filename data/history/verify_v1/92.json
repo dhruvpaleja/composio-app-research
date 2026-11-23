@@ -1,0 +1,70 @@
+{
+ "id": "92",
+ "name": "Otter AI",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://help.otter.ai",
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "https://helpdesk.tryotter.com/hc/en-us/articles/57116393450003-Partner-Hub",
+    "https://helpdesk.tryotter.com/hc/en-us/articles/22695702216979-Integrated-Partner-Process",
+    "https://help.otter.ai/hc/en-us/search?query=API",
+    "https://otter.ai/partner-program",
+    "https://help.otter.ai/api/v2/help_center/en-us/articles/36130822688279.json"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "auth",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://help.otter.ai",
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "https://connect.tryotter.com/docs/guides-authentication",
+    "https://help.otter.ai/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBcO2lzcIDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJd8Z38SJDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI6L2hjL2VuLXVzL2FydGljbGVzLzM2MTMwODIyNjg4Mjc5LU90dGVyLWFpLVB1YmxpYy1BUEkGOwhUOglyYW5raQY%3D--9b646bc1fa0f799c16ad523f56998fae8eb89fcc",
+    "https://integrations.sh/otter.ai",
+    "https://connect.tryotter.com/docs/guides-quickstart",
+    "https://help.otter.ai/api/v2/help_center/en-us/articles/36130822688279.json"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "otter_ai_mcp",
+    "name": "Otter.ai MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 3
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": [
+   "otter_ai_mcp"
+  ]
+ }
+}

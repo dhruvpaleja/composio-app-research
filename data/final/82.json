@@ -1,0 +1,104 @@
+{
+ "one_liner": "Plaid has a broad REST API with a free Sandbox for everyone; the free Production Trial is limited to US/CA signups, and full production needs approval.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Core API uses client_id and secret sent with each request, plus per-user access_tokens obtained through Plaid Link. OAuth client_credentials via /oauth/token is only documented for the Dashboard MCP, which is narrow, so it is not primary. This was not re-verifiable in the supplied pages.",
+ "access": "self_serve_free",
+ "access_notes": "Sandbox is free for all developers and supports all Plaid functionality. US/CA developers who sign up on or after April 15, 2026 can get an auto-approved free Trial plan with real data, capped at 10 Production Items. Full Production needs approval, which takes a few business days.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.dashboard.plaid.com/mcp/",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Sandbox is free and unlimited, so a toolkit can be built and tested without approval. The Trial plan adds free real-data access for US/CA developers. Full Production approval takes a few business days but does not block building.",
+ "webhooks": true,
+ "sandbox": true,
+ "docs_url": "https://plaid.com/docs/",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://plaid.com/docs/account/billing",
+   "quote": "These models only apply to Production traffic; usage of Sandbox is always free.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different",
+   "quote": "The [Sandbox](https://plaid.com/docs/quickstart/glossary/#sandbox) is a free environment for application development and testing with mock data. It supports all Plaid functionality, including the [Plaid API](https://plaid.com/docs/) and Plaid Link.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.plaid.com/hc/en-us/articles/39994173227159-What-is-the-Plaid-Trial-plan",
+   "quote": "The Plaid Trial plan provides free access to Plaid's production APIs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://plaid.com/docs/",
+   "quote": "Explore server-side API libraries and integrate with API endpoints",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://plaid.com/docs/mcp",
+   "quote": "you must first create an OAuth token with the scope `mcp:dashboard` and the `client_credentials` grant type via the [`/oauth/token`](/docs/api/oauth/#oauthtoken) API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://plaid.com/docs/resources/mcp",
+   "quote": "The **Dashboard MCP server** is a remote MCP server hosted by Plaid. It provides Production diagnostics and analytics tools",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "plaid",
+    "name": "Plaid",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 70
+   },
+   {
+    "slug": "plaid_mcp",
+    "name": "Plaid MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 5
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "plaid_mcp"
+  ]
+ }
+}

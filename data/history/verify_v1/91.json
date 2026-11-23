@@ -1,0 +1,66 @@
+{
+ "id": "91",
+ "name": "NotebookLM",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://cloud.google.com/gemini",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+    "https://discuss.ai.google.dev/t/how-to-access-notebooklm-via-api/5084/42",
+    "https://kortex-notebooklm.com/blog/gemini-notebook-api",
+    "https://note.com/ai_next_level/n/n44c5ef1d91a0?hl=en",
+    "https://autocontentapi.com/blog/does-notebooklm-have-an-api"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://cloud.google.com/gemini",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://github.com/jacob-bd/gemini-notebook-mcp-cli/blob/main/docs/MCP_GUIDE.md",
+    "https://github.com/teng-lin/notebooklm-py/raw/refs/heads/main/docs/mcp-guide.md",
+    "https://github.com/moodRobotics/notebooklm-mcp-server/blob/HEAD/README.md"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "notebook_lm",
+    "name": "NotebookLM",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 11
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

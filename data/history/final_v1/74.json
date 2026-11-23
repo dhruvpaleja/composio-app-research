@@ -1,0 +1,133 @@
+{
+ "one_liner": "Jira Cloud has a broad REST v3 API with self-serve OAuth 2.0 (3LO) via the developer console plus basic-auth API tokens, and Atlassian lists a vendor-run Atlassian MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 (3LO) authorization code grants are for non-Forge/Connect integrations. Basic auth is for personal scripts and ad-hoc calls (API tokens). Connect apps use JWT built into the Connect libraries. Atlassian says apps that collect API tokens or have customers create individual 3LO apps violate its policies, so multi-user toolkits should ship a single distributable 3LO app.",
+ "access": "self_serve_free",
+ "access_notes": "OAuth 2.0 (3LO) apps are created in the developer console. The pages do not state pricing explicitly. All apps start in Tier 1 rate limits by default; Tier 2 per-tenant quota requires review. Free-on-all-plans claim is not confirmed by the supplied pages.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/use-atlassian-rovo-mcp-server/",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor friction: points-based rate limits with Tier 1 default; Tier 2 needs review. Distributable 3LO app needed for multi-user use.",
+ "docs_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "use OAuth 2.0 authorization code grants (3LO) for security",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "For personal scripts, bots, and ad-hoc execution of the REST APIs use basic authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "For Connect apps, authentication (JWT-based) is built into the Connect libraries.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.atlassian.com/cloud/jira/software/oauth-2-3lo-apps",
+   "quote": "In the Developer console, select the **Create** dropdown and choose **OAuth 2.0 integration** to create an OAuth 2.0 (3LO) app.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://atlassian.com/blog/development/evolving-api-rate-limits",
+   "quote": "All apps begin in Tier 1 by default.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "quote": "The Jira REST API enables you to interact with Jira programmatically.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/scopes-for-oauth-2-3LO-and-forge-apps",
+   "quote": "Fetch, register, refresh, and delete dynamically declared Jira webhooks.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.atlassian.com",
+   "quote": "Build a secure, scalable bridge between Atlassian and external AI solutions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://atlassian.com/blog/development/evolving-api-rate-limits",
+   "quote": "consider using Atlassian Rovo MCP as an alternative to direct API queries.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "atlassian_mcp",
+    "name": "Atlassian MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 213
+   },
+   {
+    "slug": "jira",
+    "name": "Jira",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 166
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 8,
+  "composio_mcp_toolkits": [
+   "atlassian_mcp"
+  ]
+ }
+}

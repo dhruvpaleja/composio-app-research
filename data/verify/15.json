@@ -1,0 +1,42 @@
+{
+ "id": "15",
+ "name": "Pylon",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+    "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server?lang=en",
+    "https://usepylon.com/integrations/mcp",
+    "https://usepylon.com",
+    "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "https://github.com/pylon-apis/pylon/blob/main/PROVIDERS.md",
+    "https://support.toriihq.com/hc/en-us/articles/57380017029147-Pylon-Integration",
+    "https://pylonapi.com/providers.html",
+    "https://usepylon.com/pylon-facts"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "pylon_mcp",
+    "name": "Pylon MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 12
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "pylon_mcp"
+  ]
+ }
+}

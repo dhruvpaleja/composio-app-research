@@ -1,0 +1,42 @@
+{
+ "id": "57",
+ "name": "Bright Data",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.brightdata.com/products/mcp-server/integrations/claude-code",
+    "https://docs.brightdata.com/products/mcp-server/tools",
+    "https://docs.brightdata.com/products/mcp-server/faqs",
+    "https://docs.brightdata.com/products/mcp-server/remote/oauth",
+    "https://brightdata.com/blog/ai/cherry-studio-with-bright-data",
+    "https://brightdata.com",
+    "https://docs.brightdata.com/api-reference/authentication",
+    "https://brightdata.com/static/web/Bright-Data-Partner-Program-Guide.pdf?md5=3151917-a3bd1d14",
+    "https://brightdata.com/partners/faq"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "brightdata",
+    "name": "Bright Data",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 167
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

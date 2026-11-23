@@ -1,0 +1,100 @@
+{
+ "one_liner": "LinkedIn Ads (Marketing/Advertising API) is a broad REST API with 3-legged OAuth2; apps are created self-serve but the Advertising API product requires LinkedIn approval, with the Development tier limited to editing 5 ad accounts.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "All Marketing API permissions are 3-legged (authorization code); 2-legged/client-credentials is not available for marketing use cases.",
+ "access": "app_review",
+ "access_notes": "Advertising API is a vetted product: apply from the app's Product tab in the Developer Portal. Development tier allows edits on up to 5 ad accounts; Standard tier needs a separate upgrade application, and LinkedIn may decline at its discretion. Free-of-charge claim comes from a third-party source and was not verified on the vendor pages.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/mharnett/mcp-linkedin-ads",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "The Advertising API product requires LinkedIn approval; Standard tier requires a further upgrade for managing many accounts. Development tier is enough to build and test (5 editable ad accounts).",
+ "docs_url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+ "openapi_spec": false,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq?view=li-lms-2026-09",
+   "quote": "All LinkedIn Marketing API Program permissions are [three-legged permissions.]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq?view=li-lms-2026-09",
+   "quote": "Two-legged auth is not available for marketing use cases.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-09",
+   "quote": "Visit your app's Product tab in the [Developer Portal](https://www.linkedin.com/developers/apps) to apply for the Advertising API product.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-09",
+   "quote": "**Edit** : Make updates related to up to 5 ad accounts that you administer",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+   "quote": "| Advertising API | Vetted Product with development and standard tiers |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+   "quote": "These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Meshpilot-AGI/linkedin-ads-mcp",
+   "quote": "There's no official LinkedIn MCP. This fills the gap with a thin, correctness-first wrapper",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "linkedin_ads",
+    "name": "Linkedin Ads",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 28
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

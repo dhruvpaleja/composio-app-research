@@ -1,0 +1,65 @@
+{
+ "id": "71",
+ "name": "Notion",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+    "https://developers.notion.com/guides/mcp/build-mcp-client",
+    "https://developers.notion.com",
+    "https://developers.notion.com/reference",
+    "https://developers.notion.com/page/changelog",
+    "https://notion.com/partners/security-compliance-partner-program",
+    "https://notion.so/technology-partner-program",
+    "https://activepieces.com/blog/notion-api-quickstart-get-a-key-and-make-your-first-call",
+    "https://developers.notion.com/guides/connections-and-tokens/personal-access-tokens"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "best quote only 0% found on cited page"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "notion",
+    "name": "Notion",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 57
+   },
+   {
+    "slug": "notion_mcp",
+    "name": "Notion MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 42
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.notion/mcp"
+  ],
+  "mcp_registry_any": 8,
+  "composio_mcp_toolkits": [
+   "notion_mcp"
+  ]
+ }
+}

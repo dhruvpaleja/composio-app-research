@@ -1,0 +1,137 @@
+{
+ "one_liner": "Brex has a broad REST/OpenAPI API with admin-generated user tokens for existing Brex customers, partner-only OAuth2 (issued on request), and an official hosted MCP server with OAuth/DCR; you need an existing Brex account.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Customers use an admin-generated user token (Bearer) with scopes from Settings \u2192 Developer. OAuth2 Authorization Code is for partner integrations, where client ID/secret are issued by developer support; the onboarding API uses Client Credentials. The MCP server separately supports OAuth with Dynamic Client Registration for any employee, so per-user OAuth is available via MCP only. Most APIs require an account admin.",
+ "access": "self_serve_free",
+ "access_notes": "The pages do not state pricing or how one becomes a Brex customer. GA APIs are available by default to all Brex customers, and an admin must accept the Developer API agreement in the dashboard. Partner credentials (staging, OAuth) are issued only after application approval. No customer sandbox is shown. Access value is the most defensible but unsettled by the pages, so confidence is low.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": false,
+ "openapi_spec": true,
+ "mcp": "official",
+ "mcp_url": "https://api.brex.com/mcp",
+ "docs_url": "https://developer.brex.com",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Requires an existing Brex account with an admin who accepts the Developer API agreement and creates tokens (per-customer setup). Multi-tenant OAuth requires partner approval. The MCP server is beta and must be enabled under Beta features.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "Generate one from **Settings \u2192 Developer** in the Brex Dashboard.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/roles_permissions_scopes",
+   "quote": "Most Brex APIs require a Brex admin to grant access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/roles_permissions_scopes",
+   "quote": "Partners using the **onboarding API** authenticate with a [Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/)\u2013there is no user associated with this API access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/partner_authentication",
+   "quote": "Please [contact our developer support team](https://developer.brex.com/docs/support) to be issued a client ID and client secret for partner authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.brex.com/guides/api-launch-stages",
+   "quote": "Available by default to all Brex customers.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "An account admin or card admin must accept the Developer API agreement in **Settings \u2192 Developer**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.brex.com/docs/partner_onboarding",
+   "quote": "Once your application is approved, you'll receive credentials for the staging environment using SendSafely.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.brex.com",
+   "quote": "Send real-time notifications based on events",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.brex.com",
+   "quote": "Brex APIs use the [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) architecture, are defined using the [OpenAPI specification](https://swagger.io/specification/)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "The server is hosted at `https://api.brex.com/mcp` and supports any MCP-compatible client.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "The server supports [Dynamic Client Registration (RFC 7591)](https://www.rfc-editor.org/rfc/rfc7591), so MCP clients don't need to be pre-registered.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "brex",
+    "name": "Brex",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 84
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

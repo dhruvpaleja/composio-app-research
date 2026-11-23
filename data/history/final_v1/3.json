@@ -1,0 +1,103 @@
+{
+ "one_liner": "Pipedrive has a broad REST API (v1/v2) with OAuth 2.0 and API tokens, OpenAPI specs, and an official vendor-run MCP server; API token is included with every plan, with a 14-day trial for new accounts.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code flow plus a static personal API token obtained manually from the Pipedrive app.",
+ "access": "self_serve_trial",
+ "access_notes": "The homepage offers a 14-day free trial, no credit card. A developer sandbox account can be requested. No permanent free plan is confirmed by the pages.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.pipedrive.ai/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "No permanent free plan; a trial, paid seat or requested sandbox is needed for working credentials.",
+ "docs_url": "https://developers.pipedrive.com/docs/api/v1",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://pipedrive.com/en/features/mcp-server",
+   "quote": "An official, reliable and fully supported connection built and maintained by Pipedrive.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+   "quote": "Enter Pipedrive MCP as the app name and in the **\u201dConnection\u201d** field enter [https://mcp.pipedrive.ai/mcp](https://mcp.pipedrive.ai/mcp).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pipedrive.com",
+   "quote": "14-day free trial, no credit card required",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.pipedrive.com/docs/api/v1",
+   "quote": "Go to [the Developer Sandbox Account](https://pipedrive.readme.io/docs/developer-sandbox-account) page to learn more and request your own sandbox account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.pipedrive.com/docs/api/v1",
+   "quote": "The API token can be [obtained](https://pipedrive.readme.io/docs/how-to-find-the-api-token) manually from the Pipedrive app.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.pipedrive.com/en/article/mcp-claude",
+   "quote": "you may be prompted to sign in to your Pipedrive account and authorize access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.pipedrive.com/docs/api/v1",
+   "quote": "you can always import our OpenAPI 3 specification files",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "pipedrive",
+    "name": "Pipedrive",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 404
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "id": "49",
+ "name": "Amazon Selling Partner",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer-docs.amazon.com/sp-api",
+    "https://developer-docs.amazon.com/sp-api/docs/roles-in-the-selling-partner-api?ld=NSGoogle&pageName=US:SPDS:SPAPI-getting-started-guide",
+    "https://developer-docs.amazon/sp-api/docs/registering-as-a-developer",
+    "https://developer.amazonservices.com/start/getting-started-for-private-developers",
+    "https://sell.amazon.com/developers",
+    "https://deltologic.com/blog/amazon-seller-central-api-guide",
+    "https://netalith.com/blogs/marketplace-selling/amazon-sp-api-integration-cost",
+    "https://aumlytics.com/blog/amazon-sp-api-fees-2026",
+    "https://github.com/amzn/selling-partner-agentic-toolkit"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

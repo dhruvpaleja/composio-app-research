@@ -1,0 +1,107 @@
+{
+ "one_liner": "SendGrid has a broad REST v3 API using API-key auth and a free trial (no credit card), with continued sending needing a paid plan; only community MCP servers are evidenced.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Users create an API key in Settings > API Keys and supply it to the client. No OAuth for third-party developers appears in the pages.",
+ "access": "self_serve_trial",
+ "access_notes": "The homepage advertises a free trial with no credit card required. The trial terms (60 days, 100/day) and the paid-plan requirement afterward come from a support page that is not among the provided pages, so they are unverified here.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api",
+ "mcp": "community",
+ "mcp_url": "https://github.com/Garoth/sendgrid-mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Access is through a free trial; sustained use likely needs a paid plan (not confirmed by the provided pages). Each user must create and paste their own API key (no OAuth).",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://github.com/Garoth/sendgrid-mcp/blob/main/README.md",
+   "quote": "Go to Settings > API Keys",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://sendgrid.com",
+   "quote": "No credit card required",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://sendgrid.com",
+   "quote": "Free trial",
+   "grounding": 0.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api",
+   "quote": "List all authenticated domains",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api",
+   "quote": "Create API keys",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api",
+   "quote": "Create an Event Webhook",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Garoth/sendgrid-mcp/blob/main/README.md",
+   "quote": "A Model Context Protocol (MCP) server that provides access to SendGrid's Marketing API for email marketing and contact management.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Neschadin/sendgrid-mcp",
+   "quote": "This server is for **transactional send and delivery**, not a map of the whole SendGrid API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "sendgrid",
+    "name": "SendGrid",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 359
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

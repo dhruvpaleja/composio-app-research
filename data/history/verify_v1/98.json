@@ -1,0 +1,82 @@
+{
+ "id": "98",
+ "name": "Mermaid CLI",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/mermaid-js/mermaid-cli",
+    "https://api.mermaid.ai/v1/docs",
+    "https://mermaid.ai/products/mermaid-api",
+    "https://mermaid.ai/docs/ai/mcp-server",
+    "https://mermaid.ai/pricing",
+    "https://github.com/tomwright/mermaid-server",
+    "https://github.com/UnquietCode/mermaid-server"
+   ],
+   "changed": {
+    "api_breadth": [
+     "narrow",
+     "moderate"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://github.com/mermaid-js/mermaid-cli",
+    "https://api.mermaid.ai/v1/docs",
+    "https://mermaid.ai/products/mermaid-api",
+    "https://mermaid.ai/docs/ai/mcp-server",
+    "https://mermaid-api.readthedocs.io/en/latest/_sources/authentication.rst.txt",
+    "https://mermaid.ai/pricing"
+   ],
+   "changed": {
+    "auth_primary": [
+     "API_KEY",
+     "NONE"
+    ],
+    "api_type": [
+     "REST",
+     "SDK_or_CLI_only"
+    ],
+    "api_breadth": [
+     "moderate",
+     "narrow"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V3_rules",
+   "field": "api",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

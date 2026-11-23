@@ -1,0 +1,94 @@
+{
+ "one_liner": "GoHighLevel has a broad REST v2 API with OAuth 2.0 and Private Integration Tokens plus an official hosted MCP server; API access is bundled with paid plans (Starter $97/mo), with only a short trial reported.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 (Marketplace apps) and Private Integration Tokens (static bearer) are both available on all plans per the official help center. Legacy API keys are being phased out. The vendor MCP server now uses OAuth, with a PIT-header option documented in an older article.",
+ "access": "self_serve_trial",
+ "access_notes": "No free tier is documented on the fetched pages. API access is included in paid plans (Starter $97, Unlimited $297, Founder $497). The ~14-day trial claim comes from a third-party source only and was not on the fetched vendor pages, so it is unverified. Create Sub-Account and Enable SaaS require the Founder plan (formerly Agency Pro).",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://services.leadconnectorhq.com/mcp/",
+ "docs_url": "https://marketplace.gohighlevel.com/docs/",
+ "webhooks": true,
+ "sandbox": false,
+ "openapi_spec": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The builder needs a HighLevel subscription (Starter $97/month and up) or a short trial. Some endpoints need the Founder plan ($497/month).",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529",
+   "quote": "Both OAuth 2.0 and Private Integration Tokens (PIT) are available across plans.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529",
+   "quote": "The following endpoints are currently documented as requiring Founders plan access:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000003054-private-integrations-everything-you-need-to-know",
+   "quote": "Private Integration Tokens (PIT) are available across HighLevel subscription plans.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "api",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "quote": "Access all HighLevel platform features through our REST API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+   "quote": "The active catalog includes **more than 600 read, create, update, and delete operations across 38 domains**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000007981-highlevel-mcp-server-model-context-protocol-",
+   "quote": "The HighLevel MCP (Model Context Protocol) Server provides a secure way for AI agents and MCP-compatible applications to interact with HighLevel tools and services.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "highlevel_mcp",
+    "name": "HighLevel MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 36
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "highlevel_mcp"
+  ]
+ }
+}

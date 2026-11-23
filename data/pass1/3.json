@@ -1,0 +1,77 @@
+{
+ "one_liner": "Pipedrive has a broad REST API (v1/v2) with self-serve OAuth 2.0 app registration, API tokens, a free developer sandbox, and an official MCP server, so a toolkit is buildable now.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code flow via oauth.pipedrive.com; apps are registered in the Developer Hub to get a client_id and client_secret. Personal API tokens (x-api-token header) also work and are tied to one user.",
+ "access": "self_serve_free",
+ "access_notes": "A free developer sandbox account is available at developers.pipedrive.com. One source says the sandbox needs a paid plan, which conflicts with the others. There is no free product plan, but a 14-day trial exists. API access is included on every plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.pipedrive.ai/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Nothing major. Sandbox availability is slightly disputed, but a 14-day trial and API tokens on every plan are fallbacks. A daily token budget applies as a rate limit, which is not friction.",
+ "docs_url": "https://developers.pipedrive.com/docs/api/v1",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://pipedrive.readme.io/docs/marketplace-oauth-api",
+   "quote": "Get your [developer sandbox account](https://developers.pipedrive.com/)"
+  },
+  {
+   "field": "auth",
+   "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+   "quote": "The API token must be provided in the `x-api-token` header for all requests"
+  },
+  {
+   "field": "auth",
+   "url": "https://rollout.com/integration-guides/pipedrive/how-to-build-a-public-pipedrive-integration-building-the-auth-flow",
+   "quote": "Pipedrive's API is a powerful tool for building integrations, and it uses OAuth 2.0 for authentication."
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/pipedrive-api",
+   "quote": "a free sandbox account lets you build without touching production data."
+  },
+  {
+   "field": "access",
+   "url": "https://pipedrive.com/en/features/crm-api",
+   "quote": "Every Pipedrive plan comes with an API token that gives you access to our RESTful API for free."
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/pipedrive-api",
+   "quote": "Pipedrive's API** is a mature REST surface with two active versions (v1 and v2)"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/pipedrive-api",
+   "quote": "Webhooks v2 covers all core entities with field-level change events"
+  },
+  {
+   "field": "mcp",
+   "url": "https://pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants",
+   "quote": "Pipedrive MCP is built and maintained by Pipedrive, requires no coding, and works with real-time CRM data."
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+   "quote": "enter [https://mcp.pipedrive.ai/mcp](https://mcp.pipedrive.ai/mcp)"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

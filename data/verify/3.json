@@ -1,0 +1,44 @@
+{
+ "id": "3",
+ "name": "Pipedrive",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://support.pipedrive.com/en/article/mcp-chatgpt",
+    "https://pipedrive.com",
+    "https://developers.pipedrive.com/docs/api/v1",
+    "https://pipeline.zoominfo.com/sales/pipedrive-api",
+    "https://pipedrive.com/en/solution-provider-partnership",
+    "https://pipedrive.com/en/features/crm-api",
+    "https://pipedrive.com/en/blog/saas-partner-programs",
+    "https://pipedrive.com/en/newsroom/pipedrive-announces-new-solution-provider-partner-program-to-enhance-global-growth",
+    "https://support.pipedrive.com/en/article/how-can-i-become-a-pipedrive-affiliate-or-partner"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "pipedrive",
+    "name": "Pipedrive",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 404
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

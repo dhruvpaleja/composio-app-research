@@ -1,0 +1,81 @@
+{
+ "one_liner": "Paygent Connect (gopaygent.com) is a payments platform with a REST API, bearer API keys (pgt_live_...), webhooks and a sandbox, plus a free plan. Other unrelated \"Paygent\" products appear in the evidence, so identity is a risk.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The gopaygent.com curl example sends a static bearer key (pgt_live_...) in the Authorization header. No OAuth is shown.",
+ "access": "self_serve_free",
+ "access_notes": "The gopaygent.com homepage says \"No credit card required. Free plan available.\" and lists sandbox testing. The pages do not confirm that the free plan includes API keys.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "unverified",
+ "blocker": "unclear_docs",
+ "blocker_notes": "The MCP servers in the pages belong to different products. These are api.paygent.tech (virtual cards), withpaygent.com (@paygent-ai/mcp-server, usage billing) and the paygentic-sdk GitHub repo. None of them is gopaygent.com. The gopaygent.com developer docs (https://gopaygent.com/developers/docs) were not fetched, so \"none\" for MCP is unverified and kept only as the draft value, with low confidence. Whether the free plan includes API keys is also unverified.",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "docs_url": "https://gopaygent.com",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://gopaygent.com",
+   "quote": "Authorization: Bearer pgt_live_xxx",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://gopaygent.com",
+   "quote": "No credit card required. Free plan available.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://gopaygent.com",
+   "quote": "Full-featured test environment to simulate any payment scenario.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://gopaygent.com",
+   "quote": "Clean, predictable, and fully documented REST APIs for every payment workflow.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://gopaygent.com",
+   "quote": "Real-time event notifications with retry logic and delivery guarantees.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ },
+ "_human": {
+  "note": "Identity is unresolved. The brief says 'NMI-powered'; the agent found gopaygent.com (Bearer pgt_ keys) and could not tie it to NMI, and whether its free plan includes API keys is unverified. Marked unverified and kept out of the ready count until someone confirms which product the brief means.",
+  "src": [
+   "https://gopaygent.com"
+  ],
+  "trigger": "human queue (V1: no MCP evidence)"
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "id": "29",
+ "name": "Aircall",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://support.aircall.io/en-gb/articles/39677926959517",
+    "https://developer.aircall.io/docs/how-to-register",
+    "https://aircall.io",
+    "https://developer.aircall.io/api-references/",
+    "https://developer.aircall.io/docs/public-vs-private-app",
+    "https://pipeline.zoominfo.com/sales/aircall-api-review",
+    "https://developer.aircall.io/docs/launch-process",
+    "https://developer.aircall.io/docs/plan-your-integration",
+    "https://developer.aircall.io/docs/messaging"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "aircall",
+    "name": "Aircall",
+    "auth_schemes": [
+     "OAUTH2",
+     "BASIC"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 48
+   }
+  ],
+  "catalog_auth": [
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "one_liner": "Intercom has a broad REST API with OAuth 2.0 for public apps, access tokens for private apps, a free developer workspace and an official remote MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth (authorization code) is for public apps that access other people's workspaces. Access tokens are static and are for your own workspace. OAuth tokens don't expire and there are no refresh tokens. Permissions are set in the Developer Hub.",
+ "access": "self_serve_free",
+ "access_notes": "A free developer workspace (US only) gives you an app, an access token and OAuth setup. Sources conflict. Intercom's FAQ and ZoomInfo say the API needs a paid plan, while Nango says a free dev account is enough. Review is only required to publish to the App Store. Development workspaces have limited functionality. Customers' production workspaces may need a paid plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.intercom.com/mcp",
+ "docs_url": "https://developers.intercom.com/docs",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "There is no hard blocker. Some sources say API access needs a paid plan, but a free developer workspace can be used for building and testing. App Store review only applies if we publish a listing.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "quote": "OAuth is for if you're building a public app that accesses **other people's** Intercom data."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "quote": "An [Access Token](https://developers.intercom.com/docs/build-an-integration/learn-more/authentication#access-tokens) is for if you're using the API to access data in **your own** Intercom workspace"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.nango.dev/integrations/all/intercom",
+   "quote": "Free, self-signup for an [Intercom Developer account](https://app.intercom.com/a/developer-signup)."
+  },
+  {
+   "field": "access",
+   "url": "https://intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+   "quote": "Developer workspaces are free and intended for development purposes only."
+  },
+  {
+   "field": "access",
+   "url": "https://intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+   "quote": "In order to access the API you'll need to upgrade your plan."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.nango.dev/integrations/all/intercom",
+   "quote": "Only required for apps published to the Intercom App Store."
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/intercom-api",
+   "quote": "| **API type** | REST over HTTPS, JSON responses |"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/intercom/intercom-mcp-server/blob/main/README.md",
+   "quote": "Intercom hosts a remote MCP server that follows the authenticated remote MCP specification"
+  },
+  {
+   "field": "mcp",
+   "url": "https://intercom.com/integrations/connectors/intercom-mcp-server",
+   "quote": "Connect via the Streamable HTTP endpoint at https://mcp.intercom.com/mcp"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

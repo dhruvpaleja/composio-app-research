@@ -1,0 +1,113 @@
+{
+ "one_liner": "Vercel has a broad REST API authenticated with self-serve access tokens that work on the free Hobby plan, and it has an official remote MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Access tokens are created at vercel.com/account/tokens. Sign in with Vercel offers an OAuth authorization-code flow, but it is identity-oriented; the access token is the primary method for the REST API.",
+ "access": "self_serve_free",
+ "access_notes": "A free Hobby plan account can create an access token. The supplied pages did not re-verify this; the draft's inference is kept with lower confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://vercel.com/docs/rest-api",
+ "mcp": "official",
+ "mcp_url": "https://mcp.vercel.com",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://blog.vercel.com/docs/accounts/access-tokens",
+   "quote": "Vercel access tokens authenticate requests to the",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api",
+   "quote": "Authorization Endpoint | [https://vercel.com/oauth/authorize](https://vercel.com/oauth/authorize)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://vercel.com/docs/rest-api/getting-started",
+   "quote": "Go to the [Account Tokens page](https://vercel.com/account/tokens) and enter a descriptive name for the token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://vercel.co/pricing",
+   "quote": "Our Hobby plan is free and a great way to get started.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://vercel.com/docs/rest-api/getting-started",
+   "quote": "Use a Vercel access token to call the Vercel REST API with `curl`, then make the same request with `@vercel/sdk`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+   "quote": "Vercel MCP is Vercel's official MCP server. It's a remote MCP with OAuth that gives AI tools secure access to your Vercel projects available at:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "vercel",
+    "name": "Vercel",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 399
+   },
+   {
+    "slug": "vercel_mcp",
+    "name": "Vercel MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 37
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "app.vercel.agent-permissions-index/agent-permissions-index",
+   "app.vercel.agent-shopping-tracker/feed",
+   "app.vercel.agent-svg-registry/mcp",
+   "app.vercel.agentready-rho/agentready",
+   "app.vercel.aididwhat/aididwhat"
+  ],
+  "mcp_registry_any": 23,
+  "composio_mcp_toolkits": [
+   "vercel_mcp"
+  ]
+ }
+}

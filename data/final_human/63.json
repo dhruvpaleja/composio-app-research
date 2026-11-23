@@ -1,0 +1,107 @@
+{
+ "one_liner": "Netlify has a broad REST API with self-serve PATs and OAuth2 apps, a free plan, and an official MCP server; ready to build.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Users can create OAuth apps in User Settings > Applications (authorization-code style flow with redirect URL) and personal access tokens. Docs say public integrations must use OAuth2.",
+ "access": "self_serve_free",
+ "access_notes": "Free plan reportedly includes 'Deploy from AI, Git, or API' (pricing page; not re-fetched in this pass, so confidence lowered). No separate API charge claimed by third-party source only.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.netlify.com/mcp",
+ "docs_url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None; free account gives credentials and OAuth app registration is self-serve.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+   "quote": "If you\u2019re making a public integration with Netlify for others to enjoy, you must use OAuth2",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+   "quote": "To authenticate API requests, include the token in the authorization header:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth",
+   "quote": "Select \u201cNew OAuth app\u201d and fill in any details for your project.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://netlify.com/pricing",
+   "quote": "Deploy from AI, Git, or API",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth",
+   "quote": "Every action available in the Netlify UI is powered by an API endpoint.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://netlify.com/blog/netlify-mcp-server-ai-agents-deploy-your-code",
+   "quote": "Introducing the official Netlify MCP Server",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview",
+   "quote": "npx -y add-mcp https://mcp.netlify.com/mcp",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "netlify_mcp",
+    "name": "Netlify MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "app.netlify.acenes-of-sparta-the-dragon-slayer/epic-fantasy-101-booklist",
+   "app.netlify.agent-kb-y83q/kb",
+   "app.netlify.agent-rescue-desk/production-triage",
+   "app.netlify.automatom-x402/web-data-toolkit",
+   "app.netlify.chaincheck-api/chaincheck"
+  ],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": [
+   "netlify_mcp"
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "one_liner": "Gladly has a broad REST API with per-user API tokens (HTTP Basic), but access requires a Gladly customer account obtained via demo/sales; no self-serve signup or trial.",
+ "auth_methods": [
+  "BASIC"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "API token generated in Gladly settings by a user with API User role; used as the password with the user's email as the Basic username. Tokens are tied to a user and environment (sandbox vs production). Lookup Adaptor uses HMAC-SHA256 request signing, but that is for Gladly calling the developer's service, not the main API.",
+ "access": "partner_gated",
+ "access_notes": "No free tier or self-serve trial is documented. Gladly typically requires a demo and custom pricing, and sandbox access requires contacting Gladly. Tokens are created inside a customer's Gladly instance, which is sold via sales.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "docs_url": "https://developer.gladly.com/rest",
+ "mcp": "community",
+ "mcp_url": "https://gladly.usefulapi.io/mcp",
+ "verdict": "needs_outreach",
+ "blocker": "partnership",
+ "blocker_notes": "A builder needs a Gladly instance (demo/sales conversation) to get a sandbox or API token. There is no self-serve path.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://help.gladly.com/developer-tutorials/docs/test-the-rest-api-with-postman",
+   "quote": "Select **Basic** as the Authorization Type. Enter your username (your Gladly login email) and Password (the Gladly API token you just generated)."
+  },
+  {
+   "field": "auth",
+   "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+   "quote": "You must create an API token to access Gladly API resources (see above)."
+  },
+  {
+   "field": "access",
+   "url": "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly",
+   "quote": "Gladly typically requires a demo and custom pricing. Request a demo and trial access at [https://www.gladly.com/request-demo]"
+  },
+  {
+   "field": "access",
+   "url": "https://alloyautomation-245bf23e.mintlify.app/connectors/Gladly",
+   "quote": "Contact Gladly for sandbox or trial environment access."
+  },
+  {
+   "field": "access",
+   "url": "https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks",
+   "quote": "API tokens are tied to a single user account and a particular environment."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.gladly.com/rest",
+   "quote": "Resources follow REST semantics and utilize industry-standard HTTP verbs, response codes, and authentication schemes. In addition, all responses and payloads are in JSON"
+  },
+  {
+   "field": "mcp",
+   "url": "https://clauderules.net/mcp/io-usefulapi-gladly",
+   "quote": "claude mcp add --transport http gladly-mcp-by-usefulapi https://gladly.usefulapi.io/mcp"
+  },
+  {
+   "field": "mcp",
+   "url": "https://stackone.com/connectors/gladly/mcp",
+   "quote": "StackOne offers a hosted Gladly MCP server with 65 pre-built actions, and every action is tested and QA'd by StackOne."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

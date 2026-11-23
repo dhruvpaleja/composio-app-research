@@ -1,0 +1,67 @@
+{
+ "one_liner": "Clay has a REST Public API (api.clay.com/public/v0) with self-serve API keys on all plans including Free, plus an official hosted OAuth MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Public API uses a per-user clay-api-key header. OAuth 2.1 with DCR exists only for the MCP server at api.clay.com/v3/mcp, and the evidence doesn't show it for the REST API, so API key is primary for the REST API.",
+ "access": "self_serve_free",
+ "access_notes": "Developer platform (API and CLI) is available on all plans including Free, with search result caps (100 results per 30 days on Free). Table webhooks and the HTTP API column need Growth. The API cannot create or write to tables.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://developers.clay.com",
+ "mcp": "official",
+ "mcp_url": "https://api.clay.com/v3/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Limits: the Free plan's search cap is small, and the API can't write to tables (inbound webhooks are the write path and need Growth). The API is new, so its breadth is unverified.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.clay.com/public-api/authentication",
+   "quote": "Every request to the Clay Public API must include a Clay API key in the `clay-api-key` header."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.clay.com/quickstart",
+   "quote": "Create one yourself in Clay under [API and CLI \u2192 API keys]"
+  },
+  {
+   "field": "access",
+   "url": "https://university.clay.com/docs/clay-api-cli",
+   "quote": "The developer platform is available across all Clay plans, including free, trial, and Legacy plans."
+  },
+  {
+   "field": "api",
+   "url": "https://cleanlist.ai/blog/2026-10-16-clay-api-guide",
+   "quote": "Clay's Public API is a REST API at `api.clay.com/public/v0`"
+  },
+  {
+   "field": "api",
+   "url": "https://cleanlist.ai/blog/2026-10-16-clay-api-guide",
+   "quote": "It cannot create or write to tables; inbound webhooks still do that."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/cursor/plugins/blob/main/third_party/clay",
+   "quote": "Cursor plugin that connects agents to [Clay](https://www.clay.com) through Clay's official hosted [Model Context Protocol](https://modelcontextprotocol.io/) server."
+  },
+  {
+   "field": "mcp",
+   "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+   "quote": "Clay exposes a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that lets an external platform"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,118 @@
+{
+ "one_liner": "Google Ads API has a documented REST/JSON interface with OAuth 2.0 and broad coverage. Production use needs developer-token or access-level approval, so it is buildable with friction.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "REST calls send an OAuth 2.0 bearer access token, and the discovery document lists a single OAuth scope, adwords. The draft also listed a service-account flow (OTHER) and said developer tokens are optional. The supplied pages don't confirm either claim, so I dropped OTHER. The REST examples page still lists a developer token as a prerequisite.",
+ "access": "app_review",
+ "access_notes": "The supplied pages show that REST calls need OAuth credentials, test account access and a developer token. They don't describe the access-level tiers (Explorer, Basic, Standard) that the draft cited. The rubric names the Google Ads developer token as the app_review example, so I kept app_review with reduced confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+ "docs_url": "https://developers.google.com/google-ads/api",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Meaningful production use needs a developer token or access-level approval. The supplied pages don't detail the tiers. The webhook covers lead forms only. The MCP claim could not be re-verified: no supplied page supports it, and the vendor-namespace MCP registry search returned nothing.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://developers.google.com/google-ads/api/rest/examples",
+   "quote": "This guide contains examples of calling the REST endpoints directly, without the use of a client library.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.google.com/google-ads/api/rest/common/search",
+   "quote": "https://googleads.googleapis.com/v26/customers/CUSTOMER_ID/googleAds",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.google.com/google-ads/api/rest/design/overview",
+   "quote": "The discovery document contains information about all the services, methods, resources and entities used in the Google Ads API",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.google.com/google-ads/api/rest/examples",
+   "quote": "The [Authorization](https://developers.google.com/google-ads/api/rest/auth) guide provides instructions for generating an OAuth 2.0 access token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://googleads.googleapis.com/$discovery/rest?version=v23",
+   "quote": "See, edit, create, and delete your Google Ads accounts and data.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.google.com/google-ads/api/rest/examples",
+   "quote": "Prerequisites include a developer token, test account access",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developers.google.com/google-ads",
+   "quote": "Use webhook to send data from Google Ads to your CRM system.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "low",
+  "api": "high",
+  "auth": "medium",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "googleads",
+    "name": "Google Ads",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 78
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

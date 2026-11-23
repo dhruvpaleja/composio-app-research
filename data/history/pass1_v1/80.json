@@ -1,0 +1,57 @@
+{
+ "one_liner": "Harvest (time tracking) offers a documented REST v2 API with OAuth2 and personal access tokens, available on all accounts including free, plus an official remote MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Personal Access Tokens are created in Harvest ID Developers and sent as a Bearer token with a Harvest-Account-Id header. Full OAuth2 is available for multi-user integrations. A User-Agent header is required.",
+ "access": "self_serve_free",
+ "access_notes": "All Harvest accounts, including free and trial accounts, include API access. Permissions mirror the user's account role.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://help.getharvest.com/api-v2",
+ "mcp": "official",
+ "mcp_url": "https://api.harvestapp.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "The API breadth rating is from general knowledge of the v2 API, which covers time entries, projects, clients, invoices, expenses and users. The snippets don't enumerate the endpoints. Webhooks, sandbox and OpenAPI status are unknown from this evidence.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+   "quote": "A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API."
+  },
+  {
+   "field": "auth",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+   "quote": "Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations."
+  },
+  {
+   "field": "access",
+   "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+   "quote": "Your Harvest subscription includes API access for all accounts (including free and trial accounts) which can be used to manage your Harvest account."
+  },
+  {
+   "field": "api",
+   "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+   "quote": "When issuing a POST or PATCH request, parameters should be included in the request body."
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+   "quote": "The Harvest MCP (Model Context Protocol) connection lets you work with your Harvest data through an AI assistant, using plain language instead of clicking through the app."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "webhooks": null,
+ "sandbox": null,
+ "openapi_spec": null,
+ "_pass": 1
+}

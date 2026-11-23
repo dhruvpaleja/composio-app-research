@@ -1,0 +1,63 @@
+{
+ "one_liner": "Help Scout has a broad OAuth2 REST Inbox API 2.0 and an official MCP server, but API access requires a paid plan (Standard+); the Free plan has none.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Inbox API 2.0 uses OAuth2 (authorization code for multi-user integrations, client credentials for internal use); apps created under Your Profile > My apps. The separate Docs API v1 uses an API key via HTTP Basic (key:X). No OAuth scopes; access follows the authorizing user's permissions.",
+ "access": "paid_plan",
+ "access_notes": "The Free plan has no API access; Standard ($25/user/mo), Plus and Pro include it. Reporting endpoints need Plus or Pro. No vendor review is needed once on a paid plan. A trial was not confirmed in the evidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.helpscout.net/mcp",
+ "docs_url": "https://developer.helpscout.com/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "API needs a paid Help Scout plan (Standard or above), so testing requires a paid account. Otherwise the OAuth2 flow is self-serve.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "The Authorization Code flow is typically used for integrations to be used by other Help Scout users. The Client Credentials flow is meant for internal integrations."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/docs-api",
+   "quote": "The API key is passed via HTTP Basic Authentication and goes in the username field. A dummy password, such as X, goes in the password field."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+   "quote": "The Free plan does not include access to the API or integrations."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.helpscout.com/llms.txt",
+   "quote": "The primary REST API for managing Help Scout conversations, customers, and support operations."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+   "quote": "Set the remote MCP server URL to `https://mcp.helpscout.net/mcp`"
+  },
+  {
+   "field": "mcp",
+   "url": "https://articles.helpscout.com/blog/introducing-help-scout-mcp",
+   "quote": "Today, we're bringing Help Scout's Model Context Protocol (MCP) server out of beta, making it generally available to all Help Scout customers."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,95 @@
+{
+ "one_liner": "SE Ranking offers a broad REST Data/Project API with API-key auth, a 14-day trial with 100K credits, and an official vendor-hosted MCP server (OAuth 2.1 or API key).",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "REST API uses a single API key generated in the API Dashboard, sent as 'Authorization: Token KEY'. The MCP server supports OAuth 2.1 with dynamic client registration, or an X-Api-Key header; the pages do not show OAuth for the REST API itself.",
+ "access": "self_serve_trial",
+ "access_notes": "14-day trial with 100,000 free API credits. API package is standalone (no subscription needed); pay-as-you-go from $50/250K credits. Paid plans include monthly credits. No permanent free tier shown.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.seranking.com/mcp",
+ "docs_url": "https://seranking.com/api/data/getting-started",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Only a 14-day trial (100K credits) is free; ongoing testing needs a paid plan or $50 PAYG credits. The trial is enough to build, so friction is modest.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/data/getting-started",
+   "quote": "Include an `Authorization` header in your request, with the value `Token YOUR_API_KEY`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/how-to-get-api",
+   "quote": "A single API key authenticates every endpoint across the Data API and the Project API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/integrations/mcp",
+   "quote": "This transport uses OAuth 2.1 with dynamic client registration for authentication at the following address:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://seranking.com/api-pricing.html",
+   "quote": "14-day trial to test every API endpoint",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.seranking.com/hc/en-us/articles/22903914755100-Prompt-library",
+   "quote": "The API package is available as a standalone product \u2014 no active SE Ranking subscription is required. Start with a 14-day trial that includes **100,000 free API credits**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://seranking.com/mcp.html",
+   "quote": "Data across keyword research, domain analysis, backlinks, website audits, and more \u2014 all in one MCP server.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://seranking.com/api/integrations/mcp",
+   "quote": "MCP server server follows the authenticated remote MCP spec, so it\u2019s centrally hosted and managed.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://seranking.com/api/integrations/mcp",
+   "quote": "Add the official [SE Ranking connector](https://claude.ai/customize/connectors/id/se-ranking) and click **Connect**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

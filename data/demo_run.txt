@@ -1,0 +1,12 @@
+$ python3 -m agent.pipeline all --ids 41 --workers 1
+[pass1 1/1] #41 Shopify: auth=OAUTH2 access=self_serve_free verdict=ready
+STATS {"search": 3, "fetch": 0, "llm": 1, "llm_cost_usd": 0.0484667, "cache_hits": 0}
+[verify 1/1] #41 Shopify: flags=0 rounds=1
+STATS {"search": 7, "fetch": 14, "llm": 1, "llm_cost_usd": 0.083881, "cache_hits": 12}
+wall time (s): 120.54
+
+# data/final/41.json
+{"auth_methods": ["OAUTH2", "API_KEY"], "auth_primary": "OAUTH2", "access": "self_serve_free",
+ "api_type": "REST+GraphQL", "mcp": "official", "verdict": "ready", "blocker": "none",
+ 9 evidence quotes, all found on their pages (grounding 1.0)}
+# recorded 23 Nov 2026, total Claude cost $0.13

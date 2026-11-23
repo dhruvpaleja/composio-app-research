@@ -1,0 +1,110 @@
+{
+ "one_liner": "Slack has a broad Web API with OAuth, free developer sandboxes, incoming webhooks, and an official vendor-hosted MCP server at mcp.slack.com/mcp (admin approval may be needed).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The docs link a \"Tokens and OAuth\" section, and the MCP server uses OAuth. API_KEY (bot/user tokens, webhook URLs) is retained from standard Slack behaviour. The fetched pages only show the webhook URL as a static secret and do not show bot-token text, so confidence is medium.",
+ "access": "self_serve_free",
+ "access_notes": "Anyone can join the free Slack Developer Program and provision a basic sandbox. Basic sandboxes have limits, including a one-month lifespan and no hosted functions. Some workflow features need a paid plan. Distributing apps to other workspaces goes through Marketplace review.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "docs_url": "https://docs.slack.dev",
+ "mcp": "official",
+ "mcp_url": "https://mcp.slack.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No hard blocker. The MCP server goes through the standard Slack app approval process, so workspace admins may need to approve it. Marketplace distribution needs review.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://api.slack.com/docs/developer-sandbox",
+   "quote": "All developers can provision a basic sandbox.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://api.slack.com/docs/developer-sandbox",
+   "quote": "Anyone can sign up for an account, and there are no costs associated with being a member of the Slack Developer Program.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.slack.dev",
+   "quote": "Remote MCP over HTTP with OAuth. Your workspace admin may need to approve it.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.slack.dev",
+   "quote": "MCP connections go through the standard Slack app approval process, so admins stay in control of what connects.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.slack.dev",
+   "quote": "Web API methods",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.slack.dev",
+   "quote": "Tokens and OAuth",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://docs.slack.dev",
+   "quote": "Copy the URL under **Incoming Webhooks**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "blocker",
+   "url": "https://api.slack.com/slack-marketplace/guidelines",
+   "quote": "provide only an MCP server without meaningful in-Slack functionality.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "slack",
+    "name": "Slack",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 165
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": []
+ }
+}

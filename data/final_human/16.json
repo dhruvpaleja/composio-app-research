@@ -1,0 +1,88 @@
+{
+ "one_liner": "LiveAgent helpdesk has a documented REST API v3 with admin-generated API keys, a 30-day free trial with no credit card, and a vendor-built MCP server (Business plan and up).",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API v3 uses a static API key that an admin generates under Configuration > System > API. This was not re-verified in the supplied pages, so the draft evidence is kept. OAuth 2.1 (Authorization Code + PKCE) and bearer tokens are documented only for the MCP server, not the main REST API.",
+ "access": "self_serve_trial",
+ "access_notes": "A 30-day free trial with no credit card is available, and the docs recommend a trial account for API testing. No permanent free tier is shown. Correction to the draft: the pricing page lists the MCP server under the Business plan, not Enterprise, and Business has a self-serve \"Start free trial\" button. Enterprise is \"Talk to sales\". Whether the trial includes the Business-tier MCP server is not stated.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+ "docs_url": "https://support.liveagent.com/567924-Documentation",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "A 30-day no-card trial is long enough to build and test the REST API. Each customer has its own domain and API key, which is not counted as friction under the rubric.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "quote": "While logged in as an admin navigate to Configuration> System> API which loads the API v3 section where you find existing API keys or add a new one.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+   "quote": "There are two ways to authenticate your MCP client - **OAuth 2.1 (recommended)**, where the AI tool discovers the authorization server automatically",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://liveagent.com",
+   "quote": "Connect your support email and website chat, and answer real customers for 30 days. No credit card, no setup fee.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.liveagent.com/567924-Documentation",
+   "quote": "Consider registering a new [free Trial account](https://www.liveagent.com/trial/) for testing purposes, before using API with your live account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://cdn.liveagent.com/features/mcp-server",
+   "quote": "- MCP server for your own AI tools",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://support.liveagent.com/567924-Documentation",
+   "quote": "You can find whole LiveAgent API documentation within your LiveAgent account:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+   "quote": "LiveAgent exposes a built-in **MCP server** (Model Context Protocol) that lets you connect external AI tools, such as ChatGPT, Claude Desktop, Cursor",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

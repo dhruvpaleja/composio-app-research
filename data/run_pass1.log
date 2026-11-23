@@ -1,0 +1,101 @@
+[pass1 1/100] #3 Pipedrive: auth=OAUTH2 access=self_serve_trial verdict=ready
+[pass1 2/100] #6 Podio: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 3/100] #9 Copper: auth=API_KEY access=self_serve_trial verdict=ready_with_friction
+[pass1 4/100] #4 Attio: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 5/100] #5 Twenty: auth=OAUTH2 access=self_serve_trial verdict=ready_with_friction
+[pass1 6/100] #8 Close: auth=OAUTH2 access=self_serve_trial verdict=ready_with_friction
+[pass1 7/100] #7 Zoho CRM: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 8/100] #1 Salesforce: auth=OAUTH2 access=self_serve_free verdict=ready_with_friction
+[pass1 9/100] #2 HubSpot: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 10/100] #10 DealCloud: auth=OAUTH2 access=partner_gated verdict=needs_outreach
+[pass1 11/100] #15 Pylon: auth=API_KEY access=paid_plan verdict=ready_with_friction
+[pass1 12/100] #12 Intercom: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 13/100] #17 Plain: auth=OAUTH2 access=paid_plan verdict=ready_with_friction
+[pass1 14/100] #16 LiveAgent: auth=API_KEY access=self_serve_trial verdict=ready_with_friction
+[pass1 15/100] #13 Freshdesk: auth=API_KEY access=self_serve_trial verdict=ready_with_friction
+[pass1 16/100] #14 Front: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 17/100] #18 Help Scout: auth=OAUTH2 access=paid_plan verdict=ready_with_friction
+[pass1 18/100] #11 Zendesk: auth=OAUTH2 access=self_serve_trial verdict=ready_with_friction
+[pass1 19/100] #20 Gladly: auth=BASIC access=partner_gated verdict=needs_outreach
+[pass1 20/100] #22 Twilio: auth=OAUTH2 access=self_serve_trial verdict=ready
+[pass1 21/100] #23 Zoho Cliq: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 22/100] #21 Slack: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 23/100] #24 Lark (Larksuite): auth=OAUTH2 access=self_serve_free verdict=ready_with_friction
+[pass1 24/100] #25 Pumble: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 25/100] #26 Discord: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 26/100] #27 Telegram: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 27/100] #30 Vonage: auth=BASIC access=self_serve_free verdict=ready
+[pass1 28/100] #19 Gorgias: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 29/100] #29 Aircall: auth=BASIC access=self_serve_trial verdict=ready_with_friction
+[pass1 30/100] #28 WhatsApp Business: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 31/100] #32 Meta Ads: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 32/100] #31 Google Ads: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 33/100] #34 GoHighLevel: auth=OAUTH2 access=self_serve_trial verdict=ready_with_friction
+[pass1 34/100] #36 Klaviyo: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 35/100] #37 systeme.io: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 36/100] #35 Mailchimp: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 37/100] #38 Pinterest: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 38/100] #33 LinkedIn Ads: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 39/100] #40 SendGrid: auth=API_KEY access=self_serve_trial verdict=ready_with_friction
+[pass1 40/100] #41 Shopify: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 41/100] #39 Threads (Meta): auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 42/100] #42 WooCommerce: auth=API_KEY access=self_serve_free verdict=ready_with_friction
+[pass1 43/100] #43 BigCommerce: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 44/100] #46 Squarespace: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 45/100] #44 Salesforce Commerce Cloud: auth=OAUTH2 access=partner_gated verdict=needs_outreach
+[pass1 46/100] #45 Magento (Adobe Commerce): auth=OTHER access=self_serve_free verdict=ready_with_friction
+[pass1 47/100] #47 Ecwid: auth=OAUTH2 access=paid_plan verdict=ready_with_friction
+[pass1 48/100] #48 Gumroad: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 49/100] #49 Amazon Selling Partner: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 50/100] #50 fanbasis: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 51/100] #58 Sherlock: auth=NONE access=self_serve_free verdict=not_buildable
+[pass1 52/100] #54 MrScraper: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 53/100] #52 SE Ranking: auth=API_KEY access=self_serve_trial verdict=ready_with_friction
+[pass1 54/100] #51 DataForSEO: auth=BASIC access=self_serve_free verdict=ready
+[pass1 55/100] #53 Ahrefs: auth=API_KEY access=paid_plan verdict=ready_with_friction
+[pass1 56/100] #55 Apify: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 57/100] #56 Firecrawl: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 58/100] #59 Waterfall.io: auth=API_KEY access=partner_gated verdict=needs_outreach
+[pass1 59/100] #57 Bright Data: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 60/100] #62 Vercel: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 61/100] #60 Clay: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 62/100] #61 GitHub: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 63/100] #63 Netlify: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 64/100] #64 Cloudflare: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 65/100] #65 Supabase: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 66/100] #66 Neo4j: auth=OAUTH2 access=self_serve_free verdict=ready_with_friction
+[pass1 67/100] #67 Snowflake: auth=OAUTH2 access=self_serve_trial verdict=ready_with_friction
+[pass1 68/100] #68 MongoDB Atlas: auth=OAUTH2 access=self_serve_free verdict=ready_with_friction
+[pass1 69/100] #71 Notion: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 70/100] #69 Datadog: auth=API_KEY access=self_serve_trial verdict=ready_with_friction
+[pass1 71/100] #70 Sentry: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 72/100] #72 Airtable: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 73/100] #73 Linear: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 74/100] #74 Jira: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 75/100] #75 Asana: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 76/100] #77 ClickUp: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 77/100] #76 Monday.com: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 78/100] #78 Coda: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 79/100] #81 Stripe: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 80/100] #80 Harvest: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 81/100] #79 Smartsheet: auth=OAUTH2 access=paid_plan verdict=ready_with_friction
+[pass1 82/100] #83 Binance: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 83/100] #85 iPayX: auth=API_KEY access=self_serve_free verdict=ready_with_friction
+[pass1 84/100] #86 QuickBooks: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 85/100] #84 Paygent Connect: auth=API_KEY access=self_serve_free verdict=ready_with_friction
+[pass1 86/100] #82 Plaid: auth=API_KEY access=self_serve_free verdict=ready_with_friction
+[pass1 87/100] #88 Brex: auth=API_KEY access=self_serve_free verdict=ready_with_friction
+[pass1 88/100] #87 Xero: auth=OAUTH2 access=self_serve_free verdict=ready_with_friction
+[pass1 89/100] #89 Ramp: auth=OAUTH2 access=app_review verdict=ready_with_friction
+[pass1 90/100] #90 PitchBook: auth=API_KEY access=partner_gated verdict=needs_outreach
+[pass1 91/100] #91 NotebookLM: auth=OAUTH2 access=paid_plan verdict=ready_with_friction
+[pass1 92/100] #92 Otter AI: auth=API_KEY access=partner_gated verdict=needs_outreach
+[pass1 93/100] #94 Consensus: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 94/100] #93 Fathom: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 95/100] #95 Reducto: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 96/100] #96 Devin: auth=API_KEY access=paid_plan verdict=ready_with_friction
+[pass1 97/100] #97 higgsfield: auth=API_KEY access=paid_plan verdict=ready_with_friction
+[pass1 98/100] #99 YouTube Transcript: auth=API_KEY access=self_serve_free verdict=ready
+[pass1 99/100] #100 Grain: auth=OAUTH2 access=self_serve_free verdict=ready
+[pass1 100/100] #98 Mermaid CLI: auth=API_KEY access=self_serve_free verdict=ready_with_friction
+STATS {"search": 294, "fetch": 0, "llm": 98, "llm_cost_usd": 5.739780700000001, "cache_hits": 8}

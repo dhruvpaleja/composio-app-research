@@ -1,0 +1,63 @@
+{
+ "one_liner": "Neo4j offers the Aura management REST API (OAuth2 client credentials) plus per-database HTTP Query API (Basic/Bearer) and an official MCP server; the free Aura tier allows self-serve testing.",
+ "auth_methods": [
+  "OAUTH2",
+  "BASIC",
+  "API_KEY"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Aura API uses OAuth 2.0 client credentials (client ID/secret to bearer token), which is not a user-authorization flow. The database HTTP/Query API uses Basic auth with database username and password, and also supports bearer tokens. Per-database credentials are the main way to use the data API.",
+ "access": "self_serve_free",
+ "access_notes": "Aura Free needs no credit card and gives instance credentials. The Aura management API credentials may require billing info for Free and Professional users, per the classic docs; the current docs say all tiers can create them. The database Query API works with free instance credentials.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://github.com/neo4j/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Per-instance credentials, and no multi-user OAuth authorization-code flow. The Query API is hosted per database.",
+ "docs_url": "https://neo4j.com/docs/aura/api/authentication",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "The Aura API uses OAuth 2.0 for API authentication."
+  },
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/docs/http-api/current/authentication-authorization",
+   "quote": "Both *basic* and *bearer* authentication are supported."
+  },
+  {
+   "field": "access",
+   "url": "https://neo4j.com/subscriptions",
+   "quote": "No credit card or other payment method required"
+  },
+  {
+   "field": "access",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "All tiers can create Aura API credentials."
+  },
+  {
+   "field": "api",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "To authenticate API requests to the [Aura API](/docs/aura/platform/api/specification/), you must provide a Bearer Token in the `Authorization` header"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/neo4j-contrib/mcp-neo4j",
+   "quote": "If you are looking for the official product Neo4j MCP server please find it [here](https://github.com/neo4j/mcp)."
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

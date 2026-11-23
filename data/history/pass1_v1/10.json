@@ -1,0 +1,67 @@
+{
+ "one_liner": "DealCloud (Intapp) CRM for private capital has a broad REST API with OAuth2 client credentials, but it's available only to licensed customer sites, and its MCP server is vendor-hosted, read-only and needs a Celeste license.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Token endpoint uses OAuth2 client credentials: client_id plus a user-generated API key as the secret, scopes requested per call. Bearer tokens expire after 900s. User proxy assignments allow acting on behalf of other users. No authorization-code flow for third-party apps is documented for the REST API.",
+ "access": "partner_gated",
+ "access_notes": "The API key is generated in a user's profile inside a customer DealCloud site, and the user group must have the API capability enabled by an admin. No free tier, trial or developer sandbox is evidenced. Credentials need an existing paid enterprise customer site, reached through the account manager or CSM.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": null,
+ "openapi_spec": true,
+ "sandbox": null,
+ "docs_url": "https://api.docs.dealcloud.com",
+ "mcp": "official",
+ "mcp_url": "https://api.docs.dealcloud.com/mcp",
+ "verdict": "needs_outreach",
+ "blocker": "partnership",
+ "blocker_notes": "There is no self-serve path. A developer needs a licensed DealCloud site with API capability enabled by an admin or CSM. Multi-tenant toolkit use means a per-customer setup, since each site has its own URL and credentials.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://api.docs.dealcloud.com/docs/token",
+   "quote": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests."
+  },
+  {
+   "field": "auth",
+   "url": "https://api.docs.dealcloud.com/docs/apikeys",
+   "quote": "Scroll down to the API Key section and click **Enable**. Then click **Copy API Key to Clipboard** to copy your API key for use in integrations or API requests."
+  },
+  {
+   "field": "access",
+   "url": "https://api.docs.dealcloud.com/docs/apikeys",
+   "quote": "If you do not see the Admin section, contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance."
+  },
+  {
+   "field": "access",
+   "url": "https://api.docs.dealcloud.com/docs/publications/getting_started",
+   "quote": "Get in touch with your account manager to have Publications enabled on your site."
+  },
+  {
+   "field": "api",
+   "url": "https://api.docs.dealcloud.com/docs/relintel",
+   "quote": "These APIs provide create access to the email and meeting datasets that are core to Relationship Intelligence."
+  },
+  {
+   "field": "mcp",
+   "url": "https://api.docs.dealcloud.com/releases",
+   "quote": "DealCloud now provides a Model Context Protocol (MCP) server which gives AI agents read access to your DealCloud data."
+  },
+  {
+   "field": "mcp",
+   "url": "https://api.docs.dealcloud.com/mcp/tools",
+   "quote": "All DealCloud MCP tools are currently read-only and do not create, update, or delete data."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

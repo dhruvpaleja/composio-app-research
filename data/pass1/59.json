@@ -1,0 +1,56 @@
+{
+ "one_liner": "Waterfall.io offers a REST API for contact and company enrichment that uses an x-api-key header. Keys are issued only after the vendor approves a request, and pricing is quoted case by case.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "A static API key goes in the x-api-key header. A master key can create sub-keys, and key management must be enabled by the account manager. Webhooks are signed with Ed25519 JWTs.",
+ "access": "partner_gated",
+ "access_notes": "Access is by approval. You enter a work email or book a call, and the team reviews every request. Pricing is quoted after a benchmark. No free tier or self-serve trial is documented.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "needs_outreach",
+ "blocker": "partnership",
+ "blocker_notes": "Keys are issued only after approval and a sales or founder conversation. Some endpoints are in preview or need access enabled on the key.",
+ "docs_url": "https://docs.waterfall.io/v1/introduction",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.waterfall.io/v1/authentication",
+   "quote": "Authenticate data and account API requests with your Waterfall API key in the `x-api-key` header."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.waterfall.io/v1/faq",
+   "quote": "API access is available by approval. Enter your work email on the [Waterfall website](https://www.waterfall.io/) to request a key"
+  },
+  {
+   "field": "access",
+   "url": "https://waterfall.io/pricing",
+   "quote": "Per-credit rates depend on the endpoints you use and the volume you commit to, and are quoted after a benchmark on a sample of your own records"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "quote": "The Waterfall API is available at `https://api.waterfall.io`. Send your API key in the `x-api-key` header."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.wpwaterfall.com/mcp/overview",
+   "quote": "The WP Waterfall MCP server at https://mcp.wpwaterfall.com lets Claude, Claude Code, Cursor, ChatGPT, or another AI assistant look at your sites"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

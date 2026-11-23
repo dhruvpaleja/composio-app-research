@@ -1,0 +1,96 @@
+{
+ "one_liner": "Front has a documented REST Core API with OAuth2 apps and API tokens, a free developer sandbox account, and an official vendor MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization-code flow with refresh tokens; apps are created in the developer portal. Admin-created company-level API tokens are an alternative for single-company use. Partner integrations are required to use OAuth.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer account/environment with no production data, limited to 3 teammates. Admins can create API tokens under Settings > Developers.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://dev.frontapp.com/docs/mcp-server",
+ "docs_url": "https://dev.frontapp.com/docs/welcome",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Public App Store listing requires partner approval; building and testing do not.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/oauth",
+   "quote": "Front's OAuth implementation only supports the authorization code grant type which defines a flow to get a temporary authorization token which can then be exchanged to get an API and refresh token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "quote": "There are two ways to get a Bearer token \u2014 through API tokens in your settings or through an OAuth implementation",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+   "quote": "You must be an admin to create or manage API tokens.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "You\u2019ll get access to a free developer environment that will provide everything you need to begin building with our APIs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "quote": "The Core API uses Bearer tokens to authenticate its user.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "Access Front data and actions through the MCP protocol, allowing AI agents like Claude and ChatGPT to read and reply to conversations and other Front resources.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "front",
+    "name": "Front",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 180
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 12,
+  "composio_mcp_toolkits": []
+ }
+}

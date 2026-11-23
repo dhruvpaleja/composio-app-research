@@ -1,0 +1,119 @@
+{
+ "one_liner": "Stripe has a broad REST API with self-serve free API keys (test mode/sandbox), OAuth via Stripe Apps/Connect, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "BASIC",
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "API keys are sent via HTTP Basic (key as username) or Bearer. OAuth 2.0 is available through Stripe Apps for acting on behalf of users. Restricted API keys are a copy-paste alternative.",
+ "access": "self_serve_free",
+ "access_notes": "API keys are viewed and managed in the Dashboard; test mode secret keys give access to sandboxes with no live data impact. Account creation generates keys immediately. Live mode requires account setup.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.stripe.com",
+ "docs_url": "https://docs.stripe.com/api",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None for building and testing; sandbox keys are available with an account.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/api/authentication?lang=connect",
+   "quote": "The Stripe API authenticates requests using [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). Provide your API key as the basic auth username value.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+   "quote": "Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://stripe.com/docs/api",
+   "quote": "Test mode secret keys start with `sk_test_` and have unrestricted access to their sandboxes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.stripe.com/get-started/api-request",
+   "quote": "After you create a Stripe account, we generate two pairs of [API keys](/keys) for you",
+   "grounding": 0.86,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.stripe.com/keys/restricted-api-keys",
+   "quote": "All Stripe APIs support restricted API keys.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/stripe/agent-toolkit",
+   "quote": "Stripe hosts a remote MCP server at `https://mcp.stripe.com`. This allows secure MCP client access via OAuth.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.stripe.com/mcp?agent=claude",
+   "quote": "The Stripe Model Context Protocol (MCP) server provides tools that AI agents can use to interact with the Stripe API and search the Stripe knowledge base, including documentation and support articles.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "stripe",
+    "name": "Stripe",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 428
+   },
+   {
+    "slug": "stripe_mcp",
+    "name": "Stripe MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 10
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.stripe/mcp"
+  ],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": [
+   "stripe_mcp"
+  ]
+ }
+}

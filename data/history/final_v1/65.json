@@ -1,0 +1,129 @@
+{
+ "one_liner": "Supabase offers a Management API, per-project REST and GraphQL APIs, and an official vendor-run remote MCP server (OAuth login) at mcp.supabase.com; the free tier is self-serve.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The supplied pages show an OAuth authorization-code flow for partner integrations and OAuth for the hosted MCP server. The MCP docs say \"You don't need a personal access token (PAT)\", which implies PATs exist, and the MCP tools return publishable and legacy anon API keys. Composio lists OAUTH2 and API_KEY. The pages do not document the Management API's auth directly, so confidence is low-to-medium.",
+ "access": "self_serve_free",
+ "access_notes": "The pages do not show a free-plan statement directly. The draft's pricing claims came from a page not supplied here, so they cannot be verified. The MCP docs say \"Branching (experimental) Requires a paid plan.\", implying other features do not need one. The self-serve claim is inferred.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.supabase.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker is evident in the supplied pages. Branching requires a paid plan, and the pages say nothing about OAuth app registration approval.",
+ "docs_url": "https://supabase.com/docs",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://github.com/supabase/mcp/blob/main/README.md",
+   "quote": "# Supabase MCP Server",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/supabase/mcp/blob/main/README.md",
+   "quote": "\"url\": \"https://mcp.supabase.com/mcp\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+   "quote": "You don't need a personal access token (PAT).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://supabase.com/docs",
+   "quote": "Manage your Supabase projects and organizations.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://supabase.com/docs",
+   "quote": "[GraphQL API](https://supabase.com/docs/guides/graphql)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://supabase.com/docs",
+   "quote": "[Data REST API](https://supabase.com/docs/guides/api)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+   "quote": "Requires a paid plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "auth",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "supabase",
+    "name": "Supabase",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 230
+   },
+   {
+    "slug": "supabase_mcp",
+    "name": "Supabase MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 32
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.supabase/mcp"
+  ],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": [
+   "supabase_mcp"
+  ]
+ }
+}

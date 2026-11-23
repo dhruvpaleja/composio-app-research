@@ -1,0 +1,76 @@
+{
+ "id": "6",
+ "name": "Podio",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://podio.com",
+    "https://developers.podio.com",
+    "https://developers.podio.com/index/faq",
+    "https://progress.com/podio/documentation/using-podio/troubleshooting-and-faqs/podio-hybrid-pricing-faq",
+    "https://podio.com/site/pricing",
+    "https://podio.com/site/partners",
+    "https://progress.com/podio/documentation/using-podio/upgrade-and-billing/add-ons-increase-api"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "OAUTH2",
+      "OTHER"
+     ],
+     [
+      "OAUTH2",
+      "API_KEY"
+     ]
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://podio.com",
+    "https://developers.podio.com",
+    "https://mcp.podio.com",
+    "https://progress.com/podio/documentation/using-podio/podio-mcp-server",
+    "https://composio.dev/toolkits/podio/framework/hermes-agent",
+    "https://martechdb.com/vendors/podio",
+    "https://help.podia.com/en/articles/16680176-connecting-podia-to-your-ai-tool"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "podio",
+    "name": "Podio",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 143
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

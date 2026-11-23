@@ -1,0 +1,42 @@
+{
+ "id": "6",
+ "name": "Podio",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://mcp.podio.com",
+    "https://podio.com",
+    "https://developers.podio.com",
+    "https://developers.podio.com/index/faq",
+    "https://progress.com/podio/documentation/using-podio/troubleshooting-and-faqs/podio-hybrid-pricing-faq",
+    "https://podio.com/site/pricing",
+    "https://podio.com/site/partners",
+    "https://progress.com/podio/documentation/using-podio/upgrade-and-billing/add-ons-increase-api",
+    "https://toolsurf.com/podio-pricing-2026"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "podio",
+    "name": "Podio",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 143
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

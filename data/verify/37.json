@@ -1,0 +1,30 @@
+{
+ "id": "37",
+ "name": "systeme.io",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.systeme.io/docs/mcp-server",
+    "https://help.systeme.io/article/11229-how-to-connect-your-systemeio-account-with-chatgpt-using-mcp-keys",
+    "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+    "https://help.systeme.io/article/11414-how-to-manage-your-automation-rules-with-the-systeme-io-mcp-server",
+    "https://systeme.io/mcp",
+    "https://help.systeme.io/article/11230-how-to-connect-your-systemeio-account-with-claude-using-mcp-keys",
+    "https://help.systeme.io/article/11407-how-to-manage-your-newsletters-and-email-campaigns-with-the-systemeio-mcp-server",
+    "https://systeme.io",
+    "https://developer.systeme.io/reference/api"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

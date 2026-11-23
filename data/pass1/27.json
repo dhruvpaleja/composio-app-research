@@ -1,0 +1,63 @@
+{
+ "one_liner": "Telegram offers a free Bot API (token from @BotFather) plus MTProto user API (api_id/api_hash); easily buildable, with only community MCP servers.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Bot API uses a static bot token from @BotFather. MTProto user API uses api_id/api_hash plus phone-code login (session auth). Telegram Login offers OIDC authorization-code with PKCE, but only for sign-in, not for the main API.",
+ "access": "self_serve_free",
+ "access_notes": "The Bot API and the Telegram API (MTProto) are free. A bot token comes from @BotFather, and api_id/api_hash come from my.telegram.org.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://github.com/chigwell/telegram-mcp",
+ "docs_url": "https://core.telegram.org/bots/api",
+ "openapi_spec": false,
+ "sandbox": false,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "The Bot API docs page was not in the evidence. The REST, broad and webhooks labels rely on the policies page, which describes a simple HTTPS interface, and on general knowledge. Bots cannot act as a user account, and user-level access needs MTProto sessions.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "quote": "You will get basic addresses as well as the **api_id** and **api_hash** parameters required for user authorization."
+  },
+  {
+   "field": "auth",
+   "url": "https://oauth.telegram.org/developers",
+   "quote": "Our implementation follows the standard [Authorization Code Flow](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth) with **PKCE** support."
+  },
+  {
+   "field": "auth",
+   "url": "https://cloutlab.studio/en/blog/telegram-api-pricing",
+   "quote": "| Bot API | Bots and Mini Apps: messages, buttons, payments, groups, channels | A token from @BotFather | Free |"
+  },
+  {
+   "field": "access",
+   "url": "https://policies.telegram.org",
+   "quote": "You are welcome to use both APIs free of charge."
+  },
+  {
+   "field": "api",
+   "url": "https://policies.telegram.org",
+   "quote": "You communicate with this server via a simple HTTPS interface that offers a simplified version of the Telegram API."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/chigwell/telegram-mcp/blob/main/README.md",
+   "quote": "The server currently includes 80+ MCP tools grouped into these areas"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,38 @@
+{
+ "id": "52",
+ "name": "SE Ranking",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://seranking.com/api/data/getting-started",
+    "https://help.seranking.com/hc/en-us/articles/25945946059548-SE-Ranking-API-Use-Cases-Overview",
+    "https://seranking.com/api/how-to-get-api",
+    "https://seranking.com/blog/mcp-vs-api-seo",
+    "https://help.seranking.com/hc/en-us/articles/28449005578012-SE-Ranking-API-Comparison-Project-API-vs-Data-API",
+    "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "https://seranking.com/api-pricing.html"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "API_KEY",
+      "OAUTH2"
+     ],
+     [
+      "API_KEY"
+     ]
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

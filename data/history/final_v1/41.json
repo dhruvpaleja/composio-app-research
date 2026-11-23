@@ -1,0 +1,109 @@
+{
+ "one_liner": "Shopify offers a broad GraphQL Admin API with OAuth-style app auth and merchant-generated tokens, free dev stores via Partner/Dev Dashboard, and an official Shopify MCP plus a Dev MCP.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Pages show apps authenticating with an access token in the X-Shopify-Access-Token header, and merchant-generated Private API Credentials. The OAuth flow details are not on the fetched pages. OAUTH2 is kept because the Composio catalog lists it and the pages describe public apps installed by merchants.",
+ "access": "self_serve_free",
+ "access_notes": "Dev stores with test data are available for building and testing. Some APIs and scopes need Shopify approval or a specific plan, and subscription/pre-order apps must request API access in the Dev Dashboard. A general toolkit is still buildable.",
+ "api_type": "GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://shopify.dev/docs/api/shopify-mcp",
+ "docs_url": "https://shopify.dev/docs/api",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Some scopes and APIs need Shopify approval or a specific plan. Public distribution needs review. None of these blocks a toolkit for core data.",
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://shopify.dev/docs/api",
+   "quote": "lets merchants and partners set up and manage a store through the AI agent of their choice.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://shopify.dev",
+   "quote": "For agent skills and the Dev MCP server, see the",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://shopify.dev/docs/api",
+   "quote": "reads and writes products, customers, orders, inventory, and the rest of the data behind the Shopify admin.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://shopify.dev/docs/api",
+   "quote": "notify your app when a store changes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://shopify.dev/docs/api",
+   "quote": "are stores with test data that you build and test against.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://shopify.dev/docs/api",
+   "quote": "Some APIs also require Shopify's approval or a specific",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://shopify.com/legal/api-terms",
+   "quote": "\u201cPrivate API Credentials\u201d means the API Credentials generated through the Merchant Store Admin",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://shopify.dev/docs/apps/launch/billing/shopify-app-pricing/redirect-plan-selection-page",
+   "quote": "`SHOPIFY_PARTNER_API_ACCESS_TOKEN`: The access token for your Partner API client.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "shopify",
+    "name": "Shopify",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 386
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "one_liner": "Ramp has a broad REST Developer API with OAuth2 (client credentials and authorization code), a sandbox, webhooks, an OpenAPI schema and a vendor-run MCP server. Publishing an app to other Ramp businesses needs Ramp's partner and production-access approvals.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Grant types are Client Credentials, Authorization Code and Refresh Token. The token endpoint is usually called with HTTP Basic client_id:client_secret, but that is only the OAuth2 token exchange.",
+ "access": "app_review",
+ "access_notes": "An admin of a Ramp account can create a developer app and get credentials for their own business. Without a Ramp account, a sandbox can be requested through a form. Publishing to other Ramp businesses takes two approvals (partner application, then production access). Some scopes are partner-only or need a support ticket, and some endpoints need a plan feature.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.ramp.com/mcp",
+ "docs_url": "https://docs.ramp.com/developer-api/v1/introduction",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Multi-user OAuth for other Ramp businesses requires a partner application and a production access application, both reviewed by Ramp. Own-business use needs a Ramp account with admin access. The exact MCP URL is not stated on the fetched pages; it comes from the draft and the Composio signal.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.ramp.com/llms-guides/authorization.txt",
+   "quote": "Ramp uses OAuth 2.0.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.ramp.com/llms-guides/authorization.txt",
+   "quote": "| **Authorization Code** | Third-party apps, public integrations | Authorized user consent required |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "quote": "To begin using the Ramp Developer API, you must first create a developer app to obtain your API credentials. Admin access is required.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "quote": "Publishing an app for other Ramp businesses takes two approvals: a partner application, which gives you access to a Developer console, and a production access application for your app, which you submit from the Developer console.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ramp.com",
+   "quote": "Don't have a Ramp account? Request a sandbox to start building right away.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "quote": "**Sandbox API base URL:** `https://demo-api.ramp.com`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.ramp.com",
+   "quote": "Canonical OpenAPI schema for the Developer API: [/openapi/developer-api.json](https://docs.ramp.com/openapi/developer-api.json).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.ramp.com",
+   "quote": "Subscribe, verify signatures, retry.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.ramp.com/llms-guides/authorization.txt",
+   "quote": "For Ramp's own MCP server and CLI, see [Ramp MCP and Ramp CLI](<#ramp-mcp-and-ramp-cli>).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.ramp.com",
+   "quote": "Connect agents to Ramp via MCP or the CLI. Read data, process approvals, make purchases.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "ramp",
+    "name": "Ramp",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 186
+   },
+   {
+    "slug": "ramp_mcp",
+    "name": "Ramp MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 213
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 14,
+  "composio_mcp_toolkits": [
+   "ramp_mcp"
+  ]
+ }
+}

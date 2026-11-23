@@ -1,0 +1,66 @@
+{
+ "id": "28",
+ "name": "WhatsApp Business",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.facebook.com/docs/whatsapp",
+    "https://developers.facebook.com/documentation/business-messaging/whatsapp",
+    "https://developers.facebook.com/docs/whatsapp/solution-providers/get-started-for-solution-partners",
+    "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/overview",
+    "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/upgrade-to-tech-partner",
+    "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/get-started-for-solution-partners",
+    "https://360dialog.com/blog/meta-tech-provider-tiers"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developers.facebook.com/docs/whatsapp",
+    "https://developers.facebook.com/documentation/business-messaging/whatsapp",
+    "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+    "https://developers.facebook.com/blog/post/2026/09/15/whatsapp-business-messaging-mcp-ai-agent",
+    "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp.md",
+    "https://github.com/wassengerhq/mcp-wassenger"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "facebook",
+    "name": "Facebook",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 72
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

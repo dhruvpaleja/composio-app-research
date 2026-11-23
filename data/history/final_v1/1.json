@@ -1,0 +1,119 @@
+{
+ "one_liner": "Salesforce has a broad REST API (plus GraphQL) with OAuth 2.0. Developer Edition orgs include API access. Customer production orgs need an API-enabled edition. No MCP server is confirmed by the fetched pages.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "REST API uses an OAuth 2.0 access token sent as a Bearer token. An older cheatsheet also shows a username/password OAuth grant and session IDs, but these are legacy and not listed as methods. Connected App / External Client App and ISV terms details were not in the fetched pages.",
+ "access": "self_serve_free",
+ "access_notes": "Developer Edition orgs have API access enabled by default, and signup is linked from the docs. The homepage says \"No credit card needed\". Production orgs need Enterprise, Performance or Unlimited, or a Professional Edition add-on. The earlier claim that commercial apps must enroll in the ISV Partner Program was not verifiable from the fetched pages.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "none",
+ "mcp_url": null,
+ "docs_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Customer production orgs need an API-enabled paid edition, or an add-on for Professional. Each customer org also needs the API Enabled permission for its users. Possible ISV/commercial-use terms restrictions could not be verified from the fetched pages.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+   "quote": "API access is enabled by default in Enterprise, Performance, Unlimited, and Developer Edition orgs. Professional Edition orgs can add API access as an add-on.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+   "quote": "Get your very own Developer Edition",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://salesforce.com",
+   "quote": "No credit card needed \u00b7 No software to install",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-resources.html",
+   "quote": "HTTP Authorization\u2014Provides the OAuth 2.0 access token to authorize your client. REST API supports the Bearer authentication type.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-resources.html",
+   "quote": "Create, read, update, and delete records",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/resources-list.html",
+   "quote": "Executes a series of REST API requests in a single POST request, or retrieves a list of other composite resources with a GET request.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.salesforce.com/docs/platform/multiframework/guide/data-sdk-connect.html",
+   "quote": "for querying and mutating record data with a single request",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "no evidence"
+  },
+  {
+   "check": "V2_mcp_registry",
+   "field": "mcp",
+   "why": "agent said none, registry returns 15 servers matching name"
+  },
+  {
+   "check": "V3_rules",
+   "field": "mcp",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 556
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 15,
+  "composio_mcp_toolkits": []
+ }
+}

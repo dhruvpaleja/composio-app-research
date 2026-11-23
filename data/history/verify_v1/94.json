@@ -1,0 +1,58 @@
+{
+ "id": "94",
+ "name": "Consensus",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://consensus.app",
+    "https://docs.consensus.app/api-get-started",
+    "https://docs.consensus.app/api-plans-and-access",
+    "https://help.consensus.app/en/articles/10087865-subscription-plans",
+    "https://docs.consensus.app/enterprise/connection-reference",
+    "https://help.consensus.app/en/articles/16516328-the-consensus-api",
+    "https://docs.consensus.app/use-cases/best-practices"
+   ],
+   "changed": {
+    "auth_primary": [
+     "OAUTH2",
+     "API_KEY"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "consensus",
+    "name": "Consensus",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 1
+   },
+   {
+    "slug": "consensus_mcp",
+    "name": "Consensus MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 1
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "com.consensus-analytics/mcp"
+  ],
+  "mcp_registry_any": 10,
+  "composio_mcp_toolkits": [
+   "consensus_mcp"
+  ]
+ }
+}

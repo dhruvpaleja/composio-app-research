@@ -1,0 +1,79 @@
+{
+ "id": "58",
+ "name": "Sherlock",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/sherlock-project/sherlock",
+    "https://docs.sherlock.xyz/audit-engine/about-audit-engine",
+    "https://docs.sherlock.xyz/audit-engine/for-protocol-teams",
+    "https://usesherlock.ai/partners",
+    "https://docs.sherlock.xyz/audit-contests-deprecated-replaced-by-audit-engine/referral-program",
+    "https://docs.sherlock.xyz/collaborative-audits/scoping-and-audit-requirements",
+    "https://docs.sherlock.xyz/faq"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "auth",
+     "why": "no evidence"
+    },
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://github.com/sherlock-project/sherlock",
+    "https://docs.shebang.pro/sherlock/sign-in-with-sherlock-by-redirect",
+    "https://docs.aleph-alpha.com/phariaai-dev-guide/latest/pharia-data/creating-search-stores.html",
+    "https://docs.shebang.pro/mcp/hosted-mcp",
+    "https://docs.aleph-alpha.com/phariaai-dev-guide/latest/pharia-data/configuring-workflows.html",
+    "https://nuget.org/packages/Sherlock.MCP.Server/2.9.0",
+    "https://docs.codesherlock.ai/codesherlock-mcp-server/mcp/setup/guide"
+   ],
+   "changed": {
+    "mcp": [
+     "community",
+     "none"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V2_mcp_registry",
+     "field": "mcp",
+     "why": "agent said none, registry returns 3 servers matching name"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

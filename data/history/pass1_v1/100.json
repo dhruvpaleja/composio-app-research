@@ -1,0 +1,72 @@
+{
+ "one_liner": "Grain (grain.com) meeting recorder with a documented REST public API, PAT and OAuth2 auth, free-plan PAT access, and an official remote MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Bearer token in Authorization header. PAT (personal) and WAT (workspace, admin only, Business/Enterprise) are static non-expiring tokens; OAuth2 authorization code with PKCE for distributed integrations. Requests also need a Public-Api-Version header.",
+ "access": "self_serve_free",
+ "access_notes": "Personal API access (PAT) is available on every plan including Free. Workspace tokens need Business/Enterprise. OAuth app registration process is not fully clear; a Nango note says developer access is limited to select partners (possibly outdated), and a third-party page claims Business plan is required (contradicted by Grain's own support article).",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://api.grain.com/_/mcp",
+ "docs_url": "https://developers.grain.com",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor uncertainty over OAuth client registration (redirect URI registration step) and workspace-scope plan gating; PAT works on Free.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.grain.com/authentication.html",
+   "quote": "The API supports a standard OAuth2 Authorization Code flow, including the PKCE extension for client-side only authentication."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.grain.com/authentication.html",
+   "quote": "Generated manually from the integrations page. Doesn't expire, and can be revoked at any time."
+  },
+  {
+   "field": "access",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "quote": "Not for personal API access, which is available on every plan, including Free."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.nango.dev/docs/integrations/all/grain",
+   "quote": "The Grain Public API is still in beta. Developer access is limited to select partners."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.grain.com",
+   "quote": "https://api.grain.com/_/public-api/v2/token-info"
+  },
+  {
+   "field": "api",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "quote": "See the developer docs for the full list of supported event types."
+  },
+  {
+   "field": "mcp",
+   "url": "https://grain.com/release-note/06-18-2025",
+   "quote": "Integration URL: https://api.grain.com/_/mcp"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.grain.com/mcp/faq.html",
+   "quote": "Grain's MCP server is officially supported by us and aligns with our existing security practices"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

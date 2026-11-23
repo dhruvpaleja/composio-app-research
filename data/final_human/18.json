@@ -1,0 +1,100 @@
+{
+ "one_liner": "Help Scout has a broad OAuth2 REST Mailbox API and an official MCP server, but API access requires a paid plan (Standard+), since the Free plan excludes it.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Mailbox API 2.0 uses OAuth2 authorization code and client credentials. Apps are created self-serve under Your Profile > My apps. The legacy Docs API uses its own API key, which is secondary.",
+ "access": "paid_plan",
+ "access_notes": "The Free plan excludes API access. Standard, Plus or Pro is required. The homepage says 'try Help Scout free', which suggests a trial may exist, but the pages do not say the API works during it.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.helpscout.net/mcp",
+ "docs_url": "https://developer.helpscout.com/",
+ "openapi_spec": null,
+ "sandbox": false,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The builder needs a paid Help Scout plan (Standard or above) to get API credentials. Reporting endpoints need Plus or Pro.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "The Authorization Code flow is typically used for integrations to be used by other Help Scout users.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "Create one by navigating to Your Profile > My apps and click Create My App.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+   "quote": "The Free plan does not include access to the API or integrations.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+   "quote": "Each paid Help Scout plan has different levels of API access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.helpscout.com/llms.txt",
+   "quote": "The primary REST API for managing Help Scout conversations, customers, and support operations.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+   "quote": "Help Scout MCP gives AI assistants secure, official access to Help Scout data.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+   "quote": "Set the remote MCP server URL to `https://mcp.helpscout.net/mcp`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "help_scout",
+    "name": "Help Scout",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 129
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

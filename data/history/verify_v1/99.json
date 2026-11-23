@@ -1,0 +1,40 @@
+{
+ "id": "99",
+ "name": "YouTube Transcript",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://transcriptapi.com",
+    "https://transcriptapi.com/docs/api",
+    "https://transcriptapi.com/docs/mcp/chatgpt",
+    "https://paywithlocus.com/guides/youtube-transcript-api",
+    "https://transcriptube.com/youtube-transcript-api",
+    "https://transcript-yt.com/docs",
+    "https://rapidapi.com/wrt/api/get-youtube-transcript"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "youtube_transcript",
+    "name": "YouTube Transcript",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "id": "18",
+ "name": "Help Scout",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+    "https://articles.helpscout.com/blog/introducing-help-scout-mcp",
+    "https://helpscout.com/blog/help-scout-ai-features",
+    "https://helpscout.com",
+    "https://developer.helpscout.com/",
+    "https://docs.helpscout.com/article/1140-mailbox-api",
+    "https://helpscout.com/partner",
+    "https://ai-answers-test-co-2-186306.helpscoutdocs.com/article/846-mailbox-api",
+    "https://docs.helpscout.com/article/1464-light-users"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "help_scout",
+    "name": "Help Scout",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 129
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

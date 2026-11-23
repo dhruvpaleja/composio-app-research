@@ -1,0 +1,98 @@
+{
+ "one_liner": "MongoDB Atlas Administration API is a broad REST API with self-serve service accounts (OAuth2 client credentials) or legacy digest API keys, and a vendor-managed Atlas MCP server. Per-customer credential setup is required.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Service accounts use the OAuth 2.0 client-credentials flow (1h bearer token). Legacy HTTP Digest API keys are static keys, labelled API_KEY. Delegated user OAuth (authorization code + PKCE) is invite-only and not self-provisioned, so multi-user use means each customer creates a service account or API key.",
+ "access": "self_serve_free",
+ "access_notes": "Service accounts or API keys are created by an Organization Owner in an Atlas account. A free M0 tier exists, but the pages don't explicitly state that account creation is free, so this is a medium-confidence call. Delegated OAuth is invite-only.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": null,
+ "docs_url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Per-customer setup: an Organization Owner must create a service account or API key, and an IP access list may apply. Delegated multi-user OAuth is invite-only. The Admin API does not reach cluster data.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/",
+   "quote": "The Atlas Administration API supports OAuth2 Service Accounts and HTTP Digest-based API keys. Service accounts are the recommended authentication method and API keys are considered a legacy option.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/mongodb-partners/partner-api-quickstart-for-partners",
+   "quote": "MongoDB Atlas OAuth is currently **invite-only**. Client credentials are **not self-provisioned**",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/mongodb-partners/partner-api-quickstart-for-partners",
+   "quote": "Creates a free **M0** cluster.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://mongodb.com/docs/atlas/configure-api-access",
+   "quote": "The Atlas Administration API doesn't provide access to the data stored in your clusters.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://mongodb.com/docs/atlas/reference/partner-integrations/vercel",
+   "quote": "Vercel also accesses the Atlas-managed MongoDB MCP Server through Vercel agents.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "mongodb",
+    "name": "MongoDB",
+    "auth_schemes": [
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 496
+   },
+   {
+    "slug": "mongodb_mcp",
+    "name": "MongoDB MCP",
+    "auth_schemes": [
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 41
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": [
+   "mongodb_mcp"
+  ]
+ }
+}

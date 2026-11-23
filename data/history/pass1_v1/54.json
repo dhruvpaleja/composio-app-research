@@ -1,0 +1,56 @@
+{
+ "one_liner": "MrScraper is a web scraping platform with a REST API using self-serve API tokens (x-api-token), a free tier, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API uses a dashboard-generated token sent in the x-api-token header. Marketplace endpoints take the same token as a Bearer. OAuth 2.1 exists only on the hosted MCP server, not on the REST API, so it is not listed as an API auth method.",
+ "access": "self_serve_free",
+ "access_notes": "The free plan needs no credit card and includes monthly tokens. The sources disagree on the allocation: 1,000 tokens on the pricing and blog pages, 100 tokens in the billing docs. Pro costs $199/mo.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://github.com/mrscraper-com/mrscraper-mcp",
+ "docs_url": "https://docs.mrscraper.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": false,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker. Each user creates their own API token, and there is no OAuth for the REST API. The free tier's token quota is small.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "Include your API token in the `x-api-token` HTTP header on every request"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+   "quote": "The hosted server supports browser sign-in through OAuth 2.1."
+  },
+  {
+   "field": "access",
+   "url": "https://mrscraper.com/blog/scraping-api-rate-limits-retry-logic",
+   "quote": "Scraper Free**: $0/mo (1,000 Plan Tokens/month at up to 10 concurrent requests, no credit card required)."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "The MrScraper API uses API token authentication to secure all endpoints."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+   "quote": "MrScraper MCP is the official [MrScraper](https://mrscraper.com) server for the [Model Context Protocol](https://modelcontextprotocol.io)."
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

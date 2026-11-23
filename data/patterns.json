@@ -1,0 +1,57 @@
+{
+ "date": "23 Nov 2026",
+ "title": "91 of these 100 apps can become agent toolkits. Six need a sales conversation.",
+ "lede": "I built an agent that researched auth, access, API surface and MCP status for all 100 apps through Composio's own tools, then made it back every answer with a quote from a page it could fetch again (vendor docs wherever possible). 61 apps are ready to build today, 30 more after one hurdle, and the real gating sits in a few predictable places.",
+ "catalog_size": "1,829",
+ "patterns": [
+  {
+   "head": "Gating is the exception, not the rule.",
+   "body": "61 apps give a developer working credentials today (56 free, 5 through a trial of 30 days or more), and 30 more are buildable after one hurdle. Only 6 need a sales or partnership conversation: DealCloud, Gladly, Salesforce Commerce Cloud, Waterfall.io, PitchBook and Otter AI. Two are local tools with no hosted API (Sherlock, Mermaid CLI), and one is unresolved (Paygent Connect)."
+  },
+  {
+   "head": "OAuth 2 leads, but a toolkit has to speak both.",
+   "body": "OAuth 2 is the right primary auth for 55 apps, an API key or token for 33, and HTTP Basic for 9 (Twilio, Freshdesk, DataForSEO, Neo4j and others). 58 apps offer both OAuth and a static key, so every toolkit should accept both: OAuth for multi-user installs, a key for a single workspace."
+  },
+  {
+   "head": "Gating follows the category.",
+   "body": "Dev & Infra, Productivity, Communications and Finance are almost entirely free self-serve. Ad and social platforms gate through app review (Google Ads, Meta Ads, LinkedIn Ads, Pinterest, Threads, WhatsApp). Helpdesks gate through money: Help Scout, Gorgias, Plain and Pylon need a paid plan for the API, and Freshdesk's official rate-limit table only lists trials and paid plans."
+  },
+  {
+   "head": "The most common blocker is a paid plan, and gates often stack.",
+   "body": "Of the 39 apps not ready today, the main blocker is a paid plan for 15, app review for 9 and a partnership requirement for 8. One label per app hides stacking: Zendesk, Gorgias, Copper, Datadog, Brex, Ramp and Aircall also need vendor or partner approval before multi-user OAuth works. Paying for a plan is the easy part; partner approval is the long pole."
+  },
+  {
+   "head": "Vendors now ship their own MCP servers, so auth is the differentiator.",
+   "body": "86 of the 100 have an MCP server published by the vendor itself. Not all of them act on account data: Twilio's and Mailchimp's documentation servers only search docs. What vendors don't provide is managed auth across apps, consistent tool schemas and triggers, which is where Composio adds value."
+  },
+  {
+   "head": "The build queue is short and specific.",
+   "body": "75 apps already have a native Composio toolkit, and 4 exist only as a wrapped vendor MCP (Pylon, Netlify, Otter AI, Devin). 9 apps are ready today with no native toolkit: LiveAgent, Lark, Vonage, systeme.io, WooCommerce, fanbasis (now Commas), Netlify, Binance and Reducto. Before building systeme.io and fanbasis, confirm that their free plans include API keys."
+  },
+  {
+   "head": "Access facts go stale fast, so this research needs reruns.",
+   "body": "Several answers changed within the last year: SendGrid replaced its free plan with a 60-day trial, Xero moved to tiered API pricing, Datadog's pricing page now contradicts its own free tier, and fanbasis rebranded to Commas. A fresh rerun costs about $21 and under an hour. Clear the cache first, because it replays the old pages."
+  }
+ ],
+ "agent_intro": "A Python pipeline. Composio's tools do the web research (search and fetch). Composio's own toolkit catalog and the official MCP Registry serve as independent cross-checks, and Claude does the reading. Every answer has to carry a verbatim quote from a page the pipeline can re-fetch. The rubric that defines each label is shared by the agent, the auditor and my hand check.",
+ "human": [
+  "Writing the rubric. My first version counted 'per-customer setup' as friction, which describes nearly every API-key app, so the auditor drifted toward 'friction'. I rewrote it.",
+  "Building the 30-app gold sample by hand from vendor docs. I labelled it while pass 1 ran and before reading its output, though file timestamps can't prove that.",
+  "Diagnosing why loop v1 made things worse. The auditor treated 'the page doesn't mention it' as 'it's false' and downgraded Salesforce, Twilio and Aircall MCP to none. Fixed with an 'absence is not evidence' rule plus MCP-specific fetching.",
+  "The human queue: 2 apps still flagged after 2 rounds. Datadog's pricing page contradicts itself. Paygent Connect has an unresolved identity question: the brief says 'NMI-powered', but the agent found a different Paygent.",
+  "Auditing every answer the loop changed: 12 fields in 9 apps. 6 apps were fixed (Salesforce, Zendesk, LiveAgent, Mailchimp, Squarespace, NotebookLM), 1 is debatable (MongoDB primary auth), 1 was still wrong (fanbasis rebranded to Commas, which has its own MCP server) and 1 was made wrong (Mermaid CLI's MCP moved to 'official'). I corrected the last two by hand.",
+  "Reviewing the Composio catalog matches. The automatic matcher had false hits, such as 13 google_* toolkits for Google Ads and the CRM toolkit for Salesforce Commerce Cloud. The corrections are in gold/composio_matches.json.",
+  "A review of labels against the agent's own notes produced 5 more corrections: iPayX needs a paid plan, Close falls under the trial rule, Salesforce's blocker is partnership, Mermaid's MCP is community, and Paygent is unverified. Each is documented in gold/human_overrides.json."
+ ],
+ "verify_intro": "Four checks. (1) A 30-app gold sample: 3 random apps per category (seed 42), labelled by hand from vendor docs. (2) An 18-app held-out sample (seed 7, outside the gold), labelled blind by three separate research agents that never saw this pipeline's answers; I adjudicated their labels. (3) Automatic checks on all 100: every quote is re-fetched and must appear on its page, auth is compared with Composio's catalog, MCP with the official registry, and every evidence link is requested live. (4) A hand audit of every answer the loop changed. 'Quote-backed' means the label is right and a quote for that field was found on the cited page. Verdict has no quote of its own and uses the access quote.",
+ "wrong": [
+  "Loop v1 made accuracy worse: 95.0% \u2192 92.2% on my original labels. The rebuilt loop's gain is in evidence, not in labels. On the gold sample, v2 pass 1 was already 98.9% right. The loops raised quote-backed answers from 95.0% to 98.9%, and against my original labels v2 went 97.8% \u2192 97.2% (one more miss).",
+  "The gold key is lenient: 56 of its 180 fields accept more than one answer where the rubric is ambiguous. Counting only my first-choice answer, accuracy is 85.0% on the gold sample and 86.1% on the held-out sample.",
+  "All 4 remaining misses are the same error: the agent lists OAuth where there is none (Salesforce, DataForSEO, Telegram, Clay). It also lists Basic for Salesforce. A keyword rule I tried flagged 6 apps that really do offer OAuth and missed all 4 errors, so I didn't ship it. The next fix is a dedicated check for an OAuth authorize endpoint.",
+  "I revised 5 gold labels after reading the agent's evidence, and all 5 moved toward the agent: Freshdesk \u00d72, Xero, Salesforce, Datadog. Each revision has a cited reason in gold/gold.json.",
+  "Low-confidence labels to re-check by hand: Devin (which plan includes the API), Harvest (free-plan API access), Plain (third-party source) and Brex (needs a business account).",
+  "{links_dead} of {links_total} evidence links were dead at publish time, and the {quotes_dropped} quotes behind them were dropped. {links_blocked} more block automated requests but were fetched and grounded during the run.",
+  "Paygent Connect defeated the agent: it could not tie the NMI-powered product in the brief to a public developer site.",
+  "Small samples: 48 checked apps in total. Treat every percentage here as accurate to a few points."
+ ]
+}

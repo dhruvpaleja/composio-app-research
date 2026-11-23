@@ -1,0 +1,329 @@
+{
+ "n": 100,
+ "verdict": {
+  "ready_with_friction": 30,
+  "ready": 61,
+  "needs_outreach": 6,
+  "not_buildable": 2,
+  "unverified": 1
+ },
+ "access": {
+  "self_serve_free": 60,
+  "self_serve_trial": 13,
+  "partner_gated": 6,
+  "paid_plan": 10,
+  "app_review": 9,
+  "no_public_api": 2
+ },
+ "auth_primary": {
+  "OAUTH2": 55,
+  "API_KEY": 33,
+  "BASIC": 9,
+  "OTHER": 1,
+  "NONE": 2
+ },
+ "auth_any": {
+  "OAUTH2": 76,
+  "BASIC": 19,
+  "OTHER": 17,
+  "API_KEY": 79,
+  "NONE": 2
+ },
+ "mcp": {
+  "official": 86,
+  "community": 12,
+  "none": 2
+ },
+ "blocker": {
+  "partnership": 8,
+  "none": 61,
+  "paid_plan": 15,
+  "other": 3,
+  "app_review": 9,
+  "self_hosted_or_local": 3,
+  "unclear_docs": 1
+ },
+ "api_type": {
+  "REST+GraphQL": 6,
+  "REST": 89,
+  "GraphQL": 3,
+  "SDK_or_CLI_only": 2
+ },
+ "verdict_by_cat": {
+  "CRM": {
+   "ready_with_friction": 3,
+   "ready": 6,
+   "needs_outreach": 1
+  },
+  "Support & Helpdesk": {
+   "ready_with_friction": 6,
+   "ready": 3,
+   "needs_outreach": 1
+  },
+  "Communications": {
+   "ready": 8,
+   "ready_with_friction": 2
+  },
+  "Marketing & Ads": {
+   "ready_with_friction": 6,
+   "ready": 4
+  },
+  "Ecommerce": {
+   "ready": 5,
+   "needs_outreach": 1,
+   "ready_with_friction": 4
+  },
+  "Data, SEO & Scraping": {
+   "ready": 6,
+   "ready_with_friction": 2,
+   "not_buildable": 1,
+   "needs_outreach": 1
+  },
+  "Dev & Infra": {
+   "ready": 9,
+   "ready_with_friction": 1
+  },
+  "Productivity & PM": {
+   "ready": 9,
+   "ready_with_friction": 1
+  },
+  "Finance & Fintech": {
+   "ready": 5,
+   "unverified": 1,
+   "ready_with_friction": 3,
+   "needs_outreach": 1
+  },
+  "AI & Media": {
+   "ready": 6,
+   "needs_outreach": 1,
+   "ready_with_friction": 2,
+   "not_buildable": 1
+  }
+ },
+ "access_by_cat": {
+  "CRM": {
+   "self_serve_free": 6,
+   "self_serve_trial": 3,
+   "partner_gated": 1
+  },
+  "Support & Helpdesk": {
+   "self_serve_trial": 3,
+   "self_serve_free": 2,
+   "paid_plan": 4,
+   "partner_gated": 1
+  },
+  "Communications": {
+   "self_serve_free": 7,
+   "self_serve_trial": 2,
+   "app_review": 1
+  },
+  "Marketing & Ads": {
+   "app_review": 5,
+   "self_serve_trial": 2,
+   "self_serve_free": 3
+  },
+  "Ecommerce": {
+   "self_serve_free": 6,
+   "partner_gated": 1,
+   "app_review": 2,
+   "paid_plan": 1
+  },
+  "Data, SEO & Scraping": {
+   "self_serve_free": 6,
+   "self_serve_trial": 1,
+   "paid_plan": 1,
+   "no_public_api": 1,
+   "partner_gated": 1
+  },
+  "Dev & Infra": {
+   "self_serve_free": 8,
+   "self_serve_trial": 2
+  },
+  "Productivity & PM": {
+   "self_serve_free": 9,
+   "paid_plan": 1
+  },
+  "Finance & Fintech": {
+   "self_serve_free": 7,
+   "paid_plan": 1,
+   "app_review": 1,
+   "partner_gated": 1
+  },
+  "AI & Media": {
+   "self_serve_free": 6,
+   "partner_gated": 1,
+   "paid_plan": 2,
+   "no_public_api": 1
+  }
+ },
+ "mcp_by_cat": {
+  "CRM": {
+   "official": 10
+  },
+  "Support & Helpdesk": {
+   "official": 9,
+   "community": 1
+  },
+  "Communications": {
+   "official": 8,
+   "community": 2
+  },
+  "Marketing & Ads": {
+   "official": 7,
+   "community": 3
+  },
+  "Ecommerce": {
+   "official": 7,
+   "community": 3
+  },
+  "Data, SEO & Scraping": {
+   "official": 8,
+   "community": 1,
+   "none": 1
+  },
+  "Dev & Infra": {
+   "official": 10
+  },
+  "Productivity & PM": {
+   "official": 10
+  },
+  "Finance & Fintech": {
+   "official": 9,
+   "none": 1
+  },
+  "AI & Media": {
+   "community": 2,
+   "official": 8
+  }
+ },
+ "auth_by_cat": {
+  "CRM": {
+   "OAUTH2": 9,
+   "API_KEY": 1
+  },
+  "Support & Helpdesk": {
+   "OAUTH2": 5,
+   "BASIC": 3,
+   "API_KEY": 2
+  },
+  "Communications": {
+   "OAUTH2": 6,
+   "BASIC": 3,
+   "API_KEY": 1
+  },
+  "Marketing & Ads": {
+   "OAUTH2": 8,
+   "API_KEY": 2
+  },
+  "Ecommerce": {
+   "OAUTH2": 6,
+   "BASIC": 1,
+   "OTHER": 1,
+   "API_KEY": 2
+  },
+  "Data, SEO & Scraping": {
+   "BASIC": 1,
+   "API_KEY": 7,
+   "OAUTH2": 1,
+   "NONE": 1
+  },
+  "Dev & Infra": {
+   "OAUTH2": 5,
+   "API_KEY": 4,
+   "BASIC": 1
+  },
+  "Productivity & PM": {
+   "OAUTH2": 9,
+   "API_KEY": 1
+  },
+  "Finance & Fintech": {
+   "OAUTH2": 4,
+   "API_KEY": 6
+  },
+  "AI & Media": {
+   "OAUTH2": 2,
+   "API_KEY": 7,
+   "NONE": 1
+  }
+ },
+ "oauth_and_key": 58,
+ "in_composio": 75,
+ "not_in_composio": [
+  "DealCloud",
+  "LiveAgent",
+  "Gladly",
+  "Lark (Larksuite)",
+  "Vonage",
+  "systeme.io",
+  "WooCommerce",
+  "Salesforce Commerce Cloud",
+  "Magento (Adobe Commerce)",
+  "Squarespace",
+  "Ecwid",
+  "Amazon Selling Partner",
+  "fanbasis",
+  "SE Ranking",
+  "Sherlock",
+  "Waterfall.io",
+  "Binance",
+  "Paygent Connect",
+  "iPayX",
+  "Reducto",
+  "Mermaid CLI"
+ ],
+ "mcp_only_in_composio": [
+  "Pylon",
+  "Netlify",
+  "Otter AI",
+  "Devin"
+ ],
+ "composio_status": {
+  "native": 75,
+  "none": 21,
+  "mcp_only": 4
+ },
+ "easy_wins_missing": [
+  "LiveAgent",
+  "Lark (Larksuite)",
+  "Vonage",
+  "systeme.io",
+  "WooCommerce",
+  "fanbasis",
+  "Netlify",
+  "Binance",
+  "Reducto"
+ ],
+ "links": {
+  "OK": 604,
+  "BLOCKED": 23,
+  "DEAD": 18
+ },
+ "dead_evidence_dropped": 23,
+ "outreach": [
+  "DealCloud",
+  "Gladly",
+  "Salesforce Commerce Cloud",
+  "Waterfall.io",
+  "PitchBook",
+  "Otter AI"
+ ],
+ "grounding_pass1": 0.962,
+ "quotes_pass1": 693,
+ "grounding_final": 0.996,
+ "quotes_final": 757,
+ "apps_with_initial_flags": 13,
+ "apps_changed": 9,
+ "field_changes": {
+  "api_type": 1,
+  "verdict": 2,
+  "blocker": 2,
+  "mcp": 5,
+  "auth_primary": 2
+ },
+ "open_flag_apps": [],
+ "flag_checks": {
+  "V3_rules": 9,
+  "V1_grounding": 8,
+  "V2_catalog": 1
+ }
+}

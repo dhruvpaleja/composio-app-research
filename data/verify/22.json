@@ -1,0 +1,46 @@
+{
+ "id": "22",
+ "name": "Twilio",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://twilio.com/docs/ai/mcp",
+    "https://twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills",
+    "https://twilio.com/en-us/blog/deploy-mcp-server-serverless-functions",
+    "https://twilio.com/docs/ai",
+    "https://twilio.com",
+    "https://www.twilio.com/docs",
+    "https://twilio.com/content/dam/twilio-com/global/en/solutions/partner-solutions/2026-Twilio-Technology_Partner-Program-Guide.pdf",
+    "https://twilio.com/en-us/partners/become-a-partner",
+    "https://twilio.com/docs/iam/api-keys/restricted-api-keys"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "twilio",
+    "name": "Twilio",
+    "auth_schemes": [
+     "API_KEY",
+     "BASIC",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 452
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

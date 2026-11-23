@@ -1,0 +1,66 @@
+{
+ "one_liner": "Pylon (usepylon.com) has a REST API with admin-created bearer tokens, plus an official OAuth MCP server, but API access appears to need a paid seat-based plan with an annual contract.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API uses bearer API tokens created by an Admin under Settings > Integrations & dev > API. Tokens don't expire and have no scopes. OAuth 2.0 exists only for the vendor's MCP server, not for the REST API, and there is no documented self-serve app registration.",
+ "access": "paid_plan",
+ "access_notes": "Pricing lists the API as included in the Professional plan ($89 per seat/month, annual contract). No free tier or trial is evidenced. Only Admins can create tokens.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+ "mcp": "official",
+ "mcp_url": "https://mcp.usepylon.com",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The API is documented, but getting a working token requires a paid Pylon workspace on an annual contract. The evidence shows no free tier or trial. A sales-assisted route may exist, which is unverified.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "The Pylon API uses [Bearer](https://www.rfc-editor.org/rfc/rfc6750#section-2.1) authentication. This means you\u2019ll need to pass your API token in the header of your request"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "Tokens don't expire, and their access is controlled only by the role. There are no separate scopes."
+  },
+  {
+   "field": "access",
+   "url": "https://usepylon.com/pylon-facts",
+   "quote": "Professional** | **$89 per seat/month**, annual contract | Core support, viewer seats, analytics, automations, Skills, broadcasts, MCP, API, integrations"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "Only Admins can create and manage API tokens."
+  },
+  {
+   "field": "api",
+   "url": "https://usepylon.com/pylon-facts",
+   "quote": "Developer platform:** REST API, scoped API tokens, webhooks, iFrame embeds, custom apps, Pylon MCP server."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "quote": "The Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol (e.g. Claude, ChatGPT, Cursor)."
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server?lang=en",
+   "quote": "The Pylon MCP server only supports OAuth authentication. API key authentication is not currently available"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

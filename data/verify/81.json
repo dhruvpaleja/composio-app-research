@@ -1,0 +1,59 @@
+{
+ "id": "81",
+ "name": "Stripe",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/stripe/agent-toolkit",
+    "https://docs.stripe.com/mcp?agent=claude",
+    "https://docs.stripe.com/agentic-commerce/monetize-mcp",
+    "https://docs.stripe.com/projects/mcp",
+    "https://marketplace.stripe.com/apps/mcp-cursor",
+    "https://stripe.com/docs/api",
+    "https://docs.stripe.com/api",
+    "https://docs.stripe.com/partners/platforms",
+    "https://stripe.com/docs/partners"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "stripe",
+    "name": "Stripe",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 428
+   },
+   {
+    "slug": "stripe_mcp",
+    "name": "Stripe MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 10
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.stripe/mcp"
+  ],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": [
+   "stripe_mcp"
+  ]
+ }
+}

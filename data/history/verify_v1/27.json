@@ -1,0 +1,77 @@
+{
+ "id": "27",
+ "name": "Telegram",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://core.telegram.org",
+    "https://core.telegram.org/bots/api",
+    "https://telegram.org/tos/bot-developers",
+    "https://core.telegram.org/api/premium",
+    "https://green-api.com/en/telegram/docs/partners",
+    "https://core.telegram.org/gateway/verification-tutorial",
+    "https://core.telegram.org/api/business"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "API_KEY",
+      "OAUTH2",
+      "OTHER"
+     ],
+     [
+      "API_KEY",
+      "OTHER"
+     ]
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://core.telegram.org",
+    "https://core.telegram.org/bots/api",
+    "https://github.com/mcp-telegram/mcp-telegram/blob/main/README.md",
+    "https://github.com/mcp-telegram/mcp-telegram-cloud/blob/main/README.md",
+    "https://github.com/sparfenyuk/mcp-telegram/blob/main/README.md",
+    "https://github.com/mcp-telegram",
+    "https://github.com/n24q02m/better-telegram-mcp/blob/main/README.md"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "telegram",
+    "name": "Telegram",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 18
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 13,
+  "composio_mcp_toolkits": []
+ }
+}

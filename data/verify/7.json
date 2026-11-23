@@ -1,0 +1,44 @@
+{
+ "id": "7",
+ "name": "Zoho CRM",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://zoho.com/crm/developer/docs/mcp/overview.html",
+    "https://zoho.com/crm/developer/docs/mcp/setup/vscode.html",
+    "https://zoho.com/crm/developer/mcp.html",
+    "https://help.zoho.com/portal/en/community/topic/kaizen-265-working-with-zoho-crm-using-zoho-mcp-part-i",
+    "https://zoho.com/crm",
+    "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+    "https://zoho.com/crm/help/api/api-limits.html",
+    "https://zoho.com/developer/help/api/api-limits.html"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "zoho",
+    "name": "Zoho",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 115
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

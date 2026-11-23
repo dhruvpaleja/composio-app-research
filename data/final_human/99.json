@@ -1,0 +1,79 @@
+{
+ "one_liner": "TranscriptAPI is a hosted REST API for YouTube transcripts, search, channels and playlists, using self-serve Bearer API keys, with a free signup and a vendor-hosted MCP server.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API uses a Bearer API key in the Authorization header, and keys come from the dashboard. The hosted MCP connector uses OAuth with client credentials generated in the dashboard, which is separate from the REST API.",
+ "access": "self_serve_free",
+ "access_notes": "The docs say to sign up free for an account, and API keys come from the dashboard. The draft said new accounts get 100 free credits and paid plans start at $5/month, but I could not verify that in the fetched text, which was truncated. The free credit amount is therefore unconfirmed.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://transcriptapi.com/mcp",
+ "docs_url": "https://transcriptapi.com/docs/api",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Signup is free and keys are self-serve. Credit limits on the free tier are unverified, but they are not an obvious blocker.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://transcriptapi.com/docs/api",
+   "quote": "The API uses Bearer token authentication. Include your API key in the `Authorization` header of every request",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://transcriptapi.com/docs/mcp/chatgpt",
+   "quote": "A TranscriptAPI account ([sign up free](https://transcriptapi.com))",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://transcriptapi.com/docs/api",
+   "quote": "curl -X GET \"https://transcriptapi.com/api/v2/youtube/transcript?video_url=dQw4w9WgXcQ\"",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://transcriptapi.com/docs/mcp/chatgpt",
+   "quote": "enter `https://transcriptapi.com/mcp` and choose OAuth",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "youtube_transcript",
+    "name": "YouTube Transcript",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

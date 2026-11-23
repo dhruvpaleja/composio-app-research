@@ -1,0 +1,42 @@
+{
+ "id": "33",
+ "name": "LinkedIn Ads",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://learn.microsoft.com/linkedin/marketing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/pdf?url=https://learn.microsoft.com/en-us/linkedin/marketing/toc.json?view%3Dli-lms-2026-10",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-09",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq?view=li-lms-2026-09",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-overview?view=li-lms-2026-10",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-10"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "linkedin_ads",
+    "name": "Linkedin Ads",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 28
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

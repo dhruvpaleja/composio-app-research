@@ -1,0 +1,50 @@
+{
+ "id": "43",
+ "name": "BigCommerce",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+    "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+    "https://docs.bigcommerce.com/developer/docs/beta/store-management-mcp",
+    "https://developer.bigcommerce.com",
+    "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/introduction",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/beginning-development",
+    "https://big-migration.com/blog/development-integrations/bigcommerce-trial-stores-unlocking-api-access-for-seamless-integrations",
+    "https://docs.bigcommerce.com/developer/docs/beta/powered-by/api-documentation"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "mcp",
+   "why": "best quote only 7% found on cited page"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "bigcommerce",
+    "name": "BigCommerce",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 532
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

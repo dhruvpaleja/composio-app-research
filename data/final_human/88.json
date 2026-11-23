@@ -1,0 +1,110 @@
+{
+ "one_liner": "Brex has a broad REST API using admin-generated user tokens. Multi-user OAuth for the main API is partner-only. The vendor's official MCP server supports OAuth with dynamic client registration. The builder needs a Brex business account.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Customers generate a user token in Settings > Developer and send it as a Bearer header. OAuth 2.0 authorization code for the main API is for Brex partners. The official MCP server accepts OAuth with Dynamic Client Registration for any employee, or an admin API token.",
+ "access": "self_serve_free",
+ "access_notes": "The API is free for Brex customers. An account admin or card admin must accept the Developer API agreement in Settings > Developer, then generate a token. A Brex business account is needed. The sandbox claim comes only from a third-party page and was not confirmed by the vendor pages.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.brex.com/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "The builder needs a Brex business account with admin rights to accept the developer agreement and create a token. Partner OAuth for the main API requires Brex approval. The pages did not confirm whether a sandbox exists.",
+ "docs_url": "https://developer.brex.com",
+ "openapi_spec": true,
+ "sandbox": null,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/authentication.md",
+   "quote": "generate a user token from your Brex dashboard and pass it along in your API call headers.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.brex.com/guides/partner_authentication",
+   "quote": "For all other APIs, you will implement the Authorization Code Grant, which implements a web-based redirection flow to request permission from the Brex client to access their account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://brex.com/journal/press/brex-announces-api-and-zapier-partnership-to-automate-payments-transactions-and-more",
+   "quote": "This new open API is available to all Brex customers, free of charge.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "An account admin or card admin must accept the Developer API agreement in **Settings \u2192 Developer**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.brex.com",
+   "quote": "Brex APIs use the [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) architecture, are defined using the [OpenAPI specification](https://swagger.io/specification/)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.brex.com",
+   "quote": "[Webhooks API](https://developer.brex.com/openapi/webhooks_api): Send real-time notifications based on events",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "The server is hosted at `https://api.brex.com/mcp` and supports any MCP-compatible client.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "The server supports [Dynamic Client Registration (RFC 7591)](https://www.rfc-editor.org/rfc/rfc7591), so MCP clients don't need to be pre-registered.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "brex",
+    "name": "Brex",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 84
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

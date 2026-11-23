@@ -1,0 +1,42 @@
+{
+ "id": "36",
+ "name": "Klaviyo",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.klaviyo.com",
+    "https://developers.klaviyo.com/en/reference/conversations_api_overview",
+    "https://klaviyo.com/wp-content/uploads/2025/07/Official-Technology-Partner-Program-Guide.pdf",
+    "https://klaviyo.com/newsroom/kpartners-technology-program-2025",
+    "https://developers.klaviyo.com/en/v2023-10-15/docs/build-your-integration",
+    "https://developers.klaviyo.com/en/v2026-07-15/reference/profiles-1",
+    "https://klaviyo.com/legal/technology-partner-agreement"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 233
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

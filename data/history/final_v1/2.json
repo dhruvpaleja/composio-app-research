@@ -1,0 +1,112 @@
+{
+ "one_liner": "HubSpot has a broad REST API (api.hubapi.com) with OAuth2 plus static tokens, free developer accounts, and a vendor-run MCP server; some endpoints are tier-gated.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The fetched pages confirm OAuth authorization URLs for apps and legacy private apps with scopes. The draft's claims about service keys, 30-minute token expiry and refresh tokens were not on the supplied pages. Private-app tokens are the static-token option.",
+ "access": "self_serve_free",
+ "access_notes": "No fee for developers to build on HubSpot, and a developer account and test account are available. Some scopes and endpoints require a higher account tier (e.g. custom objects need Enterprise), but most core CRM scopes are 'Any account'. The page notes that API usage counts toward the plan's included API capacity.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.hubspot.com",
+ "docs_url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: some endpoints and scopes depend on the customer's account tier, and date-based API versioning must be tracked. The legacy private-app deprecation in the draft is not shown on the supplied pages.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://hubspot.com/hubfs/technology-partner-enablement/how-to-become-a-hubspot-technology-partner.pdf?facet1=pdf",
+   "quote": "Create a HubSpot developer account and start a public app (aka integration).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://hubspot.com/hubfs/technology-partner-enablement/how-to-become-a-hubspot-technology-partner.pdf?facet1=pdf",
+   "quote": "HubSpot does not charge developers a fee to build",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://hubspot.com/hubfs/technology-partner-enablement/how-to-become-a-hubspot-technology-partner.pdf?facet1=pdf",
+   "quote": "OAuth authorization URLs (as specified",
+   "grounding": 0.67,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.hubspot.com/docs/api/scopes",
+   "quote": "For existing private apps, you can specify which scopes your app has access to in your",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.hubspot.com/docs/api/scopes",
+   "quote": "Access to specific APIs or endpoints depends on HubSpot account tier.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+   "quote": "All APIs, whether legacy, new, or beta, use the same root path as before: `https://api.hubapi.com/`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://hubspot.com/company-news/pricing-headless",
+   "quote": "Customers can connect third-party agents to HubSpot\u2019s existing APIs.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://hubspot.com/company-news/pricing-headless",
+   "quote": "plus our MCP server and Agent CLI",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "hubspot",
+    "name": "HubSpot",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 354
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

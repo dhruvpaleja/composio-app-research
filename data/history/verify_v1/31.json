@@ -1,0 +1,88 @@
+{
+ "id": "31",
+ "name": "Google Ads",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.google.com/google-ads",
+    "https://developers.google.com/google-ads/api",
+    "https://developers.google.com/merchant/storebuilder/online/sections/4_0_4_access_levels",
+    "https://developers.google.com/google-ads/api/docs/api-policy/access-levels.md.txt",
+    "https://developers.google.com/google-ads/api/starter-checklist",
+    "https://developers.google.com/google-ads/api/docs/get-started/onboarding",
+    "https://developers.google.com/google-ads/api/docs/api-policy/developer-token"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "api",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://developers.google.com/google-ads",
+    "https://developers.google.com/google-ads/api",
+    "https://developers.google.com/google-ads/api/rest/examples",
+    "https://developers.google.com/google-ads/api/rest/common/search",
+    "https://developers.google.com/google-ads/api/reference/rpc",
+    "https://developers.google.com/google-ads/api/rest/design/overview",
+    "https://googleads.googleapis.com/$discovery/rest?version=v23"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "OAUTH2",
+      "OTHER"
+     ],
+     [
+      "OAUTH2"
+     ]
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "googleads",
+    "name": "Google Ads",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 78
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

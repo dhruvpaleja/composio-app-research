@@ -1,0 +1,139 @@
+{
+ "one_liner": "Attio CRM has a broad public REST API with OAuth 2.0 and API keys, API access on the Free plan, webhooks, an OpenAPI spec, and a vendor-hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code flow for multi-workspace apps, registered at build.attio.com. Single-workspace API keys are generated in developer settings and sent as Bearer tokens. HTTP Basic also works (token as username, blank password), but Bearer is recommended. The draft's PKCE claim is not supported by the fetched pages, so I removed it.",
+ "access": "self_serve_free",
+ "access_notes": "API access is bundled on all plans, including Free, with no separate developer signup and no approval gate. Any Attio workspace works, and a non-admin can only send an install request for an admin to approve. Submitting an app for the App Store listing goes through review, but that is about listing, not API use. I removed the draft's claim that unpublished OAuth apps can be shared, because no fetched page supports it. The SQL endpoint is plan-gated.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.attio.com/mcp",
+ "docs_url": "https://docs.attio.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No significant blocker. Rate limits are 100 reads/sec and 25 writes/sec. The API is CRM-scoped only, with no enrichment trigger. There is no dedicated sandbox, but a free workspace works for testing.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "The standard authorization code flow for apps serving multiple workspaces.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "Generated manually in the developer settings page.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "also works (token as username, blank password), though Bearer is recommended",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "There is no separate developer signup, no approval gate, and no enterprise-only restriction.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "Bundled on all plans including Free ($0); no separate API tier or per-call charges",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/apideck-libraries/api-skills/blob/main/providers/claude/plugin/skills/attio/SKILL.md",
+   "quote": "Any Attio workspace, including the Free plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "an endpoint catalogue spanning custom objects, records, lists, notes, tasks, files, meetings, and call recordings.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "an [OpenAPI spec](https://docs.attio.com/rest-api/endpoint-reference/openapi) is downloadable",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://docs.attio.com",
+   "quote": "You can also subscribe to events in realtime using webhooks.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.attio.com",
+   "quote": "Connect Claude, ChatGPT or your AI tool of choice to search, update and manage your Attio workspace.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://pipeline.zoominfo.com/sales/attio-api",
+   "quote": "Yes, hosted at [https://mcp.attio.com/mcp](https://docs.attio.com/mcp/overview)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://github.com/apideck-libraries/api-skills/blob/main/providers/claude/plugin/skills/attio/SKILL.md",
+   "quote": "Test in a free workspace or a 14-day Pro trial; Attio support also provides development workspaces on request.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "attio",
+    "name": "Attio",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 105
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "one_liner": "iPayX offers a narrow Bearer-key REST API for FX audit (spread vs mid-market) with an MCP server; keys are self-serve from the dashboard, with a small free tier but the developer API plan is paid.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Static Bearer token (ipx_live_ / ipx_test_) generated in the dashboard. No OAuth documented.",
+ "access": "self_serve_free",
+ "access_notes": "Free account gives 5 lifetime audits on the pricing page, and the MCP docs list a free tier of 10 audits/day per key. The developer page lists a $99/mo Developer plan, so pricing is inconsistent across pages. Working keys are self-serve.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://mcp.ipayx.ai/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The API is self-serve with bearer keys, but the free quota is tiny and the pricing pages conflict. Meaningful use needs a paid plan. The API is narrow (audit and rates endpoints) and the base URL is inconsistent (supabase vs api.ipayx.ai).",
+ "docs_url": "https://ipayx.ai/docs/api",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "Every request requires a Bearer token in the `Authorization` header. Keys start with `ipx_live_`."
+  },
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/mcp-server",
+   "quote": "**How to get a key:** [Open your iPayX dashboard \u2192 API keys](/dashboard)."
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/pricing",
+   "quote": "You have 5 free audits."
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/developers",
+   "quote": "Developer \u2014 $99/mo \u00b7 100 audits/mo \u00b7 sandbox"
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/docs/mcp-server?lang=en",
+   "quote": "**Free tier:** 10 audits / day per API key."
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "Bearer auth, OpenAPI 3.1, signed webhooks."
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/developers/sandbox",
+   "quote": "Submit up to 50 FX transactions per request."
+  },
+  {
+   "field": "mcp",
+   "url": "https://ipayx.ai/mcp-marketplace",
+   "quote": "Server URL: `https://mcp.ipayx.ai/mcp` \u00b7 Transport: Streamable HTTP"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

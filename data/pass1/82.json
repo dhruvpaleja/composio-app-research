@@ -1,0 +1,56 @@
+{
+ "one_liner": "Plaid has a broad REST API with free Sandbox for everyone; the free Production Trial is limited to US/CA signups, and full production needs approval.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Core API uses client_id and secret sent with each request, plus per-user access_tokens obtained through Plaid Link. OAuth client_credentials via /oauth/token is only documented for the Dashboard MCP. That is narrow, so it is not primary.",
+ "access": "self_serve_free",
+ "access_notes": "Sandbox is free for all developers. US/CA developers who sign up on or after April 15, 2026 get an auto-approved free Trial plan with real data, capped at 10 Production Items. Full production needs approval.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://api.dashboard.plaid.com/mcp/",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Sandbox is free and unlimited, and the Trial plan gives free real-data access to US/CA developers. Full production needs a few days of approval, but that does not block building a toolkit.",
+ "webhooks": true,
+ "sandbox": true,
+ "docs_url": "https://plaid.com/docs/",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://plaid.com/docs/account/billing",
+   "quote": "These models only apply to Production traffic; usage of Sandbox is always free."
+  },
+  {
+   "field": "access",
+   "url": "https://support.plaid.com/hc/en-us/articles/39994173227159-What-is-the-Plaid-Trial-plan",
+   "quote": "The Plaid Trial plan provides free access to Plaid's production APIs. You can connect real financial accounts, call production endpoints, and build projects"
+  },
+  {
+   "field": "auth",
+   "url": "https://plaid.com/docs/mcp",
+   "quote": "you must first create an OAuth token with the scope `mcp:dashboard` and the `client_credentials` grant type via the [`/oauth/token`](/docs/api/oauth/#oauthtoken) API."
+  },
+  {
+   "field": "mcp",
+   "url": "https://plaid.com/docs/resources/mcp",
+   "quote": "The **Dashboard MCP server** is a remote MCP server hosted by Plaid. It provides Production diagnostics and analytics tools"
+  },
+  {
+   "field": "api",
+   "url": "https://plaid.com/docs/sandbox",
+   "quote": "Most products can be immediately tested in Sandbox with no extra configuration."
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

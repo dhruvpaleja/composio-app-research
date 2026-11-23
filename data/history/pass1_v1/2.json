@@ -1,0 +1,77 @@
+{
+ "one_liner": "HubSpot has a broad REST API with OAuth2 and service key/private app tokens, free developer accounts, webhooks, and an official remote MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code required for multi-account apps; access tokens expire in 30 minutes with refresh tokens. Service keys and static app/private-app tokens serve single-account use.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer account with test accounts and API access; every plan including free CRM has API access. Rate limits vary by tier (100 calls/10s on Free/Starter).",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.hubspot.com",
+ "docs_url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: installing an app requires a Super Admin; legacy private apps are being deprecated; dated API versioning needs tracking.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.hubspot.com/docs/api/oauth-quickstart-guide",
+   "quote": "HubSpot supports the [OAuth 2.0 Authorization Code grant type]"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys",
+   "quote": "you can use service keys to query HubSpot\u2019s [REST APIs](/docs/api-reference/latest/overview) directly without having to use the CLI or other platform developer tools first."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+   "quote": "There are two ways to authenticate calls to HubSpot\u2019s APIs: [OAuth](/docs/apps/legacy-apps/authentication/working-with-oauth), and [private app](/docs/apps/legacy-apps/private-apps/overview) access tokens."
+  },
+  {
+   "field": "access",
+   "url": "https://developers.hubspot.com/developer-platform-basics",
+   "quote": "You can create a free HubSpot account and build apps without a paid subscription."
+  },
+  {
+   "field": "access",
+   "url": "https://laengledigital.com/guides/hubspot-api",
+   "quote": "Every HubSpot plan has it, including the free CRM, and API calls cost no extra fee."
+  },
+  {
+   "field": "api",
+   "url": "https://laengledigital.com/guides/hubspot-api",
+   "quote": "The API is a set of web addresses at api.hubapi.com, one family per object, with the data as JSON."
+  },
+  {
+   "field": "api",
+   "url": "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+   "quote": "You can create up to 1,000 [webhook subscriptions](/docs/api-reference/latest/webhooks) per app."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.hubspot.com/docs/build-with-ai/remote-mcp-server",
+   "quote": "The remote HubSpot MCP server is a publicly hosted endpoint for connecting external AI tools and applications to HubSpot\u2019s CRM."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+   "quote": "Configuring your MCP client to connect to the HubSpot MCP server at `https://mcp.hubspot.com` using your connector\u2019s OAuth credentials."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,66 @@
+{
+ "one_liner": "Devin has a documented v3 REST API (sessions, playbooks, knowledge, enterprise) using cog_ bearer tokens and an official MCP server. API access seems to need a paid self-serve plan, and the Free plan's API access is unclear.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Service user API keys and personal access tokens, both cog_-prefixed bearer tokens. No OAuth2 app flow is documented. Legacy apk_ keys are deprecated.",
+ "access": "paid_plan",
+ "access_notes": "Self-serve plans are Free, Pro $20/mo, Max $200/mo and Teams $80/mo. The pricing table has a \"Devin API\" row, but the snippet doesn't show which plans include it. The Free plan description does not list API access, so a paid plan is assumed. Enterprise deployments use a custom API domain.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "webhooks": null,
+ "openapi_spec": null,
+ "sandbox": false,
+ "mcp": "official",
+ "mcp_url": "https://mcp.devin.ai/",
+ "docs_url": "https://docs.devin.ai/api-reference/overview",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The builder likely needs a paid plan (Pro $20/mo) to get API credentials. The snippets don't confirm whether the Free plan includes the API. Multi-user access relies on per-user PATs or service keys, not OAuth.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.devin.ai/api-reference/authentication",
+   "quote": "All API credentials use the `cog_` prefix format. Include your token in the `Authorization` header of every request"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.devin.ai/api-reference/personal-access-tokens",
+   "quote": "Personal Access Tokens (PATs) allow human users to authenticate programmatically under their own identity."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.devin.ai/admin/billing/self-serve",
+   "quote": "The Free plan lets you try Devin with limited usage. It includes: - Limited Devin usage - Access to [Devin Review](/work-with-devin/devin-review)"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.devin.ai/api-reference/getting-started/teams-quickstart",
+   "quote": "Go to **Settings > Devin API** in your organization and open the **Service users** tab"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "quote": "The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.devin.ai/api-reference/getting-started/migration-guide",
+   "quote": "Base URL | `/v1/*`, `/v2/*` | `/v3/organizations/*`, `/v3/enterprise/*`"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+   "quote": "The Devin MCP server is an authenticated service that provides access to both public and private repositories, plus full platform management capabilities."
+  }
+ ],
+ "confidence": {
+  "access": "low",
+  "api": "medium",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "low"
+ },
+ "_pass": 1
+}

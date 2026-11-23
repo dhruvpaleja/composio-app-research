@@ -1,0 +1,106 @@
+{
+ "one_liner": "Neo4j offers the Aura management REST API (OAuth2 client credentials) plus per-database HTTP Query API (Basic/Bearer) and an official MCP server; the free Aura tier allows self-serve testing.",
+ "auth_methods": [
+  "OAUTH2",
+  "BASIC",
+  "API_KEY"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Aura API uses OAuth 2.0 client credentials (client ID/secret to a one-hour bearer token), not a user-authorization flow. The database HTTP/Query API uses Basic auth with database username and password, and also supports bearer tokens.",
+ "access": "self_serve_free",
+ "access_notes": "The Aura docs say all tiers can create Aura API credentials. Aura Free needs no credit card (from the draft's subscriptions-page evidence, not re-fetched here). Per-database credentials work for the Query API.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://github.com/neo4j/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Per-instance credentials, and no multi-user OAuth authorization-code flow. The partner program pages are for resellers and integrators and do not gate API access.",
+ "docs_url": "https://neo4j.com/docs/aura/api/authentication",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "The Aura API uses OAuth 2.0 for API authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/docs/http-api/current/authentication-authorization",
+   "quote": "Both *basic* and *bearer* authentication are supported.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://neo4j.com/subscriptions",
+   "quote": "No credit card or other payment method required",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "All tiers can create Aura API credentials.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "To authenticate API requests to the [Aura API](https://neo4j.com/docs/aura/platform/api/specification/), you must provide a Bearer Token in the `Authorization` header",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/neo4j-contrib/mcp-neo4j",
+   "quote": "If you are looking for the official product Neo4j MCP server please find it [here](https://github.com/neo4j/mcp).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "neo4j",
+    "name": "Neo4J",
+    "auth_schemes": [
+     "OAUTH2",
+     "BASIC",
+     "API_KEY",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 21
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "io.github.neo4j-contrib/gds-agent",
+   "io.github.neo4j-contrib/mcp-neo4j-aura-manager",
+   "io.github.neo4j-contrib/mcp-neo4j-cypher",
+   "io.github.neo4j-contrib/mcp-neo4j-data-modeling",
+   "io.github.neo4j-contrib/mcp-neo4j-memory"
+  ],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

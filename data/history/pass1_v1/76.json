@@ -1,0 +1,72 @@
+{
+ "one_liner": "Monday.com has a broad GraphQL API with free developer sandbox, personal tokens plus OAuth, and an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Personal V2 API tokens (static, user-generated) and OAuth 2.0 for apps (new OAuth 2.1 flow with refresh tokens also available). Webhooks are signed with JWT, but that is for verification only.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer/sandbox account gives an API token. API is available on all plans including Free (200 calls/day on Free; higher on paid tiers).",
+ "api_type": "GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.monday.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free-tier daily call limit is low (200), but this is not a blocker for building.",
+ "docs_url": "https://developer.monday.com/api-reference/docs/getting-started",
+ "openapi_spec": false,
+ "sandbox": true,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.monday.com/api-reference/docs/authentication",
+   "quote": "The monday.com platform API utilizes **personal V2 API tokens** to authenticate requests and identify the user making the call."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.monday.com/apps/docs/oauth",
+   "quote": "OAuth 2.0 is a protocol that lets your app request authorization to read or modify data in a user's monday account."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.monday.com/api-reference/docs/developer-sandbox",
+   "quote": "A **developer account** (also called a **sandbox account**) is a free monday.com account designed for building and testing"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/monday-com-api",
+   "quote": "API access is [bundled into all](https://monday.com/pricing) [**monday.com**](https://monday.com/pricing) [plans](https://monday.com/pricing), including the Free tier."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.monday.com/api-reference/docs/getting-started",
+   "quote": "GraphQL APIs use a single endpoint for all operations (unlike REST APIs). Our API endpoint is:"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/monday-com-api",
+   "quote": "**monday.com's API** is a [GraphQL surface](https://developer.monday.com/api-reference/docs/introduction-to-graphql) that covers the full platform through a single endpoint"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+   "quote": "The hosted MCP server is the recommended way to connect to monday.com. It requires no local setup, updates automatically"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp.md",
+   "quote": "is monday.com's hosted MCP (Model Context Protocol) server, maintained by the monday.com AI team."
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

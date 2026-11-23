@@ -1,0 +1,103 @@
+{
+ "one_liner": "Firecrawl has a hosted REST API (v2) with free self-serve API keys, OAuth 2.1 for apps, and an official MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Bearer API keys (fc-...) are the main documented method. OAuth 2.1 'OAuth for apps' lets users connect their own Firecrawl account (fco_ access tokens, fcr_ refresh tokens). Details such as PKCE and dynamic registration come from the earlier draft and aren't re-verified in the supplied pages.",
+ "access": "self_serve_free",
+ "access_notes": "Free plan needs no card and gives 1,000 credits a month. Scrape, search and parse also work keyless, with limits.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://mcp.firecrawl.dev/v2/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None. Free credits are limited but enough to build and test.",
+ "docs_url": "https://docs.firecrawl.dev/api-reference",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "Requests need an `Authorization` header with your API key, except on the keyless endpoints described below",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "To let users connect their own Firecrawl account to your app instead, use [OAuth for apps](/oauth).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/firecrawl/firecrawl-mcp-server.git",
+   "quote": "Firecrawl issues OAuth access tokens ( fco_\u2026 ) via the authorization server on firecrawl.dev .",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://firecrawl.dev",
+   "quote": "Firecrawl gives you 1,000 free credits every month, which covers about 1,000 pages, and no card is required.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.firecrawl.dev/api-reference",
+   "quote": "All requests use the following base URL:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/firecrawl/firecrawl-mcp-server.git",
+   "quote": "Official Firecrawl MCP server, the context API for AI agents: search, scrape, and interact with the web, plus parse, crawl, map, Agent and Monitor, from any MCP client.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/firecrawl/firecrawl-mcp-server.git",
+   "quote": "Connect to the remote hosted server with no setup: https://mcp.firecrawl.dev/v2/mcp",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "firecrawl",
+    "name": "Firecrawl",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 245
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "io.github.firecrawl/firecrawl-mcp-server"
+  ],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

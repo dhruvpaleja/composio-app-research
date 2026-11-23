@@ -1,0 +1,66 @@
+{
+ "one_liner": "Xero is a broad REST accounting API with OAuth 2.0 and a free Starter tier (5 connections), plus an official Xero MCP server.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code flow with client id and secret from the developer portal. Custom Connections give a machine-to-machine client-credentials flow, but each is bound to one org and is a paid add-on. There are no API keys. OAuth 1.0a is deprecated.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer signup, and the Starter tier has no monthly fee. It is limited to 5 connections and 1,000 calls per day per org. Going past 5 orgs needs a paid tier (Core $35 AUD per month and up). Plus and above require app certification. Newer apps can't use the balance sheet, profit and loss, and journals scopes without App Partner Program enrolment.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/XeroAPI/xero-mcp-server",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Self-serve OAuth 2.0 works on the free Starter tier, which is capped at 5 connected orgs. A multi-user toolkit needs a paid tier past that, and certification for the larger tiers. Some reporting scopes need partner enrolment. Xero's terms also forbid using API data to train AI models.",
+ "docs_url": "https://developer.xero.com",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.xero.com/faq",
+   "quote": "The Xero API does not support basic API Key authentication. Our API uses OAuth 2.0 which means you need to register your app to get a client id and client secret"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.xero.com/faq",
+   "quote": "OAuth 1.0a is in the process of being deprecated and OAuth 2.0 is required for all new integrations."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.xero.com/pricing",
+   "quote": "Connections (maximum) | 5 | 50 | 1000 | 10,000 | No Limit"
+  },
+  {
+   "field": "access",
+   "url": "https://central.xero.com/0/article/How-Xero-Developer-changes-affect-your-practice",
+   "quote": "the entry-level Starter tier will remain free. This keeps barriers to entry low so developers and startups can continue to build new solutions for practices."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/XeroAPI/xero-java",
+   "quote": "This SDK supports full method coverage for the following Xero API sets:"
+  },
+  {
+   "field": "mcp",
+   "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7",
+   "quote": "Remote MCP is now generally available.** It\u2019s the same Xero MCP server, hosted and maintained by Xero. Add the URL and sign in."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/XeroAPI/xero-mcp-server/blob/main/README.md",
+   "quote": "This is a Model Context Protocol (MCP) server implementation for Xero. It provides a bridge between the MCP protocol and Xero's API"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

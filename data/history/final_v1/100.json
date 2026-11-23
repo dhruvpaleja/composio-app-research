@@ -1,0 +1,108 @@
+{
+ "one_liner": "Grain (grain.com) meeting recorder with a documented REST public API (v2), PAT access on the Free plan, OAuth2 for distributed integrations, webhooks, and a Grain-hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Bearer token in the Authorization header, plus a Public-Api-Version header. The PAT is a static token any user can generate. The WAT is workspace-wide, needs admin access, and is limited to Business and Enterprise. OAuth2 is the documented route for integrations distributed to other users. The pages don't explain how to register an OAuth client. Because of that, an agent toolkit may need to fall back to PAT until registration is confirmed.",
+ "access": "self_serve_free",
+ "access_notes": "Grain's own support article says PAT access is available on every plan, including Free. Workspace tokens need Business or Enterprise. A Nango page says developer access is limited to select partners and that the API is in beta. That page looks outdated, since v1 beta was sunset and v2 is documented. How to register an OAuth app is not documented in the fetched pages.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://api.grain.com/_/mcp",
+ "docs_url": "https://developers.grain.com",
+ "openapi_spec": null,
+ "webhooks": true,
+ "sandbox": false,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "A PAT works on the Free plan, so a toolkit can ship now. OAuth client registration is unclear, and workspace tokens are gated to Business and Enterprise.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "quote": "Available on every plan, including Free.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "quote": "Users authorize your application directly, and your app receives a token scoped to that user's data.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.nango.dev/docs/integrations/all/grain",
+   "quote": "Developer access is limited to select partners.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.grain.com",
+   "quote": "https://api.grain.com/_/public-api/v2/token-info",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "quote": "register webhooks to receive a payload whenever a new recording is processed in your workspace",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "sandbox",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "quote": "No sandbox is available at this time.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/pydantic/pydantic-ai/tree/main/src/pydantic_ai_harness/pydantic_ai_harness/grain",
+   "quote": "The server supports dynamic client registration, so any MCP OAuth client library can sign the user in.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/pydantic/pydantic-ai/tree/main/src/pydantic_ai_harness/pydantic_ai_harness/grain",
+   "quote": "Grain MCP works on every Grain plan.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "grain",
+    "name": "Grain",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 17
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 16,
+  "composio_mcp_toolkits": []
+ }
+}

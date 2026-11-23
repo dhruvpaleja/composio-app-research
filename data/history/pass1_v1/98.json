@@ -1,0 +1,62 @@
+{
+ "one_liner": "Mermaid CLI (mmdc) is a local open-source renderer with no hosted API or credentials. Mermaid.ai's separate hosted REST render API (free-tier API key) and official MCP server could back a toolkit instead.",
+ "auth_methods": [
+  "NONE",
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The CLI needs no credentials. The hosted Mermaid.ai API uses a Bearer API key created in the console. The OAuth 2.1 option in the evidence applies to the MCP server, not the REST API. The mermaid-api.readthedocs results describe an unrelated product (MERMAID coral-reef data), so I ignored them.",
+ "access": "self_serve_free",
+ "access_notes": "The CLI is free and open-source. The hosted API works with a free Mermaid account, which gets a monthly allowance of API credits. Paid plans get a bigger allowance.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://mcp.mermaid.ai/mcp",
+ "docs_url": "https://api.mermaid.ai/v1/docs",
+ "openapi_spec": null,
+ "webhooks": false,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "self_hosted_or_local",
+ "blocker_notes": "Mermaid CLI itself is a local Node/Puppeteer tool with no hosted HTTP API. A toolkit would have to target the separate Mermaid.ai hosted API (credit-metered) or run the CLI in a sandbox.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/building.md",
+   "quote": "node src/cli.js -i test-positive/state1.mmd"
+  },
+  {
+   "field": "auth",
+   "url": "https://mermaid.ai/products/mermaid-api",
+   "quote": "curl https://api.mermaid.ai/v1/render \\\n-H \"Authorization: Bearer $MERMAID_API_KEY\""
+  },
+  {
+   "field": "access",
+   "url": "https://mermaid.ai/products/mermaid-api",
+   "quote": "Any Mermaid account works, including a free one, and every account gets a monthly allowance of API credits. Paid plans include a bigger allowance."
+  },
+  {
+   "field": "api",
+   "url": "https://mermaid.ai/products/mermaid-api",
+   "quote": "The response is the image itself, ready to write to disk."
+  },
+  {
+   "field": "mcp",
+   "url": "https://mermaid.ai/docs/ai/mcp-server",
+   "quote": "HTTP**: `https://mcp.mermaid.ai/mcp` with `\"type\": \"http\"`"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/ryu1maniwa/mermaid-local-mcp",
+   "quote": "A local MCP (Model Context Protocol) server that renders Mermaid diagrams and returns PNG images."
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "low",
+  "mcp": "medium",
+  "verdict": "low"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,62 @@
+{
+ "one_liner": "Lark Open Platform offers a broad REST API with OAuth2 user tokens and app-secret tenant tokens, self-serve on any plan including free, plus an official MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "user_access_token via OAuth authorization-code flow with refresh tokens; tenant_access_token minted from app_id and app_secret. Scopes require tenant admin approval. Tenant tokens are app-secret exchanges, classed as OTHER.",
+ "access": "self_serve_free",
+ "access_notes": "Custom apps can be created in the Developer Console on any plan, including Starter/free. Starter has a 10,000 basic API calls/month cap. Advanced APIs need purchased quota. Scopes need admin approval.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/larksuite/lark-openapi-mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Per-tenant setup: each customer's admin must approve the app's scopes. Free plan has call quotas. Credentials are self-serve.",
+ "docs_url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token",
+   "quote": "OAuth token API for acquiring the `user_access_token` and `refresh_token`. The `user_access_token` serves as the user's access credential, which allows API calls to be made on behalf of the user."
+  },
+  {
+   "field": "auth",
+   "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-",
+   "quote": "When calling the server API, you need to include the access token in the request header `Authorization: Bearer <access token>`."
+  },
+  {
+   "field": "access",
+   "url": "https://support.toriihq.com/hc/en-us/articles/57346725329691-Lark-Integration",
+   "quote": "Any Lark plan, including Starter. Custom apps can call the Lark API on every plan."
+  },
+  {
+   "field": "access",
+   "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-guide/api-billing",
+   "quote": "The total number of basic API calls for all enterprise self-built applications under a single tenant is limited to **10,000 times per month**"
+  },
+  {
+   "field": "api",
+   "url": "https://larksuite.com/en_us/blog/google-workspace-alternatives-for-it",
+   "quote": "plus access to 2,500+ developer APIs \u2014 without separate subscriptions."
+  },
+  {
+   "field": "mcp",
+   "url": "https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+   "quote": "This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

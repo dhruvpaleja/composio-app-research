@@ -1,0 +1,61 @@
+{
+ "one_liner": "Zoho CRM has a mature, broad REST API (v8) with OAuth 2.0, a free edition/developer edition, and an official vendor MCP server.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code (server-based and self-client) plus client credentials flow; tokens are per-organization and datacenter-specific accounts URLs must be used.",
+ "access": "self_serve_free",
+ "access_notes": "Sources conflict: one says API is included on all plans including Free (5,000 credits/day) and a free Developer Edition exists; another says Free has limited/no API access. The Free signup may start a trial and require SMS verification. Free path likely works, and no approval is needed.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+ "docs_url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor friction: multi-datacenter account URLs, per-organization tokens, and credit-based rate limits. Webhooks (Notification API) are not available on the Free tier.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+   "quote": "The Zoho CRM API uses the **OAuth 2.0** protocol for authentication."
+  },
+  {
+   "field": "auth",
+   "url": "https://zoho.com/crm/developer/docs/api/v8/client-credentials.html",
+   "quote": "requiring only your **client ID**, **client secret**, **scope**, and **soid**."
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+   "quote": "There is no separate developer signup, no enterprise gate, and no approval process."
+  },
+  {
+   "field": "access",
+   "url": "https://aiproductivity.ai/guides/zoho-crm-api-developer-guide",
+   "quote": "the Free plan has limited or no API access."
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+   "quote": "a Bulk API for asynchronous high-volume operations, a COQL query language for SQL-style record retrieval, and a Notification API for event-driven integrations."
+  },
+  {
+   "field": "mcp",
+   "url": "https://zoho.com/crm/developer/docs/mcp/overview.html",
+   "quote": "Zoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

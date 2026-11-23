@@ -1,0 +1,62 @@
+{
+ "one_liner": "Shopify offers a broad GraphQL (plus legacy REST) Admin API with self-serve OAuth apps and free dev stores; ready to build, though an official dev-docs MCP exists but no store-operating MCP.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization code grant, token exchange and client credentials are supported for apps. Admin-created custom apps give a static shpat_ token. Public apps use the OAuth authorization-code flow. Tokens are sent in the X-Shopify-Access-Token header.",
+ "access": "self_serve_free",
+ "access_notes": "A free Partner account provides free development stores for sandbox testing. API access has no extra charge. Some scopes need Shopify approval, such as protected customer data and payments scopes.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://shopify.dev/docs/api/polaris/using-mcp",
+ "docs_url": "https://shopify.dev/docs/api",
+ "openapi_spec": false,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Some scopes and customer data fields need Shopify approval, but core development and testing are unblocked.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://github.com/Shopify/shopify-app-js/blob/main/packages/apps/shopify-api/docs/guides/oauth.md",
+   "quote": "Authorization Code Grant Flow - Suitable for non-embedded apps - Installations, and access scope changes are managed by the app"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/untitled-developers/shopify-mcp",
+   "quote": "Copy the **Admin API access token** shown once after installation"
+  },
+  {
+   "field": "access",
+   "url": "https://app-compare.com/blog/shopify-api-integration-guide",
+   "quote": "Next, create a **development store**. It\u2019s free and sandboxed. You can test API calls without touching real orders or customer data."
+  },
+  {
+   "field": "access",
+   "url": "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521",
+   "quote": "Shopify does not charge extra for API usage. However, API rate limits apply (REST and GraphQL), and the limits vary by the store\u2019s Shopify plan."
+  },
+  {
+   "field": "api",
+   "url": "https://shopify.dev/docs/api/usage/authentication",
+   "quote": "Most Shopify APIs, including the [GraphQL Admin API](https://shopify.dev/docs/api/admin-graphql), [Storefront API](https://shopify.dev/docs/api/storefront), and [Partner API](https://shopify.dev/docs/api/partner)"
+  },
+  {
+   "field": "mcp",
+   "url": "https://shopify.dev/docs/api/polaris/using-mcp",
+   "quote": "Run the following command to start the Shopify dev MCP server: npx -y @shopify/dev-mcp@latest"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

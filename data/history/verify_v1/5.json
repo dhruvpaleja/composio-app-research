@@ -1,0 +1,71 @@
+{
+ "id": "5",
+ "name": "Twenty",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://twenty.com",
+    "https://docs.twenty.com/developers/extend/api",
+    "https://twenty.com/partners/become",
+    "https://twenty.com/pricing",
+    "https://docs.twenty.com/user-guide/ai/how-tos/ai-faq",
+    "https://docs.twenty.com/user-guide/permissions-access/capabilities/permissions",
+    "https://docs.twenty.com/llms-full.txt"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "best quote only 0% found on cited page"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://twenty.com",
+    "https://docs.twenty.com/developers/extend/api",
+    "https://docs.twenty.com/developers/extend/mcp",
+    "https://docs.twenty.com/mcp",
+    "https://github.com/twentyhq/twenty/blob/main/packages/twenty-agent-skills/references/use-twenty-mcp/setup.md",
+    "https://docs.twenty.com/developers/self-host/capabilities/security",
+    "https://docs.twenty.com/developers/extend/apps/logic/skills-and-agents"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "twenty",
+    "name": "Twenty",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 23
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

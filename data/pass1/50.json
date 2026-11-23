@@ -1,0 +1,66 @@
+{
+ "one_liner": "FanBasis has a REST public API with scoped x-api-key keys from the seller dashboard, plus sandbox and webhooks; no official MCP.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Public API uses x-api-key header with scoped keys. OAuth 2.0 with PKCE is mentioned only in a partner integration (Aura) and is gated; no public OAuth docs found.",
+ "access": "self_serve_free",
+ "access_notes": "API key is found in the seller/merchant dashboard under the API section; no sign of a paid plan requirement in the evidence. Sandbox environment exists. Account signup terms not fully verified.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Docs are at apidocs.fan; the evidence comes largely from third-party mirrors of the docs.",
+ "docs_url": "https://apidocs.fan",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+   "quote": "All requests require an `x-api-key` header:"
+  },
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "No OAuth, no client ID/secret pairs \u2014 Fanbasis uses a single API key with separate test/live environments."
+  },
+  {
+   "field": "access",
+   "url": "https://demo.embedded.fanbasis.io/docs/checkout-session-secret",
+   "quote": "You can find your API key in your merchant dashboard under the API section."
+  },
+  {
+   "field": "access",
+   "url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+   "quote": "environment**: Either 'sandbox' or 'production'"
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+   "quote": "`webhooks` | `/public-api/webhook-subscriptions/*`"
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "Full Fanbasis API integration: checkout sessions, customers, subscribers, discount codes, products, transactions, refunds, and webhook management."
+  },
+  {
+   "field": "mcp",
+   "url": "http://zapier.com/mcp/fanbasis",
+   "quote": "Zapier FanBasis MCP lets you connect FanBasis's actions with any AI tool that supports MCP"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

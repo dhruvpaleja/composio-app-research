@@ -1,0 +1,62 @@
+{
+ "one_liner": "Squarespace Commerce REST APIs (orders, products, inventory, transactions, profiles, webhooks) with OAuth2 (manually reviewed client registration) or API keys that require a Commerce Advanced plan; official MCP exists but covers only domains.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code with refresh tokens (30m access token TTL); client_id/secret issued only after Squarespace manual review. API keys are generated per site and need the Commerce Advanced plan. Webhook Subscriptions API is OAuth only.",
+ "access": "app_review",
+ "access_notes": "Multi-user OAuth requires registering a client and waiting for Squarespace review. The self-serve API key path requires a paid Commerce Advanced plan on the merchant site. The evidence shows no free path.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.squarespace.com/mcp",
+ "docs_url": "https://developers.squarespace.com/commerce-apis/overview",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "OAuth client credentials are issued only after Squarespace reviews the registration. API-key testing needs a paid Commerce Advanced site. The official MCP server exposes only domain tools, not Commerce.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.squarespace.com/oauth",
+   "quote": "We will review your registration and respond with `your_client_id` and `your_client_secret` as soon as possible."
+  },
+  {
+   "field": "auth",
+   "url": "https://commerce-apis.squarespace.com/commerce-apis/making-requests",
+   "quote": "-H \"Authorization: Bearer YOUR_API_KEY_OR_OAUTH_TOKEN\""
+  },
+  {
+   "field": "access",
+   "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+   "quote": "**Orders**, **Inventory**, and **Transactions** are only available in the Commerce Advanced plan."
+  },
+  {
+   "field": "api",
+   "url": "https://support.squarespace.com/hc/articles/41325887099533",
+   "quote": "Each API contains multiple endpoints."
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/api-evangelist/squarespace/refs/heads/main/mcp/squarespace-mcp.yml",
+   "quote": "None of the 55 published Commerce operations (orders, products, inventory, contacts, discounts, transactions, webhooks) are reachable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.squarespace.com/mcp/overview",
+   "quote": "The Squarespace MCP server is a remote server. There's nothing to install."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

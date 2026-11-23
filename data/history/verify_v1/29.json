@@ -1,0 +1,105 @@
+{
+ "id": "29",
+ "name": "Aircall",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://aircall.io",
+    "https://developer.aircall.io/api-references",
+    "https://developer.aircall.io/docs/public-vs-private-app",
+    "https://pipeline.zoominfo.com/sales/aircall-api-review",
+    "https://developer.aircall.io/docs/launch-process",
+    "https://developer.aircall.io/docs/plan-your-integration",
+    "https://developer.aircall.io/docs/messaging"
+   ],
+   "changed": {
+    "access": [
+     "self_serve_trial",
+     "paid_plan"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://aircall.io",
+    "https://developer.aircall.io/api-references",
+    "https://developer.aircall.io/docs/public-vs-private-app",
+    "https://developer.aircall.io/docs/plan-your-integration",
+    "https://developer.aircall.io/docs/sms",
+    "https://developer.aircall.io/docs/launch-process",
+    "https://aircall.io/blog/tech/ai-ecosystem-developer-guide"
+   ],
+   "changed": {
+    "mcp": [
+     "official",
+     "none"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V2_mcp_registry",
+     "field": "mcp",
+     "why": "agent said none, registry returns 2 servers matching name"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "aircall",
+    "name": "Aircall",
+    "auth_schemes": [
+     "OAUTH2",
+     "BASIC"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 48
+   }
+  ],
+  "catalog_auth": [
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

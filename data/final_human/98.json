@@ -1,0 +1,81 @@
+{
+ "one_liner": "Mermaid CLI (mmdc) is a local open-source Node/Puppeteer renderer with no hosted API or credentials; the vendor's separate hosted Mermaid.ai API and official MCP server are a different product.",
+ "auth_methods": [
+  "NONE"
+ ],
+ "auth_primary": "NONE",
+ "auth_notes": "The CLI runs locally and needs no credentials. The hosted Mermaid.ai API uses Bearer API keys, and its MCP server uses OAuth 2.1 or a manually generated token, but that is a different product from the CLI.",
+ "access": "no_public_api",
+ "access_notes": "The CLI is free and open source and runs locally, with no hosted HTTP API. Separately, mermaid.ai offers a hosted render API that free accounts can use with a monthly credit allowance (open beta). A hosted toolkit should target that product.",
+ "api_type": "SDK_or_CLI_only",
+ "api_breadth": "none",
+ "docs_url": "https://github.com/mermaid-js/mermaid-cli",
+ "openapi_spec": false,
+ "webhooks": false,
+ "sandbox": false,
+ "mcp": "community",
+ "mcp_url": "https://mcp.mermaid.ai/mcp",
+ "verdict": "not_buildable",
+ "blocker": "self_hosted_or_local",
+ "blocker_notes": "Mermaid CLI is a local binary that depends on Puppeteer and Chromium, so there is no remote API to authenticate against. The hosted Mermaid.ai API (free accounts work) and its official MCP server are a separate product that could be evaluated on its own and would likely be ready.",
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://mermaid.ai/docs/ai/mcp-server",
+   "quote": "The Mermaid MCP Server enables AI assistants to create, validate, and render Mermaid diagrams seamlessly",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://mermaid.ai/docs/ai/mcp-server",
+   "quote": "**HTTP**: `https://mcp.mermaid.ai/mcp` with `\"type\": \"http\"`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/abekdwight/mermaid-mcp-server",
+   "quote": "This server uses `@mermaid-js/mermaid-cli` internally, which relies on Puppeteer to render diagrams.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/building.md",
+   "quote": "node src/cli.js -i test-positive/state1.mmd",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://mermaid.ai/products/mermaid-api",
+   "quote": "Any Mermaid account works, including a free one, and every account gets a monthly allowance of API credits. Paid plans include a bigger allowance.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ },
+ "_human": {
+  "note": "The MCP server the agent found is Mermaid Chart's (mermaid.ai), a separate commercial product, not the mermaid-cli project. Counted as community.",
+  "src": [
+   "https://github.com/mermaid-js/mermaid-cli"
+  ],
+  "trigger": "review (MCP label)"
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "one_liner": "SE Ranking offers a broad REST Data/Project API authenticated with a single API key and a vendor-hosted MCP server; access is via a 14-day trial with 100K credits, then paid credits or plans.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "REST API uses a static API key generated in the API Dashboard, sent as 'Authorization: Token KEY' (recommended) or an apikey query param. One key works for both Data and Project APIs. No OAuth is documented for the REST API in the provided pages; the earlier OAuth claim (MCP only) could not be verified from the pages and was removed.",
+ "access": "self_serve_trial",
+ "access_notes": "14-day trial with 100K credits across all endpoints and MCP, no credit card required. After the trial, a pay-as-you-go wallet (from $50 for 250K credits), API add-on, or standalone plan is needed. No ongoing free tier.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Self-serve key creation, but ongoing use needs paid credits or a plan after the 14-day trial.",
+ "docs_url": "https://seranking.com/api/data/getting-started",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/data/getting-started",
+   "quote": "Include an `Authorization` header in your request, with the value `Token YOUR_API_KEY`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://seranking.com/api/how-to-get-api",
+   "quote": "A single API key authenticates every endpoint across the Data API and the Project API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://seranking.com/api-pricing.html",
+   "quote": "14-day trial to test every API endpoint",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+   "quote": "Start with a 14-day trial that includes **100,000 free API credits**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://seranking.com/api/how-to-get-api",
+   "quote": "From $50 for 250,000 credits, with no limit on how many you buy.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://seranking.com/api/data/getting-started",
+   "quote": "The base URL for all endpoints is:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://seranking.com/blog/mcp-vs-api-seo",
+   "quote": "It is a hosted remote server, so in Claude you add the official SE Ranking connector from Claude\u2019s connector directory and sign in, with no Docker or terminal.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://seranking.com/api-pricing.html",
+   "quote": "MCP included",
+   "grounding": 0.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

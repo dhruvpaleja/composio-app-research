@@ -1,0 +1,1 @@
+{"url": "https://raw.githubusercontent.com/amzn/selling-partner-agentic-toolkit/main/.mcp.json", "via": "http", "content": "{ \"mcpServers\": { \"amazon-selling-partner\": { \"type\": \"http\", \"url\": \"https://sellingpartner-ai.amazon.com/mcp\" } } } "}

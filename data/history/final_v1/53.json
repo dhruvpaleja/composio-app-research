@@ -1,0 +1,116 @@
+{
+ "one_liner": "Ahrefs offers a broad REST API v3 authenticated with workspace API keys, but it requires an eligible paid plan (only free test queries otherwise). OAuth via Ahrefs Connect needs application approval and an Enterprise plan for production. A vendor MCP is advertised.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API v3 needs an API key created by workspace owners or admins in Account settings. OAuth 2.0 Authorization Code with PKCE exists via Ahrefs Connect, but only after application approval, and new integrations need an Enterprise plan for production. The API key is the practical primary method. The Bearer header format and the key's 1-year lifetime are not confirmed by the supplied pages.",
+ "access": "paid_plan",
+ "access_notes": "The API is available on eligible paid plans. Other plans only get a limited set of free test queries. The draft's $129/mo Lite price is not in the pages. A help-center page quotes a separate $500/mo API subscription, but it looks outdated, so the current price is unverified.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+ "docs_url": "https://docs.ahrefs.com/en/api/docs/introduction",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Each customer needs an eligible paid plan with API units. Ahrefs Connect OAuth needs an application, review and an Enterprise plan for production. A toolkit that has each customer supply their own API key is buildable. Free test queries are available for development.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "Ahrefs API is available on [eligible paid plans](https://ahrefs.com/pricing). On all other plans, you'll still have access to a [limited set of free test queries]",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "To send requests to Ahrefs API, you'll need an API key. Only workspace owners and admins can create and manage API keys.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.frontegg.com/agen-for-work/connectors/marketplace/ahrefs",
+   "quote": "Authentication is OAuth 2.0 Authorization Code with PKCE against the Ahrefs Connect program",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ahrefs.com/ahrefs-connect/docs/how-it-works",
+   "quote": "you will need an **Ahrefs Enterprise plan** to activate your integration in production.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "- [Full OpenAPI spec](https://docs.ahrefs.com/openapi.json)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://ahrefs.com/api",
+   "quote": "Connect your Ahrefs data to AI assistants and agents to enhance their answers with real marketing insights.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://ahrefs.com/seo-api",
+   "quote": "Connect Ahrefs data to AI-native workflows through MCP.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "ahrefs",
+    "name": "Ahrefs",
+    "auth_schemes": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 46
+   },
+   {
+    "slug": "ahrefs_mcp",
+    "name": "Ahrefs MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 135
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.ahrefs/mcp"
+  ],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": [
+   "ahrefs_mcp"
+  ]
+ }
+}

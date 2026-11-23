@@ -1,0 +1,99 @@
+{
+ "one_liner": "Zendesk has a broad REST API suite with OAuth 2.0 (plus likely Basic/API token); credentials need a trial or paid Zendesk account, and Zendesk itself offers an MCP server (via Zendesk Bridge, early access).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The provided pages confirm Zendesk uses OAuth clients registered in Admin Center. Basic and API token are retained from general knowledge and the earlier draft, but are not verifiable from the provided pages.",
+ "access": "self_serve_trial",
+ "access_notes": "The pages given do not settle access. The most defensible value is the trial or paid plan path from the earlier draft, whose supporting pages were not provided. Confidence is low.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Working credentials likely need a Zendesk trial or paid plan (unverified from the provided pages). The vendor MCP server is in an early access program, and connections to it need an OAuth client created in Admin Center.",
+ "docs_url": "https://developer.zendesk.com/api-reference/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+   "quote": "Zendesk Bridge provides a way to establish governed connections between the Zendesk MCP Server or Zendesk AI agents and external AI agents your organization uses",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Using-the-Zendesk-MCP-client-to-access-MCP-tools-in-action-flows-and-advanced-action-flows",
+   "quote": "Zendesk can also act as an MCP server in other scenarios.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+   "quote": "However, you must create a separate OAuth client in Admin Center before configuring this connection.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.zendesk.com/api-reference/",
+   "quote": "You'll find APIs for ticketing, help center, live chat, voice, sales CRM as well as some features that span capabilities",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "access",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 480
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

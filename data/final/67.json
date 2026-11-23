@@ -1,0 +1,104 @@
+{
+ "one_liner": "Snowflake has a broad REST API surface (SQL API, Cortex) and an official managed MCP server; trial accounts give self-serve access, with PAT/OAuth/key-pair auth.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Programmatic Access Tokens are documented for REST/Cortex APIs. The SQL API docs list OAuth or Key Pair (JWT). Snowflake OAuth uses security integrations created by an admin per account, so it is not self-serve app registration; hence PAT is primary.",
+ "access": "self_serve_trial",
+ "access_notes": "Docs homepage links to 'Getting a Trial Account'. Trial length and whether PATs can be generated in trial are not confirmed in the fetched pages. The previously cited marketplace PDF was unreadable and did not support the quote, so it was dropped.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Per-account URLs and admin-created OAuth integrations are customer-setup items. Trial length unconfirmed.",
+ "docs_url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+ "webhooks": false,
+ "sandbox": true,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/user-guide/programmatic-access-tokens.md",
+   "quote": "You can generate programmatic access tokens for human users (users with TYPE=PERSON) as well as service users (users with TYPE=SERVICE or TYPE=SERVICE_AGENT).",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-rest-api",
+   "quote": "A **Snowflake Programmatic Access Token (PAT)** for authentication.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+   "quote": "Use OAuth or Key Pair to authenticate with the Snowflake server.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.snowflake.com",
+   "quote": "[Getting a Trial Account](https://docs.snowflake.com/en/user-guide/admin-trial-account)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+   "quote": "The Snowflake SQL API is a REST API that you can use to access and update data in a Snowflake database.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.snowflake.com/en/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+   "quote": "The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Snowflake-Labs/mcp",
+   "quote": "**This project is deprecated and no longer maintained.**",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "snowflake",
+    "name": "Snowflake",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [],
+    "tools": 16
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "io.github.Snowflake-Labs/mcp"
+  ],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

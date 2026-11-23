@@ -1,0 +1,51 @@
+{
+ "id": "24",
+ "name": "Lark (Larksuite)",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/advanced-configuration",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/install-and-use-document-search-mcp",
+    "https://open.larksuite.com/document/mcp_open_tools/call-feishu-mcp-server-in-remote-mode",
+    "https://open.larksuite.com",
+    "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+    "https://open.larksuite.com/document/server-docs/getting-started/server-api-list",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-guide/api-billing",
+    "https://larksuite.com/en_us/partner",
+    "https://larksuite.com/hc/en-US/articles/000472088408-overview-of-app-permissions-and-approval-rules"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://open.larksuite.com",
+    "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+    "https://open.larksuite.com/document/server-docs/getting-started/server-api-list",
+    "https://open.larksuite.com/document/server-docs/meeting_room-v1/api-reference/obtain-building-list",
+    "https://open.larksuite.com/document/server-docs/group/overview",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/list",
+    "https://open.larksuite.com/document/ukTMukTMukTM/uETMzUjLxEzM14SMxMTN",
+    "https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 20,
+  "composio_mcp_toolkits": []
+ }
+}

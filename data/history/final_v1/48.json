@@ -1,0 +1,102 @@
+{
+ "one_liner": "Gumroad has a free, self-serve REST v2 API with OAuth2 and non-expiring access tokens, plus a vendor-run MCP server, so a toolkit can ship now.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Create an application under Settings > Advanced. For multi-user use, build a Redirect URI handler for OAuth authorization-code flow. For your own account, generate a non-expiring access token manually. Composio lists OAUTH2 as managed. The scope list in the draft is not verified from the supplied pages.",
+ "access": "self_serve_free",
+ "access_notes": "Any account can create an application and generate an access token (per the README of a community MCP server; the claim of no billing gate is from a third-party guide, not Gumroad's own docs).",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://gumroad.com/claude/v1/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker found. Third-party users must authorize via OAuth. No documented sandbox.",
+ "docs_url": "https://gumroad.com/api",
+ "openapi_spec": null,
+ "sandbox": false,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+   "quote": "Gumroad runs a server that speaks MCP (Model Context Protocol)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+   "quote": "paste this URL: `https://gumroad.com/claude/v1/mcp`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+   "quote": "The connector is run by Gumroad.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://gumroad.com/mcp",
+   "quote": "Every assistant connects to its own URL and asks for OAuth access to your Gumroad account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://github.com/rmarescu/gumroad-mcp",
+   "quote": "Use the \"Generate access token\" button to get your access token.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/rmarescu/gumroad-mcp",
+   "quote": "Gumroad API requires [authentication](https://gumroad.com/api#api-authentication).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "auth",
+   "why": "no evidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "gumroad",
+    "name": "Gumroad",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 13
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

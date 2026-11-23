@@ -1,0 +1,125 @@
+{
+ "one_liner": "Pylon is a B2B support platform with a REST API using admin-created bearer tokens and an official MCP server (OAuth or API token). Whether the API needs a paid plan isn't settled by the fetched pages.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API uses a bearer API token that an Admin creates in Settings > Integrations & dev > API. Tokens have no separate scopes; the assigned role or the user the token acts as controls access. There are two regions (US api.usepylon.com, EU api.eu.usepylon.com), and a token sent to the wrong region returns 401. OAuth 2.0 is documented only for the MCP server, not for the REST API.",
+ "access": "paid_plan",
+ "access_notes": "The fetched pages do not say which plan includes the API or whether there is a free tier or self-serve trial. They only show that tokens come from Admin settings, and that some features (MCP tools, audit logs) depend on the plan. The draft's pricing and trial claims came from pages not provided here, so I can't verify them. I kept paid_plan as the most defensible value (Pylon is sold to B2B customers), with low confidence.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+ "mcp": "official",
+ "mcp_url": "https://mcp.usepylon.com",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Each customer's Admin must create a token and the region must match. Whether a paid plan or a sales-arranged account is required is not confirmed by the fetched pages. The draft's claims about the sandbox being Enterprise-only and about trials were not verifiable and are dropped.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "Only Admins can create and manage API tokens.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.airbyte.com/integrations/sources/pylon",
+   "quote": "Pylon tokens have no separate scopes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "US region: https://api.usepylon.com",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.airbyte.com/integrations/sources/pylon",
+   "quote": "It uses `updated_at` as its cursor field and the `POST /issues/search` endpoint",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "quote": "Some tools also require a plan feature, noted in their section.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.airbyte.com/integrations/sources/pylon",
+   "quote": "a Pylon plan that includes audit log access",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "quote": "The Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "quote": "Server URL (US): https://mcp.usepylon.com",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "quote": "Auth: OAuth 2.0 or an API token.",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "low"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "verdict",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "pylon_mcp",
+    "name": "Pylon MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 12
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "pylon_mcp"
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "id": "42",
+ "name": "WooCommerce",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.woocommerce.com/docs/features/mcp",
+    "https://woocommerce.com/document/woocommerce-ai/mcp-server",
+    "https://woocommerce.com/document/woocommerce-rest-api",
+    "https://developer.woocommerce.com/docs/apis/rest-api",
+    "https://woocommerce.com/documentation/marketplace/3rd-party-developers/saas-products",
+    "https://woocommerce.com/document/customer-orders-api",
+    "https://developer.woocommerce.com/docs/woo-marketplace/getting-started",
+    "https://woo.com/documentation/woocommerce-extensions/api-manager",
+    "https://woocommerce.com/document/product-setup"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 8,
+  "composio_mcp_toolkits": []
+ }
+}

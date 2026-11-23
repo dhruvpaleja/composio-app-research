@@ -1,0 +1,105 @@
+{
+ "one_liner": "GoHighLevel has a broad REST API with OAuth 2.0 and Private Integration Tokens, plus an official vendor-hosted MCP server. API access needs a paid plan or a trial.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 for Marketplace apps; Private Integration Tokens are static bearer tokens created in Settings. The docs' quick start offers OAuth 2.0 or Private Integration Token. The MCP server uses OAuth (v2) and an older PIT-based endpoint.",
+ "access": "self_serve_trial",
+ "access_notes": "The supplied pages do not show a free tier. The draft's claims that API access comes with paid plans and a 14-day trial came from third-party pages I can't re-check here, so access confidence is low. Some endpoints need the Founder plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://marketplace.gohighlevel.com/docs/",
+ "mcp": "official",
+ "mcp_url": "https://services.leadconnectorhq.com/mcp/anthropic/v2",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "A paid HighLevel account or trial is likely needed for credentials. This is not confirmed on the supplied pages. The MCP flag is resolved: vendor help-center pages document a vendor-hosted MCP server.",
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+   "quote": "The HighLevel MCP Server, also called the LeadConnector MCP Server, connects through OAuth: sign in, choose the sub-account or sub-accounts to include, and approve the requested permissions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000007981-highlevel-mcp-server-model-context-protocol-",
+   "quote": "The HighLevel MCP (Model Context Protocol) Server provides a secure way for AI agents and MCP-compatible applications to interact with HighLevel tools and services.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+   "quote": "claude mcp add --transport http leadconnector https://services.leadconnectorhq.com/mcp/anthropic/v2",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "quote": "2. **Set Up Authentication** - OAuth 2.0 or Private Integration Token",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "quote": "Access all HighLevel platform features through our REST API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "quote": "Real-time notifications for 50+ events.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "access",
+   "why": "no evidence"
+  },
+  {
+   "check": "V3_rules",
+   "field": "access",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "highlevel_mcp",
+    "name": "HighLevel MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 36
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": [
+   "highlevel_mcp"
+  ]
+ }
+}

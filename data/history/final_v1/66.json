@@ -1,0 +1,110 @@
+{
+ "one_liner": "Neo4j's Aura management REST API uses OAuth2 client credentials that any tier can create self-serve. Neo4j also ships an MCP server, and Neo4j Labs offers a hosted memory API with static API keys.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Aura API: the user creates a client ID and secret in the console and exchanges them at the token endpoint, using HTTP Basic, for a one-hour Bearer token. This is client credentials only, with no third-party authorization-code flow. API_KEY is added because the Neo4j Labs hosted Agent Memory service issues static nams_ keys sent as Bearer tokens, and the Composio catalog lists API_KEY. BASIC covers the token endpoint and the MCP server's username/password mode. The Aura endpoint list itself was not fetched.",
+ "access": "self_serve_free",
+ "access_notes": "The Aura docs say all tiers can create API credentials. The fetched pages do not show whether a free tier exists or whether a payment method is required.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://neo4j.com/docs/mcp/current/authentication",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Each customer must create their own Aura client credentials. There is no central multi-tenant OAuth app. The Aura endpoint list was not in the fetched pages, so API breadth is unverified. Whether a free tier exists is also unverified.",
+ "docs_url": "https://neo4j.com/docs/aura/api/authentication",
+ "webhooks": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "The Aura API uses OAuth 2.0 for API authentication.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "Authentication to the token endpoint uses HTTP Basic Authentication, where the client ID and client secret are provided as the username and password, respectively.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "All tiers can create Aura API credentials.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://neo4j.com/labs/agent-memory/how-to/typescript/authenticate",
+   "quote": "**Static `nams_*` API keys** \u2014 issued via the dashboard, expire in 90 days.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://neo4j.com/docs/mcp/current/authentication",
+   "quote": "When using HTTP transport mode, the Neo4j MCP server supports two authentication methods to accommodate different deployment scenarios:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "quote": "Token URL: `https://api.neo4j.io/oauth/token`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "low",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V3_rules",
+   "field": "api",
+   "why": "agent self-reported low confidence"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "neo4j",
+    "name": "Neo4J",
+    "auth_schemes": [
+     "OAUTH2",
+     "BASIC",
+     "API_KEY",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 21
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "BASIC",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "io.github.neo4j-contrib/gds-agent",
+   "io.github.neo4j-contrib/mcp-neo4j-aura-manager",
+   "io.github.neo4j-contrib/mcp-neo4j-cypher",
+   "io.github.neo4j-contrib/mcp-neo4j-data-modeling",
+   "io.github.neo4j-contrib/mcp-neo4j-memory"
+  ],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

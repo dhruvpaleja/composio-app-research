@@ -1,0 +1,66 @@
+{
+ "one_liner": "MrScraper has a REST scraping API with self-serve API tokens, a free tier, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The REST API uses an API token sent in the x-api-token header. Marketplace endpoints take the same token as a Bearer token. OAuth 2.1 exists only on the hosted MCP server, not on the REST API, so it is not listed as an API auth method.",
+ "access": "self_serve_free",
+ "access_notes": "The free plan needs no credit card and includes API tokens. Sources disagree on the free allocation: 1,000 tokens per month in one place, 100 tokens in the billing docs. Tokens are created in the dashboard.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://mcp.mrscraper.com/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None. The breadth rating is a judgement because the evidence does not give an endpoint count.",
+ "docs_url": "https://docs.mrscraper.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "Include your API token in the `x-api-token` HTTP header on every request"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "API tokens are managed directly from your MrScraper dashboard."
+  },
+  {
+   "field": "access",
+   "url": "https://mrscraper.com/pricing",
+   "quote": "Scraper Free includes 1,000 MrScraper tokens every month at no cost - no credit card required."
+  },
+  {
+   "field": "access",
+   "url": "https://mrscraper.com/pricing",
+   "quote": "Sign in to the dashboard, open your account settings, and copy the token from the API Token page."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "The MrScraper API uses API token authentication to secure all endpoints."
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/api-evangelist/mrscraper/refs/heads/main/authentication/mrscraper-authentication.yml",
+   "quote": "Every REST endpoint takes a MrScraper API token in the x-api-token header; Marketplace endpoints take the same token as an RFC 6750 Bearer"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+   "quote": "MrScraper MCP is the official [MrScraper](https://mrscraper.com) server for the [Model Context Protocol](https://modelcontextprotocol.io)."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

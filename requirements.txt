@@ -1,0 +1,2 @@
+# Standard library only. Optional: the Anthropic SDK, used instead of the claude CLI when ANTHROPIC_API_KEY is set.
+anthropic>=0.40  # optional

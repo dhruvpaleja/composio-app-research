@@ -1,0 +1,73 @@
+{
+ "one_liner": "GitHub offers a broad, free, self-serve REST and GraphQL API with OAuth apps, GitHub Apps and PATs, plus an official GitHub-maintained MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth apps support the authorization code flow and device flow. Personal access tokens are static bearer tokens. GitHub Apps use a JWT you mint yourself to get installation tokens. Basic auth with a password has been retired, and the Basic auth text in the evidence is from an old Enterprise 11.10 doc.",
+ "access": "self_serve_free",
+ "access_notes": "A free GitHub account gives working tokens, and the API is not billed separately. Authenticated requests are limited to 5,000 per hour.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/github/github-mcp-server",
+ "docs_url": "https://docs.github.com/rest",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No blocker. Some individual endpoints depend on the paid plan of the underlying feature.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+   "quote": "You can create a personal access token, generate a token with a GitHub App, or use the built-in `GITHUB_TOKEN` in a GitHub Actions workflow."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+   "quote": "GitHub's OAuth implementation supports the standard [authorization code grant type](https://tools.ietf.org/html/rfc6749#section-4.1) and the OAuth 2.0 [Device Authorization Grant]"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app",
+   "quote": "Generate a JSON Web Token (JWT) for your app."
+  },
+  {
+   "field": "access",
+   "url": "https://apiterms.com/api/github.com",
+   "quote": "The REST API is included with GitHub accounts; GitHub plans start at Free ($0/month), Team ($4/user/month), and Enterprise (from $21/user/month), but the API is not billed separately."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2026-03-10",
+   "quote": "All of these requests count towards your personal rate limit of 5,000 requests per hour."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app",
+   "quote": "The GraphQL API does not support any queries or mutations that require you to authenticate with a JWT."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+   "quote": "Many REST API endpoints require authentication or return additional information if you are authenticated."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/extend-copilot-with-tools-and-context/set-up-the-github-mcp-server",
+   "quote": "The GitHub MCP server is a Model Context Protocol (MCP) server provided and maintained by GitHub."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,93 @@
+{
+ "id": "65",
+ "name": "Supabase",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://supabase.com/docs",
+    "https://supabase.com/docs/guides/integrations/partner-catalog",
+    "https://supabase.com/docs/guides/integrations/partner-integration-guide",
+    "https://supabase.com/partners?partner_type=Solution%20Partners",
+    "https://supabase.com/legal/partner-resources/master-partner-program-agreement",
+    "https://supabase.com/pricing.md",
+    "https://supabase.com/legal/partner-resources/program-addenda/oauth-partner-addendum"
+   ],
+   "changed": {
+    "api_type": [
+     "REST",
+     "REST+GraphQL"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://supabase.com/docs",
+    "https://supabase.com/docs/guides/ai-tools/mcp",
+    "https://github.com/supabase/mcp/blob/main/README.md",
+    "https://supabase.com/docs/guides/ai-tools/byo-mcp",
+    "https://supabase.com/docs/guides/self-hosting/enable-mcp",
+    "https://supabase.com/docs/guides/getting-started/mcp.md",
+    "https://mcp.supabase.com/api/mcp"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "auth",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "supabase",
+    "name": "Supabase",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 230
+   },
+   {
+    "slug": "supabase_mcp",
+    "name": "Supabase MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 32
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.supabase/mcp"
+  ],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": [
+   "supabase_mcp"
+  ]
+ }
+}

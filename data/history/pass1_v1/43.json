@@ -1,0 +1,72 @@
+{
+ "one_liner": "BigCommerce has broad REST+GraphQL APIs with OAuth app flow and static API-account tokens, free sandbox/trial stores, and an official storefront MCP server (plus a closed-beta store-management MCP).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "App-level API accounts use OAuth where each app generates a token per installing store. Store-level and account-level API accounts provide static access tokens created in the control panel. Registering apps requires a Developer Portal account.",
+ "access": "self_serve_free",
+ "access_notes": "A free sandbox store or trial store is available, and API credentials are generated under Settings > API Accounts. Publishing to the marketplace requires partnership, but draft apps do not.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+ "docs_url": "https://developer.bigcommerce.com",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Per-store setup is needed (each customer creates an API account or installs the app), but this is not a real blocker. Marketplace publishing needs partnership.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.bigcommerce.com/api-docs/channels/channel-app-requirements",
+   "quote": "BigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce\u2019s REST APIs: store-level credentials, app-level credentials, and account-level credentials."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.bigcommerce.com/api-docs/channels/channel-app-requirements",
+   "quote": "Store-level API accounts](/developer/docs/overview/api-fundamentals/api-accounts#store-level-api-accounts) include a static access token that does not change."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.bigcommerce.com",
+   "quote": "Sign up for a free BigCommerce trial store to test API calls and build integrations without affecting live data."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/overview",
+   "quote": "The developer sandbox is free of charge."
+  },
+  {
+   "field": "api",
+   "url": "https://support.bigcommerce.com/articles/en_US/Knowledge/Store-API-Accounts",
+   "quote": "API accounts are used to authenticate requests to our APIs."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+   "quote": "For everything else, use the [REST and GraphQL APIs](https://docs.bigcommerce.com/developer/api-reference)."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+   "quote": "The BigCommerce MCP server lets AI agents interact with a BigCommerce storefront using purpose-built commerce tools."
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.bigcommerce.com/developer/docs/beta/store-management-mcp",
+   "quote": "Connections use OAuth 2.1 with PKCE. Your MCP client registers itself automatically, so there's no client ID or client secret to create or manage."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

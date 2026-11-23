@@ -1,0 +1,77 @@
+{
+ "one_liner": "Ecwid has a broad REST API with OAuth2 for public apps and non-expiring secret tokens for custom apps, but API access requires a paid store plan (free test-store upgrade available via email).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Public/external apps use OAuth 2.0 authorization-code flow to obtain per-store access tokens; custom apps get non-expiring secret/public tokens from the app dashboard, sent as Bearer.",
+ "access": "paid_plan",
+ "access_notes": "Only stores on paid plans can access the API; no free plan or trial. Developers can email API support for a free upgrade of a test store.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "community",
+ "mcp_url": "https://ecwid.usefulapi.io/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "API requires a paid Ecwid plan; the builder must email Ecwid API support to get a free test-store upgrade, or pay (Starter about $5/mo).",
+ "docs_url": "https://docs.ecwid.com/api-reference",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+   "quote": "Ecwid uses OAuth 2.0 to provide secure access to the store data for public apps."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.ecwid.com/develop-apps/app-settings",
+   "quote": "Access tokens - non-expiring authorization keys for REST API requests."
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+   "quote": "These applications need to [handle the oAuth process](https://developers.ecwid.com/api-documentation/external-applications#get-access-token) themselves in order to get an access token."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "quote": "Only stores on paid plans can access API."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "quote": "Ecwid provides a **free upgrade to a paid plan** if you:"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_api_reference.md",
+   "quote": "Ecwid API is a **RESTful** API with **oAuth2** authentication."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.ecwid.com/api-reference/rest-api/products/update-product",
+   "quote": "`PUT` `https://app.ecwid.com/api/v3/{storeId}/products/{productId}`"
+  },
+  {
+   "field": "mcp",
+   "url": "https://usefulapi.io/ecwid",
+   "quote": "Read store products, orders, customers, categories and coupons; adjust inventory and update orders. Hosted by **usefulapi**"
+  },
+  {
+   "field": "mcp",
+   "url": "https://vinkius.com/pdf/ecwid-mcp.pdf",
+   "quote": "This MCP server is hosted and maintained by the Vinkius Cloud for AI Agents."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

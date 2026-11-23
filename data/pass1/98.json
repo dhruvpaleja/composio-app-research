@@ -1,0 +1,61 @@
+{
+ "one_liner": "Mermaid CLI (mmdc) is a local open-source Node/Puppeteer renderer with no hosted API or credentials, so there is no remote API to build a toolkit on. The separate hosted Mermaid.ai API is a different product.",
+ "auth_methods": [
+  "NONE"
+ ],
+ "auth_primary": "NONE",
+ "auth_notes": "The CLI runs locally and needs no credentials. The GitHub token in building.md is only for the npm registry when building. The hosted Mermaid.ai API (api.mermaid.ai/v1) uses Bearer API keys and OAuth 2.1 for its MCP server, but that is a different product from the CLI.",
+ "access": "no_public_api",
+ "access_notes": "The CLI is free and open source but is installed and run locally, with no hosted HTTP API. Separately, mermaid.ai offers a hosted render API that free accounts can use with a monthly credit allowance. If Composio wants a hosted toolkit, it should target that product instead.",
+ "api_type": "SDK_or_CLI_only",
+ "api_breadth": "none",
+ "docs_url": "https://github.com/mermaid-js/mermaid-cli",
+ "openapi_spec": false,
+ "webhooks": false,
+ "sandbox": false,
+ "mcp": "community",
+ "mcp_url": "https://github.com/rtuin/mcp-mermaid-validator",
+ "verdict": "not_buildable",
+ "blocker": "self_hosted_or_local",
+ "blocker_notes": "Mermaid CLI is a local binary that depends on Puppeteer and Chromium, so there is no remote API to authenticate against. The hosted Mermaid.ai API and its official MCP server (mcp.mermaid.ai) are a separate product that could be evaluated on its own. They are not the CLI.",
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://github.com/andrewginns/mermaid-mcp-server",
+   "quote": "Implements a minimal Python wrapper over [https://github.com/mermaid-js/mermaid-cli](https://github.com/mermaid-js/mermaid-cli) for simpler out of the box use."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/ryu1maniwa/mermaid-local-mcp",
+   "quote": "A local MCP (Model Context Protocol) server that renders Mermaid diagrams and returns PNG images."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/abekdwight/mermaid-mcp-server",
+   "quote": "This server uses `@mermaid-js/mermaid-cli` internally, which relies on Puppeteer to render diagrams."
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/building.md",
+   "quote": "node src/cli.js -i test-positive/state1.mmd"
+  },
+  {
+   "field": "access",
+   "url": "https://mermaid.ai/pricing",
+   "quote": "The core Mermaid syntax is always free and open-source. Paid plans add AI features, diagram storage, real-time collaboration, integrations, and security controls."
+  },
+  {
+   "field": "access",
+   "url": "https://mermaid.ai/products/mermaid-api",
+   "quote": "Any Mermaid account works, including a free one, and every account gets a monthly allowance of API credits. Paid plans include a bigger allowance."
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

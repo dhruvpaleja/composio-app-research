@@ -1,0 +1,57 @@
+{
+ "id": "76",
+ "name": "Monday.com",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/mondaycom/mcp",
+    "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+    "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+    "https://developer.monday.com/api-reference/docs/mondaycom-mcp.md",
+    "https://developer.monday.com/api-reference/docs/compatible-mcp-clients",
+    "https://developer.monday.com/api-reference/docs/monday-mcp-overview",
+    "https://developer.monday.com/apps/docs/connect-claude-for-desktop-to-mondaycom-mcp",
+    "https://developer.monday.com/apps/docs/mondaycom-mcp-integration.md",
+    "https://developer.monday.com"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "monday",
+    "name": "Monday",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 122
+   },
+   {
+    "slug": "monday_mcp",
+    "name": "Monday MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 96
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.monday/monday.com"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": [
+   "monday_mcp"
+  ]
+ }
+}

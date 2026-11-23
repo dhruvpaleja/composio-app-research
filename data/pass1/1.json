@@ -1,0 +1,68 @@
+{
+ "one_liner": "Salesforce has a broad REST/SOAP/Bulk API with OAuth2 and a free Developer Edition org; the vendor also offers hosted MCP servers.",
+ "auth_methods": [
+  "OAUTH2",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 via connected apps / external client apps (authorization code, client credentials, JWT bearer). SOAP login() uses username+password+security token (session ID). JWT is minted by the developer.",
+ "access": "self_serve_free",
+ "access_notes": "Free Developer Edition org has API access enabled; trial orgs are not API-enabled. Production API requires Enterprise+ or add-on, but that is the customer's cost. Legal terms say apps may need AppExchange Partner Program enrollment, with exceptions.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+ "docs_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+ "openapi_spec": null,
+ "sandbox": true,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "A free Developer Edition org gives working API and OAuth credentials self-serve. The AppExchange Partner Program requirement for distributed apps is a possible ToS concern, but the evidence has exceptions and it is unverified.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.salesforce.com/docs/platform/api/guide/sforce-api-oauth-and-connected-apps.html",
+   "quote": "it must be authorized as a safe visitor. To implement this authorization, use either an external client app or a connected app and an OAuth 2.0 authorization flow."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.salesforce.com/docs/platform/api/guide/sforce-api-calls-login.html",
+   "quote": "When a client app invokes the `login()` call, it passes in a username and password as credentials."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+   "quote": "API access is enabled by default in Enterprise, Performance, Unlimited, and Developer Edition orgs."
+  },
+  {
+   "field": "access",
+   "url": "https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/api_rest.pdf",
+   "quote": "Developer Edition provides a free and easy solution so that you can use Salesforce for testing and development."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.salesforce.com/blogs/2023/03/using-the-client-credentials-flow-for-easier-api-authentication",
+   "quote": "Salesforce provides a [comprehensive set of APIs](https://developer.salesforce.com/developer-centers/integration-apis) that address a wide range of use cases."
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+   "quote": "Salesforce Hosted MCP Servers give AI agents a secure, governed way to interact with Salesforce data and automation."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/salesforcecli/mcp/tree/main",
+   "quote": "The Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

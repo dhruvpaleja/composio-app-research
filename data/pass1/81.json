@@ -1,0 +1,58 @@
+{
+ "one_liner": "Stripe has a broad REST API with self-serve free API keys (test mode/sandbox), OAuth via Stripe Apps/Connect, and an official hosted MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "BASIC",
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "API keys are sent via HTTP Basic (key as username) or Bearer. OAuth 2.0 is available through Stripe Apps (public distribution, self-serve app creation via CLI) for acting on behalf of users. Restricted API keys are a copy-paste alternative.",
+ "access": "self_serve_free",
+ "access_notes": "Creating a Stripe account generates test/sandbox keys immediately; no payment is needed to build and test. Live mode requires account setup. Public OAuth apps may need marketplace review for listing, but test/dev use is self-serve.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.stripe.com",
+ "docs_url": "https://docs.stripe.com/api",
+ "openapi_spec": true,
+ "sandbox": true,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None for building and testing; sandbox keys are immediately available.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/api/authentication?lang=connect",
+   "quote": "The Stripe API authenticates requests using [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). Provide your API key as the basic auth username value."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+   "quote": "Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.stripe.com/get-started/api-request",
+   "quote": "After you create a Stripe account, we generate two pairs of [API keys](/keys) for you"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.stripe.com/keys/restricted-api-keys",
+   "quote": "All Stripe APIs support restricted API keys."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/stripe/ai/tree/main/tools",
+   "quote": "Stripe hosts a remote MCP server at `https://mcp.stripe.com`. This allows secure MCP client access via OAuth."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

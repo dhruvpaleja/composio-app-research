@@ -1,0 +1,3440 @@
+{
+ "pass1": {
+  "n_apps": 30,
+  "field_accuracy": {
+   "auth_primary": 0.967,
+   "auth_methods": 0.933,
+   "access": 1.0,
+   "api_type": 1.0,
+   "mcp": 0.967,
+   "verdict": 0.833
+  },
+  "overall": 0.95,
+  "correct": 171,
+  "total": 180,
+  "apps_all_correct": 21,
+  "rows": [
+   {
+    "id": 1,
+    "name": "Salesforce",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+     "https://developer.salesforce.com/signup"
+    ]
+   },
+   {
+    "id": 2,
+    "name": "HubSpot",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.hubspot.com/docs/guides/apps/authentication/intro-to-auth",
+     "https://developers.hubspot.com/mcp"
+    ]
+   },
+   {
+    "id": 5,
+    "name": "Twenty",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST+GraphQL",
+      "gold": [
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.twenty.com/developers/extend/oauth",
+     "https://docs.twenty.com/developers/extend/mcp"
+    ]
+   },
+   {
+    "id": 13,
+    "name": "Freshdesk",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.freshdesk.com/api/#authentication",
+     "https://support.freshdesk.com/en/support/solutions/articles/50000012670"
+    ]
+   },
+   {
+    "id": 14,
+    "name": "Front",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://dev.frontapp.com/docs/partnering-with-front",
+     "https://dev.frontapp.com/docs/mcp-server"
+    ]
+   },
+   {
+    "id": 20,
+    "name": "Gladly",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "BASIC",
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "partner_gated",
+      "gold": [
+       "partner_gated"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "community",
+      "gold": [
+       "none",
+       "community"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "needs_outreach",
+      "gold": [
+       "needs_outreach"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.gladly.com/rest",
+     "https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks"
+    ]
+   },
+   {
+    "id": 22,
+    "name": "Twilio",
+    "fields": {
+     "auth_primary": {
+      "ok": false,
+      "got": "OAUTH2",
+      "gold": [
+       "BASIC",
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial",
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://www.twilio.com/docs/usage/requests-to-twilio",
+     "https://twilio.com/docs/ai/mcp"
+    ]
+   },
+   {
+    "id": 29,
+    "name": "Aircall",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "OAUTH2",
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "BASIC",
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2",
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial",
+       "paid_plan",
+       "app_review"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.aircall.io/docs/authentication",
+     "https://support.aircall.io/en-gb/articles/39677926959517"
+    ]
+   },
+   {
+    "id": 30,
+    "name": "Vonage",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "API_KEY",
+       "BASIC",
+       "OTHER"
+      ]
+     },
+     "auth_methods": {
+      "ok": false,
+      "got": [
+       "API_KEY",
+       "BASIC",
+       "OTHER",
+       "OAUTH2"
+      ],
+      "gold": [
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_trial",
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.vonage.com/en/getting-started/concepts/authentication",
+     "https://developer.vonage.com/en/mcp-server/technical-details"
+    ]
+   },
+   {
+    "id": 31,
+    "name": "Google Ads",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "app_review",
+      "gold": [
+       "app_review"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "other_protocol"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+     "https://github.com/googleads/google-ads-mcp"
+    ]
+   },
+   {
+    "id": 37,
+    "name": "systeme.io",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.systeme.io/reference/api",
+     "https://developer.systeme.io/docs/mcp-server"
+    ]
+   },
+   {
+    "id": 40,
+    "name": "SendGrid",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "community",
+      "gold": [
+       "community",
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+     "https://support.sendgrid.com/hc/en-us/articles/35270136965403"
+    ]
+   },
+   {
+    "id": 41,
+    "name": "Shopify",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST+GraphQL",
+      "gold": [
+       "GraphQL",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": false,
+      "got": "community",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://shopify.dev/docs/apps/build/authentication-authorization",
+     "https://shopify.dev/docs/apps/build/devmcp"
+    ]
+   },
+   {
+    "id": 42,
+    "name": "WooCommerce",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "BASIC",
+       "OTHER"
+      ],
+      "gold": [
+       "API_KEY",
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication",
+     "https://developer.woocommerce.com/docs/features/mcp"
+    ]
+   },
+   {
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "partner_gated",
+      "gold": [
+       "partner_gated"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "needs_outreach",
+      "gold": [
+       "needs_outreach"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html",
+     "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+    ]
+   },
+   {
+    "id": 51,
+    "name": "DataForSEO",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": false,
+      "got": [
+       "BASIC",
+       "OAUTH2"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_trial",
+       "self_serve_free",
+       "paid_plan"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.dataforseo.com/v3/auth/",
+     "https://dataforseo.com/help-center/how-does-your-free-unlimited-trial-work"
+    ]
+   },
+   {
+    "id": 54,
+    "name": "MrScraper",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://mrscraper.com/pricing",
+     "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+    ]
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "partner_gated",
+      "gold": [
+       "partner_gated"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "none",
+      "gold": [
+       "none",
+       "community",
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "needs_outreach",
+      "gold": [
+       "needs_outreach"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.waterfall.io/v1/book-demo",
+     "https://docs.waterfall.io/v1/quickstart"
+    ]
+   },
+   {
+    "id": 64,
+    "name": "Cloudflare",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST+GraphQL",
+      "gold": [
+       "REST",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+     "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/"
+    ]
+   },
+   {
+    "id": 67,
+    "name": "Snowflake",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2",
+       "OTHER",
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2",
+       "OTHER",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "other_protocol"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+     "https://github.com/Snowflake-Labs/mcp"
+    ]
+   },
+   {
+    "id": 69,
+    "name": "Datadog",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OAUTH2"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.datadoghq.com/api/latest/authentication/",
+     "https://docs.datadoghq.com/bits_ai/mcp_server/"
+    ]
+   },
+   {
+    "id": 74,
+    "name": "Jira",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2",
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations/",
+     "https://www.atlassian.com/platform/remote-mcp-server"
+    ]
+   },
+   {
+    "id": 75,
+    "name": "Asana",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.asana.com/docs/authentication",
+     "https://developers.asana.com/docs/using-asanas-mcp-server"
+    ]
+   },
+   {
+    "id": 78,
+    "name": "Coda",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OAUTH2"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://coda.io/developers/apis/v1",
+     "https://help.coda.io/hc/en-us/articles/44722769665549"
+    ]
+   },
+   {
+    "id": 81,
+    "name": "Stripe",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.stripe.com/api/authentication",
+     "https://docs.stripe.com/mcp"
+    ]
+   },
+   {
+    "id": 83,
+    "name": "Binance",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OTHER"
+      ],
+      "gold": [
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "other_protocol"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+     "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+    ]
+   },
+   {
+    "id": 87,
+    "name": "Xero",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.xero.com/documentation/guides/oauth2/overview/",
+     "https://github.com/XeroAPI/xero-mcp-server"
+    ]
+   },
+   {
+    "id": 93,
+    "name": "Fathom",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.fathom.ai/faq",
+     "https://developers.fathom.ai/mcp-docs"
+    ]
+   },
+   {
+    "id": 95,
+    "name": "Reducto",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://reducto.ai/pricing",
+     "https://docs.reducto.ai/mcp-server"
+    ]
+   },
+   {
+    "id": 96,
+    "name": "Devin",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "paid_plan",
+      "gold": [
+       "paid_plan"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.devin.ai/api-reference/authentication.md",
+     "https://docs.devin.ai/work-with-devin/devin-mcp"
+    ]
+   }
+  ]
+ },
+ "final": {
+  "n_apps": 30,
+  "field_accuracy": {
+   "auth_primary": 0.933,
+   "auth_methods": 0.967,
+   "access": 0.967,
+   "api_type": 1.0,
+   "mcp": 0.9,
+   "verdict": 0.767
+  },
+  "overall": 0.922,
+  "correct": 166,
+  "total": 180,
+  "apps_all_correct": 21,
+  "rows": [
+   {
+    "id": 1,
+    "name": "Salesforce",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST+GraphQL",
+      "gold": [
+       "REST",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": false,
+      "got": "none",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+     "https://developer.salesforce.com/signup"
+    ]
+   },
+   {
+    "id": 2,
+    "name": "HubSpot",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.hubspot.com/docs/guides/apps/authentication/intro-to-auth",
+     "https://developers.hubspot.com/mcp"
+    ]
+   },
+   {
+    "id": 5,
+    "name": "Twenty",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST+GraphQL",
+      "gold": [
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.twenty.com/developers/extend/oauth",
+     "https://docs.twenty.com/developers/extend/mcp"
+    ]
+   },
+   {
+    "id": 13,
+    "name": "Freshdesk",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.freshdesk.com/api/#authentication",
+     "https://support.freshdesk.com/en/support/solutions/articles/50000012670"
+    ]
+   },
+   {
+    "id": 14,
+    "name": "Front",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://dev.frontapp.com/docs/partnering-with-front",
+     "https://dev.frontapp.com/docs/mcp-server"
+    ]
+   },
+   {
+    "id": 20,
+    "name": "Gladly",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "BASIC",
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "partner_gated",
+      "gold": [
+       "partner_gated"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "none",
+      "gold": [
+       "none",
+       "community"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "needs_outreach",
+      "gold": [
+       "needs_outreach"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.gladly.com/rest",
+     "https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks"
+    ]
+   },
+   {
+    "id": 22,
+    "name": "Twilio",
+    "fields": {
+     "auth_primary": {
+      "ok": false,
+      "got": "OAUTH2",
+      "gold": [
+       "BASIC",
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial",
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": false,
+      "got": "none",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://www.twilio.com/docs/usage/requests-to-twilio",
+     "https://twilio.com/docs/ai/mcp"
+    ]
+   },
+   {
+    "id": 29,
+    "name": "Aircall",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "OAUTH2",
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "BASIC",
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2",
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "paid_plan",
+      "gold": [
+       "self_serve_trial",
+       "paid_plan",
+       "app_review"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": false,
+      "got": "none",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.aircall.io/docs/authentication",
+     "https://support.aircall.io/en-gb/articles/39677926959517"
+    ]
+   },
+   {
+    "id": 30,
+    "name": "Vonage",
+    "fields": {
+     "auth_primary": {
+      "ok": false,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "BASIC",
+       "OTHER"
+      ]
+     },
+     "auth_methods": {
+      "ok": false,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC",
+       "OTHER"
+      ],
+      "gold": [
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_trial",
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.vonage.com/en/getting-started/concepts/authentication",
+     "https://developer.vonage.com/en/mcp-server/technical-details"
+    ]
+   },
+   {
+    "id": 31,
+    "name": "Google Ads",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "app_review",
+      "gold": [
+       "app_review"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "other_protocol"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+     "https://github.com/googleads/google-ads-mcp"
+    ]
+   },
+   {
+    "id": 37,
+    "name": "systeme.io",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.systeme.io/reference/api",
+     "https://developer.systeme.io/docs/mcp-server"
+    ]
+   },
+   {
+    "id": 40,
+    "name": "SendGrid",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "community",
+      "gold": [
+       "community",
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+     "https://support.sendgrid.com/hc/en-us/articles/35270136965403"
+    ]
+   },
+   {
+    "id": 41,
+    "name": "Shopify",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "GraphQL",
+      "gold": [
+       "GraphQL",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://shopify.dev/docs/apps/build/authentication-authorization",
+     "https://shopify.dev/docs/apps/build/devmcp"
+    ]
+   },
+   {
+    "id": 42,
+    "name": "WooCommerce",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "API_KEY",
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication",
+     "https://developer.woocommerce.com/docs/features/mcp"
+    ]
+   },
+   {
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": false,
+      "got": "paid_plan",
+      "gold": [
+       "partner_gated"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "needs_outreach"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html",
+     "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+    ]
+   },
+   {
+    "id": 51,
+    "name": "DataForSEO",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "BASIC",
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "BASIC"
+      ],
+      "gold": [
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_trial",
+       "self_serve_free",
+       "paid_plan"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.dataforseo.com/v3/auth/",
+     "https://dataforseo.com/help-center/how-does-your-free-unlimited-trial-work"
+    ]
+   },
+   {
+    "id": 54,
+    "name": "MrScraper",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://mrscraper.com/pricing",
+     "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+    ]
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "partner_gated",
+      "gold": [
+       "partner_gated"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "none",
+      "gold": [
+       "none",
+       "community",
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "needs_outreach",
+      "gold": [
+       "needs_outreach"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.waterfall.io/v1/book-demo",
+     "https://docs.waterfall.io/v1/quickstart"
+    ]
+   },
+   {
+    "id": 64,
+    "name": "Cloudflare",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OAUTH2"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST+GraphQL",
+      "gold": [
+       "REST",
+       "REST+GraphQL"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+     "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/"
+    ]
+   },
+   {
+    "id": 67,
+    "name": "Snowflake",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2",
+       "OTHER",
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2",
+       "OTHER",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "other_protocol"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+     "https://github.com/Snowflake-Labs/mcp"
+    ]
+   },
+   {
+    "id": 69,
+    "name": "Datadog",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OAUTH2"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_trial",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.datadoghq.com/api/latest/authentication/",
+     "https://docs.datadoghq.com/bits_ai/mcp_server/"
+    ]
+   },
+   {
+    "id": 74,
+    "name": "Jira",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC",
+       "OTHER"
+      ],
+      "gold": [
+       "OAUTH2",
+       "BASIC"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations/",
+     "https://www.atlassian.com/platform/remote-mcp-server"
+    ]
+   },
+   {
+    "id": 75,
+    "name": "Asana",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "OAUTH2",
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.asana.com/docs/authentication",
+     "https://developers.asana.com/docs/using-asanas-mcp-server"
+    ]
+   },
+   {
+    "id": 78,
+    "name": "Coda",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://coda.io/developers/apis/v1",
+     "https://help.coda.io/hc/en-us/articles/44722769665549"
+    ]
+   },
+   {
+    "id": 81,
+    "name": "Stripe",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY",
+       "BASIC"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.stripe.com/api/authentication",
+     "https://docs.stripe.com/mcp"
+    ]
+   },
+   {
+    "id": 83,
+    "name": "Binance",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OTHER"
+      ],
+      "gold": [
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST",
+       "other_protocol"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready",
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+     "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+    ]
+   },
+   {
+    "id": 87,
+    "name": "Xero",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2"
+      ],
+      "gold": [
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": false,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developer.xero.com/documentation/guides/oauth2/overview/",
+     "https://github.com/XeroAPI/xero-mcp-server"
+    ]
+   },
+   {
+    "id": 93,
+    "name": "Fathom",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "OAUTH2",
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "OAUTH2",
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://developers.fathom.ai/faq",
+     "https://developers.fathom.ai/mcp-docs"
+    ]
+   },
+   {
+    "id": 95,
+    "name": "Reducto",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY",
+       "OTHER"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "self_serve_free",
+      "gold": [
+       "self_serve_free",
+       "self_serve_trial"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready",
+      "gold": [
+       "ready"
+      ]
+     }
+    },
+    "src": [
+     "https://reducto.ai/pricing",
+     "https://docs.reducto.ai/mcp-server"
+    ]
+   },
+   {
+    "id": 96,
+    "name": "Devin",
+    "fields": {
+     "auth_primary": {
+      "ok": true,
+      "got": "API_KEY",
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "auth_methods": {
+      "ok": true,
+      "got": [
+       "API_KEY"
+      ],
+      "gold": [
+       "API_KEY"
+      ]
+     },
+     "access": {
+      "ok": true,
+      "got": "paid_plan",
+      "gold": [
+       "paid_plan"
+      ]
+     },
+     "api_type": {
+      "ok": true,
+      "got": "REST",
+      "gold": [
+       "REST"
+      ]
+     },
+     "mcp": {
+      "ok": true,
+      "got": "official",
+      "gold": [
+       "official"
+      ]
+     },
+     "verdict": {
+      "ok": true,
+      "got": "ready_with_friction",
+      "gold": [
+       "ready_with_friction"
+      ]
+     }
+    },
+    "src": [
+     "https://docs.devin.ai/api-reference/authentication.md",
+     "https://docs.devin.ai/work-with-devin/devin-mcp"
+    ]
+   }
+  ]
+ }
+}

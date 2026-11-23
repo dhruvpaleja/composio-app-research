@@ -1,0 +1,58 @@
+{
+ "one_liner": "Plain is a B2B support platform with a full-parity GraphQL API, machine-user API keys, OAuth apps, and an official OAuth-based hosted MCP server. API use appears to require a paid workspace.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth apps (authorization code, with PKCE for client-side apps and a client secret for server-side apps) call the API as the signed-in user. Machine users hold API keys, sent as Bearer plainApiKey_xxx, with fine-grained permissions. Webhooks use HMAC-SHA256 request signing and mTLS, which is OTHER.",
+ "access": "paid_plan",
+ "access_notes": "The evidence shows only paid plans (Foundation $45/user/month billed annually, Horizon $99, Frontier custom). It shows no free tier or free trial. Machine-user API keys are created in workspace settings, so a paid workspace is probably needed. This is inferred, not stated.",
+ "api_type": "GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.plain.com/mcp",
+ "docs_url": "https://plain.com/docs/graphql/introduction",
+ "openapi_spec": false,
+ "webhooks": true,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "There is no evidence of a free tier or trial, so a paid workspace is likely needed for testing. Otherwise the API is well documented, with a published GraphQL schema and self-serve OAuth apps.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://plain.com/docs/graphql/introduction",
+   "quote": "**API URL:** `https://core-api.uk.plain.com/graphql/v1`"
+  },
+  {
+   "field": "auth",
+   "url": "https://plain.com/docs/api-reference/graphql/authentication",
+   "quote": "Click \u201cAdd API key\u201d and select the permissions you need."
+  },
+  {
+   "field": "auth",
+   "url": "https://plain.com/docs/graphql/oauth",
+   "quote": "An OAuth app lets users in your workspace sign in to your app with their Plain account."
+  },
+  {
+   "field": "access",
+   "url": "https://apis.io/plans/plain-support/plain-support-plans-pricing",
+   "quote": "| Foundation | $45/user/month billed annually Includes: 1,000 credits / month; Member seats up to 5; Viewer seats unlimited |"
+  },
+  {
+   "field": "mcp",
+   "url": "https://plain.com/docs/integrations/mcp-server",
+   "quote": "The Plain MCP server at `https://mcp.plain.com/mcp` lets tools like Claude, ChatGPT, and Cursor work with your support data directly."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

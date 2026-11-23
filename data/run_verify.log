@@ -1,0 +1,102 @@
+[verify 1/100] #4 Attio: flags=0 rounds=1
+[verify 2/100] #14 Front: flags=0 rounds=1
+[verify 3/100] #10 DealCloud: flags=0 rounds=1
+[verify 4/100] #2 HubSpot: flags=0 rounds=1
+[verify 5/100] #9 Copper: flags=0 rounds=2
+[verify 6/100] #6 Podio: flags=0 rounds=2
+[verify 7/100] #13 Freshdesk: flags=0 rounds=2
+[verify 8/100] #3 Pipedrive: flags=0 rounds=2
+[verify 9/100] #5 Twenty: flags=0 rounds=2
+[verify 10/100] #15 Pylon: flags=0 rounds=2
+[verify 11/100] #11 Zendesk: flags=0 rounds=2
+[verify 12/100] #7 Zoho CRM: flags=0 rounds=2
+[verify 13/100] #16 LiveAgent: flags=0 rounds=2
+[verify 14/100] #8 Close: flags=0 rounds=2
+[verify 15/100] #18 Help Scout: flags=0 rounds=2
+[verify 16/100] #17 Plain: flags=1 rounds=2
+[verify 17/100] #12 Intercom: flags=1 rounds=2
+[verify 18/100] #19 Gorgias: flags=0 rounds=2
+[verify 19/100] #1 Salesforce: flags=0 rounds=2
+[verify 20/100] #20 Gladly: flags=0 rounds=2
+[verify 21/100] #21 Slack: flags=0 rounds=1
+[verify 22/100] #23 Zoho Cliq: flags=0 rounds=2
+[verify 23/100] #36 Klaviyo: flags=0 rounds=1
+[verify 24/100] #37 systeme.io: flags=0 rounds=1
+[verify 25/100] #22 Twilio: flags=0 rounds=2
+[verify 26/100] #24 Lark (Larksuite): flags=0 rounds=2
+[verify 27/100] #27 Telegram: flags=0 rounds=2
+[verify 28/100] #25 Pumble: flags=0 rounds=1
+[verify 29/100] #32 Meta Ads: flags=0 rounds=2
+[verify 30/100] #29 Aircall: flags=0 rounds=2
+[verify 31/100] #31 Google Ads: flags=0 rounds=2
+[verify 32/100] #35 Mailchimp: flags=0 rounds=2
+[verify 33/100] #33 LinkedIn Ads: flags=0 rounds=2
+[verify 34/100] #28 WhatsApp Business: flags=0 rounds=2
+[verify 35/100] #30 Vonage: flags=0 rounds=2
+[verify 36/100] #26 Discord: flags=0 rounds=2
+[verify 37/100] #41 Shopify: flags=0 rounds=1
+[verify 38/100] #46 Squarespace: flags=0 rounds=1
+[verify 39/100] #39 Threads (Meta): flags=0 rounds=2
+[verify 40/100] #42 WooCommerce: flags=0 rounds=2
+[verify 41/100] #38 Pinterest: flags=0 rounds=2
+[verify 42/100] #51 DataForSEO: flags=0 rounds=1
+[verify 43/100] #34 GoHighLevel: flags=0 rounds=2
+[verify 44/100] #43 BigCommerce: flags=0 rounds=2
+[verify 45/100] #40 SendGrid: flags=0 rounds=2
+[verify 46/100] #49 Amazon Selling Partner: flags=0 rounds=2
+[verify 47/100] #45 Magento (Adobe Commerce): flags=0 rounds=2
+[verify 48/100] #47 Ecwid: flags=0 rounds=2
+[verify 49/100] #53 Ahrefs: flags=0 rounds=1
+[verify 50/100] #48 Gumroad: flags=1 rounds=2
+[verify 51/100] #50 fanbasis: flags=0 rounds=2
+[verify 52/100] #44 Salesforce Commerce Cloud: flags=0 rounds=2
+[verify 53/100] #56 Firecrawl: flags=0 rounds=1
+[verify 54/100] #52 SE Ranking: flags=0 rounds=1
+[verify 55/100] #60 Clay: flags=0 rounds=1
+[verify 56/100] #58 Sherlock: flags=0 rounds=2
+[verify 57/100] #54 MrScraper: flags=1 rounds=1
+[verify 58/100] #59 Waterfall.io: flags=0 rounds=2
+[verify 59/100] #57 Bright Data: flags=0 rounds=2
+[verify 60/100] #62 Vercel: flags=0 rounds=2
+[verify 61/100] #61 GitHub: flags=0 rounds=2
+[verify 62/100] #65 Supabase: flags=0 rounds=2
+[verify 63/100] #64 Cloudflare: flags=1 rounds=2
+[verify 64/100] #68 MongoDB Atlas: flags=0 rounds=1
+[verify 65/100] #71 Notion: flags=1 rounds=1
+[verify 66/100] #63 Netlify: flags=0 rounds=2
+[verify 67/100] #72 Airtable: flags=0 rounds=1
+[verify 68/100] #73 Linear: flags=0 rounds=1
+[verify 69/100] #76 Monday.com: flags=0 rounds=1
+[verify 70/100] #69 Datadog: flags=1 rounds=2
+[verify 71/100] #70 Sentry: flags=0 rounds=2
+[verify 72/100] #77 ClickUp: flags=0 rounds=1
+[verify 73/100] #67 Snowflake: flags=2 rounds=2
+[verify 74/100] #74 Jira: flags=0 rounds=1
+[verify 75/100] #66 Neo4j: flags=0 rounds=2
+[verify 76/100] #79 Smartsheet: flags=0 rounds=1
+[verify 77/100] #75 Asana: flags=0 rounds=2
+[verify 78/100] #78 Coda: flags=1 rounds=2
+[verify 79/100] #80 Harvest: flags=0 rounds=2
+[verify 80/100] #81 Stripe: flags=0 rounds=2
+[verify 81/100] #82 Plaid: flags=0 rounds=2
+[verify 82/100] #89 Ramp: flags=0 rounds=1
+[verify 83/100] #90 PitchBook: flags=0 rounds=1
+[verify 84/100] #84 Paygent Connect: flags=3 rounds=2
+[verify 85/100] #93 Fathom: flags=0 rounds=1
+[verify 86/100] #88 Brex: flags=0 rounds=2
+[verify 87/100] #87 Xero: flags=0 rounds=2
+[verify 88/100] #94 Consensus: flags=0 rounds=1
+[verify 89/100] #83 Binance: flags=0 rounds=1
+[verify 90/100] #85 iPayX: flags=0 rounds=2
+[verify 91/100] #97 higgsfield: flags=0 rounds=1
+[verify 92/100] #55 Apify: flags=0 rounds=2
+[verify 93/100] #92 Otter AI: flags=0 rounds=2
+[verify 94/100] #91 NotebookLM: flags=1 rounds=2
+[verify 95/100] #95 Reducto: flags=1 rounds=1
+[verify 96/100] #99 YouTube Transcript: flags=0 rounds=1
+[verify 97/100] #100 Grain: flags=0 rounds=1
+[verify 98/100] #86 QuickBooks: flags=0 rounds=2
+[verify 99/100] #96 Devin: flags=1 rounds=2
+[verify 100/100] #98 Mermaid CLI: flags=2 rounds=2
+STATS {"search": 670, "fetch": 1059, "llm": 133, "llm_cost_usd": 10.7720859, "cache_hits": 2429}
+human queue: 53 apps with unresolved flags

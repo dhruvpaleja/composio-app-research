@@ -1,0 +1,129 @@
+{
+ "one_liner": "Fathom (fathom.video AI notetaker) has a public REST API at api.fathom.ai/external/v1. Self-serve user-scoped API keys work on all plans including free. OAuth 2.0 is available for multi-user apps, there are HMAC-signed webhooks, and there is an MCP server that is probably official.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "API keys are generated in User Settings \u2192 API Access and sent in the X-Api-Key header. They are per user, with no org-level keys. OAuth 2.0 (Bearer token) is for apps that other Fathom users install. OAuth apps need to be registered with Fathom. OAuth apps cannot use include_summary/include_transcript on /meetings. Refresh tokens are one-time-use and rotate.",
+ "access": "self_serve_free",
+ "access_notes": "The FAQ says API access (keys and webhooks) is included on all plans, and the ZoomInfo review says this includes the free plan. The Fathom Help Center article says anyone can browse the docs and start building. The usefathom.com changelog on paid API plans concerns Fathom Analytics, a different product, and was ignored. Rate limit is 60 calls per minute per user and Fathom does not offer higher limits.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://api.fathom.ai/mcp",
+ "docs_url": "https://developers.fathom.ai/",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "No real blocker. Minor friction: OAuth apps need registration with Fathom, and the rate limit is low at 60 calls per minute.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://developers.fathom.ai/faq",
+   "quote": "Yes. API access\u2014keys and webhooks\u2014 are included on all plans. Generate a key in User Settings \u2192 API Access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://pipeline.zoominfo.com/sales/fathom-api-review",
+   "quote": "API access is available on [all plan tiers](https://fathom.ai/pricing) including the free plan",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.fathom.ai/faq",
+   "quote": "you\u2019re sending `X-Api-Key` (or Bearer for OAuth) correctly.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.fathom.ai/faq",
+   "quote": "Use **OAuth** if you\u2019re building an app that other Fathom users will install so they can connect their own accounts.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "API keys are created at the user level.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/fathom-api-review",
+   "quote": "documents a REST surface at https://api.fathom.ai/external/v1/, with TypeScript and Python SDKs, OAuth 2.0 for public integrations, webhook support, and an [MCP server](https://developers.fathom.ai/mcp-docs) for AI assistants.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://pipeline.zoominfo.com/sales/fathom-api-review",
+   "quote": "the OpenAPI spec is downloadable",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developers.fathom.ai/faq",
+   "quote": "Each request includes `webhook-id`, `webhook-timestamp`, and `webhook-signature` headers.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "users can make 60 calls per minute across all of their API keys",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.fathom.ai/",
+   "quote": "[MCP](https://developers.fathom.ai/mcp-docs)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "fathom",
+    "name": "Fathom",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 10
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "ai.fathom.api/mcp",
+   "dev.fly.fathom-lab-door/fathom"
+  ],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": []
+ }
+}

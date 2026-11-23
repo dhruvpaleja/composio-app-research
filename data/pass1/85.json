@@ -1,0 +1,71 @@
+{
+ "one_liner": "iPayX offers a Bearer-key REST FX audit API with OpenAPI 3.1, webhooks and an official MCP server; a free tier exists (5 lifetime audits / 10 per day on MCP), narrow scope.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Static Bearer token (ipx_live_ / ipx_test_) generated in the dashboard.",
+ "access": "self_serve_free",
+ "access_notes": "Docs say MCP free tier is 10 audits/day per key; the pricing page gives 5 lifetime free audits. The API developer plan is $99/mo. Free credentials are enough to build and test, but the limits are tight and the sources conflict.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://mcp.ipayx.ai/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free usage is small and the docs are inconsistent (base URLs, tiers), but a key can be obtained self-serve.",
+ "docs_url": "https://ipayx.ai/docs/api",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "Every request requires a Bearer token in the `Authorization` header. Keys start with `ipx_live_`."
+  },
+  {
+   "field": "auth",
+   "url": "https://ipayx.ai/docs/mcp-server",
+   "quote": "Format:** `ipx_live_xxxxx` (production) or `ipx_test_xxxxx` (sandbox)."
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/docs/mcp-server?lang=en",
+   "quote": "**Free tier:** 10 audits / day per API key."
+  },
+  {
+   "field": "access",
+   "url": "https://ipayx.ai/pricing",
+   "quote": "5 audits, lifetime"
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/docs/api",
+   "quote": "Bearer auth, OpenAPI 3.1, signed webhooks."
+  },
+  {
+   "field": "api",
+   "url": "https://ipayx.ai/developers/sandbox",
+   "quote": "Submit up to 50 FX transactions per request."
+  },
+  {
+   "field": "mcp",
+   "url": "https://ipayx.ai/developers?lang=en",
+   "quote": "Officially listed on the MCP Registry (v1.3.3)"
+  },
+  {
+   "field": "mcp",
+   "url": "https://ipayx.ai/mcp",
+   "quote": "MCP Server URL"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

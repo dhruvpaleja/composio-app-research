@@ -1,0 +1,33 @@
+{
+ "id": "85",
+ "name": "iPayX",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+    "https://ipayx.ai/mcp",
+    "https://ipayx.ai/developers",
+    "https://ipayx.ai/docs/mcp-server",
+    "https://ipayx.ai/mcp-marketplace",
+    "https://ipayx.ai/integrations/microsoft-foundry",
+    "https://ipayx.ai/forensic-audit?lang=en",
+    "https://ipayx.ai/docs/api",
+    "https://ipayx.ai/developers?lang=en"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Ipayx-stellar/fx-audit",
+   "io.github.iPAYX-Technologies/mcp-fx-audit"
+  ],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

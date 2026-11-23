@@ -1,0 +1,50 @@
+{
+ "id": "41",
+ "name": "Shopify",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://shopify.dev",
+    "https://shopify.dev/docs/api",
+    "https://shopify.dev/docs/apps/launch/billing/shopify-app-pricing/redirect-plan-selection-page",
+    "https://shopify.com/legal/api-terms",
+    "https://shopify.dev/docs/apps/build/purchase-options/subscriptions/selling-plans/build-a-selling-plan.md",
+    "https://shopify.dev/docs/apps/launch/protected-customer-data.md",
+    "https://shopify.dev/docs/api/usage/access-scopes"
+   ],
+   "changed": {
+    "api_type": [
+     "REST+GraphQL",
+     "GraphQL"
+    ],
+    "mcp": [
+     "community",
+     "official"
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "shopify",
+    "name": "Shopify",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 386
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 17,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "one_liner": "Zendesk has a broad REST API with OAuth 2.0 (auth code + PKCE); only a free 14-day trial gives working credentials, global OAuth for multi-tenant apps needs Zendesk approval; Zendesk now has its own official MCP server (via Zendesk Bridge, EAP).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code (with PKCE) is the recommended method. API tokens (basic auth email/token:api_token) are being removed: unused tokens deactivate from July 28, 2026 and all stop by April 30, 2027. Multi-customer distribution requires global OAuth clients, which Zendesk must approve. Per-instance OAuth clients can be created in Admin Center.",
+ "access": "self_serve_trial",
+ "access_notes": "A free 14-day trial gives a working account and API. No permanent free tier is documented. Sponsored accounts are reserved for Marketplace partners. Individual developers are directed to their own instances or sandboxes.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Only a 14-day trial is available without partnership. Multi-tenant distribution needs a global OAuth client approved by Zendesk. Per-instance OAuth clients are creatable in Admin Center.",
+ "docs_url": "https://developer.zendesk.com/api-reference/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "evidence": [
+  {
+   "field": "mcp",
+   "url": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+   "quote": "Zendesk Bridge provides a way to establish governed connections between the Zendesk MCP Server or Zendesk AI agents and external AI agents your organization uses",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.zendesk.com/hc/en-us/articles/11400026079130",
+   "quote": "\u201cGlobal\u201d means Zendesk has approved the client for use across customer accounts.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+   "quote": "If you plan on distributing an app, integration, or bot to multiple Zendesk customers, you must use global OAuth tokens to authenticate Zendesk API requests.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+   "quote": "Starting July 28, 2026, unused tokens will automatically deactivate. By April 30, 2027, all API tokens will stop working.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+   "quote": "You can try out the Zendesk platform with a free, 14-day trial account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+   "quote": "Customer developers or individual private app developers should use their own instances or sandboxes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.zendesk.com/api-reference/",
+   "quote": "You'll find APIs for ticketing, help center, live chat, voice, sales CRM as well as some features that span capabilities",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "webhooks",
+   "url": "https://developer.zendesk.com/api-reference/",
+   "quote": "[Webhooks](https://developer.zendesk.com/api-reference/webhooks/introduction/)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 480
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": []
+ }
+}

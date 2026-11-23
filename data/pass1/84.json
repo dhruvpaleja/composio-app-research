@@ -1,0 +1,51 @@
+{
+ "one_liner": "Paygent (gopaygent.com) is an NMI-style payments gateway with a REST API, bearer API keys and a free sandbox. The evidence mixes several unrelated \"Paygent\" products, so the match is uncertain.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "gopaygent.com examples use a static bearer key (pgt_live_...) in the Authorization header. No OAuth is shown.",
+ "access": "self_serve_free",
+ "access_notes": "The pricing FAQ says the sandbox has full API access at no cost and needs no credit card. Production costs $15/mo for the gateway plus $0.10 per transaction.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "none",
+ "mcp_url": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "The main risk is that the evidence blends several different \"Paygent\" products. Confirm that gopaygent.com is the intended one. If the intended product is a Japanese Paygent, a merchant contract may be needed.",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "docs_url": "https://gopaygent.com",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://gopaygent.com",
+   "quote": "const paygent = require('paygent')('pgt_live_key');"
+  },
+  {
+   "field": "access",
+   "url": "https://gopaygent.com/pricing",
+   "quote": "We offer a sandbox environment with full API access at no cost. You can test transactions, webhooks, and integrations before going live."
+  },
+  {
+   "field": "api",
+   "url": "https://gopaygent.com",
+   "quote": "Clean, predictable, and fully documented REST APIs for every payment workflow."
+  },
+  {
+   "field": "mcp",
+   "url": "https://npm.io/package/@paygent-ai/mcp-server",
+   "quote": "Connect **Cursor**, **Claude Desktop**, **VS Code**, and other AI assistants to your Paygent account."
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "low"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,63 @@
+{
+ "id": "68",
+ "name": "MongoDB Atlas",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://mongodb.com/docs/atlas/api",
+    "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/",
+    "https://mongodb.com/docs/atlas/configure-api-access",
+    "https://github.com/mongodb-partners/partner-api-quickstart-for-partners",
+    "https://mongodb.com/docs/atlas/reference/partner-integrations/vercel",
+    "https://mongodb.com/docs/atlas/app-connections/partner-integration-guide",
+    "https://mongodb.com/docs/atlas/app-connections"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "OAUTH2",
+      "API_KEY",
+      "BASIC"
+     ],
+     [
+      "OAUTH2",
+      "API_KEY"
+     ]
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "mongodb",
+    "name": "MongoDB",
+    "auth_schemes": [
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 496
+   },
+   {
+    "slug": "mongodb_mcp",
+    "name": "MongoDB MCP",
+    "auth_schemes": [
+     "S2S_OAUTH2"
+    ],
+    "managed": [],
+    "tools": 41
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": [
+   "mongodb_mcp"
+  ]
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "id": "95",
+ "name": "Reducto",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://reducto.ai",
+    "https://docs.reducto.ai",
+    "https://reducto.ai/blog/workload-identity-reducto-api",
+    "https://docs.reducto.ai/mcp-server",
+    "https://integrations.sh/reducto.ai",
+    "https://docs.reducto.ai/quickstart",
+    "https://docs.reducto.ai/onprem/securing_reducto"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "API_KEY"
+     ],
+     [
+      "API_KEY",
+      "OTHER"
+     ]
+    ]
+   },
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [
+  {
+   "check": "V1_grounding",
+   "field": "auth",
+   "why": "best quote only 24% found on cited page"
+  }
+ ],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

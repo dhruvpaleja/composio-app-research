@@ -1,0 +1,129 @@
+{
+ "one_liner": "Fathom (fathom.ai AI notetaker) has a free-tier REST API with user-generated API keys, OAuth2 for multi-user apps, webhooks, and an official MCP server.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API keys are generated per user in the Fathom settings. OAuth 2.0 is supported for apps installed by multiple accounts, but the docs say you must register an app with Fathom. It is unclear whether that is fully self-serve, so API key is primary.",
+ "access": "self_serve_free",
+ "access_notes": "The FAQ says API access is included on all plans. The help center says anyone can browse the docs and start building. Keys are created at the user level. The page text does not confirm that the free plan includes the API; that claim rests only on the draft's FAQ quote.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://api.fathom.ai/mcp",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "The rate limit is 60 calls per minute across all of a user's keys. Keys only see meetings the holder recorded or that were shared to their Team. The support.fathomhq.com (finance product) and usefathom.com (analytics) pages are different products and were ignored.",
+ "docs_url": "https://developers.fathom.ai/",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.fathom.ai/api-overview",
+   "quote": "All REST API resources are authenticated with API keys generated via the Fathom website\u2019s settings area.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.fathom.ai/sdks/oauth",
+   "quote": "OAuth users need to register an app with us before using this feature.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.fathom.ai/sdks/oauth",
+   "quote": "Both TypeScript and Python SDKs support OAuth 2.0 authentication for building integrations that can be installed by multiple Fathom accounts.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.fathom.ai/faq",
+   "quote": "Yes. API access\u2014keys and webhooks\u2014 are included on all plans. Generate a key in User Settings \u2192 API Access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "Anyone can browse the API docs and start building!",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "API keys are created at the user level. Your key can access meetings recorded by you or shared to your Team.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "users can make 60 calls per minute across all of their API keys",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.fathom.ai/mcp-docs",
+   "quote": "Fathom now offers an official MCP (Model Context Protocol) server, allowing you to connect your Fathom meeting data to AI assistants like ChatGPT, Claude, and more.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.fathom.ai/mcp-docs",
+   "quote": "**MCP server URL:** `https://api.fathom.ai/mcp`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://fathom.ai/features/mcp-server",
+   "quote": "Yes. Fathom MCP is available on every Fathom plan, including Free.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "fathom",
+    "name": "Fathom",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 10
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "ai.fathom.api/mcp",
+   "dev.fly.fathom-lab-door/fathom"
+  ],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": []
+ }
+}

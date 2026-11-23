@@ -1,0 +1,125 @@
+{
+ "id": "80",
+ "name": "Harvest",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://harvestapp.com",
+    "https://help.getharvest.com/api-v2",
+    "https://support.greenhouse.io/hc/en-us/articles/360029266032-Harvest-API-overview",
+    "https://harvestdocs.greenhouse.io/docs/harvest-partner-oauth",
+    "https://support.greenhouse.io/hc/en-us/articles/115000521723-Manage-Harvest-API-credentials-permissions",
+    "https://docs.harvest-api.com/guides/concurrency",
+    "https://harvest-api.com"
+   ],
+   "changed": {},
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "auth",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://harvestapp.com",
+    "https://help.getharvest.com/api-v2",
+    "https://harvestdocs.greenhouse.io/docs/authentication",
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+    "https://support.greenhouse.io/hc/en-us/articles/360029266032-Harvest-API-overview",
+    "https://support.greenhouse.io/hc/en-us/articles/115000521723-Manage-Harvest-API-credentials-permissions",
+    "https://docs.harvest-api.com/guides/concurrency"
+   ],
+   "changed": {
+    "access": [
+     "self_serve_free",
+     "self_serve_trial"
+    ],
+    "mcp": [
+     "official",
+     "none"
+    ],
+    "verdict": [
+     "ready",
+     "ready_with_friction"
+    ],
+    "blocker": [
+     "none",
+     "other"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V2_mcp_registry",
+     "field": "mcp",
+     "why": "agent said none, registry returns 7 servers matching name"
+    },
+    {
+     "check": "V3_rules",
+     "field": "access",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "verdict",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "harvest",
+    "name": "Harvest",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 57
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 7,
+  "composio_mcp_toolkits": []
+ }
+}

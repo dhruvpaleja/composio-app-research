@@ -1,0 +1,61 @@
+{
+ "one_liner": "systeme.io has a documented REST public API that uses a self-generated X-API-Key header, plus an official vendor-hosted MCP server. No OAuth is documented.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "The official docs say the API key in the X-API-Key header is the only option. Users create up to 3 keys per account, optionally with an expiry. A Rollout guide describes an OAuth flow, but it is third-party and contradicts the official docs, so it was ignored.",
+ "access": "self_serve_free",
+ "access_notes": "Keys are generated self-serve in account settings. The snippets don't say which plan tier is required. systeme.io is known to have a free plan, but this is not confirmed by the evidence.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://mcp.systeme.io/mcp",
+ "docs_url": "https://developer.systeme.io/reference/api",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Each user must paste their own API key, because there is no OAuth. Rate limits are shared across all of a user's keys.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.systeme.io/reference/api",
+   "quote": "To authenticate with the Systeme.io Public API, your only option right now is to attach your API key to the `X-API-Key` header of each request."
+  },
+  {
+   "field": "access",
+   "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+   "quote": "Scroll down to the Public API keys section and click **Create** (3)."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.systeme.io/reference/api",
+   "quote": "Adhering to RESTful conventions, our API ensures an intuitive and consistent interaction pattern for all users."
+  },
+  {
+   "field": "api",
+   "url": "https://developer.systeme.io/reference/api",
+   "quote": "allowing you to manage contacts, tags, and a variety of other operations integral to our platform."
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.systeme.io/article/11229-how-to-connect-your-systemeio-account-with-chatgpt-using-mcp-keys",
+   "quote": "**Description (optional) (5):** [Systeme.io](http://Systeme.io) official MCP server"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.systeme.io/docs/mcp-server",
+   "quote": "HTTP Header**: Attach your MCP key to the `X-MCP-Key` header."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

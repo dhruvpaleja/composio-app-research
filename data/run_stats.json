@@ -1,0 +1,13 @@
+{
+ "Apps researched": "100",
+ "Composio web searches": "1,317 unique (KEENABLE_SEARCH_WEB_PUBLIC)",
+ "Pages fetched and re-checked": "1,711 unique (KEENABLE_FETCH_URL_PUBLIC, HTTP fallback)",
+ "MCP Registry lookups": "100",
+ "Claude calls, final pipeline": "311 (100 research + 211 audit)",
+ "Claude cost, final pipeline": "$20.75",
+ "Claude cost, incl. discarded v1": "about $40",
+ "Wall time, cold cache": "~45 min at 8 to 16 workers",
+ "Wall time, rerun": "~5 min (cached search and fetch)",
+ "Evidence quotes kept": "99.6% of 757 re-check on their page",
+ "Evidence links checked live": "{links_total}: {links_ok} OK, {links_blocked} bot-blocked, {links_dead} dead (dropped)"
+}

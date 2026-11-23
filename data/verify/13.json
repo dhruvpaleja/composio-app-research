@@ -1,0 +1,42 @@
+{
+ "id": "13",
+ "name": "Freshdesk",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://support.freshdesk.com/support/solutions/articles/50000014407",
+    "https://freshdesk.com",
+    "https://developers.freshdesk.com/api",
+    "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000014407/create_ticket",
+    "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+    "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/225439-what-are-the-rate-limits-for-the-api-calls-to-freshdesk-",
+    "https://docs.nexla.com/user-guides/connectors/freshdesk_api",
+    "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+    "https://support.freshdesk.com/support/solutions/articles/225439-what-are-the-rate-limits-for-the-api-calls-to-freshdesk-"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "freshdesk",
+    "name": "Freshdesk",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 184
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": []
+ }
+}

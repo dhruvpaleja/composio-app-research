@@ -1,0 +1,67 @@
+{
+ "one_liner": "GoHighLevel has a broad REST API v2 with OAuth 2.0 and Private Integration Tokens, plus an official MCP server, but API access requires a paid plan (trial only).",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 (agency/location tokens) for Marketplace apps; Private Integration Tokens are static bearer tokens created in Settings. Sources conflict on whether OAuth needs Agency Pro; the official help center says OAuth is available on all plans.",
+ "access": "self_serve_trial",
+ "access_notes": "No free tier. API comes with paid plans (Starter $97+). A 14-day standard trial (card required) gives working access. Some endpoints (Create Sub-Account, Enable SaaS) need Agency Pro.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://marketplace.gohighlevel.com/docs/",
+ "mcp": "official",
+ "mcp_url": "https://services.leadconnectorhq.com/mcp/",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "A paid HighLevel subscription (or time-limited trial) is needed for API credentials. Some endpoints need Agency Pro.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529",
+   "quote": "Both **OAuth 2.0** and **Private Integration Tokens (PIT)** are available across all plans, allowing developers to build integrations and access supported APIs"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/GoHighLevel/highlevel-api-sdk/blob/main/README.md",
+   "quote": "Agency Access Token - Used for agency-level operations - Access to agency and sub-account data - Obtained through OAuth 2.0 flow"
+  },
+  {
+   "field": "access",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529",
+   "quote": "certain endpoints require an Agency Pro ($497/month) subscription."
+  },
+  {
+   "field": "access",
+   "url": "https://upmish.com/gohighlevel-api-key",
+   "quote": "HighLevel's standard trial is 14 days"
+  },
+  {
+   "field": "api",
+   "url": "https://cleanform.io/blog/gohighlevel-api",
+   "quote": "Webhooks | More than 70 events, retried up to 12 times"
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/GoHighLevel/highlevel-api-sdk/blob/main/README.md",
+   "quote": "This SDK provides a comprehensive interface to interact with all HighLevel API endpoints"
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+   "quote": "The active catalog includes **more than 600 read, create, update, and delete operations across 38 domains**."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

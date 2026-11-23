@@ -1,0 +1,42 @@
+{
+ "id": "92",
+ "name": "Otter AI",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "https://otter.diy/docs/mcp",
+    "https://help.otter.ai",
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "https://helpdesk.tryotter.com/hc/en-us/articles/57116393450003-Partner-Hub",
+    "https://helpdesk.tryotter.com/hc/en-us/articles/22695702216979-Integrated-Partner-Process",
+    "https://help.otter.ai/hc/en-us/search?query=API",
+    "https://otter.ai/partner-program",
+    "https://help.otter.ai/api/v2/help_center/en-us/articles/36130822688279.json"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "otter_ai_mcp",
+    "name": "Otter.ai MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 3
+   }
+  ],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": [
+   "otter_ai_mcp"
+  ]
+ }
+}

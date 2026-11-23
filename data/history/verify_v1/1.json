@@ -1,0 +1,116 @@
+{
+ "id": "1",
+ "name": "Salesforce",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://salesforce.com",
+    "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+    "https://developer.salesforce.com/docs/platform/isvforce/guide/dev-packages-rest-api-access.html",
+    "https://developer.salesforce.com/blogs/2025/02/important-updates-to-legal-terms-for-salesforce-developers",
+    "https://salesforce.com/company/legal/sfdc-api-terms-of-service",
+    "https://sliick.com/articles/salesforce-api-terms-of-service-update-isv-guide",
+    "https://help.salesforce.com/s/articleView?hubs_content=knowledge.hubspot.com/records/use-lifecycle-stages&hubs_content-cta=hubspot-salesforce-integration&id=000385436&t=39463&type=1"
+   ],
+   "changed": {
+    "auth_methods": [
+     [
+      "OAUTH2",
+      "OTHER"
+     ],
+     [
+      "OAUTH2"
+     ]
+    ],
+    "blocker": [
+     "other",
+     "tos_restrictions"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "api",
+     "why": "no evidence"
+    },
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "pages": [
+    "https://salesforce.com",
+    "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-compatible-editions.html",
+    "https://developer.salesforce.com/docs/platform/api-rest/guide/resources-list.html",
+    "https://developer.salesforce.com/docs/platform/multiframework/guide/data-sdk-connect.html",
+    "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest-resources.html",
+    "https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/SF_Rest_API_cheatsheet_web.pdf",
+    "https://developer.salesforce.com/blogs/2024/04/accessing-object-data-with-salesforce-platform-apis"
+   ],
+   "changed": {
+    "api_type": [
+     "REST",
+     "REST+GraphQL"
+    ],
+    "mcp": [
+     "official",
+     "none"
+    ],
+    "blocker": [
+     "tos_restrictions",
+     "paid_plan"
+    ]
+   },
+   "flags_after": [
+    {
+     "check": "V1_grounding",
+     "field": "mcp",
+     "why": "no evidence"
+    },
+    {
+     "check": "V2_mcp_registry",
+     "field": "mcp",
+     "why": "agent said none, registry returns 15 servers matching name"
+    },
+    {
+     "check": "V3_rules",
+     "field": "mcp",
+     "why": "agent self-reported low confidence"
+    }
+   ]
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 556
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 15,
+  "composio_mcp_toolkits": []
+ }
+}

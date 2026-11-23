@@ -1,0 +1,44 @@
+{
+ "id": "38",
+ "name": "Pinterest",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.pinterest.com/about-pinterest-mcp",
+    "https://developers.pinterest.com",
+    "https://developers.pinterest.com/docs/api/v5/",
+    "https://blotato.com/blog/pinterest-api-pricing",
+    "https://developers.pinterest.com/docs/key-concepts/developer-guidelines",
+    "https://community.pinterest.biz/t/standard-access-walkthrough-a-step-by-step-guide/52518",
+    "https://plugkit.co/blog/pinterest-api-guide",
+    "https://developers.pinterest.com/docs/getting-started/connect-app",
+    "https://insightpins.com/blog/get-pinterest-keyword-volume.html"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "pinterest",
+    "name": "Pinterest",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 27
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 16,
+  "composio_mcp_toolkits": []
+ }
+}

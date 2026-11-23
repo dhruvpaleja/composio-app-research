@@ -1,0 +1,110 @@
+{
+ "one_liner": "WhatsApp Business Platform (Cloud API) is a broad Graph API REST surface with webhooks. Direct use is self-serve with system-user tokens. Serving other businesses needs Tech Provider status, App Review with Advanced access and Embedded Signup. Meta publishes an official beta WhatsApp Business Tools MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Graph API calls use Bearer access tokens. Direct developers generate a system user access token in Business Settings, which is a static secret (API_KEY). Partners use business tokens, and Embedded Signup authorizes the partner's app to access client assets. The MCP server uses OAuth sign-in. The pages do not detail the Graph OAuth flow, so OAUTH2 as primary is medium confidence.",
+ "access": "app_review",
+ "access_notes": "Apps not used by other businesses follow the Cloud API Get Started guide, so single-business use is self-serve. Accessing WABAs the app's business does not own requires Advanced access via App Review. Pricing details are not settled by the supplied pages.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "sandbox": null,
+ "openapi_spec": null,
+ "docs_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp",
+ "mcp": "official",
+ "mcp_url": "https://mcp.facebook.com/whatsapp_business_tools",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Serving other businesses requires App Review with Advanced access to whatsapp_business_management and whatsapp_business_messaging, plus Embedded Signup onboarding. Tech Provider clients must supply their own payment method. The official MCP is beta, aimed at development and testing, not production sending at scale.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/get-started-for-solution-partners",
+   "quote": "As a Technology Partner with the Reseller add-on, your app must go through [App Review](https://developers.facebook.com/docs/app-review) and request **Advanced access** to the following permissions",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.facebook.com/docs/whatsapp/solution-providers/get-started-for-solution-partners",
+   "quote": "If your app uses this permission to access WABAs not owned by your business, you must have **Advanced access**.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/docs/whatsapp",
+   "quote": "\"Authorization\": \"Bearer <ACCESS_TOKEN>\",",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.facebook.com/docs/whatsapp",
+   "quote": "Programmatically manage your WhatsApp business account and its assets.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+   "quote": "| Endpoint | `https://mcp.facebook.com/whatsapp_business_tools` |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+   "quote": "| Authentication | Meta developer account sign-in (OAuth) |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.facebook.com/blog/post/2026/09/15/whatsapp-business-messaging-mcp-ai-agent",
+   "quote": "This release is built for development and testing workflows, not production sending at scale.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+   "quote": "Get a link to generate a **system user access token** for your business",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "facebook",
+    "name": "Facebook",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 72
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

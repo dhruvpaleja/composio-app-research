@@ -1,0 +1,114 @@
+{
+ "one_liner": "Intercom has a broad REST API with OAuth 2.0 for public apps, a free developer workspace with access tokens, and an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 for public apps accessing other people's data, set up in the Developer Hub. Access tokens are for private apps on your own workspace.",
+ "access": "self_serve_free",
+ "access_notes": "Free development workspace (US region only) gives Developer Hub access to configure OAuth and webhooks. It lacks the full functionality of a paid workspace. Review is only needed to publish publicly to the App Store; private apps need no review.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.intercom.com/mcp",
+ "docs_url": "https://developers.intercom.com/docs",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free dev workspace gives working credentials. App review applies only to App Store publishing.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://developers.intercom.com/docs",
+   "quote": "To develop a public app you will need to use a development workspace: [sign up here](https://www.intercom.com/signup/developer) to create your free account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.intercom.com/docs",
+   "quote": "Development workspaces are only available for the US region.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.intercom.com/docs",
+   "quote": "You can build a private app using your Access Token and it does not require a review.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://intercom.com/integrations/connectors/intercom-mcp-server",
+   "quote": "Connect via the Streamable HTTP endpoint at https://mcp.intercom.com/mcp",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://intercom.com/integrations/connectors/intercom-mcp-server",
+   "quote": "Intercom's MCP server lets AI tools and CLIs (like Claude Code, Claude Desktop, ChatGPT, Cursor, and VS Code) securely access your Intercom data through the Model Context Protocol.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+   "quote": "If you are building a public integration that will have access to other peoples' Intercom data you are required to set up OAuth.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.intercom.com/docs",
+   "quote": "you can build your own using our [REST APIs](https://developers.intercom.com/docs/build-an-integration/getting-started)",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "intercom",
+    "name": "Intercom",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 138
+   },
+   {
+    "slug": "intercom_mcp",
+    "name": "Intercom MCP",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 15
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": [
+   "intercom_mcp"
+  ]
+ }
+}

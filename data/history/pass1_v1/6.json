@@ -1,0 +1,62 @@
+{
+ "one_liner": "Podio has a free-to-use REST API with OAuth2 (plus app-token flow) and an official vendor-hosted MCP server; ready to build.",
+ "auth_methods": [
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth2 server-side (authorization code) and client-side flows with self-registered client ID/secret. Username/password and app-auth flows also exist (app token exchanged for access token, still OAuth-style token endpoint). Access tokens last 8h, refresh tokens 28 days.",
+ "access": "self_serve_free",
+ "access_notes": "Free and paid Podio accounts both have full API access; API key self-generated from account settings. Base limits 250/hr resource-intensive and 1000/hr others; higher limits via paid add-on.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://developers.podio.com",
+ "mcp": "official",
+ "mcp_url": "https://mcp.podio.com",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Rate limits are modest (1000 calls/hr) but not a blocker.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.podio.com/authentication",
+   "quote": "The Podio API uses the [OAuth2 protocol](http://oauth.net/2/) for authentication."
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.podio.com/authentication/server_side",
+   "quote": "You use the authorization code to obtain an access token"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.podio.com/index/faq",
+   "quote": "The Podio API is available to use for both paid and free Podio accounts. Both have full access to the API"
+  },
+  {
+   "field": "api",
+   "url": "https://rollout.com/integration-guides/podio/api-essentials",
+   "quote": "Podio has a RESTful API."
+  },
+  {
+   "field": "api",
+   "url": "https://rollout.com/integration-guides/podio/api-essentials",
+   "quote": "Provides complete programmatic access to all Podio functionality"
+  },
+  {
+   "field": "mcp",
+   "url": "https://progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide",
+   "quote": "The server is live at **[https://mcp.podio.com](https://mcp.podio.com)** \u2014 just point your AI platform at it and log in with your Podio account."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,61 @@
+{
+ "one_liner": "LinkedIn Ads (Marketing API) has a broad REST API with OAuth 2.0 3-legged auth; access requires app creation and Advertising API approval, with tiered Development/Standard access; only community MCP servers exist.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Authorization code (3-legged) flow with rw_ads / r_ads scopes; Token Generator tool in developer portal for testing tokens. Refresh tokens supported.",
+ "access": "app_review",
+ "access_notes": "Developer app is self-serve, but Advertising API product must be applied for and approved. Development tier allows read on unlimited accounts and edit on up to 5 ad accounts; Standard tier (separate application, vetting) needed for unlimited edit. API is free of charge.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+ "mcp": "community",
+ "mcp_url": "https://github.com/mharnett/mcp-linkedin-ads",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Advertising API access requires LinkedIn approval via the Products tab; Standard tier upgrade needed for production multi-account write access.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/api-evangelist/linkedin-ads/refs/heads/main/authentication/linkedin-ads-authentication.yml",
+   "quote": "OAuth 2.0 three-legged (authorization code) flow \u2014 the flow every Marketing API call uses."
+  },
+  {
+   "field": "auth",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-09",
+   "quote": "Marketing APIs require the `rw_ads` scope."
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+   "quote": "All applications start with Development tier. You must apply separately to upgrade to the Standard tier."
+  },
+  {
+   "field": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+   "quote": "API calls succeed only when made with correct scopes/permissions assigned to the app after the vetting process."
+  },
+  {
+   "field": "api",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-08",
+   "quote": "These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/Meshpilot-AGI/linkedin-ads-mcp",
+   "quote": "There's no official LinkedIn MCP. This fills the gap with a thin, correctness-first wrapper"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "high",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

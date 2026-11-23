@@ -1,0 +1,95 @@
+{
+ "one_liner": "FanBasis (now Commas) has a REST public API with x-api-key keys from the merchant dashboard, plus sandbox and webhooks; only a third-party Zapier MCP was found.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Public API uses x-api-key header. A third-party integration doc states no OAuth is used.",
+ "access": "self_serve_free",
+ "access_notes": "Credentials come from the merchant dashboard API section, and the platform is free to start (revenue-share). Sandbox environment exists. Whether API access is gated by account approval is not verified.",
+ "api_type": "REST",
+ "api_breadth": "moderate",
+ "mcp": "official",
+ "mcp_url": "https://npmjs.com/package/commas-cli",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "None for building: FanBasis (now Commas) issues API keys from the merchant dashboard. Its MCP server is first-party (the commas-cli is a client for it).",
+ "docs_url": "https://apidocs.fan",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/Gitmealez/fbnewapi/main/api-docs.md",
+   "quote": "All requests require an `x-api-key` header:",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "No OAuth, no client ID/secret pairs \u2014 Fanbasis uses a single API key with separate test/live environments.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+   "quote": "Log in to your Fanbasis merchant dashboard",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://whop.com/blog/fanbasis-alternatives",
+   "quote": "It's free to start selling, as FanBasis operates on a revenue-share model",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+   "quote": "The sandbox environment allows you to test payments without real money:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://raw.githubusercontent.com/subtain-haider/laravel-payments/main/docs/gateways/fanbasis.md",
+   "quote": "Full Fanbasis API integration: checkout sessions, customers, subscribers, discount codes, products, transactions, refunds, and webhook management.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "http://zapier.com/mcp/fanbasis",
+   "quote": "Zapier FanBasis MCP lets you connect FanBasis's actions with any AI tool that supports MCP",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "medium",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ },
+ "_human": {
+  "note": "FanBasis rebranded to Commas; Commas publishes its own MCP server (the commas-cli is a thin client over it). The agent only found Zapier's wrapper.",
+  "src": [
+   "https://npmjs.com/package/commas-cli"
+  ],
+  "trigger": "change audit (loop moved none -> community, still wrong)"
+ }
+}

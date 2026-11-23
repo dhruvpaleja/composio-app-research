@@ -1,0 +1,80 @@
+{
+ "one_liner": "Lark Open Platform offers a broad REST API with OAuth 2.0 user authorization and tenant tokens, self-serve app creation, and an official MCP server (lark-mcp, local npm tool).",
+ "auth_methods": [
+  "OAUTH2",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "user_access_token via authorization-code OAuth flow with refresh tokens; tenant_access_token obtained by exchanging app_id/app_secret (app-level). Tokens are sent as Authorization: Bearer. Custom apps need admin approval of scopes within a tenant.",
+ "access": "self_serve_free",
+ "access_notes": "Developer Console lets anyone create a custom app; works on any Lark plan including Starter (10,000 basic API calls/month cap). Scopes need tenant admin approval, which a developer can self-do in their own tenant.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/larksuite/lark-openapi-mcp",
+ "docs_url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Minor: scopes need tenant admin approval, and Starter caps basic API calls at 10,000/month; neither blocks building. The remote MCP server mode is marked deprecated and in internal testing, but the official local lark-mcp tool remains.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/access-credentials",
+   "quote": "`tenant_access_token` **:** Tenant authorization token. With this token, the app uses its own account to perform corresponding actions",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token",
+   "quote": "OAuth token API for acquiring the `user_access_token` and `refresh_token`. The `user_access_token` serves as the user's access credential, which allows API calls to be made on behalf of the user.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://open.larksuite.com/document/server-docs/group/overview",
+   "quote": "`POST` /open-apis/im/v1/chats > Create a group and set the profile photo, name, and description for the group.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://open.larksuite.com/document/server-docs/meeting_room-v1/api-reference/obtain-building-list",
+   "quote": "| HTTP URL | https://open.larksuite.com/open-apis/meeting_room/building/list?page_size=1&page_token=0&order_by=name-asc&fields=* |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-guide/api-billing",
+   "quote": "The total number of basic API calls for all enterprise self-built applications under a single tenant is limited to **10,000 times per month**",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://raw.githubusercontent.com/larksuite/lark-openapi-mcp/main/README.md",
+   "quote": "This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 20,
+  "composio_mcp_toolkits": []
+ }
+}

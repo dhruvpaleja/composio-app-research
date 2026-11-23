@@ -1,0 +1,120 @@
+{
+ "one_liner": "Datadog has a broad REST API with self-serve API/app keys and PATs; OAuth exists but is limited to approved partners; an official remote MCP server exists; builder access is via a 14-day free trial.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Users generate an API key + application key (headers DD-API-KEY / DD-APPLICATION-KEY), or newer Personal Access Tokens. Datadog does document an OAuth2 authorization-code + PKCE flow, but OAuth clients are created in a Datadog Partner Sandbox Account / Developer Platform for Marketplace integrations, and the earlier-fetched integration docs say standalone OAuth clients are not supported. So OAUTH2 is not counted as available to a general third-party developer. Composio's catalog lists OAUTH2 (probably via partner registration), which is the flagged discrepancy; the pages do not show self-serve OAuth app registration.",
+ "access": "self_serve_trial",
+ "access_notes": "Datadog's blog says new users can sign up for a free 14-day trial. The pages do not mention a permanent free tier. Keys are created inside a Datadog org.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.datadoghq.com/mcp_server",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Builder access is via a short 14-day trial. Multi-user OAuth is limited to partner-registered clients, so the toolkit must use per-customer API/app keys or PATs.",
+ "docs_url": "https://docs.datadoghq.com/api/latest/",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/api/latest/",
+   "quote": "Authenticate to the API with an [API key](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys) using the header `DD-API-KEY`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/account_management/personal-access-tokens",
+   "quote": "Unlike application keys, PATs do not need to be paired with an API key.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/extend/integrations/api_integration",
+   "quote": "OAuth is available only to approved Technology Partners developing official Datadog integrations. Standalone OAuth clients are not supported.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog",
+   "quote": "Within your Datadog Partner Sandbox Account, create and configure your OAuth client in the [Developer Platform](https://app.datadoghq.com/publishing-platform).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://datadoghq.com/blog/datadog-remote-mcp-server",
+   "quote": "if you don\u2019t already have a Datadog account, sign up for a free 14-day trial today.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.datadoghq.com/api/latest/",
+   "quote": "The Datadog API is an HTTP REST API.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.datadoghq.com/mcp_server",
+   "quote": "The Datadog MCP Server acts as a bridge between your observability data in Datadog and any AI agents that support the",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [
+  {
+   "check": "V2_catalog",
+   "field": "auth",
+   "why": "Composio catalog lists ['API_KEY', 'OAUTH2']; agent missed ['OAUTH2']"
+  }
+ ],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "datadog",
+    "name": "Datadog",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY",
+     "BEARER_TOKEN"
+    ],
+    "managed": [],
+    "tools": 255
+   },
+   {
+    "slug": "datadog_mcp",
+    "name": "Datadog MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 370
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 3,
+  "composio_mcp_toolkits": [
+   "datadog_mcp"
+  ]
+ }
+}

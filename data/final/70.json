@@ -1,0 +1,122 @@
+{
+ "one_liner": "Sentry has a broad REST API (sentry.io/api/0) with bearer auth tokens and OAuth for Sentry Apps. A free Developer plan is available, and there is an official hosted MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "BASIC"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Org or user auth tokens (internal integration) are sent as a Bearer header. Sentry Apps (integration platform) support OAuth 2.0 with a grant-code exchange. Legacy API keys use Basic auth but are disabled for new accounts. DSN auth is very limited.",
+ "access": "self_serve_free",
+ "access_notes": "Sentry's API tutorial recommends a free developer account. The Sentry cookbook says the MCP server works with any plan, including free. Third-party sites claim the free plan excludes the API, which conflicts with Sentry's docs. Creating an internal integration or token needs an org Manager or Admin role. These pages did not directly confirm the API on the free plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.sentry.dev/mcp",
+ "docs_url": "https://docs.sentry.io/api/",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": null,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Possible minor friction: third-party sources say the free plan excludes the API, but Sentry's docs point to a free developer account. The 14-day Business trial would also work.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.sentry.io/api/auth.md",
+   "quote": "curl -H 'Authorization: Bearer {TOKEN}' https://sentry.io/api/0/organizations/{organization_slug}/projects/",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/getsentry/sentry/blob/master/src/sentry/api/authentication.py",
+   "quote": "Authenticates a Sentry Application using its Client ID and Secret",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://sentry-docs-git-patch-1.sentry.dev/api/auth",
+   "quote": "API keys are passed using HTTP Basic auth where the username is your api key, and the password is an empty value.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://docs.sentry.io/api/guides/teams-tutorial",
+   "quote": "We recommend using a free [Sentry developer account](https://sentry.io/pricing/) for this tutorial.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://sentry.io/cookbook/debug-with-sentry-mcp-claude-code",
+   "quote": "The Sentry MCP server works with any Sentry plan, including the free tier.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://docs.sentry.io/api",
+   "quote": "The Sentry web API is used to access the Sentry platform programmatically.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.sentry.io/product/sentry-mcp",
+   "quote": "The base MCP server address is: `https://mcp.sentry.dev/mcp`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://sentry-docs-j9n0fzz72.sentry.dev/product/sentry-mcp",
+   "quote": "Sentry hosts and manages a remote MCP server, which you can connect to and leverage centrally.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "sentry",
+    "name": "Sentry",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 210
+   },
+   {
+    "slug": "sentry_mcp",
+    "name": "Sentry MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 9
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 11,
+  "composio_mcp_toolkits": [
+   "sentry_mcp"
+  ]
+ }
+}

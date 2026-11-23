@@ -1,0 +1,110 @@
+{
+ "one_liner": "Smartsheet has a broad REST API with OAuth2 and bearer API tokens plus a vendor-published MCP server, but API access requires a paid Business, Enterprise or Advanced Work Management plan.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "The OpenAPI spec lists OAuth2 and an HTTP bearer API token. Personal access tokens are generated in the UI under Personal Settings > API Access. Tokens are environment-specific (Smartsheet, Regions, Gov). OAuth app registration goes through the Developer tools registration page. The Developer Agreement says apps need written Smartsheet approval before being made available to end users.",
+ "access": "paid_plan",
+ "access_notes": "The API docs say the required plan is Business, Enterprise or Advanced Work Management. The OpenAPI reference says the API is restricted to Business and Enterprise plans. No free or trial path to API credentials appears in the pages. The Resource Management API is separate and has its own plan requirements.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+ "docs_url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "A paid Business or higher plan is needed to generate tokens. Distributing an OAuth app to end users also requires Smartsheet's written approval under the Developer Agreement.",
+ "evidence": [
+  {
+   "field": "access",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+   "quote": "**Required plan:** Business, Enterprise, or Advanced Work Management",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+   "quote": "The Smartsheet API is restricted to users on Business and Enterprise plans",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+   "quote": "APIToken API Token. Type: http Scheme: bearer",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+   "quote": "Generate an API access token in the Smartsheet UI.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://smartsheet.com/developers",
+   "quote": "Develop applications that request user authorization to access Smartsheet data.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi.md",
+   "quote": "Download OpenAPI description [Smartsheet OpenAPI Reference](https://developers.smartsheet.com/_bundle/api/smartsheet/openapi.yaml)",
+   "grounding": 1.0,
+   "fetched_via": "http"
+  },
+  {
+   "field": "mcp",
+   "url": "https://smartsheet.com/developers",
+   "quote": "Explore API docs, connect to our MCP server, develop faster on SDKs",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+   "quote": "**Smartsheet MCP server:** Connect Smartsheet to AI clients like Claude, Cursor, and Codex",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "high",
+  "api": "medium",
+  "auth": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "smartsheet",
+    "name": "Smartsheet",
+    "auth_schemes": [
+     "OAUTH2",
+     "BEARER_TOKEN"
+    ],
+    "managed": [],
+    "tools": 180
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 2,
+  "composio_mcp_toolkits": []
+ }
+}

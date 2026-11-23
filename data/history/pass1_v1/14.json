@@ -1,0 +1,57 @@
+{
+ "one_liner": "Front has a documented REST Core API with OAuth2 and admin-generated API tokens, a free developer account, and an official vendor MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code grant only (needs an app created in the developer portal; client ID/secret). API tokens are company-level, created by admins in Settings > Developers. Front requires OAuth for public partner integrations.",
+ "access": "self_serve_free",
+ "access_notes": "Free developer account/sandbox environment, limited to 3 teammates, gives working credentials. Rate limits 50-200 rpm by plan; partner OAuth integrations get 120 rpm. A public App Store listing requires the partner application form.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://help.front.com/en/articles/4883136",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Public App Store listing needs partner approval, but a toolkit can use self-serve OAuth apps or API tokens with a free developer account.",
+ "docs_url": "https://dev.frontapp.com/docs/welcome",
+ "webhooks": true,
+ "sandbox": true,
+ "openapi_spec": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "quote": "There are two ways to get a Bearer token \u2014 through API tokens in your settings or through an OAuth implementation"
+  },
+  {
+   "field": "auth",
+   "url": "https://dev.frontapp.com/docs/oauth",
+   "quote": "Front's OAuth implementation only supports the authorization code grant type which defines a flow to get a temporary authorization token"
+  },
+  {
+   "field": "access",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "You\u2019ll get access to a free developer environment that will provide everything you need to begin building with our APIs."
+  },
+  {
+   "field": "api",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "quote": "The Core API uses Bearer tokens to authenticate its user."
+  },
+  {
+   "field": "mcp",
+   "url": "https://help.front.com/en/articles/4883136",
+   "quote": "Front's MCP server lets you and your teammates connect Front to AI assistants like Claude, ChatGPT, Gemini, and Microsoft Copilot."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}

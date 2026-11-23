@@ -1,0 +1,67 @@
+{
+ "one_liner": "Open-source CRM with workspace-generated REST and GraphQL APIs, OAuth2 and API keys, and an official MCP server. The cloud API needs a paid or trial plan, and self-hosting is free.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth 2.0 authorization code + PKCE and client credentials, with dynamic client registration (RFC 7591) and no dashboard setup. API keys are Bearer tokens created in Settings \u2192 Developers \u2192 API.",
+ "access": "self_serve_trial",
+ "access_notes": "There is no free cloud plan. One third-party source says API access starts on Cloud Pro, with a 7-day trial without a card or a 30-day trial with a card. Self-hosting is free with all Pro features, so a developer can get credentials that way.",
+ "api_type": "REST+GraphQL",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "openapi_spec": true,
+ "sandbox": false,
+ "docs_url": "https://docs.twenty.com/developers/extend/api",
+ "mcp": "official",
+ "mcp_url": "https://docs.twenty.com/developers/extend/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Cloud API use needs a paid Pro plan or a short trial. Each workspace has its own base URL and schema, so setup is per customer. Self-hosting is a free path.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.twenty.com/developers/extend/oauth",
+   "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.twenty.com/developers/extend/api",
+   "quote": "Create an API key in **Settings \u2192 Developers \u2192 API \u2192 + Create key**. Copy it immediately \u2014 it\u2019s shown once."
+  },
+  {
+   "field": "access",
+   "url": "https://onegtmlab.dev/tool-directory/crm/twenty",
+   "quote": "Self-hosted Free: $0 with all Pro features (community support). No free cloud plan."
+  },
+  {
+   "field": "access",
+   "url": "https://onegtmlab.dev/tool-directory/crm/twenty",
+   "quote": "Create a Twenty account. API access starts on the Cloud Pro plan."
+  },
+  {
+   "field": "api",
+   "url": "https://docs.twenty.com/developers/extend/api",
+   "quote": "Core API \u2014 `/rest/` and `/graphql/` CRUD on records: People, Companies, Opportunities, your custom objects."
+  },
+  {
+   "field": "api",
+   "url": "https://github.com/twentyhq/twenty/blob/main/packages/twenty-website/public/llms.txt",
+   "quote": "per-workspace OpenAPI at `/rest/open-api/core` and `/rest/open-api/metadata`"
+  },
+  {
+   "field": "mcp",
+   "url": "https://docs.twenty.com/developers/extend/mcp",
+   "quote": "Twenty exposes an [MCP](https://modelcontextprotocol.io/) server so that AI assistants \u2014 Claude Desktop, Claude Code, Cursor, ChatGPT, and others \u2014 can read and write your CRM data"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

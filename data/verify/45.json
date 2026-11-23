@@ -1,0 +1,30 @@
+{
+ "id": "45",
+ "name": "Magento (Adobe Commerce)",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developer.adobe.com/commerce",
+    "https://developer.adobe.com/commerce/webapi/",
+    "https://experienceleague.adobe.com/en/docs/commerce/user-guides/integration-services/saas",
+    "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1",
+    "https://developer.adobe.com/commerce/extensibility/app-development/app-builder-partnership-essentials",
+    "https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/cannot-access-the-latest-beta-version",
+    "https://devdocs.magento.com/marketplace/eqp/v1/api.html",
+    "https://anchorterminal.com/tools/adobe-commerce",
+    "https://developer.adobe.com/commerce/webapi/rest"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "one_liner": "Meta's Marketing API (Graph API) for Facebook/Instagram ads is broad and documented, with OAuth2 and system user tokens. Managing other people's ad accounts needs App Review, Business Verification and Full tier. Meta also hosts an official ads MCP server at mcp.facebook.com/ads.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth dialog with ads_management/ads_read scopes for managing others' ads. System user access tokens are static tokens (API_KEY-like). The ads MCP server also supports OAuth via Facebook Login for Business, user tokens and Employee-role system user tokens.",
+ "access": "app_review",
+ "access_notes": "Limited tier is for development only. Managing other people's ad accounts needs advanced access via App Review, plus Full tier (500 calls in 15 days). Business Verification is required for Advanced Access. The ads MCP server needs ads_mcp_management Advanced Access for agencies and partners.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.facebook.com/ads",
+ "verdict": "ready_with_friction",
+ "blocker": "app_review",
+ "blocker_notes": "Multi-user access needs App Review for advanced access to ads_read/ads_management, Business Verification, and the Full Marketing API Access Tier. Limited tier is for development only.",
+ "docs_url": "https://developers.facebook.com/docs/marketing-apis",
+ "openapi_spec": false,
+ "webhooks": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://developers.facebook.com/docs/marketing-apis",
+   "quote": "The Marketing API is a collection of [Graph API](https://developers.facebook.com/docs/graph-api) endpoints and other features that can be used to help you advertise across Meta technologies.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.facebook.com/documentation/mcp.md",
+   "quote": "Meta runs official remote Model Context Protocol (MCP) servers that bring Facebook, Instagram, WhatsApp, and Meta Ads capabilities to your agentic workflows.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview.md",
+   "quote": "The server is remote-hosted at `https://mcp.facebook.com/ads` and works with any MCP-compatible AI agent.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview.md",
+   "quote": "**The ads MCP server is a Meta-hosted [Model Context Protocol](https://modelcontextprotocol.io/) server**",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started",
+   "quote": "The ads MCP server supports three authentication methods.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started",
+   "quote": "You can also use a [system user access token](https://developers.facebook.com/docs/business-management-apis/system-users) to access the ads MCP server",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server",
+   "quote": "If you manage data on behalf of other businesses, for example you are an agency or a partner, you need to submit your app for review.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "facebook",
+    "name": "Facebook",
+    "auth_schemes": [
+     "OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 72
+   },
+   {
+    "slug": "metaads",
+    "name": "Meta Ads",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 99
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

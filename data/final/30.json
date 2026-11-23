@@ -1,0 +1,92 @@
+{
+ "one_liner": "Vonage offers self-serve REST communications APIs (SMS, Voice, Messages, Verify, Numbers, etc.) with API key/secret and JWT auth, free signup credit, and official MCP servers.",
+ "auth_methods": [
+  "API_KEY",
+  "BASIC",
+  "OTHER"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Account-level API key/secret (Basic header or legacy params) and application-signed JWT (self-minted with private key). OAuth exists only for Vonage Business Communications APIs (gated) and CAMARA network APIs; no user-authorization flow for the main API.",
+ "access": "self_serve_free",
+ "access_notes": "Free signup gives API key/secret, \u20ac2 test credit, and DEMO mode (up to 10 destination numbers). Production needs added credit. RCS requires managed-customer onboarding; VBC APIs require 50+ extensions and a CSM.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://github.com/Vonage-Community/vonage-mcp-server-api-bindings",
+ "docs_url": "https://developer.vonage.com",
+ "openapi_spec": true,
+ "webhooks": true,
+ "sandbox": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free account gives working credentials with demo credit; the VBC and RCS sub-products are gated but the core APIs are not.",
+ "evidence": [
+  {
+   "field": "api",
+   "url": "https://developer.vonage.com/en/voice/voice-api/technical-details",
+   "quote": "The Vonage Voice API allows developers to programmatically manage voice calls using two complementary models:",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.vonage.com/en/api/developer/numbers",
+   "quote": "Retrieve all the inbound numbers associated with your Vonage account.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.vonage.com/en/api/account",
+   "quote": "Retrieve the current balance of your Vonage API account",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/verify/concepts/authentication",
+   "quote": "Basic Authentication sends your API Key and API Secret **Base64-encoded** in the `Authorization` header.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.vonage.com/en/dashboard/build/applications",
+   "quote": "Vonage APIs (Voice, Messages, Conversation, etc) use JSON Web Tokens (JWTs) for authentication. JWTs must be signed with the private key of your application.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://developer.vonage.com/en/messages/getting-started",
+   "quote": "When you create your Vonage account you are given \u20ac2 free test credit and your account is set in DEMO mode.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://developer.vonage.com/en/mcp-server/how-to-guides/install-tooling-mcp-server",
+   "quote": "also known as the Tooling MCP Server, lets you invoke various API actions directly through your LLM Assistant or IDE of choice.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "access": "medium",
+  "api": "high",
+  "auth": "high",
+  "mcp": "medium",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [
+   "io.github.Vonage/vonage-documentation-mcp"
+  ],
+  "mcp_registry_any": 1,
+  "composio_mcp_toolkits": []
+ }
+}

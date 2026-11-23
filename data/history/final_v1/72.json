@@ -1,0 +1,121 @@
+{
+ "one_liner": "Airtable has a broad REST Web API with PATs and OAuth, free-plan access (1,000 calls/workspace/month cap), and an official vendor MCP server.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "Personal access tokens (static, user-created, scoped) cover single-user use; OAuth is the recommended route for third-party integrations. Legacy API keys were deprecated, completing Feb 1, 2024. Details of OAuth integration registration (/create/oauth, app-listing requirements) were not on the provided pages.",
+ "access": "self_serve_free",
+ "access_notes": "PATs are available on all plan types. Free plan has access to all Base Data endpoints except Views, with 1,000 calls per workspace per month. Enterprise API endpoints require Enterprise Scale.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://airtable.com/developers/agents/mcp/getting-started",
+ "docs_url": "https://airtable.com/developers/web/api/introduction",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free-plan call cap (1,000/month) and 5 requests/sec per-base rate limit are operational constraints, not blockers.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://support.airtable.com/docs/en/creating-and-using-api-keys-and-access-tokens",
+   "quote": "Personal Access Tokens (PATs) allow users to create multiple access tokens that allow for a wide range of access to the information held in Airtable bases.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://support.airtable.com/docs/en/creating-and-using-api-keys-and-access-tokens",
+   "quote": "All users should migrate to Personal Access Tokens for individual use and OAuth for third-party integrations.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://airtable.com/developers/web/api/billing-plans.md",
+   "quote": "Access to all \"Base Data\" endpoints except \"Views\"",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.airtable.com/docs/getting-started-with-airtables-web-api",
+   "quote": "**Free** plan - 1000 calls per workspace per month",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://support.airtable.com/docs/en/creating-and-using-api-keys-and-access-tokens",
+   "quote": "All plan types. Certain features are only available to Enterprise Scale or Business plan customers.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://airtable.com/developers/web/api/introduction",
+   "quote": "The API closely follows REST semantics, uses JSON to encode objects, and relies on standard HTTP codes to signal operation outcomes.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://support.airtable.com/docs/getting-started-with-airtables-web-api",
+   "quote": "Yes, the Web API has a rate limit of 5 requests per second, per base.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://airtable.com/developers",
+   "quote": "The Airtable MCP server gives agents your base's full structure \u2014 field types, relationships, and views \u2014 so they can make context-aware decisions.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://airtable.com/developers",
+   "quote": "`npm install -g @airtable/mcp-cli`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "airtable",
+    "name": "Airtable",
+    "auth_schemes": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 26
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [
+   "com.airtable/mcp"
+  ],
+  "mcp_registry_any": 9,
+  "composio_mcp_toolkits": []
+ }
+}

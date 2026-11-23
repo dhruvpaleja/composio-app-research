@@ -1,0 +1,70 @@
+{
+ "one_liner": "NotebookLM has an official Google Cloud API only for Enterprise (licensed, 15-license minimum) plus a preview personal-account API with OAuth; consumer access otherwise relies on unofficial cookie-based libraries and community MCPs.",
+ "auth_methods": [
+  "OAUTH2"
+ ],
+ "auth_primary": "OAUTH2",
+ "access": "paid_plan",
+ "access_notes": "Official Enterprise API requires Gemini Notebook Enterprise licenses in a Google Cloud project ($9/license/month, 15 minimum, trial available). A free Public Preview API exists for personal Google accounts only (Workspace unsupported, no SLA), and it only creates notebooks and adds sources. Unofficial consumer routes use browser cookies.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "community",
+ "mcp_url": "https://github.com/teng-lin/notebooklm-py",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Enterprise API needs paid licenses and admin setup. The free preview is narrow (notebooks and sources only), covers personal accounts only, and OAuth tokens expire in about 1 hour. Unofficial cookie-based clients are brittle and risk breaking Google's terms.",
+ "docs_url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": false,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://autocontentapi.com/blog/does-notebooklm-have-an-api",
+   "quote": "A personal Google account (Workspace accounts are not supported yet), a Google Cloud project and an OAuth 2.0 user token; the API takes no API keys."
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/teng-lin/notebooklm-py/blob/v0.8.6/docs/auth-cookie-lifecycle.md",
+   "quote": "NotebookLM does not offer this project a public OAuth or service-account API. The Web backend therefore uses Google browser-session cookies."
+  },
+  {
+   "field": "access",
+   "url": "https://kortex-notebooklm.com/blog/gemini-notebook-api",
+   "quote": "Google's product page lists Gemini Notebook for Enterprise at $9 per license per month after a 30-day trial, with a 15-license minimum"
+  },
+  {
+   "field": "access",
+   "url": "https://note.com/ai_next_level/n/n44c5ef1d91a0?hl=en",
+   "quote": "**Free public preview** (0 yen API usage fee, 100 RPM limit per project)"
+  },
+  {
+   "field": "api",
+   "url": "https://autocontentapi.com/blog/does-notebooklm-have-an-api",
+   "quote": "It only creates notebooks and adds sources: it generates no content of any kind"
+  },
+  {
+   "field": "api",
+   "url": "https://notebooklm.roomi-fields.com/blog/does-notebooklm-have-an-api",
+   "quote": "Google documents a REST surface for Gemini Notebook Enterprise, including notebook operations and audio overviews"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/teng-lin/notebooklm-py/raw/refs/heads/main/docs/mcp-guide.md",
+   "quote": "as a set of **38 tools** \u2014 manage notebooks and sources, chat over a notebook's sources, generate and download studio artifacts, and run deep research."
+  },
+  {
+   "field": "mcp",
+   "url": "https://autocontentapi.com/blog/does-notebooklm-have-an-api",
+   "quote": "A remote MCP server gives the same notebook and source tools."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

@@ -1,0 +1,115 @@
+{
+ "one_liner": "Copper CRM has a broad REST Developer API using API-key headers, but no free tier: API needs a Professional plan or a 14-day trial, and OAuth app registration requires emailing Copper. An official MCP server is announced but still in waitlist beta.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "API key is generated in System settings > API Keys (admin only) and sent with X-PW-AccessToken, X-PW-Application and X-PW-UserEmail headers. OAuth 2.0 exists but app registration requires contacting partners@copper.com, so it isn't self-serve. developer.copper.co and getcopper.io describe different products and were ignored.",
+ "access": "self_serve_trial",
+ "access_notes": "No free plan. Every plan starts with a 14-day free trial, no credit card required, and the trial includes API access. Basic has no API; Professional and Business include it.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": false,
+ "docs_url": "https://developer.copper.com/",
+ "mcp": "official",
+ "mcp_url": "https://copper.com/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "API needs Professional or higher, or the 14-day trial, which is short for ongoing toolkit testing. Self-serve OAuth is not available because app registration goes through partners@copper.com.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.copper.com/introduction/authentication.html",
+   "quote": "There are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.copper.com/introduction/oauth",
+   "quote": "To register your application, [contact us](mailto:partners@copper.com).",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.copper.com/introduction/requests.html",
+   "quote": "| X-PW-AccessToken | *API Key* |",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://copper.com",
+   "quote": "Every plan starts with a 14-day free trial, and no credit card is required.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://bit-integrations.com/blog/gravity-forms-copper-crm-integration",
+   "quote": "The free trial grants temporary access to Professional and Business-level features, including the API",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://bit-integrations.com/blog/gravity-forms-copper-crm-integration",
+   "quote": "Copper Basic and Starter do not include API access.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developer.copper.com/",
+   "quote": "The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://copper.com/mcp",
+   "quote": "Yes. Copper is launching an official MCP server, built and hosted by Copper. The beta launches in November 2026.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://copper.com/mcp",
+   "quote": "Request early access to the beta, or join the waitlist for updates as we get closer to launch.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "high",
+  "api": "medium",
+  "mcp": "low",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "copper",
+    "name": "Copper",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 65
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 4,
+  "composio_mcp_toolkits": []
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "one_liner": "Plain is a B2B support platform with a full GraphQL API, OAuth apps, machine-user API keys and an official hosted MCP server. The pricing evidence shows only paid plans, so the builder probably needs a paid workspace.",
+ "auth_methods": [
+  "OAUTH2",
+  "API_KEY",
+  "OTHER"
+ ],
+ "auth_primary": "OAUTH2",
+ "auth_notes": "OAuth apps (client-side with PKCE, or server-side with a client secret) are created self-serve under Settings \u2192 OAuth applications. Calls run as the signed-in user. Machine-user API keys (Bearer plainApiKey_...) carry per-key permissions. HMAC request signing and mTLS are used for webhooks and customer cards.",
+ "access": "paid_plan",
+ "access_notes": "The pricing evidence lists only paid plans (Foundation $45/user/month billed annually, Horizon, Frontier). It shows no free tier or trial. Machine users and API keys are created in workspace settings. I could not verify whether a trial exists, so this is a best-judgement label.",
+ "api_type": "GraphQL",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.plain.com/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "The evidence shows no free plan or trial, so a paid workspace is probably needed to get credentials. A trial may exist but isn't confirmed in the evidence.",
+ "docs_url": "https://plain.com/docs/graphql/introduction",
+ "openapi_spec": false,
+ "webhooks": true,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://plain.com/docs/graphql/oauth",
+   "quote": "An OAuth app lets users in your workspace sign in to your app with their Plain account. Your app then calls the API as that user"
+  },
+  {
+   "field": "auth",
+   "url": "https://plain.com/docs/api-reference/graphql/authentication",
+   "quote": "Go to **Settings** \u2192 **Machine Users** and click **+ Add Machine User**"
+  },
+  {
+   "field": "auth",
+   "url": "https://plain.com/docs/api-reference/graphql/authentication",
+   "quote": "Authorization: Bearer plainApiKey_xxx"
+  },
+  {
+   "field": "access",
+   "url": "https://apis.io/plans/plain-support/plain-support-plans-pricing",
+   "quote": "Foundation | $45/user/month billed annually Includes: 1,000 credits / month; Member seats up to 5; Viewer seats unlimited"
+  },
+  {
+   "field": "api",
+   "url": "https://plain.com/docs/graphql/introduction",
+   "quote": "**API URL:** `https://core-api.uk.plain.com/graphql/v1`"
+  },
+  {
+   "field": "api",
+   "url": "https://plain.com/docs/graphql/sdk",
+   "quote": "It is auto-generated from the [GraphQL schema](/docs/graphql/schema), which means every query and mutation available in the API is available in the SDK."
+  },
+  {
+   "field": "mcp",
+   "url": "https://plain.com/docs/integrations/mcp-server",
+   "quote": "The Plain MCP server at `https://mcp.plain.com/mcp` lets tools like Claude, ChatGPT, and Cursor work with your support data directly."
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "low",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "low"
+ },
+ "_pass": 1
+}

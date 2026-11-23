@@ -1,0 +1,30 @@
+{
+ "id": "83",
+ "name": "Binance",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://developers.binance.com/en/docs",
+    "https://developers.binance.com/en/docs/products/institutional-buy-sell/basics/6.apply-developer-account",
+    "https://developers.binance.com/en/docs/products/caas/getting-started",
+    "https://plans.apis.io/plans/binance/binance-plans-pricing",
+    "https://voiceofchain.com/academy/binance-api-pricing",
+    "https://agentgid.com/apis/binance-api",
+    "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+    "https://binance.com/en/blog/ecosystem/5991233187660196794",
+    "https://binance.com/en/support/faq/detail/7a6e676e36fb455d96478932cb12d9f3"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [],
+  "catalog_auth": [],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 5,
+  "composio_mcp_toolkits": []
+ }
+}

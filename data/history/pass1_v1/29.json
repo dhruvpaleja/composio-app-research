@@ -1,0 +1,77 @@
+{
+ "one_liner": "Aircall has a broad REST API with webhooks; any customer admin can self-generate API ID/token (Basic auth), while OAuth is limited to approved tech partners; only a read-only official MCP (beta) exists.",
+ "auth_methods": [
+  "BASIC",
+  "OAUTH2"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Basic Auth (api_id:api_token) generated in the Aircall Dashboard by an admin. OAuth 2.0 is the multi-customer method but requires Tech Partner program approval and OAuth credentials, so a multi-user toolkit would rely on per-customer Basic keys unless partnered.",
+ "access": "self_serve_trial",
+ "access_notes": "Requires an Aircall account (paid product; sign-up/trial). Private-app API keys need no review. Public OAuth apps require Tech Partner program and review. Messaging API direct access requires Professional plan.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://mcp.aircall.io/mcp",
+ "verdict": "ready_with_friction",
+ "blocker": "paid_plan",
+ "blocker_notes": "Needs an Aircall customer account to generate keys; OAuth for multi-tenant use requires Tech Partner approval; Messaging API needs Professional plan.",
+ "docs_url": "https://developer.aircall.io/api-references",
+ "webhooks": true,
+ "openapi_spec": null,
+ "sandbox": null,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developer.aircall.io/docs/authentication",
+   "quote": "Aircall supports two ways to authenticate with the REST API: Basic Authentication and OAuth."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.aircall.io/docs/basic-authentication",
+   "quote": "Aircall will generate two strings: an `API ID`and an `API token`, which act as your username and password."
+  },
+  {
+   "field": "auth",
+   "url": "https://developer.aircall.io/docs/oauth",
+   "quote": "If you haven't received them yet, apply to the [Tech Partner program](https://aircall.io/partners/technology/signup/)."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.aircall.io/docs/public-vs-private-app",
+   "quote": "It's the fastest way to get started \u2014 no review process, no marketplace listing, and no OAuth flow required."
+  },
+  {
+   "field": "access",
+   "url": "https://developer.aircall.io/docs/sms",
+   "quote": "**Direct API access requires the Professional plan.**"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.aircall.io/api-references",
+   "quote": "Aircall Public API is a classic REST API. It can be used with any programming languages"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.aircall.io/api-references",
+   "quote": "We can call back any endpoint of your choice, each time an event occurs on an Aircall account"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.aircall.io/en-gb/articles/39677926959517",
+   "quote": "Aircall MCP is read-only.** It can retrieve data, but it can't take action"
+  },
+  {
+   "field": "mcp",
+   "url": "https://support.aircall.io/en-gb/articles/39677926959517",
+   "quote": "https://mcp.aircall.io/mcp"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

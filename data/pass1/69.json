@@ -1,0 +1,61 @@
+{
+ "one_liner": "Datadog has a broad REST API with self-serve API/app keys and PATs; OAuth is partner-only; an official remote MCP server exists.",
+ "auth_methods": [
+  "API_KEY"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Users generate API key + application key, or newer Personal Access Tokens (single credential, scoped, TTL). OAuth 2.0 authorization-code exists but is only for approved Technology Partners; standalone OAuth clients are not supported, so it is not counted for a third-party developer.",
+ "access": "self_serve_trial",
+ "access_notes": "Keys are created in a Datadog org. Datadog has historically offered a free trial of its paid product, but the evidence provided does not state a free tier or trial. Access judged from general knowledge, so confidence is low.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "mcp": "official",
+ "mcp_url": "https://docs.datadoghq.com/mcp_server",
+ "verdict": "ready_with_friction",
+ "blocker": "other",
+ "blocker_notes": "Multi-user OAuth is limited to approved partners, so the toolkit must use per-customer API/app keys or PATs. Builder access is likely via a trial or org account, which the evidence does not confirm.",
+ "docs_url": "https://docs.datadoghq.com/api/latest/",
+ "openapi_spec": null,
+ "webhooks": null,
+ "sandbox": true,
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/api/latest/authentication",
+   "quote": "Requests that write data require reporting access and require an `API key`. Requests that read data require full access and also require an `application key`."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/account_management/personal-access-tokens",
+   "quote": "Unlike application keys, PATs do not need to be paired with an API key."
+  },
+  {
+   "field": "auth",
+   "url": "https://docs.datadoghq.com/extend/integrations/api_integration",
+   "quote": "OAuth is available only to approved Technology Partners developing official Datadog integrations. Standalone OAuth clients are not supported."
+  },
+  {
+   "field": "access",
+   "url": "https://docs.datadoghq.com/extend/integrations/api_integration",
+   "quote": "These steps assume you've joined the Datadog Partner Network, have access to a partner developer organization"
+  },
+  {
+   "field": "api",
+   "url": "https://activepieces.com/blog/datadog-api-keys-endpoints-and-getting-started",
+   "quote": "The Datadog API is an HTTP/JSON interface served from the regional site domain your account lives on"
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/datadog-labs/mcp-server",
+   "quote": "Datadog's managed MCP server connects your AI agents to Datadog's observability tools and data."
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "low",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": 1
+}

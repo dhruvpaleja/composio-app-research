@@ -1,0 +1,45 @@
+{
+ "id": "44",
+ "name": "Salesforce Commerce Cloud",
+ "rounds": [
+  {
+   "round": 1,
+   "pages": [
+    "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+    "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/agentic-mcp-shopper-tools-quick-start.html",
+    "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/headless-360-mcp.html",
+    "https://developer.salesforce.com/docs/commerce",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html",
+    "https://salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/alliance-agreements-and-terms/commerce-cloud-link-partner-integration-agreement.pdf",
+    "https://1.salesforce-partners.com/full-stack-commerce-cloud",
+    "https://partners.salesforce.com/s/education/consultants/Consulting_Partner_Signup",
+    "https://partners.salesforce.com/pdx/s/learn/article/isv-salesforce-commerce-cloud-MCXU3JBWFMQBBKRLW76UCTTYO63A?language=en_US"
+   ],
+   "changed": {},
+   "flags_after": []
+  }
+ ],
+ "initial_flags": [],
+ "signals": {
+  "composio_catalog": [
+   {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "auth_schemes": [
+     "OAUTH2",
+     "S2S_OAUTH2"
+    ],
+    "managed": [
+     "OAUTH2"
+    ],
+    "tools": 556
+   }
+  ],
+  "catalog_auth": [
+   "OAUTH2"
+  ],
+  "mcp_registry_official": [],
+  "mcp_registry_any": 0,
+  "composio_mcp_toolkits": []
+ }
+}

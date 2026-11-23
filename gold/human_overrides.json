@@ -1,0 +1,102 @@
+{
+ "69": {
+  "set": {
+   "auth_methods": [
+    "API_KEY",
+    "OAUTH2"
+   ],
+   "auth_primary": "API_KEY",
+   "access_notes": "14-day free trial gives API and application keys. The pricing page's price table lists Basic hosts as 'Contact sales' while its FAQ still describes a 5-host Free tier, so whether a permanent free path exists is unclear."
+  },
+  "trigger": "human queue (V2: Composio catalog lists OAuth2)",
+  "note": "OAuth exists but only for approved Datadog partner integrations, so it is listed but API keys stay primary. Access left as trial: datadoghq.com/pricing lists Basic hosts as 'Contact sales' while its FAQ still describes a 5-host Free tier, so the free path is unclear.",
+  "src": [
+   "https://docs.datadoghq.com/developers/authorization/oauth2_in_datadog/",
+   "https://www.datadoghq.com/pricing/"
+  ]
+ },
+ "84": {
+  "set": {
+   "mcp": "none",
+   "verdict": "unverified",
+   "blocker": "unclear_docs"
+  },
+  "trigger": "human queue (V1: no MCP evidence)",
+  "note": "Identity is unresolved. The brief says 'NMI-powered'; the agent found gopaygent.com (Bearer pgt_ keys) and could not tie it to NMI, and whether its free plan includes API keys is unverified. Marked unverified and kept out of the ready count until someone confirms which product the brief means.",
+  "src": [
+   "https://gopaygent.com"
+  ]
+ },
+ "50": {
+  "set": {
+   "mcp": "official",
+   "mcp_url": "https://npmjs.com/package/commas-cli",
+   "blocker_notes": "None for building: FanBasis (now Commas) issues API keys from the merchant dashboard. Its MCP server is first-party (the commas-cli is a client for it)."
+  },
+  "trigger": "change audit (loop moved none -> community, still wrong)",
+  "note": "FanBasis rebranded to Commas; Commas publishes its own MCP server (the commas-cli is a thin client over it). The agent only found Zapier's wrapper.",
+  "src": [
+   "https://npmjs.com/package/commas-cli"
+  ]
+ },
+ "68": {
+  "set": {
+   "auth_methods": [
+    "OAUTH2",
+    "OTHER"
+   ]
+  },
+  "trigger": "change audit (auth changed)",
+  "note": "Atlas Admin API uses OAuth2 service accounts (client credentials, recommended) and HTTP Digest API keys (legacy). Digest is OTHER, not BASIC. Primary kept as OAUTH2: service accounts cover the whole Admin API, though this is borderline under the rubric's authorization-code rule.",
+  "src": [
+   "https://mongodb.com/docs/api/doc/atlas-admin-api-v2/authentication"
+  ]
+ },
+ "98": {
+  "set": {
+   "mcp": "community"
+  },
+  "trigger": "review (MCP label)",
+  "note": "The MCP server the agent found is Mermaid Chart's (mermaid.ai), a separate commercial product, not the mermaid-cli project. Counted as community.",
+  "src": [
+   "https://github.com/mermaid-js/mermaid-cli"
+  ]
+ },
+ "1": {
+  "set": {
+   "blocker": "partnership",
+   "blocker_notes": "A free Developer Edition org gives working OAuth credentials, so building and testing is self-serve. But the SFDC API Terms bar Commercial Use of the APIs unless the app is enrolled in Salesforce's ISV partner program, which applies to a commercial multi-tenant toolkit."
+  },
+  "trigger": "review (blocker label)",
+  "note": "The agent's own evidence describes a partner-program requirement, so the blocker is partnership rather than a generic ToS worry.",
+  "src": [
+   "https://salesforce.com/company/legal/sfdc-api-terms-of-service"
+  ]
+ },
+ "8": {
+  "set": {
+   "verdict": "ready_with_friction",
+   "blocker": "paid_plan",
+   "blocker_notes": "No free plan; only a 14-day trial (or a Dev org requested from support). Under the rubric a trial under 30 days is friction."
+  },
+  "trigger": "review (rubric consistency)",
+  "note": "Applied the same trial rule as Zendesk, Copper and Datadog (14-day trials are friction).",
+  "src": [
+   "https://www.close.com/pricing"
+  ]
+ },
+ "85": {
+  "set": {
+   "access": "paid_plan",
+   "verdict": "ready_with_friction",
+   "blocker": "paid_plan",
+   "blocker_notes": "API keys start on the $99/month Developer plan; the free tier is 5 lifetime audits in the web app."
+  },
+  "trigger": "review (label vs notes)",
+  "note": "iPayX's developer page lists API plans from $99/mo; the agent had labelled it free from an MCP free-tier mention.",
+  "src": [
+   "https://ipayx.ai/developers",
+   "https://ipayx.ai/pricing"
+  ]
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "one_liner": "Clay has a REST Public API (api.clay.com/public/v0) using a self-serve API key, reportedly available on all plans including Free, plus an official hosted MCP server at api.clay.com/v3/mcp with open OAuth DCR.",
+ "auth_methods": [
+  "API_KEY",
+  "OAUTH2"
+ ],
+ "auth_primary": "API_KEY",
+ "auth_notes": "Public API uses the clay-api-key header with a user-generated key. OAuth 2.0 authorization-code + PKCE with open Dynamic Client Registration applies to the MCP server only (scope \"mcp\"), not the main REST API.",
+ "access": "self_serve_free",
+ "access_notes": "Draft source says the developer platform is available on all plans including Free. The pages fetched this round neither confirm nor contradict that, so the claim is kept at lower confidence. Tables API is Enterprise only. Editor/Admin workspace access is needed.",
+ "api_type": "REST",
+ "api_breadth": "narrow",
+ "mcp": "official",
+ "mcp_url": "https://api.clay.com/v3/mcp",
+ "docs_url": "https://developers.clay.com",
+ "openapi_spec": null,
+ "sandbox": null,
+ "webhooks": true,
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Public API is limited in scope: it runs searches and routines/functions and works with audiences and signals. Table reads are Enterprise only. Writes to tables go through inbound webhooks.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://developers.clay.com/public-api/authentication",
+   "quote": "Every request to the Clay Public API must include a Clay API key in the `clay-api-key` header.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+   "quote": "Make an unauthenticated `POST` to `https://api.clay.com/v3/mcp`.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "mcp",
+   "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+   "quote": "Registration is open \u2014 there is no Clay-side approval step.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "auth",
+   "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+   "quote": "Once registered, run the standard authorization-code + PKCE flow.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "access",
+   "url": "https://university.clay.com/docs/clay-api-cli",
+   "quote": "The developer platform is available across all Clay plans, including free, trial, and Legacy plans.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://developers.clay.com",
+   "quote": "Need existing table data? Use [Tables](/tables). Tables are Enterprise only.",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  },
+  {
+   "field": "api",
+   "url": "https://cleanlist.ai/blog/2026-10-16-clay-api-guide",
+   "quote": "Clay's Public API is a REST API at `api.clay.com/public/v0`",
+   "grounding": 1.0,
+   "fetched_via": "composio:keenable"
+  }
+ ],
+ "confidence": {
+  "auth": "high",
+  "access": "medium",
+  "api": "medium",
+  "mcp": "high",
+  "verdict": "medium"
+ },
+ "_pass": "final",
+ "_open_flags": [],
+ "_signals": {
+  "composio_catalog": [
+   {
+    "slug": "clay",
+    "name": "Clay",
+    "auth_schemes": [
+     "API_KEY"
+    ],
+    "managed": [],
+    "tools": 15
+   },
+   {
+    "slug": "clay_mcp",
+    "name": "Clay MCP",
+    "auth_schemes": [
+     "DCR_OAUTH"
+    ],
+    "managed": [],
+    "tools": 17
+   }
+  ],
+  "catalog_auth": [
+   "API_KEY"
+  ],
+  "mcp_registry_official": [
+   "io.github.clay-swartz/pennyrail"
+  ],
+  "mcp_registry_any": 6,
+  "composio_mcp_toolkits": [
+   "clay_mcp"
+  ]
+ }
+}

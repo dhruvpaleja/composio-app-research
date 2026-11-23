@@ -1,0 +1,67 @@
+{
+ "one_liner": "MongoDB Atlas Administration API is a broad REST API with free self-serve API keys (digest) and service accounts (OAuth client-credentials); user-delegated OAuth is invite-only; official MCP exists.",
+ "auth_methods": [
+  "BASIC",
+  "OAUTH2"
+ ],
+ "auth_primary": "BASIC",
+ "auth_notes": "Admin API accepts HTTP Digest with org/project API keys (legacy, classed as BASIC-style key pair) and service accounts via OAuth2 client-credentials. The authorization-code OAuth (App Connections) is invite-only with manually provisioned credentials, so OAUTH2 is not primary for multi-user.",
+ "access": "self_serve_free",
+ "access_notes": "Free Atlas account; Organization Owner can create API keys or service accounts. Free M0 cluster available. Admin API does not expose cluster data.",
+ "api_type": "REST",
+ "api_breadth": "broad",
+ "docs_url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/",
+ "openapi_spec": true,
+ "webhooks": null,
+ "sandbox": null,
+ "mcp": "official",
+ "mcp_url": "https://github.com/mongodb-js/mongodb-mcp-server",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Self-serve credentials are available today. Multi-user delegated OAuth is invite-only, but per-customer API keys or service accounts work, and that does not count as friction.",
+ "evidence": [
+  {
+   "field": "auth",
+   "url": "https://mongodb.com/docs/api/doc/atlas-admin-api-v2/authentication",
+   "quote": "The API accepts 2 different authentication methods: Digest auth (http) Service accounts (oauth2)"
+  },
+  {
+   "field": "auth",
+   "url": "https://github.com/mongodb-partners/partner-api-quickstart-for-partners",
+   "quote": "MongoDB Atlas OAuth is currently **invite-only**. Client credentials are **not self-provisioned** \u2014 MongoDB provisions them manually on your behalf."
+  },
+  {
+   "field": "access",
+   "url": "https://mongodb.com/docs/atlas/configure-api-access",
+   "quote": "To create a service account or API keys for an organization, you must have Organization Owner access to that organization."
+  },
+  {
+   "field": "access",
+   "url": "https://mongodb.com/docs/atlas/billing/atlas-flex-costs.md",
+   "quote": "Free cluster (`M0`) | No cost | Learning MongoDB, prototyping, and other workloads that fit within the Atlas Free Cluster Limits."
+  },
+  {
+   "field": "api",
+   "url": "https://mongodb.com/docs/atlas/api/api-authentication",
+   "quote": "To use the Atlas Administration API to manage your Atlas clusters, you must authenticate your API requests."
+  },
+  {
+   "field": "mcp",
+   "url": "https://github.com/mongodb-js/mongodb-mcp-server?tab=readme-ov-file",
+   "quote": "A Model Context Protocol server for interacting with MongoDB Databases and MongoDB Atlas."
+  },
+  {
+   "field": "mcp",
+   "url": "https://mongodb.com/docs/mcp-server/overview",
+   "quote": "MongoDB Atlas Managed MCP Server, which MongoDB hosts and manages for you in Atlas."
+  }
+ ],
+ "confidence": {
+  "auth": "medium",
+  "access": "high",
+  "api": "high",
+  "mcp": "high",
+  "verdict": "high"
+ },
+ "_pass": 1
+}
