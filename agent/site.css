@@ -334,3 +334,17 @@ pre code{font-size:inherit}
   .more.big{padding:0 20px}
   .eyebrow span:nth-child(2){display:none}
 }
+
+/* ---------- cross-check with the manual pass */
+.agree{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px 0 14px}
+.ag{background:var(--surface);border-radius:var(--r);padding:26px 18px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;min-width:0}
+.ag b{font:700 3rem/1 var(--f-display);letter-spacing:-.05em;color:var(--ink);font-variant-numeric:tabular-nums}
+.agl{font-size:.92rem;font-weight:500;color:var(--ink-2);margin-top:6px}
+.ag small{font-size:.78rem;color:var(--ink-4)}
+.ag .kbar{margin-top:12px;--c:var(--accent)}
+.xtab td small{display:block;font-size:.74rem;color:var(--ink-4);margin-top:4px;max-width:46ch;white-space:normal}
+.xtab td,.xtab th{vertical-align:top}
+.diff,.same{font-size:.76rem;font-weight:500;margin-left:6px;white-space:nowrap}
+.diff{color:#9a5b00} .same{color:#1a7f45}
+.diff::before,.same::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:5px;vertical-align:1px}
+@media (max-width:720px){.agree{grid-template-columns:repeat(2,minmax(0,1fr))}.ag b{font-size:2.4rem}}

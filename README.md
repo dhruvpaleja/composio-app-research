@@ -39,6 +39,10 @@ data/apps.csv → PASS 1 → V1 citation check → V2 cross-source → V3 rules 
 
 The labelling rubric is in `agent/schema.py`. The agent, the auditor and the hand checks all use it, so "accuracy" means agreement on the same definitions.
 
+## Cross-check against a manual pass
+
+`site/manual-pass.pdf` is an independent manual research pass over the same 100 apps. Its table is extracted into `data/manual_pass_rows.json`; `python -m agent.manual_pass` maps it onto the agent's schema and writes per-app agreement to `data/manual_pass.json` (also published as `site/manual_pass.json`). The extraction reproduces the PDF's own totals (69 free, 10 paid, 13 gated, 41 official MCP). Agreement with the agent: verdict 82/100, access 82/100, primary auth 86/97, MCP 42/60 where the manual pass names one. The page shows every disagreement, and each app's detail row shows the manual answer next to the agent's.
+
 ## Run it
 
 Python 3.10+, standard library only. The cache in `data/cache/` (≈38 MB) ships with the repo, so these commands reproduce the published page **offline, with no keys and no cost**:
@@ -48,6 +52,7 @@ python3 -m agent.pipeline all --ids 41   # one app (Shopify), replayed from the 
 python3 -m agent.human                   # apply human review decisions
 python3 -m agent.score                   # accuracy: gold, strict, original labels, held-out
 python3 -m agent.analyze                 # results.json / results.csv / stats.json
+python3 -m agent.manual_pass             # cross-check vs the manual pass
 python3 -m agent.check                   # every number in the page text vs the data (fails on mismatch)
 python3 -m agent.build_site              # site/index.html
 ```

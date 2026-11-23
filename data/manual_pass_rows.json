@@ -1,0 +1,1002 @@
+[
+ {
+  "id": 1,
+  "app": "Salesforce",
+  "category": "CRM",
+  "auth": "OAuth2 (JWT bearer / web server)",
+  "access": "free Developer Edition org",
+  "api_mcp": "REST + SOAP + GraphQL, very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.salesforce.com"
+ },
+ {
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM",
+  "auth": "OAuth2 + private app token",
+  "access": "free account + free dev test account",
+  "api_mcp": "REST broad, CRM + marketing; official MCP",
+  "verdict": "buildable",
+  "evidence": "developers.hubspot.com"
+ },
+ {
+  "id": 3,
+  "app": "Pipedrive",
+  "category": "CRM",
+  "auth": "OAuth2 + personal API token",
+  "access": "14-day trial, free sandbox",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "developers.pipedrive.com"
+ },
+ {
+  "id": 4,
+  "app": "Attio",
+  "category": "CRM",
+  "auth": "OAuth2 + workspace API key",
+  "access": "free workspace, dev console",
+  "api_mcp": "REST broad (records, lists, webhooks); official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.attio.com"
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM (OSS)",
+  "auth": "API key (Bearer)",
+  "access": "self-host free / cloud free tier",
+  "api_mcp": "REST + GraphQL per schema; community MCP",
+  "verdict": "buildable",
+  "evidence": "docs.twenty.com"
+ },
+ {
+  "id": 6,
+  "app": "Podio",
+  "category": "CRM",
+  "auth": "OAuth2 (4 flows)",
+  "access": "free plan, register app",
+  "api_mcp": "REST broad; no official MCP",
+  "verdict": "buildable",
+  "evidence": "developers.podio.com"
+ },
+ {
+  "id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM",
+  "auth": "OAuth2 (+ self- client)",
+  "access": "free plan up to 3 users",
+  "api_mcp": "REST broad; Zoho MCP servers",
+  "verdict": "buildable",
+  "evidence": "zoho.com/crm/developer/docs"
+ },
+ {
+  "id": 8,
+  "app": "Close",
+  "category": "CRM",
+  "auth": "API key via HTTP Basic + OAuth2",
+  "access": "14-day trial",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "developer.close.com"
+ },
+ {
+  "id": 9,
+  "app": "Copper",
+  "category": "CRM",
+  "auth": "API key + HMAC signature, or OAuth2",
+  "access": "paid plan for API",
+  "api_mcp": "REST broad; no MCP",
+  "verdict": "buildable, minor: signature header",
+  "evidence": "developer.copper.com"
+ },
+ {
+  "id": 10,
+  "app": "DealCloud",
+  "category": "CRM (private capital)",
+  "auth": "OAuth2 client credentials",
+  "access": "gated: enterprise customer tenant",
+  "api_mcp": "REST v4 + Python SDK; no MCP",
+  "verdict": "outreach",
+  "evidence": "api.docs.dealcloud.com/docs/token"
+ },
+ {
+  "id": 11,
+  "app": "Zendesk",
+  "category": "Support",
+  "auth": "OAuth2 access tokens",
+  "access": "free trial + dev sandbox",
+  "api_mcp": "REST very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.zendesk.com"
+ },
+ {
+  "id": 12,
+  "app": "Intercom",
+  "category": "Support",
+  "auth": "access token (private app) or OAuth2",
+  "access": "free dev workspace",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developers.intercom.com"
+ },
+ {
+  "id": 13,
+  "app": "Freshdesk",
+  "category": "Support",
+  "auth": "API key via HTTP Basic",
+  "access": "free plan + trial",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "developers.freshdesk.com"
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "category": "Support",
+  "auth": "Bearer token or OAuth2",
+  "access": "token in Settings > Developers",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "dev.frontapp.com"
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "category": "Support (B2B)",
+  "auth": "Bearer token (admin-created)",
+  "access": "paid product",
+  "api_mcp": "REST broad; no MCP",
+  "verdict": "buildable, minor: paid workspace",
+  "evidence": "docs.usepylon.com"
+ },
+ {
+  "id": 16,
+  "app": "LiveAgent",
+  "category": "Support",
+  "auth": "API key in apikey header",
+  "access": "free trial",
+  "api_mcp": "REST broad; no MCP",
+  "verdict": "buildable",
+  "evidence": "support.liveagent.com/docs/api/v3"
+ },
+ {
+  "id": 17,
+  "app": "Plain",
+  "category": "Support (dev-first)",
+  "auth": "API key Bearer",
+  "access": "free tier",
+  "api_mcp": "GraphQL single endpoint; no MCP",
+  "verdict": "buildable",
+  "evidence": "plain.com/docs/graphql/authentication"
+ },
+ {
+  "id": 18,
+  "app": "Help Scout",
+  "category": "Support",
+  "auth": "OAuth2",
+  "access": "paid plan (no API on Free)",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable, minor: paid plan",
+  "evidence": "developer.helpscout.com"
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "category": "Support (ecommerce)",
+  "auth": "HTTP Basic (email + API key)",
+  "access": "all helpdesk plans, admin only",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "developers.gorgias.com"
+ },
+ {
+  "id": 20,
+  "app": "Gladly",
+  "category": "Support (enterprise)",
+  "auth": "API token per user, admin- granted",
+  "access": "gated: enterprise, no self- serve",
+  "api_mcp": "REST + Lookup API; no MCP",
+  "verdict": "outreach",
+  "evidence": "developer.gladly.com/rest"
+ },
+ {
+  "id": 21,
+  "app": "Slack",
+  "category": "Comms",
+  "auth": "OAuth2 bot/user tokens",
+  "access": "free workspace",
+  "api_mcp": "Web API very broad + Events; official MCP",
+  "verdict": "buildable",
+  "evidence": "api.slack.com/authentication"
+ },
+ {
+  "id": 22,
+  "app": "Twilio",
+  "category": "Comms / CPaaS",
+  "auth": "Basic (Account SID + auth token, or API key)",
+  "access": "free trial",
+  "api_mcp": "REST very broad",
+  "verdict": "buildable",
+  "evidence": "twilio.com/docs/iam/api-keys"
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "category": "Team chat",
+  "auth": "OAuth2 + bot/webhook tokens",
+  "access": "free plan",
+  "api_mcp": "REST medium",
+  "verdict": "buildable",
+  "evidence": "zoho.com/cliq/help/restapi/v2"
+ },
+ {
+  "id": 24,
+  "app": "Lark",
+  "category": "Team suite",
+  "auth": "→ app id/secret tenant/user token",
+  "access": "self-serve dev console",
+  "api_mcp": "REST very broad",
+  "verdict": "buildable",
+  "evidence": "open.larksuite.com/document"
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "category": "Team chat",
+  "auth": "token + x-app- token headers",
+  "access": "free",
+  "api_mcp": "REST small-medium",
+  "verdict": "buildable",
+  "evidence": "pumble.com help"
+ },
+ {
+  "id": 26,
+  "app": "Discord",
+  "category": "Community chat",
+  "auth": "bot token + OAuth2",
+  "access": "free dev portal",
+  "api_mcp": "REST + Gateway broad",
+  "verdict": "buildable",
+  "evidence": "discord.com/developers/docs"
+ },
+ {
+  "id": 27,
+  "app": "Telegram",
+  "category": "Messaging",
+  "auth": "bot token from BotFather",
+  "access": "free",
+  "api_mcp": "Bot API broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "core.telegram.org/bots/api"
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "category": "Messaging",
+  "auth": "Meta app / system-user token",
+  "access": "test number free; prod needs business verification",
+  "api_mcp": "Cloud API medium",
+  "verdict": "buildable, blocker: business verification",
+  "evidence": "developers.facebook.com/docs/whatsapp"
+ },
+ {
+  "id": 29,
+  "app": "Aircall",
+  "category": "Cloud phone",
+  "auth": "Basic (API ID + token); OAuth for partners",
+  "access": "paid Aircall account",
+  "api_mcp": "REST broad; no official MCP",
+  "verdict": "buildable, blocker: paid account",
+  "evidence": "developer.aircall.io"
+ },
+ {
+  "id": 30,
+  "app": "Vonage",
+  "category": "CPaaS",
+  "auth": "API key + secret (Basic) + JWT",
+  "access": "free trial credit",
+  "api_mcp": "REST very broad",
+  "verdict": "buildable",
+  "evidence": "developer.vonage.com"
+ },
+ {
+  "id": 31,
+  "app": "Google Ads",
+  "category": "Ads",
+  "auth": "OAuth2 + developer token",
+  "access": "test self-serve; production needs access level",
+  "api_mcp": "REST/gRPC very broad; official MCP",
+  "verdict": "buildable on test, blocker: token approval",
+  "evidence": "developers.google.com/google-ads"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "category": "Ads",
+  "auth": "OAuth2 user/system-user tokens",
+  "access": "Limited self-serve; Full via App Review",
+  "api_mcp": "Graph Marketing API very broad",
+  "verdict": "buildable own account, blocker: App Review",
+  "evidence": "developers.facebook.com/docs/marketing"
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "category": "Ads",
+  "auth": "OAuth2 3-legged",
+  "access": "gated: Advertising API approval",
+  "api_mcp": "REST broad",
+  "verdict": "outreach / approval",
+  "evidence": "learn.microsoft.com/linkedin/marketing"
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "Marketing CRM",
+  "auth": "OAuth2 + Private Integration Token",
+  "access": "paid plan from $97/mo",
+  "api_mcp": "REST broad",
+  "verdict": "buildable on paid plan",
+  "evidence": "help.gohighlevel.com"
+ },
+ {
+  "id": 35,
+  "app": "Mailchimp",
+  "category": "Email",
+  "auth": "API key or OAuth2",
+  "access": "free plan",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "mailchimp.com/developer"
+ },
+ {
+  "id": 36,
+  "app": "Klaviyo",
+  "category": "Email / SMS",
+  "auth": "private API key or OAuth2",
+  "access": "free plan",
+  "api_mcp": "REST broad; official MCP mcp.klaviyo.com",
+  "verdict": "buildable",
+  "evidence": "developers.klaviyo.com"
+ },
+ {
+  "id": 37,
+  "app": "systeme.io",
+  "category": "Funnels",
+  "auth": "API key ( X-API- Key )",
+  "access": "self-serve incl. free",
+  "api_mcp": "REST medium; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.systeme.io"
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "category": "Social / ads",
+  "auth": "OAuth2",
+  "access": "Trial after app approval; Standard needs review",
+  "api_mcp": "REST v5 broad",
+  "verdict": "buildable on Trial, blocker: Standard review",
+  "evidence": "developers.pinterest.com"
+ },
+ {
+  "id": 39,
+  "app": "Threads",
+  "category": "Social",
+  "auth": "OAuth2 via Meta app",
+  "access": "own/test users free; App Review for others",
+  "api_mcp": "REST medium",
+  "verdict": "buildable own account, blocker: App Review",
+  "evidence": "developers.facebook.com/docs/threads"
+ },
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Email",
+  "auth": "API key Bearer",
+  "access": "free trial",
+  "api_mcp": "REST v3 broad",
+  "verdict": "buildable",
+  "evidence": "twilio.com/docs/sendgrid"
+ },
+ {
+  "id": 41,
+  "app": "Shopify",
+  "category": "Ecommerce",
+  "auth": "OAuth2 / token exchange, X- Shopify- Access-Token",
+  "access": "free Partner account + dev stores",
+  "api_mcp": "GraphQL Admin very broad; official Dev MCP",
+  "verdict": "buildable",
+  "evidence": "shopify.dev"
+ },
+ {
+  "id": 42,
+  "app": "WooCommerce",
+  "category": "Ecommerce (WP)",
+  "auth": "consumer key/secret (Basic over HTTPS)",
+  "access": "self-serve, self-hosted",
+  "api_mcp": "REST v3 broad",
+  "verdict": "buildable, needs a WP site",
+  "evidence": "developer.woocommerce.com"
+ },
+ {
+  "id": 43,
+  "app": "BigCommerce",
+  "category": "Ecommerce",
+  "auth": "OAuth API accounts / store token",
+  "access": "free trial store + sandbox",
+  "api_mcp": "REST + GraphQL broad",
+  "verdict": "buildable",
+  "evidence": "developer.bigcommerce.com"
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "category": "Enterprise ecommerce",
+  "auth": "OAuth2 SLAS + Account Manager",
+  "access": "gated: licensed B2C instance",
+  "api_mcp": "SCAPI REST broad",
+  "verdict": "outreach",
+  "evidence": "developer.salesforce.com/docs/commerce"
+ },
+ {
+  "id": 45,
+  "app": "Magento / Adobe Commerce",
+  "category": "Ecommerce",
+  "auth": "OAuth1.0a integrations / bearer tokens",
+  "access": "OSS self-serve; Adobe Commerce licensed",
+  "api_mcp": "REST + GraphQL broad",
+  "verdict": "buildable on OSS",
+  "evidence": "developer.adobe.com/commerce"
+ },
+ {
+  "id": 46,
+  "app": "Squarespace",
+  "category": "Ecommerce",
+  "auth": "API key per site or OAuth",
+  "access": "paid site plan",
+  "api_mcp": "REST medium",
+  "verdict": "buildable, blocker: paid site",
+  "evidence": "developers.squarespace.com"
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "category": "Ecommerce",
+  "auth": "custom app tokens (secret/public)",
+  "access": "free store + custom app",
+  "api_mcp": "REST broad",
+  "verdict": "buildable",
+  "evidence": "api-docs.ecwid.com"
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "category": "Creator commerce",
+  "auth": "OAuth2",
+  "access": "self-serve free",
+  "api_mcp": "REST medium + official CLI",
+  "verdict": "buildable",
+  "evidence": "gumroad.com/api"
+ },
+ {
+  "id": 49,
+  "app": "Amazon SP-API",
+  "category": "Marketplace",
+  "auth": "LWA OAuth2",
+  "access": "gated: Solution Provider Portal + review",
+  "api_mcp": "REST very broad",
+  "verdict": "outreach / approval",
+  "evidence": "developer-docs.amazon.com/sp-api"
+ },
+ {
+  "id": 50,
+  "app": "fanbasis (Commas)",
+  "category": "Creator payments",
+  "auth": "API key in Authorization header",
+  "access": "seller portal + sandbox",
+  "api_mcp": "REST medium; official MCP bundle",
+  "verdict": "buildable",
+  "evidence": "commasdocs.com/api-reference/api-basic"
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "category": "SEO data",
+  "auth": "HTTP Basic",
+  "access": "self-serve, pay-as-you-go",
+  "api_mcp": "REST very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.dataforseo.com"
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "SEO",
+  "auth": "API key",
+  "access": "paid plan",
+  "api_mcp": "REST broad",
+  "verdict": "buildable, blocker: paid plan",
+  "evidence": "seranking.com/api"
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "category": "SEO",
+  "auth": "API key Bearer, v3",
+  "access": "paid: Lite plan and above",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable on paid plan",
+  "evidence": "docs.ahrefs.com"
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "category": "Scraping",
+  "auth": "API token header",
+  "access": "self-serve",
+  "api_mcp": "REST (fetch, markdown, screenshot)",
+  "verdict": "buildable",
+  "evidence": "docs.mrscraper.com"
+ },
+ {
+  "id": 55,
+  "app": "Apify",
+  "category": "Scraping platform",
+  "auth": "API token Bearer",
+  "access": "free plan",
+  "api_mcp": "REST broad; official MCP mcp.apify.com",
+  "verdict": "buildable",
+  "evidence": "docs.apify.com"
+ },
+ {
+  "id": 56,
+  "app": "Firecrawl",
+  "category": "Scraping",
+  "auth": "API key Bearer fc-",
+  "access": "free tier",
+  "api_mcp": "REST medium; official hosted MCP",
+  "verdict": "buildable",
+  "evidence": "docs.firecrawl.dev"
+ },
+ {
+  "id": 57,
+  "app": "Bright Data",
+  "category": "Proxy / scraping",
+  "auth": "API key Bearer; proxy user/pass",
+  "access": "self-serve, 5,000 free req/mo",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.brightdata.com"
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "category": "OSINT CLI",
+  "auth": "none (local CLI, MIT)",
+  "access": "self-serve free",
+  "api_mcp": "no hosted API",
+  "verdict": "local tool only, blocker: no API",
+  "evidence": "github.com/sherlock-project/sherlock"
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "Enrichment",
+  "auth": "API key x-api- key",
+  "access": "gated: contact sales",
+  "api_mcp": "REST medium",
+  "verdict": "outreach",
+  "evidence": "docs.waterfall.io"
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "category": "GTM enrichment",
+  "auth": "webhooks in + Enterprise API",
+  "access": "gated: no general public API",
+  "api_mcp": "limited",
+  "verdict": "partial / outreach, blocker: no public API",
+  "evidence": "clay.com/university/guide/using-clay-as-an"
+ },
+ {
+  "id": 61,
+  "app": "GitHub",
+  "category": "Dev",
+  "auth": "PAT / GitHub App / OAuth",
+  "access": "free",
+  "api_mcp": "REST + GraphQL very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.github.com/rest"
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "category": "Dev / hosting",
+  "auth": "access token Bearer",
+  "access": "free Hobby",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "vercel.com/docs/rest-api"
+ },
+ {
+  "id": 63,
+  "app": "Netlify",
+  "category": "Dev / hosting",
+  "auth": "PAT Bearer / OAuth",
+  "access": "free",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.netlify.com/api"
+ },
+ {
+  "id": 64,
+  "app": "Cloudflare",
+  "category": "Dev / infra",
+  "auth": "scoped API tokens",
+  "access": "free plan",
+  "api_mcp": "REST very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developers.cloudflare.com"
+ },
+ {
+  "id": 65,
+  "app": "Supabase",
+  "category": "Dev / DB",
+  "auth": "PAT + project keys",
+  "access": "free tier",
+  "api_mcp": "Management API + auto REST; official MCP",
+  "verdict": "buildable",
+  "evidence": "supabase.com/docs"
+ },
+ {
+  "id": 66,
+  "app": "Neo4j",
+  "category": "Graph DB",
+  "auth": "Basic / bearer; Aura OAuth2",
+  "access": "free Aura tier",
+  "api_mcp": "Cypher over HTTP + Bolt; official MCP",
+  "verdict": "buildable",
+  "evidence": "neo4j.com/docs/api"
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "category": "Data warehouse",
+  "auth": "key-pair JWT, OAuth, PAT",
+  "access": "30-day trial",
+  "api_mcp": "SQL API broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.snowflake.com"
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "category": "DBaaS",
+  "auth": "service account OAuth2 / API keys (Digest)",
+  "access": "free M0",
+  "api_mcp": "Admin API broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "mongodb.com/docs/atlas/api"
+ },
+ {
+  "id": 69,
+  "app": "Datadog",
+  "category": "Observability",
+  "auth": "+ DD-API-KEY DD- APPLICATION- KEY",
+  "access": "14-day trial",
+  "api_mcp": "REST very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.datadoghq.com"
+ },
+ {
+  "id": 70,
+  "app": "Sentry",
+  "category": "Error monitoring",
+  "auth": "auth tokens Bearer / OAuth",
+  "access": "free dev plan",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.sentry.io/api"
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity",
+  "auth": "internal integration token / OAuth",
+  "access": "free workspace",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developers.notion.com"
+ },
+ {
+  "id": 72,
+  "app": "Airtable",
+  "category": "Productivity",
+  "auth": "PAT / OAuth",
+  "access": "free plan",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "airtable.com/developers"
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "category": "PM",
+  "auth": "personal API key / OAuth2",
+  "access": "free plan",
+  "api_mcp": "GraphQL; official MCP",
+  "verdict": "buildable",
+  "evidence": "linear.app/developers"
+ },
+ {
+  "id": 74,
+  "app": "Jira",
+  "category": "PM",
+  "auth": "Basic (email + token) / OAuth 2.0 3LO",
+  "access": "free up to 10 users",
+  "api_mcp": "REST very broad; official Atlassian MCP",
+  "verdict": "buildable",
+  "evidence": "developer.atlassian.com"
+ },
+ {
+  "id": 75,
+  "app": "Asana",
+  "category": "PM",
+  "auth": "PAT / OAuth",
+  "access": "free plan",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developers.asana.com"
+ },
+ {
+  "id": 76,
+  "app": "monday.com",
+  "category": "Work OS",
+  "auth": "personal API token / OAuth",
+  "access": "free dev account",
+  "api_mcp": "GraphQL broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.monday.com"
+ },
+ {
+  "id": 77,
+  "app": "ClickUp",
+  "category": "PM",
+  "auth": "personal token pk_ / OAuth",
+  "access": "free plan",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.clickup.com"
+ },
+ {
+  "id": 78,
+  "app": "Coda",
+  "category": "Docs / PM",
+  "auth": "API token Bearer",
+  "access": "free",
+  "api_mcp": "REST broad",
+  "verdict": "buildable",
+  "evidence": "coda.io/api"
+ },
+ {
+  "id": 79,
+  "app": "Smartsheet",
+  "category": "Work mgmt",
+  "auth": "API access token Bearer",
+  "access": "gated by plan: Business/Enterprise/AWM",
+  "api_mcp": "REST broad",
+  "verdict": "buildable, blocker: paid plan",
+  "evidence": "developers.smartsheet.com"
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "category": "Time / invoicing",
+  "auth": "PAT + Harvest- Account-Id / OAuth",
+  "access": "free trial",
+  "api_mcp": "REST broad; community MCP",
+  "verdict": "buildable",
+  "evidence": "help.getharvest.com/api-v2"
+ },
+ {
+  "id": 81,
+  "app": "Stripe",
+  "category": "Payments",
+  "auth": "secret/restricted keys; OAuth for Connect",
+  "access": "free test mode",
+  "api_mcp": "REST very broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "docs.stripe.com/api"
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "category": "Open banking",
+  "auth": "client_id + secret",
+  "access": "free Sandbox; Production approval",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable sandbox, prod gated",
+  "evidence": "plaid.com/docs"
+ },
+ {
+  "id": 83,
+  "app": "Binance",
+  "category": "Crypto",
+  "auth": "API key + signed requests",
+  "access": "self-serve after KYC",
+  "api_mcp": "REST + WebSocket very broad",
+  "verdict": "buildable, blocker: KYC + signing",
+  "evidence": "developers.binance.com"
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "category": "Payments (NMI)",
+  "auth": "NMI private key + public tokenization key",
+  "access": "gated: merchant account via reseller",
+  "api_mcp": "NMI Payment API",
+  "verdict": "outreach",
+  "evidence": "support.nmi.com"
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "category": "FX audit",
+  "auth": "Bearer API key",
+  "access": "self-serve",
+  "api_mcp": "REST tiny (3 endpoints)",
+  "verdict": "buildable, tiny surface",
+  "evidence": "ipayx.ai/docs/api"
+ },
+ {
+  "id": 86,
+  "app": "QuickBooks",
+  "category": "Accounting",
+  "auth": "OAuth2 auth code",
+  "access": "free dev account + sandbox",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.intuit.com"
+ },
+ {
+  "id": 87,
+  "app": "Xero",
+  "category": "Accounting",
+  "auth": "OAuth2 code/PKCE; Custom Connections",
+  "access": "free Demo Company",
+  "api_mcp": "REST broad; official MCP",
+  "verdict": "buildable",
+  "evidence": "developer.xero.com"
+ },
+ {
+  "id": 88,
+  "app": "Brex",
+  "category": "Spend mgmt",
+  "auth": "user token Bearer",
+  "access": "gated: Brex customer + admin",
+  "api_mcp": "REST broad; no official MCP",
+  "verdict": "outreach",
+  "evidence": "developer.brex.com"
+ },
+ {
+  "id": 89,
+  "app": "Ramp",
+  "category": "Spend mgmt",
+  "auth": "OAuth2 scoped; official MCP + CLI",
+  "access": "gated: Ramp customer",
+  "api_mcp": "REST broad",
+  "verdict": "outreach",
+  "evidence": "docs.ramp.com"
+ },
+ {
+  "id": 90,
+  "app": "PitchBook",
+  "category": "Private- market data",
+  "auth": "API credentials via Direct Data team",
+  "access": "gated: contact sales / client",
+  "api_mcp": "REST data feed",
+  "verdict": "outreach",
+  "evidence": "pitchbook.com/help/PitchBook-api"
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "category": "AI research",
+  "auth": "Google Cloud OAuth2 + IAM role",
+  "access": "gated: Gemini Notebook Enterprise licence, v1alpha",
+  "api_mcp": "REST narrow",
+  "verdict": "gated",
+  "evidence": "docs.cloud.google.com/gemini/enterprise/ enterprise"
+ },
+ {
+  "id": 92,
+  "app": "Otter.ai",
+  "category": "AI meeting notes",
+  "auth": "Bearer API key",
+  "access": "gated: Enterprise workspaces only",
+  "api_mcp": "REST read-mostly",
+  "verdict": "gated",
+  "evidence": "help.otter.ai"
+ },
+ {
+  "id": 93,
+  "app": "Fathom",
+  "category": "AI meeting notes",
+  "auth": "API key X-Api- Key / OAuth2",
+  "access": "API on all plans",
+  "api_mcp": "REST, 60 calls/min",
+  "verdict": "buildable",
+  "evidence": "developers.fathom.ai/quickstart"
+ },
+ {
+  "id": 94,
+  "app": "Consensus",
+  "category": "AI research search",
+  "auth": "API key x-api- key",
+  "access": "free 30 calls/mo",
+  "api_mcp": "REST single search endpoint; MCP dashboard",
+  "verdict": "buildable",
+  "evidence": "docs.consensus.app"
+ },
+ {
+  "id": 95,
+  "app": "Reducto",
+  "category": "AI doc parsing",
+  "auth": "Bearer API key",
+  "access": "free account",
+  "api_mcp": "REST broad, OpenAPI 3.1",
+  "verdict": "buildable",
+  "evidence": "docs.reducto.ai"
+ },
+ {
+  "id": 96,
+  "app": "Devin",
+  "category": "AI coding agent",
+  "auth": "Bearer cog_ token (service user / PAT)",
+  "access": "Devin account",
+  "api_mcp": "REST v3 + official MCP mcp.devin.ai",
+  "verdict": "buildable",
+  "evidence": "docs.devin.ai"
+ },
+ {
+  "id": 97,
+  "app": "Higgsfield",
+  "category": "AI media gen",
+  "auth": "Authorization: Key id:secret",
+  "access": "self-serve, paid credits",
+  "api_mcp": "REST async + webhooks, CLI",
+  "verdict": "buildable, paid",
+  "evidence": "docs.higgsfield.ai"
+ },
+ {
+  "id": 98,
+  "app": "Mermaid CLI",
+  "category": "Diagram render",
+  "auth": "none (local CLI, MIT)",
+  "access": "self-serve free",
+  "api_mcp": "no API; → mmdc SVG/PNG/PDF",
+  "verdict": "local tool only",
+  "evidence": "github.com/mermaid-js/mermaid-cli"
+ },
+ {
+  "id": 99,
+  "app": "TranscriptAPI",
+  "category": "YouTube transcripts",
+  "auth": "Bearer API key",
+  "access": "100 free credits",
+  "api_mcp": "REST",
+  "verdict": "buildable",
+  "evidence": "transcriptapi.com/docs/api"
+ },
+ {
+  "id": 100,
+  "app": "Grain",
+  "category": "AI meeting recorder",
+  "auth": "PAT / WAT / OAuth2",
+  "access": "self-serve tokens; workspace scope on some plans",
+  "api_mcp": "REST + official MCP api.grain.com/_/mcp",
+  "verdict": "buildable",
+  "evidence": "developers.grain.com"
+ }
+]

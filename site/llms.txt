@@ -6,6 +6,8 @@
 ## Files
 - results.json: array of 100 records (fields below)
 - results.csv: same data, one row per app
+- manual_pass.json: an independent manual pass over the same 100 apps, normalised to these fields, with per-field agreement
+- manual-pass.pdf: that manual pass as written
 - index.html: human-readable case study (patterns, findings, agent design, verification)
 
 ## Fields

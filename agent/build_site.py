@@ -152,7 +152,8 @@ def gold_table(acc):
             f'</tr></thead><tbody>{"".join(body)}</tbody></table></div>')
 
 
-def app_table(rows):
+def app_table(rows, mp=None):
+    mp = {a["id"]: a for a in (mp or {}).get("apps", [])}
     out = []
     for r in rows:
         others = [a for a in (r["auth_methods"] or []) if a != r["auth_primary"]]
@@ -180,6 +181,7 @@ def app_table(rows):
 <dt>MCP</dt><dd>{E(MCP[r["mcp"]])}{(' · <a href="' + E(r["mcp_url"]) + '" target="_blank" rel="noopener">' + E(r["mcp_url"][:80]) + '</a>') if r.get("mcp_url") else ""}</dd>
 <dt>Composio today</dt><dd>{E(", ".join(r["composio_slugs"]) or "no toolkit in catalog")}{(" · auth " + E(", ".join(r["composio_auth"]))) if r["composio_auth"] else ""}</dd>
 <dt>Evidence</dt><dd class="evl">{ev_links}</dd>
+{manual_detail(mp.get(r["id"]))}
 <dt>Verification</dt><dd>{r["verify_rounds"]} audit round(s). {("Changed: " + changed) if changed else "Pass-1 answer confirmed."}{(" Still open: " + E(", ".join(r["open_flags"]))) if r["open_flags"] else ""}</dd>
 </dl>{human}
 <ol class="quotes">{quotes}</ol></div>"""
@@ -196,9 +198,88 @@ def app_table(rows):
     return "".join(out)
 
 
+# ------------------------------------------------------------------ manual cross-check
+MP_VERDICT = {"ready": ("v", "ready", "Ready"), "friction": ("v", "ready_with_friction", "Friction"),
+              "outreach": ("v", "needs_outreach", "Outreach"), "not_buildable": ("v", "not_buildable", "No API")}
+MP_ACCESS = {"self_serve": ("a", "self_serve_free", "Self-serve"), "paid": ("a", "paid_plan", "Paid plan"),
+             "review": ("a", "app_review", "Review"), "gated": ("a", "partner_gated", "Gated"),
+             "no_api": ("a", "no_public_api", "No API")}
+MP_MCP = {"official": ("m", "official", "Official"), "community": ("m", "community", "Community"), "none": ("m", "none", "None")}
+MP_FIELDS = {"verdict": ("Verdict", MP_VERDICT), "access": ("Access", MP_ACCESS), "mcp": ("MCP", MP_MCP)}
+RANK = {"ready": 0, "friction": 1, "outreach": 2, "not_buildable": 3}
+
+
+def load_manual():
+    f = DATA / "manual_pass.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+
+
+def mp_pill(field, val):
+    kind, cls, lab = MP_FIELDS[field][1][val]
+    return pill(kind, cls, lab)
+
+
+def manual_detail(m):
+    if not m:
+        return ""
+    diff = [MP_FIELDS[k][0].lower() for k in MP_FIELDS if m["agree"].get(k) is False]
+    src = f' · <a href="{E(m["manual_url"])}" target="_blank" rel="noopener">source</a>' if m["manual_url"] else ""
+    flag = f' <span class="diff">differs on {E(", ".join(diff))}</span>' if diff else ' <span class="same">agrees</span>'
+    return (f'<dt>Manual pass</dt><dd>{mp_pill("verdict", m["manual_norm"]["verdict"])} '
+            f'{E(m["manual"]["access"])} · {E(m["manual"]["api_mcp"])}{src}{flag}</dd>')
+
+
+def cross_section(mp):
+    if not mp:
+        return ""
+    S, apps = mp["summary"], mp["apps"]
+    tiles = "".join(
+        f'<div class="ag"><b>{round(100 * S["agree"][k] / S["n"][k])}%</b><span class="agl">{lab}</span>'
+        f'<small>{S["agree"][k]} of {S["n"][k]}{note}</small><span class="kbar"><i style="width:{100 * S["agree"][k] / S["n"][k]:.0f}%"></i></span></div>'
+        for k, lab, note in [("verdict", "same verdict", ""), ("access", "same access", ""),
+                             ("auth", "same primary auth", ""), ("mcp", "same MCP status", " where stated")])
+    vd = [a for a in apps if a["agree"]["verdict"] is False]
+    softer = sum(RANK[a["manual_norm"]["verdict"]] < RANK[a["agent_norm"]["verdict"]] for a in vd)
+    c = S["counts"]
+
+    def table(field):
+        rows_ = [a for a in apps if a["agree"].get(field) is False]
+        body = "".join(
+            f'<tr><th scope="row"><a href="#app-{a["id"]}">{E(a["name"])}</a></th>'
+            f'<td>{mp_pill(field, a["manual_norm"][field])}<small>{E(a["manual"]["access"] if field != "mcp" else a["manual"]["api_mcp"])}</small></td>'
+            f'<td>{mp_pill(field, a["agent_norm"][field])}</td>'
+            f'<td>{f"""<a href="{E(a["manual_url"])}" target="_blank" rel="noopener">docs</a>""" if a["manual_url"] else ""}</td></tr>'
+            for a in rows_)
+        return (f'<details class="more big"><summary>{MP_FIELDS[field][0]} disagreements ({len(rows_)})</summary><div class="morein">'
+                f'<div class="tw"><table class="xtab"><thead><tr><th>App</th><th>Manual pass</th><th>Agent</th><th>Manual source</th></tr></thead>'
+                f'<tbody>{body}</tbody></table></div></div></details>')
+
+    return f"""
+<section id="cross" class="sec">
+  <h2>A second opinion</h2>
+  <p class="intro">An independent manual research pass over the same 100 apps, read against the agent field by field. <a href="manual-pass.pdf">Read the manual pass (PDF)</a></p>
+  <div class="agree">{tiles}</div>
+  <div class="grid2">
+    <div class="card"><h3>The manual pass in numbers</h3><div class="rstats">
+      <div class="rs"><b>{c["access"].get("self_serve", 0)}</b><span class="rk">free account, no approval</span></div>
+      <div class="rs"><b>{c["access"].get("paid", 0)}</b><span class="rk">need a paid plan</span></div>
+      <div class="rs"><b>{c["access"].get("gated", 0)}</b><span class="rk">gated: partner, customer or sales</span></div>
+      <div class="rs"><b>{c["mcp"].get("official", 0)}</b><span class="rk">official MCP named</span><small>agent: {S["agent_mcp_official"]}</small></div>
+    </div></div>
+    <div class="card"><h3>Where they part ways</h3><div class="loopkey">
+      <div><span>verdicts that differ</span><b>{len(vd)}</b><small>manual more optimistic on {softer}, stricter on {len(vd) - softer}</small></div>
+      <div><span>official MCP servers</span><b>{c["mcp"].get("official", 0)} vs {S["agent_mcp_official"]}</b><small>the agent also checks the MCP Registry; {c["mcp"].get("unstated", 0)} manual rows don't name an MCP status</small></div>
+    </div></div>
+  </div>
+  {table("verdict")}{table("access")}{table("mcp")}
+</section>
+"""
+
+
 # ------------------------------------------------------------------ page
 def build(artifact: bool = False):
     rows, s, acc, P, run = load()
+    MPD = load_manual()
     n = s["n"]
     v = s["verdict"]
     stage = "final_human" if "final_human" in acc else "final"
@@ -263,7 +344,7 @@ def build(artifact: bool = False):
     body = f"""
 <header class="top"><div class="wrap topin">
   <a class="brand" href="#top"><span class="mark" aria-hidden="true">{"<i></i>" * 9}</span>App Research Agent</a>
-  <nav aria-label="Sections"><a href="#patterns">Patterns</a><a href="#act">Where to act</a><a href="#matrix">All apps</a><a href="#agent">Agent</a><a href="#verify">Verification</a><a href="#run-it">Run it</a></nav>
+  <nav aria-label="Sections"><a href="#patterns">Patterns</a><a href="#act">Where to act</a><a href="#matrix">All apps</a><a href="#agent">Agent</a><a href="#verify">Verification</a>{'<a href="#cross">Cross-check</a>' if MPD else ""}<a href="#run-it">Run it</a></nav>
   <a class="dl" href="results.csv" download>results.csv ↓</a>
 </div></header>
 
@@ -345,7 +426,7 @@ def build(artifact: bool = False):
   </div>
   <div class="tw"><table class="apps">
     <thead><tr><th>#</th><th>App</th><th>Auth</th><th>Access</th><th>API</th><th>MCP</th><th>Verdict</th><th>In Composio</th></tr></thead>
-    <tbody>{app_table(rows)}</tbody></table></div>
+    <tbody>{app_table(rows, MPD)}</tbody></table></div>
 </section>
 
 <section id="agent" class="sec">
@@ -397,6 +478,7 @@ def build(artifact: bool = False):
   <details class="more big warnd"><summary>What is still wrong or weak ({len(P["wrong"])})</summary><div class="morein"><ul class="plain">{wrong_html}</ul></div></details>
 </section>
 
+{cross_section(MPD)}
 <section id="run-it" class="sec">
   <h2>Run it</h2>
   <div class="grid2">
@@ -414,6 +496,7 @@ python3 -m agent.analyze && python3 -m agent.check && python3 -m agent.build_sit
         <li><a href="results.json">results.json</a>: full records with evidence</li>
         <li><a href="results.csv">results.csv</a>: one row per app.</li>
         <li><a href="llms.txt">llms.txt</a>: field definitions</li>
+        <li><a href="manual_pass.json">manual_pass.json</a>: an independent manual pass, compared field by field</li>
         <li>Source and README: <a href="{E(REPO_URL)}">{E(REPO_URL)}</a></li>
       </ul></div>
   </div>
