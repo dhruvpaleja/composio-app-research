@@ -17,9 +17,9 @@
  "openapi_spec": null,
  "sandbox": true,
  "webhooks": null,
- "verdict": "ready_with_friction",
- "blocker": "partnership",
- "blocker_notes": "A free Developer Edition org gives working OAuth credentials, so building and testing is self-serve. But the SFDC API Terms bar Commercial Use of the APIs unless the app is enrolled in Salesforce's ISV partner program, which applies to a commercial multi-tenant toolkit.",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "A free Developer Edition org has API access by default, so credentials are self-serve. The commercial-use / ISV clause in the API terms is not one of the rubric's friction triggers. (developer.salesforce.com HTML pages returned 403, so the quote is from Salesforce's official REST API guide PDF.)",
  "evidence": [
   {
    "field": "auth",
@@ -122,5 +122,12 @@
    "https://salesforce.com/company/legal/sfdc-api-terms-of-service"
   ],
   "trigger": "review (blocker label)"
+ },
+ "_recheck": {
+  "note": "verdict: A free Developer Edition org has API access by default, so credentials are self-serve. The commercial-use / ISV clause in the API terms is not one of the rubric's friction triggers. (developer.salesforce.com HTML pages returned 403, so the quote is from Salesforce's official REST API guide PDF.)",
+  "src": [
+   "https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/api_rest.pdf"
+  ],
+  "trigger": "vendor-docs re-check of a field the manual pass disputed"
  }
 }

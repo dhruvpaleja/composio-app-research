@@ -1,17 +1,17 @@
 {
  "n": 100,
  "verdict": {
-  "ready_with_friction": 30,
-  "ready": 61,
+  "ready": 65,
+  "ready_with_friction": 26,
   "needs_outreach": 6,
   "not_buildable": 2,
   "unverified": 1
  },
  "access": {
-  "self_serve_free": 60,
-  "self_serve_trial": 13,
+  "self_serve_free": 62,
+  "self_serve_trial": 14,
   "partner_gated": 6,
-  "paid_plan": 10,
+  "paid_plan": 7,
   "app_review": 9,
   "no_public_api": 2
  },
@@ -30,17 +30,17 @@
   "NONE": 2
  },
  "mcp": {
-  "official": 86,
-  "community": 12,
+  "official": 85,
+  "community": 13,
   "none": 2
  },
  "blocker": {
-  "partnership": 8,
-  "none": 61,
-  "paid_plan": 15,
-  "other": 3,
+  "none": 65,
+  "paid_plan": 12,
+  "partnership": 7,
+  "other": 4,
   "app_review": 9,
-  "self_hosted_or_local": 3,
+  "self_hosted_or_local": 2,
   "unclear_docs": 1
  },
  "api_type": {
@@ -51,8 +51,8 @@
  },
  "verdict_by_cat": {
   "CRM": {
-   "ready_with_friction": 3,
-   "ready": 6,
+   "ready": 7,
+   "ready_with_friction": 2,
    "needs_outreach": 1
   },
   "Support & Helpdesk": {
@@ -69,9 +69,9 @@
    "ready": 4
   },
   "Ecommerce": {
-   "ready": 5,
+   "ready": 6,
    "needs_outreach": 1,
-   "ready_with_friction": 4
+   "ready_with_friction": 3
   },
   "Data, SEO & Scraping": {
    "ready": 6,
@@ -80,17 +80,16 @@
    "needs_outreach": 1
   },
   "Dev & Infra": {
-   "ready": 9,
-   "ready_with_friction": 1
+   "ready": 10
   },
   "Productivity & PM": {
    "ready": 9,
    "ready_with_friction": 1
   },
   "Finance & Fintech": {
-   "ready": 5,
+   "ready": 6,
    "unverified": 1,
-   "ready_with_friction": 3,
+   "ready_with_friction": 2,
    "needs_outreach": 1
   },
   "AI & Media": {
@@ -107,9 +106,9 @@
    "partner_gated": 1
   },
   "Support & Helpdesk": {
-   "self_serve_trial": 3,
+   "self_serve_trial": 5,
    "self_serve_free": 2,
-   "paid_plan": 4,
+   "paid_plan": 2,
    "partner_gated": 1
   },
   "Communications": {
@@ -136,16 +135,15 @@
    "partner_gated": 1
   },
   "Dev & Infra": {
-   "self_serve_free": 8,
-   "self_serve_trial": 2
+   "self_serve_free": 9,
+   "self_serve_trial": 1
   },
   "Productivity & PM": {
    "self_serve_free": 9,
    "paid_plan": 1
   },
   "Finance & Fintech": {
-   "self_serve_free": 7,
-   "paid_plan": 1,
+   "self_serve_free": 8,
    "app_review": 1,
    "partner_gated": 1
   },
@@ -158,7 +156,8 @@
  },
  "mcp_by_cat": {
   "CRM": {
-   "official": 10
+   "official": 9,
+   "community": 1
   },
   "Support & Helpdesk": {
    "official": 9,
@@ -288,9 +287,11 @@
   "Vonage",
   "systeme.io",
   "WooCommerce",
+  "Magento (Adobe Commerce)",
   "fanbasis",
   "Netlify",
   "Binance",
+  "iPayX",
   "Reducto"
  ],
  "links": {

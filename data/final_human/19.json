@@ -7,8 +7,8 @@
  ],
  "auth_primary": "BASIC",
  "auth_notes": "Private apps use an API key sent via HTTP Basic (email:API key). OAuth2 authorization-code is mandatory for public apps but needs partner account and Gorgias approval, so not self-serve for multi-user use. The official MCP itself authorizes via OAuth.",
- "access": "paid_plan",
- "access_notes": "API is available on all helpdesk plans, which are paid. The fetched pages show the MCP also requires a paid plan; no free tier or trial is evidenced in the pages. Admins create the key in Settings \u2192 REST API. Public OAuth apps need partner signup and review.",
+ "access": "self_serve_trial",
+ "access_notes": "The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan.",
  "api_type": "REST",
  "api_breadth": "broad",
  "mcp": "official",
@@ -18,8 +18,8 @@
  "sandbox": null,
  "webhooks": null,
  "verdict": "ready_with_friction",
- "blocker": "paid_plan",
- "blocker_notes": "Builder needs a paid Gorgias helpdesk account (trial not confirmed in the evidence) to obtain an API key. OAuth2 for multi-user needs partner app approval.",
+ "blocker": "other",
+ "blocker_notes": "The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan.",
  "evidence": [
   {
    "field": "auth",
@@ -123,5 +123,12 @@
   "mcp_registry_official": [],
   "mcp_registry_any": 1,
   "composio_mcp_toolkits": []
+ },
+ "_recheck": {
+  "note": "access: The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan.",
+  "src": [
+   "https://www.gorgias.com/pricing"
+  ],
+  "trigger": "vendor-docs re-check of a field the manual pass disputed"
  }
 }

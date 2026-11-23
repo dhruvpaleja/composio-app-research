@@ -5,15 +5,15 @@
  ],
  "auth_primary": "API_KEY",
  "auth_notes": "Static Bearer token (ipx_live_ / ipx_test_) generated in the dashboard. Some public MCP tools need no auth (IP rate-limited).",
- "access": "paid_plan",
- "access_notes": "MCP docs list a free tier of 10 audits/day per API key, and the dashboard issues keys. Other pages give different free limits (3 per IP per month; 10/IP/7d). The REST API Developer plan is $99/mo with sandbox. The pricing page was not fetched, so the earlier '5 lifetime audits' claim is unverified and was removed. Free credentials likely suffice to build and test, but limits conflict across pages.",
+ "access": "self_serve_free",
+ "access_notes": "The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan.",
  "api_type": "REST",
  "api_breadth": "narrow",
  "mcp": "official",
  "mcp_url": "https://mcp.ipayx.ai/mcp",
- "verdict": "ready_with_friction",
- "blocker": "paid_plan",
- "blocker_notes": "API keys start on the $99/month Developer plan; the free tier is 5 lifetime audits in the web app.",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "Free API keys from the dashboard are enough to build and test the 3-endpoint API (medium confidence, because the /developers page cites a $99 Developer plan). The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan.",
  "docs_url": "https://ipayx.ai/docs/api",
  "openapi_spec": true,
  "webhooks": true,
@@ -102,5 +102,12 @@
    "https://ipayx.ai/pricing"
   ],
   "trigger": "review (label vs notes)"
+ },
+ "_recheck": {
+  "note": "verdict: Free API keys from the dashboard are enough to build and test the 3-endpoint API (medium confidence, because the /developers page cites a $99 Developer plan). access: The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan.",
+  "src": [
+   "https://ipayx.ai/docs/mcp-server"
+  ],
+  "trigger": "vendor-docs re-check of a field the manual pass disputed"
  }
 }

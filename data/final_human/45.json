@@ -12,9 +12,9 @@
  "api_breadth": "broad",
  "mcp": "community",
  "mcp_url": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
- "verdict": "ready_with_friction",
- "blocker": "self_hosted_or_local",
- "blocker_notes": "There is no hosted public sandbox. The builder must stand up their own Magento instance, and each merchant has its own base URL and OAuth 1.0a integration, so there is no central multi-user OAuth app flow.",
+ "verdict": "ready",
+ "blocker": "none",
+ "blocker_notes": "The free Magento Open Source build exposes the same web API, so a developer can self-host and create an integration for credentials. Self-hosting and per-merchant integrations are not rubric friction.",
  "docs_url": "https://developer.adobe.com/commerce/webapi/",
  "openapi_spec": null,
  "sandbox": false,
@@ -78,5 +78,12 @@
   "mcp_registry_official": [],
   "mcp_registry_any": 4,
   "composio_mcp_toolkits": []
+ },
+ "_recheck": {
+  "note": "verdict: The free Magento Open Source build exposes the same web API, so a developer can self-host and create an integration for credentials. Self-hosting and per-merchant integrations are not rubric friction.",
+  "src": [
+   "https://developer.adobe.com/commerce/webapi/get-started/"
+  ],
+  "trigger": "vendor-docs re-check of a field the manual pass disputed"
  }
 }

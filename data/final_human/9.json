@@ -14,8 +14,8 @@
  "openapi_spec": null,
  "sandbox": false,
  "docs_url": "https://developer.copper.com/",
- "mcp": "official",
- "mcp_url": "https://copper.com/mcp",
+ "mcp": "community",
+ "mcp_url": null,
  "verdict": "ready_with_friction",
  "blocker": "paid_plan",
  "blocker_notes": "API needs Professional or higher, or the 14-day trial, which is short for ongoing toolkit testing. Self-serve OAuth is not available because app registration goes through partners@copper.com.",
@@ -111,5 +111,12 @@
   "mcp_registry_official": [],
   "mcp_registry_any": 4,
   "composio_mcp_toolkits": []
+ },
+ "_recheck": {
+  "note": "mcp: Copper's own server is still listed as coming soon behind a waitlist/beta, so it is not yet published; third-party servers (e.g. dazanza/copper-mcp, Cotlet, Activepieces) do exist.",
+  "src": [
+   "https://copper.com/mcp"
+  ],
+  "trigger": "vendor-docs re-check of a field the manual pass disputed"
  }
 }

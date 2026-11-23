@@ -1,0 +1,114 @@
+{
+ "1": {
+  "set": {
+   "verdict": "ready",
+   "blocker": "none",
+   "blocker_notes": "A free Developer Edition org has API access by default, so credentials are self-serve. The commercial-use / ISV clause in the API terms is not one of the rubric's friction triggers. (developer.salesforce.com HTML pages returned 403, so the quote is from Salesforce's official REST API guide PDF.)"
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "verdict: A free Developer Edition org has API access by default, so credentials are self-serve. The commercial-use / ISV clause in the API terms is not one of the rubric's friction triggers. (developer.salesforce.com HTML pages returned 403, so the quote is from Salesforce's official REST API guide PDF.)",
+  "src": [
+   "https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/api_rest.pdf"
+  ],
+  "was": {
+   "verdict": "ready_with_friction"
+  }
+ },
+ "45": {
+  "set": {
+   "verdict": "ready",
+   "blocker": "none",
+   "blocker_notes": "The free Magento Open Source build exposes the same web API, so a developer can self-host and create an integration for credentials. Self-hosting and per-merchant integrations are not rubric friction."
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "verdict: The free Magento Open Source build exposes the same web API, so a developer can self-host and create an integration for credentials. Self-hosting and per-merchant integrations are not rubric friction.",
+  "src": [
+   "https://developer.adobe.com/commerce/webapi/get-started/"
+  ],
+  "was": {
+   "verdict": "ready_with_friction"
+  }
+ },
+ "69": {
+  "set": {
+   "verdict": "ready",
+   "access": "self_serve_free",
+   "blocker": "none",
+   "blocker_notes": "A permanent free tier, plus the trial, gives API and app keys self-serve, and partner-registered OAuth is not a rubric friction item.",
+   "access_notes": ""
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "verdict: A permanent free tier, plus the trial, gives API and app keys self-serve, and partner-registered OAuth is not a rubric friction item.",
+  "src": [
+   "https://www.datadoghq.com/pricing/"
+  ],
+  "was": {
+   "verdict": "ready_with_friction",
+   "access": "self_serve_trial"
+  }
+ },
+ "85": {
+  "set": {
+   "verdict": "ready",
+   "access": "self_serve_free",
+   "blocker": "none",
+   "blocker_notes": "Free API keys from the dashboard are enough to build and test the 3-endpoint API (medium confidence, because the /developers page cites a $99 Developer plan). The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan.",
+   "access_notes": "The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan."
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "verdict: Free API keys from the dashboard are enough to build and test the 3-endpoint API (medium confidence, because the /developers page cites a $99 Developer plan). access: The vendor docs state a free API-key tier issued from the dashboard, which conflicts with the agent's paid_plan.",
+  "src": [
+   "https://ipayx.ai/docs/mcp-server"
+  ],
+  "was": {
+   "verdict": "ready_with_friction",
+   "access": "paid_plan"
+  }
+ },
+ "19": {
+  "set": {
+   "access": "self_serve_trial",
+   "blocker": "other",
+   "blocker_notes": "The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan.",
+   "access_notes": "The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan."
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "access: The API is on all helpdesk plans, and a no-card 7-day trial with all features gives credentials, so this is self_serve_trial, not paid_plan.",
+  "src": [
+   "https://www.gorgias.com/pricing"
+  ],
+  "was": {
+   "access": "paid_plan"
+  }
+ },
+ "17": {
+  "set": {
+   "access": "self_serve_trial",
+   "blocker": "other",
+   "blocker_notes": "A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan.",
+   "access_notes": "A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan."
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "access: A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan.",
+  "src": [
+   "https://www.plain.com/pricing"
+  ],
+  "was": {
+   "access": "paid_plan"
+  }
+ },
+ "9": {
+  "set": {
+   "mcp": "community",
+   "mcp_url": null
+  },
+  "trigger": "vendor-docs re-check of a field the manual pass disputed",
+  "note": "mcp: Copper's own server is still listed as coming soon behind a waitlist/beta, so it is not yet published; third-party servers (e.g. dazanza/copper-mcp, Cotlet, Activepieces) do exist.",
+  "src": [
+   "https://copper.com/mcp"
+  ],
+  "was": {
+   "mcp": "official"
+  }
+ }
+}

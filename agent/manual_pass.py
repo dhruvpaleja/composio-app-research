@@ -79,6 +79,11 @@ AGENT_VERDICT = {"ready": "ready", "ready_with_friction": "friction", "needs_out
 def run():
     manual = json.loads((DATA / "manual_pass_rows.json").read_text(encoding="utf-8"))
     agent = {r["id"]: r for r in json.loads((SITE / "results.json").read_text(encoding="utf-8"))}
+    # Compare against the agent's answers *before* the vendor-docs re-check was applied, so fields the
+    # manual pass got right still count as its wins (gold/recheck_overrides.json records the old values).
+    rc_file = ROOT / "gold" / "recheck_overrides.json"
+    was = {int(k): v.get("was", {}) for k, v in json.loads(rc_file.read_text(encoding="utf-8")).items()} if rc_file.exists() else {}
+    agent = {i: {**r, **was.get(i, {})} for i, r in agent.items()}
     out, agree, n = [], Counter(), Counter()
     for m in manual:
         a = agent[m["id"]]

@@ -17,8 +17,8 @@ It then checks its own work. The outputs are a one-page case study (`site/index.
 
 ## Results in one paragraph
 
-- **Verdicts:** 61 apps are ready to build today, 30 more after one hurdle, and 6 need a sales or partnership conversation. 2 are local tools with no hosted API, and 1 is unresolved.
-- **Accuracy:** checked on 30 apps labelled by hand and 18 held-out apps labelled blind by separate research agents. 98.9% and 98.1% of answers are acceptable; 85.0% and 86.1% match the first-choice answer exactly.
+- **Verdicts:** 65 apps are ready to build today, 26 more after one hurdle (after the vendor-docs re-check; the agent alone said 61 and 30), and 6 need a sales or partnership conversation. 2 are local tools with no hosted API, and 1 is unresolved.
+- **Accuracy:** checked on 30 apps labelled by hand and 18 held-out apps labelled blind by separate research agents. 98.9% and 98.1% of answers are acceptable; 86.7% and 88.0% match the first-choice answer exactly.
 - **The verification loop:** the first version made answers worse. The rebuilt loop raised the share of answers backed by a quote found on the cited page from 95.0% to 98.9%.
 
 ## How it works
@@ -34,7 +34,7 @@ data/apps.csv → PASS 1 → V1 citation check → V2 cross-source → V3 rules 
 | V2 cross-source | Auth vs Composio's toolkit catalog (snapshot in `data/composio_toolkits.json`). MCP vs the official MCP Registry. |
 | V3 rules | Contradictions, e.g. verdict "ready" with a partner gate, or primary auth missing from the auth list. |
 | V4 re-research | Flagged fields, plus access and MCP on every app, get vendor-domain pages and a skeptical auditor that may only answer with verbatim quotes. Max 2 rounds. |
-| Human review | `data/human_queue.json` holds the apps still flagged. Decisions are in `gold/human_overrides.json` and applied by `agent/human.py`. |
+| Human review | `data/human_queue.json` holds the apps still flagged. Decisions are in `gold/human_overrides.json`, and vendor-docs re-checks in `gold/recheck_overrides.json`; `agent/human.py` applies both. |
 | Link check | Every evidence URL is requested live (`agent/linkcheck.py`). Dead links are dropped from the published data. |
 
 The labelling rubric is in `agent/schema.py`. The agent, the auditor and the hand checks all use it, so "accuracy" means agreement on the same definitions.

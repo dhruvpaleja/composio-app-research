@@ -7,15 +7,15 @@
  ],
  "auth_primary": "OAUTH2",
  "auth_notes": "OAuth apps (client-side with PKCE, or server-side with a client secret) are created self-serve under Settings \u2192 OAuth applications. Calls run as the signed-in user. Machine-user API keys (Bearer plainApiKey_...) carry per-key permissions. HMAC request signing and mTLS are used for webhooks and customer cards. The hosted MCP server uses OAuth only, requiring the openid and offline_access scopes.",
- "access": "paid_plan",
- "access_notes": "The pricing evidence lists only paid plans (Foundation $45/user/month billed annually, Horizon, Frontier). No free tier or trial appears in any fetched page, but absence is not proof, so this is a best-judgement label. Machine users and API keys are created in workspace settings.",
+ "access": "self_serve_trial",
+ "access_notes": "A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan.",
  "api_type": "GraphQL",
  "api_breadth": "broad",
  "mcp": "official",
  "mcp_url": "https://mcp.plain.com/mcp",
  "verdict": "ready_with_friction",
- "blocker": "paid_plan",
- "blocker_notes": "No free plan or trial is shown in the evidence, so a paid workspace is probably needed to get credentials. A trial may exist but is not confirmed.",
+ "blocker": "other",
+ "blocker_notes": "A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan.",
  "docs_url": "https://plain.com/docs/graphql/introduction",
  "openapi_spec": false,
  "webhooks": true,
@@ -118,5 +118,12 @@
   "composio_mcp_toolkits": [
    "plain_mcp"
   ]
+ },
+ "_recheck": {
+  "note": "access: A self-serve trial exists, so the agent's paid_plan is wrong. The manual 'self_serve' label maps to the right answer, but its 'free tier' claim is wrong: it is a trial, not a free plan.",
+  "src": [
+   "https://www.plain.com/pricing"
+  ],
+  "trigger": "vendor-docs re-check of a field the manual pass disputed"
  }
 }

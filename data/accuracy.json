@@ -7741,7 +7741,7 @@
      "verdict": {
       "ok": true,
       "grounded": 1.0,
-      "got": "ready_with_friction",
+      "got": "ready",
       "gold": [
        "ready",
        "ready_with_friction"
@@ -8983,7 +8983,7 @@
      "access": {
       "ok": true,
       "grounded": 1.0,
-      "got": "self_serve_trial",
+      "got": "self_serve_free",
       "gold": [
        "self_serve_free",
        "self_serve_trial"
@@ -9008,7 +9008,7 @@
      "verdict": {
       "ok": true,
       "grounded": 1.0,
-      "got": "ready_with_friction",
+      "got": "ready",
       "gold": [
        "ready",
        "ready_with_friction"
@@ -9615,11 +9615,11 @@
    "apps_all_correct": 26
   },
   "final_human": {
-   "overall": 0.972,
-   "verified_overall": 0.972,
-   "correct": 175,
+   "overall": 0.983,
+   "verified_overall": 0.983,
+   "correct": 177,
    "total": 180,
-   "apps_all_correct": 26
+   "apps_all_correct": 27
   }
  },
  "strict": {
@@ -9644,8 +9644,8 @@
    "total": 180
   },
   "final_human": {
-   "overall": 0.85,
-   "correct": 153,
+   "overall": 0.867,
+   "correct": 156,
    "total": 180
   }
  },
@@ -11064,7 +11064,7 @@
       "mcp": {
        "ok": true,
        "grounded": 1.0,
-       "got": "official",
+       "got": "community",
        "gold": [
         "community",
         "official"
@@ -11303,7 +11303,7 @@
       "access": {
        "ok": true,
        "grounded": 1.0,
-       "got": "paid_plan",
+       "got": "self_serve_trial",
        "gold": [
         "self_serve_trial",
         "app_review",
@@ -11974,8 +11974,8 @@
    "total": 108
   },
   "final_human": {
-   "overall": 0.861,
-   "correct": 93,
+   "overall": 0.88,
+   "correct": 95,
    "total": 108
   }
  }

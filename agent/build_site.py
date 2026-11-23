@@ -271,8 +271,8 @@ def adjudication_block(S):
   <div class="agree">{tiles}</div>
   <div class="grid2">
     <div class="card"><h3>Rulings by field</h3><div class="tw"><table class="mini"><thead><tr><th></th>{"".join(f"<th>{WIN[k][0]}</th>" for k in WIN)}</tr></thead><tbody>{per}</tbody></table></div></div>
-    <div class="card"><h3>Best-estimate numbers</h3><div class="tw"><table class="mini"><thead><tr><th></th><th>Agent</th><th>Manual</th><th>Checked</th></tr></thead><tbody>{best}</tbody></table></div>
-      <p class="note">Checked = the agent's answer where both passes agree, the re-checked answer where they don't. Unclear rulings keep the agent's answer.</p></div>
+    <div class="card"><h3>Best-estimate numbers</h3><div class="tw"><table class="mini"><thead><tr><th></th><th>Agent before</th><th>Manual</th><th>Checked</th></tr></thead><tbody>{best}</tbody></table></div>
+      <p class="note">Checked = the numbers used across this page: the shared answer where both passes agree, the vendor-docs ruling where they don't (unclear rulings keep the agent's answer).</p></div>
   </div>"""
 
 
