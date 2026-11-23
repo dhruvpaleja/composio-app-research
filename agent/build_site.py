@@ -45,6 +45,11 @@ def pill(kind, val, label=None):
     return f'<span class="pill {kind}-{E(str(val))}">{E(label or str(val))}</span>'
 
 
+def more(label, inner, cls=""):
+    """Progressive disclosure: secondary detail stays one click away instead of on the page."""
+    return f'<details class="more {cls}"><summary>{label}</summary><div class="morein">{inner}</div></details>'
+
+
 def pct(x):
     return f"{round(100 * x)}%"
 
@@ -217,7 +222,7 @@ def build(artifact: bool = False):
     P["wrong"] = [w.format_map(L) for w in P["wrong"]]
     run = {k: str(v).format_map(L) for k, v in run.items()}
     patterns_html = "".join(
-        f'<li><h3>{E(p["head"])}</h3><p>{E(p["body"])}</p></li>' for p in P["patterns"])
+        f'<li><details><summary><h3>{E(p["head"])}</h3></summary><p>{E(p["body"])}</p></details></li>' for p in P["patterns"])
     human_html = "".join(f"<li>{E(h)}</li>" for h in P["human"])
     wrong_html = "".join(f"<li>{E(h)}</li>" for h in P["wrong"])
     cat_opts = "".join(f'<option value="{E(c)}">{E(c)}</option>' for c in cats)
@@ -257,18 +262,17 @@ def build(artifact: bool = False):
     <p class="lede">{E(P["lede"])}</p>
     <div class="kpis">{kpis}</div>
     <div class="accstats" aria-label="Accuracy">
-      <div class="as"><b>{pct1(a2["overall"])}</b><span>answers acceptable on the {a2["n_apps"]}-app hand-labelled gold sample</span></div>
-      <div class="as"><b>{pct1(ho["overall"])}</b><span>acceptable on {ho["n_apps"]} held-out apps, labelled blind by separate agents</span></div>
-      <div class="as"><b>{pct1(acc["strict"]["final_human"]["overall"])}<i>/</i>{pct1(acc["holdout_strict"]["final_human"]["overall"])}</b><span>exact match with my first-choice answer (gold / held-out)</span></div>
-      <div class="as up"><b>{pct1(a1["verified_overall"])}<i>→</i>{pct1(a2["verified_overall"])}</b><span>answers backed by a quote found on the cited page</span></div>
+      <div class="as"><b>{pct1(a2["overall"])}</b><span>accurate · {a2["n_apps"]}-app gold set</span></div>
+      <div class="as"><b>{pct1(ho["overall"])}</b><span>accurate · {ho["n_apps"]} blind held-out</span></div>
+      <div class="as"><b>{pct1(acc["strict"]["final_human"]["overall"])}<i>/</i>{pct1(acc["holdout_strict"]["final_human"]["overall"])}</b><span>exact first-choice match</span></div>
+      <div class="as up"><b>{pct1(a1["verified_overall"])}<i>→</i>{pct1(a2["verified_overall"])}</b><span>quote-backed answers</span></div>
     </div>
-    <p class="accnote">My first verification loop made answers worse, so I rebuilt it. The rebuilt loop improves evidence, not labels.</p>
   </div>
   <figure class="herofig">
     <div class="figlab"><span>{n} apps · 10 × 10</span><span>by verdict</span></div>
     {waffle(rows)}
     <div class="legend">{"".join(f'<span class="lg"><i class="v-{k}"></i>{E(VERDICT_LONG[k])}</span>' for k in VERDICT)}</div>
-    <figcaption>All {n} apps, one square each, in the order given (10 categories × 10). Colour is the verdict. Click a square to jump to its row.</figcaption>
+    <figcaption>One square per app. Click to open it.</figcaption>
   </figure>
 </div></section>
 
@@ -276,6 +280,7 @@ def build(artifact: bool = False):
 
 <section id="patterns" class="sec">
   <h2>What the 100 apps say</h2>
+  <p class="intro">Six patterns. Open one to read the evidence.</p>
   <ol class="patterns">{patterns_html}</ol>
   <div class="grid2">
     <figure class="card"><figcaption><b>Verdict by category</b><span>count of apps, out of 10 per row</span></figcaption>
@@ -290,7 +295,7 @@ def build(artifact: bool = False):
       {stacked_rows(s["mcp_by_cat"], list(MCP), MCP, "m")}</figure>
     <figure class="card"><figcaption><b>Already in Composio's catalog?</b><span>matched against Composio's {P.get("catalog_size", "")} toolkits</span></figcaption>
       {hbars(s["composio_status"], {"native": "Native toolkit", "mcp_only": "Only a wrapped vendor MCP", "none": "Nothing yet"}, "cs", n, ["native", "mcp_only", "none"])}
-      <p class="note">Only a wrapped MCP: {E(", ".join(s["mcp_only_in_composio"]))}. Nothing yet: {E(", ".join(s["not_in_composio"]))}.</p></figure>
+      {more("Which apps", '<p class="note">Only a wrapped MCP: ' + E(", ".join(s["mcp_only_in_composio"])) + '.<br>Nothing yet: ' + E(", ".join(s["not_in_composio"])) + '.</p>')}</figure>
   </div>
 </section>
 
@@ -298,26 +303,25 @@ def build(artifact: bool = False):
   <h2>Where to act</h2>
   <div class="act">
     <div class="actcol"><h3><i class="v-ready"></i>Build this week <span>{len(ship)} without a native toolkit</span></h3>
-      <p>Self-serve and documented, with no native Composio toolkit today. Engineering time only.</p>
+      <p>Self-serve, no toolkit yet. Engineering time only.</p>
       <div class="chips">{chips(ship) or '<span class="note">None. Every ready app is already covered.</span>'}</div>
-      <p class="sub">Ready and already covered ({len(ship_have)}): maintenance and depth, not new builds.</p>
-      <div class="chips dim">{chips(ship_have)}</div></div>
+      {more("Already covered (" + str(len(ship_have)) + ")", '<div class="chips dim">' + chips(ship_have) + '</div>')}</div>
     <div class="actcol"><h3><i class="v-ready_with_friction"></i>Build with a workaround <span>{len(fr)}</span></h3>
-      <p>Buildable, but someone has to clear app review, buy a plan, work within a short trial, or get partner approval first.</p>
+      <p>One hurdle first: review, a paid plan or a trial.</p>
       <div class="chips">{chips(fr, lambda r: f'<small>{E(BLOCKER.get(r["blocker"], r["blocker"]))}</small>')}</div></div>
     <div class="actcol"><h3><i class="v-needs_outreach"></i>Start a conversation <span>{len(by_v("needs_outreach"))}</span></h3>
-      <p>Credentials only come through a partnership or a sales contract. This is work for the partnerships team, not engineering.</p>
+      <p>Credentials need a partnership. A job for BD.</p>
       <div class="chips">{chips(by_v("needs_outreach"))}</div>
-      <p class="sub"><i class="sw v-not_buildable"></i>No hosted API ({len(by_v("not_buildable"))}): local tools that could run in a sandbox instead.</p>
+      <p class="sub"><i class="sw v-not_buildable"></i>No hosted API ({len(by_v("not_buildable"))})</p>
       <div class="chips">{chips(by_v("not_buildable"))}</div>
-      <p class="sub"><i class="sw v-unverified"></i>Unverified ({len(unsure)}): which product the brief means is unclear, so it is held back.</p>
+      <p class="sub"><i class="sw v-unverified"></i>Unverified ({len(unsure)})</p>
       <div class="chips">{chips(unsure)}</div></div>
   </div>
 </section>
 
 <section id="matrix" class="sec">
   <h2>All 100 apps</h2>
-  <p class="intro">Click an app name for its notes, every quote the agent relied on, and what verification changed. Hover an evidence link to see the quote. The same data is in <a href="results.json">results.json</a> and <a href="results.csv">results.csv</a>.</p>
+  <p class="intro">Click an app to see its evidence. Raw data: <a href="results.json">JSON</a> · <a href="results.csv">CSV</a>.</p>
   <div class="filters" role="search">
     <label for="q">Search</label><input id="q" type="search" placeholder="Search 100 apps…" autocomplete="off">
     <label for="fcat">Category</label><select id="fcat"><option value="">All categories</option>{cat_opts}</select>
@@ -334,28 +338,30 @@ def build(artifact: bool = False):
 
 <section id="agent" class="sec">
   <h2>The agent</h2>
-  <p class="intro">{E(P["agent_intro"])}</p>
+  {more("How it works", '<p>' + E(P["agent_intro"]) + '</p>', "lead")}
   <ol class="pipe">
-    <li><b>Pass 1 · research</b><span>3 web searches per app through Composio (<code>KEENABLE_SEARCH_WEB_PUBLIC</code>). Claude fills a fixed schema with a verbatim quote and URL behind each claim.</span></li>
-    <li><b>V1 · citation check</b><span>Every quote's URL is fetched again through Composio (<code>KEENABLE_FETCH_URL_PUBLIC</code>). A quote has to be on the page (word 3-gram match ≥ 60%) or that field is flagged.</span></li>
-    <li><b>V2 · cross-source</b><span>Auth is checked against Composio's own toolkit catalog ({P.get("catalog_size", "")} toolkits). MCP is checked against the official MCP Registry. A disagreement raises a flag.</span></li>
-    <li><b>V3 · rules</b><span>Contradictions raise flags: "ready" with a partner gate, a primary auth not in the auth list, low self-reported confidence.</span></li>
-    <li><b>V4 · re-research</b><span>Flagged fields, plus access and MCP on every app, get vendor-domain docs pages. A skeptical auditor model may only answer with verbatim quotes from those pages. Then V1 to V3 run again, for up to 2 rounds.</span></li>
-    <li><b>Human queue</b><span>Anything still flagged after 2 rounds goes to <code>data/human_queue.json</code> for a person to decide against the docs.</span></li>
+    <li><b>Research</b><span>3 Composio web searches per app. Every claim gets a quote and URL.</span></li>
+    <li><b>Citation check</b><span>Re-fetch each page. The quote must be on it.</span></li>
+    <li><b>Cross-source</b><span>Auth vs Composio's catalog. MCP vs the MCP Registry.</span></li>
+    <li><b>Rules</b><span>Flag contradictions, like "ready" behind a partner gate.</span></li>
+    <li><b>Re-research</b><span>A skeptical auditor re-checks flags on vendor docs, up to 2 rounds.</span></li>
+    <li><b>Human queue</b><span>Whatever is still flagged, a person decides.</span></li>
   </ol>
   <div class="grid2">
     <div class="card"><h3>Run numbers</h3><div class="rstats">{run_tiles}</div></div>
-    <div class="card"><h3>Where a human was needed</h3><ul class="plain">{human_html}</ul></div>
+    <div class="card"><h3>Where a human was needed</h3><p class="note" style="margin:0 0 4px">{len(P["human"])} judgement calls the agent could not make alone.</p>{more("Read them", '<ul class="plain">' + human_html + '</ul>')}</div>
   </div>
 </section>
 
 <section id="verify" class="sec">
   <h2>How I know it's right</h2>
-  <p class="intro">{E(P["verify_intro"])}</p>
+  {more("Method", '<p>' + E(P["verify_intro"]) + '</p>', "lead")}
   <div class="grid2">
     <figure class="card"><figcaption><b>Accuracy on the {a2["n_apps"]}-app gold sample, by iteration</b><span>{a2["total"]} field answers per stage. The axis starts at 80%.</span></figcaption>{accuracy_chart(acc)}
-      <p class="note">v1 = first rubric and loop; v2 = fixed rubric and loop. Scored against the gold after 5 evidence-backed corrections. Against my original, uncorrected labels: v1 {pct1(acc["vs_gold_v1"]["v1_pass1"]["overall"])} → {pct1(acc["vs_gold_v1"]["v1_final"]["overall"])}, final {pct1(acc["vs_gold_v1"]["final_human"]["overall"])}.</p></figure>
+      <details class="more"><summary>Notes</summary><div class="morein"><p class="note">v1 = first rubric and loop; v2 = fixed rubric and loop. Scored against the gold after 5 evidence-backed corrections. Against my original, uncorrected labels: v1 {pct1(acc["vs_gold_v1"]["v1_pass1"]["overall"])} → {pct1(acc["vs_gold_v1"]["v1_final"]["overall"])}, final {pct1(acc["vs_gold_v1"]["final_human"]["overall"])}.</p></div></details></figure>
     <div class="card"><h3>Loop by loop</h3>
+      <div class="loopkey"><div><span>v1 loop · labels right</span><b class="c-outreach">{pct1(acc["v1_pass1"]["overall"])} → {pct1(acc["v1_final"]["overall"])}</b><small>made it worse, rebuilt</small></div><div><span>v2 loop · quote-backed</span><b class="c-ready">{pct1(a1["verified_overall"])} → {pct1(a2["verified_overall"])}</b><small>evidence improved</small></div></div>
+      <details class="more"><summary>All loop numbers</summary><div class="morein">
       <dl class="nums">
         <dt>v1 loop (first version)</dt><dd>Made things worse: {pct1(acc["v1_pass1"]["overall"])} → {pct1(acc["v1_final"]["overall"])} right, {pct1(acc["v1_pass1"]["verified_overall"])} → {pct1(acc["v1_final"]["verified_overall"])} quote-backed. The auditor read missing evidence as a "no".</dd>
         <dt>v2 pass 1 (fixed rubric)</dt><dd>{pct1(a1["overall"])} right · {pct1(a1["verified_overall"])} quote-backed · {a1["apps_all_correct"]}/{a1["n_apps"]} apps fully right</dd>
@@ -368,15 +374,15 @@ def build(artifact: bool = False):
         <dt>Apps flagged by V1 to V3</dt><dd>{s["apps_with_initial_flags"]} of {n}</dd>
         <dt>Fields changed by the loop</dt><dd>{sum(s["field_changes"].values())} in {s["apps_changed"]} apps ({", ".join(f"{k} {c}" for k, c in s["field_changes"].items())})</dd>
         <dt>Still flagged after 2 rounds</dt><dd>{len(queue)} apps went to the human queue ({E(", ".join(queue))}). Both were decided by hand, see the agent section.</dd>
-      </dl></div>
+      </dl></div></details></div>
   </div>
-  <h3 class="h3">Verified accuracy per field, by iteration</h3>
+  <details class="more big"><summary>Accuracy per field, by iteration</summary><div class="morein">
   <p class="intro">Big number: right and backed by a quote on the page. Small number: right at all.</p>
-  {field_table(acc)}
-  <h3 class="h3">Every gold-sample answer, hit or miss</h3>
+  {field_table(acc)}</div></details>
+  <details class="more big"><summary>Every gold-sample answer, hit or miss</summary><div class="morein">
   <p class="intro">✓ right in both passes · <span class="g-fixed inl">✓ fixed</span> wrong in pass 1, fixed by the loops · <span class="g-broke inl">✗ broke</span> right in pass 1, made wrong by the loops · <span class="g-miss inl">✗</span> still wrong. Hover a cell for the agent's answer against gold.</p>
-  {gold_table(acc)}
-  <div class="card warn"><h3>What is still wrong or weak</h3><ul class="plain">{wrong_html}</ul></div>
+  {gold_table(acc)}</div></details>
+  <details class="more big warnd"><summary>What is still wrong or weak ({len(P["wrong"])})</summary><div class="morein"><ul class="plain">{wrong_html}</ul></div></details>
 </section>
 
 <section id="run-it" class="sec">
@@ -388,20 +394,20 @@ cd composio-app-research
 python3 -m agent.pipeline all --ids 41   # one app (Shopify), replayed from the cache
 python3 -m agent.human && python3 -m agent.score
 python3 -m agent.analyze && python3 -m agent.check && python3 -m agent.build_site</code></pre>
-      <p class="note">The cache in <code>data/cache</code> ships with the repo, so the commands above reproduce this page offline, with no keys and no cost. To research live, run <code>composio login</code>, delete <code>data/cache</code>, and run <code>--ids 1-100</code>. Claude runs through <code>ANTHROPIC_API_KEY</code> if set, otherwise the local <code>claude</code> CLI.</p>
-      <h3>Recorded run: one app, live, cache cleared</h3>
-<pre><code>{E(DEMO)}</code></pre></div>
+      <p class="note">Runs offline from the shipped cache: no keys, no cost.</p>
+      {more("Research live instead", '<p class="note">Run <code>composio login</code>, delete <code>data/cache</code>, then <code>--ids 1-100</code>. Claude runs via <code>ANTHROPIC_API_KEY</code> or the local <code>claude</code> CLI.</p>')}
+      {more("Recorded run: one app, live", '<pre><code>' + E(DEMO) + '</code></pre>')}</div>
     <div class="card"><h3>For agents reading this page</h3>
       <ul class="plain">
-        <li><a href="results.json">results.json</a>: 100 records, full schema, with evidence quotes and grounding scores.</li>
+        <li><a href="results.json">results.json</a>: full records with evidence</li>
         <li><a href="results.csv">results.csv</a>: one row per app.</li>
-        <li><a href="llms.txt">llms.txt</a>: field definitions and how to read the data.</li>
+        <li><a href="llms.txt">llms.txt</a>: field definitions</li>
         <li>Source and README: <a href="{E(REPO_URL)}">{E(REPO_URL)}</a></li>
       </ul></div>
   </div>
 </section>
 </main>
-<footer class="foot"><div class="wrap"><span>Made by {E(AUTHOR)} for Composio's AI Product Ops Intern take-home. Researched {E(P["date"])}.</span><span>Facts about vendors change; each claim links to the page it came from.</span></div></footer>
+<footer class="foot"><div class="wrap"><span>Made by {E(AUTHOR)} for Composio's AI Product Ops Intern take-home. Researched {E(P["date"])}.</span><span>Every claim links to its source.</span></div></footer>
 <script>{js}</script>
 """
     head = f"""<title>App Research Agent</title>
