@@ -2,7 +2,7 @@
 
 Take-home for Composio's AI Product Ops Intern role. **Dhruv Paleja.**
 
-**Live case study:** see the link in the repo description. The page is `site/index.html`.
+**Live case study:** https://dhruv-paleja-composio-case-study.vercel.app (built from `site/index.html`)
 
 For each of 100 apps the agent records:
 - category and a one-liner
