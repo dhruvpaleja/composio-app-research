@@ -292,7 +292,7 @@ def build(artifact: bool = False):
 
 <section id="patterns" class="sec">
   <h2>What the 100 apps say</h2>
-  <p class="intro">Six patterns. Open one to read the evidence.</p>
+  <p class="intro">{len(P["patterns"])} patterns. Open one to read the evidence.</p>
   <ol class="patterns">{patterns_html}</ol>
   <div class="grid2">
     <figure class="card"><figcaption><b>Verdict by category</b><span>count of apps, out of 10 per row</span></figcaption>
@@ -425,10 +425,10 @@ python3 -m agent.analyze && python3 -m agent.check && python3 -m agent.build_sit
     head = f"""<title>App Research Agent</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="color-scheme" content="light"><meta name="theme-color" content="#f7f5f0">
+<meta name="color-scheme" content="light"><meta name="theme-color" content="#ffffff">
 <meta name="description" content="{E(P['lede'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Geist+Mono:wght@400;500&display=swap">
 <style>{css}</style>"""
     if artifact:
         page = head + body
